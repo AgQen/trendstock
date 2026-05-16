@@ -19,13 +19,14 @@ function Step($label, $cmd) {
     }
 }
 
-Step "1/5 가격 수집 (yfinance + pykrx)"       { python -m collectors.run_all }
-Step "2/5 룰 기반 등급 재계산"                { python -m collectors.rerate }
-Step "3/5 적중률 검증 (7d / 30d / 90d)"      { python -m collectors.verify_predictions }
-Step "4/5 web JSON 생성"                     { python -m collectors.export_web }
+Step "1/6 가격 수집 (yfinance + pykrx)"       { python -m collectors.run_all }
+Step "2/6 적중률 검증 (7d / 30d / 90d)"      { python -m collectors.verify_predictions }
+Step "3/6 LLM 분석 (API 키 없으면 skip)"     { python -m llm.run; if ($LASTEXITCODE -ne 0) { $script:LASTEXITCODE = 0 } }
+Step "4/6 룰 기반 객관 등급 적용"             { python -m collectors.rerate }
+Step "5/6 web JSON 생성"                     { python -m collectors.export_web }
 
 Write-Host ""
-Write-Host "▶ 5/5 git push" -ForegroundColor Cyan
+Write-Host "▶ 6/6 git push" -ForegroundColor Cyan
 if (-not (Test-Path ".git")) {
     Write-Host "[FAIL] .git 폴더 없음 — GITHUB_SETUP.md 의 B-1 단계 먼저" -ForegroundColor Red
     exit 1

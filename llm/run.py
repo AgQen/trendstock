@@ -205,13 +205,11 @@ def _strip_code_fence(s: str) -> str:
 
 
 def run_daily(analysis_date: str | None = None,
-              model: str = DEFAULT_MODEL) -> dict:
+              model: str = DEFAULT_MODEL) -> dict | None:
     if not os.environ.get("ANTHROPIC_API_KEY"):
-        raise RuntimeError(
-            "ANTHROPIC_API_KEY 미설정. PowerShell:\n"
-            "  [Environment]::SetEnvironmentVariable("
-            "'ANTHROPIC_API_KEY','sk-ant-...','User')"
-        )
+        print("  [SKIP] ANTHROPIC_API_KEY 미설정 — LLM 분석 건너뜀.")
+        print("         (룰 기반 등급/적중률은 정상 갱신됨)")
+        return None
 
     init_db()
     if analysis_date is None:
@@ -259,8 +257,11 @@ def main() -> None:
     p.add_argument("--model", default=DEFAULT_MODEL)
     args = p.parse_args()
     result = run_daily(args.date, args.model)
-    print(f"\n[DONE] {len(result['current_trends'])}개 현재 트렌드 + "
-          f"{len(result['predicted_trends'])}개 예측 트렌드 저장 완료.")
+    if result is None:
+        print("\n[DONE] LLM skip — 룰 기반 파이프라인만 실행됨.")
+    else:
+        print(f"\n[DONE] {len(result['current_trends'])}개 현재 트렌드 + "
+              f"{len(result['predicted_trends'])}개 예측 트렌드 저장 완료.")
 
 
 if __name__ == "__main__":

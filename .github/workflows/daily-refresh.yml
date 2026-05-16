@@ -31,19 +31,19 @@ jobs:
       - name: Collect prices (yfinance + pykrx)
         run: python -m collectors.run_all
 
-      - name: Re-rate recommendations (objective rules)
-        run: python -m collectors.rerate
-
       - name: Verify predictions (7d/30d/90d alpha)
         run: python -m collectors.verify_predictions
 
-      # LLM 분석은 ANTHROPIC_API_KEY Secret 이 등록된 경우에만 실행.
-      # 없으면 skip (룰 기반 등급만 갱신됨).
-      - name: LLM daily analysis (optional)
-        if: ${{ env.ANTHROPIC_API_KEY != '' }}
+      # LLM 분석. API 키 없으면 llm/run.py 가 graceful exit (정상 종료).
+      - name: LLM daily analysis (skips if no API key)
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python -m llm.run
+        continue-on-error: true
+
+      # 룰 기반 객관 등급은 LLM 분석 후에 적용 — LLM 주관 grade 를 객관 룰로 덮어쓰기.
+      - name: Re-rate recommendations (objective rules)
+        run: python -m collectors.rerate
 
       - name: Export web JSON
         run: python -m collectors.export_web
