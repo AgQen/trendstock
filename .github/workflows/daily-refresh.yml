@@ -1,0 +1,61 @@
+name: Daily TrendStock Refresh
+
+# KST 06:50 (UTC 21:50 전일) 매일 자동 실행
+# 수동 실행: Actions 탭 → 이 workflow → Run workflow
+on:
+  schedule:
+    - cron: "50 21 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install deps
+        run: |
+          pip install --quiet yfinance pykrx pydantic anthropic
+
+      - name: Collect prices (yfinance + pykrx)
+        run: python -m collectors.run_all
+
+      - name: Re-rate recommendations (objective rules)
+        run: python -m collectors.rerate
+
+      - name: Verify predictions (7d/30d/90d alpha)
+        run: python -m collectors.verify_predictions
+
+      # LLM 분석은 ANTHROPIC_API_KEY Secret 이 등록된 경우에만 실행.
+      # 없으면 skip (룰 기반 등급만 갱신됨).
+      - name: LLM daily analysis (optional)
+        if: ${{ env.ANTHROPIC_API_KEY != '' }}
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python -m llm.run
+
+      - name: Export web JSON
+        run: python -m collectors.export_web
+
+      - name: Commit & push
+        run: |
+          git config user.name "trendstock-bot"
+          git config user.email "noreply@users.noreply.github.com"
+          git add data.db web/data/analysis.json || true
+          if git diff --cached --quiet; then
+            echo "no changes to commit"
+          else
+            git commit -m "auto refresh $(date -u +%Y-%m-%d)"
+            git push
+          fi

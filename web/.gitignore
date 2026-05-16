@@ -1,0 +1,7 @@
+# macOS / Windows
+.DS_Store
+Thumbs.db
+
+# 로컬 도구 캐시
+.vscode/
+.idea/

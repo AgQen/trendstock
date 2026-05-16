@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+.pytest_cache/
+
+# Local-only check/utility scripts (one-off)
+_check_*.py
+_fill_*.py
+_extra_*.py
+
+# Editors
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Secrets
+.env
+.env.local
+*.secret
+
+# SQLite journal (DB 본체 data.db 는 commit — 분석 누적용)
+*.db-journal
+*.db-wal
+*.db-shm

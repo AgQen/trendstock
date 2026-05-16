@@ -1,0 +1,443 @@
+{
+  "analysis_date": "2026-05-14",
+  "model_name": "manual-by-claude-code-day1",
+  "current_trends": [
+    {
+      "rank": 1,
+      "title": "AI 메모리 슈퍼사이클",
+      "summary": "HBM 수요 폭증 + 메모리 3사 가격 결정력 회복. KR 반도체 20일 +40~78% + US ARM/MU/ASML 일제 강세",
+      "category": "AI 메모리",
+      "confidence": 85,
+      "causal_chain": [
+        {"step_no": 1, "statement": "AI GPU 학습/추론 수요 폭증으로 데이터센터 메모리 캐파 부족", "confidence": 92},
+        {"step_no": 2, "statement": "HBM3E/HBM4 가격 결정력이 메모리 3사(하이닉스/삼성/마이크론)에 집중", "confidence": 88},
+        {"step_no": 3, "statement": "메모리 캐파 증설 → EUV(ASML) 및 후공정 장비(한미반도체) 수요 동반 폭증", "confidence": 80},
+        {"step_no": 4, "statement": "AP/모바일 반도체(ARM/QCOM)도 후행으로 사이클 합류", "confidence": 65}
+      ],
+      "disconfirming_hypotheses": [
+        "메모리 사이클은 통상 6-9개월마다 과잉공급으로 꺾임 — 한국 반도체 20일 +40~78%는 명백한 과열 구간",
+        "TSMC 파운드리 캐파 부족이 해소되면 메모리 수요도 한꺼번에 식을 수 있음",
+        "AI 학습 사이클이 추론 사이클로 전환되면 HBM3E/4 수요 곡선이 평탄해짐"
+      ],
+      "evidence": {
+        "price": "KR 하이닉스 20d +78.6%, 한미반도체 +44.2%, 삼성전자 +43.3%, 삼성전자 오늘 신고가 돌파",
+        "us_session": "MU +4.83%, ASML +3.99%, ARM +6.39%, NVDA +2.29% (모두 오늘)",
+        "concordance": "다국가·다세그먼트(메모리·장비·AP) 동조 = 진짜 구조적 사이클"
+      },
+      "recommendations": [
+        {
+          "rank": 1, "ticker": "MU", "grade": "Strong Buy",
+          "rationale": "메모리 3사 막내. 매출 YoY +196%, 영업이익률 68%, ROE 40%로 펀더 폭발. P/E 38은 NVDA(46) 대비 매력. HBM3E NVDA 인증 통과로 메모리 사이클 직접 수혜.",
+          "fundamentals_score": 8,
+          "fundamentals": {"revenue_yoy_pct": 196.3, "operating_margin_pct": 67.6, "net_margin_pct": 41.5, "roe_pct": 39.8, "pe_ratio": 37.9, "ps_ratio": 15.6, "debt_to_equity": 15, "market_cap_usd_b": 906.3, "fcf_usd_b": 2.9}
+        },
+        {
+          "rank": 2, "ticker": "005930", "grade": "Strong Buy",
+          "rationale": "삼성전자. 매출 YoY +69%, 영업이익률 43%, 부채비율 6으로 펀더 강력. 20일 +43%로 SK하이닉스(+78%)보다 덜 과열되어 분할 매수 가능. HBM3E 양산 본격화.",
+          "fundamentals_score": 8,
+          "fundamentals": {"revenue_yoy_pct": 69.3, "operating_margin_pct": 42.7, "net_margin_pct": 21.5, "roe_pct": 18.9, "debt_to_equity": 6, "ps_ratio": 5.0}
+        },
+        {
+          "rank": 3, "ticker": "000660", "grade": "Buy",
+          "rationale": "SK하이닉스. HBM 점유율 글로벌 1위로 매출 YoY +198% 영업이익률 72%로 압도. 단 20일 +78.6%는 과열 — 신규 진입은 -5~10% 조정 대기 권장.",
+          "fundamentals_score": 9,
+          "fundamentals": {"revenue_yoy_pct": 198.1, "operating_margin_pct": 71.5, "net_margin_pct": 56.9, "roe_pct": 61.2, "debt_to_equity": 12, "ps_ratio": 10.6}
+        },
+        {
+          "rank": 4, "ticker": "NVDA", "grade": "Hold",
+          "rationale": "ROE 101% 매출 +73%로 펀더 압도적이지만 P/E 46 + 시총 $5.4T로 추가 상승 여력 제한. 이미 충분히 보유 중이라면 유지, 신규 진입은 조정 대기.",
+          "fundamentals_score": 7,
+          "fundamentals": {"revenue_yoy_pct": 73.2, "operating_margin_pct": 65.0, "roe_pct": 101.5, "pe_ratio": 46.1, "ps_ratio": 25.3, "market_cap_usd_b": 5469.7}
+        },
+        {
+          "rank": 5, "ticker": "ASML", "grade": "Buy",
+          "rationale": "EUV 노광 독점. 매출 둔화(+13%)는 직전 사이클 바닥, 메모리 캐파 증설로 회복기 진입. ROE 52% 유지. 장기 분할 매수 적합.",
+          "fundamentals_score": 6,
+          "fundamentals": {"revenue_yoy_pct": 13.2, "operating_margin_pct": 36.0, "roe_pct": 52.2, "pe_ratio": 51.8, "market_cap_usd_b": 609.6}
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "title": "한국 콘텐츠/플랫폼 갑작스러운 매수세",
+      "summary": "한 달 정체 후 오늘 카카오 +6.98% NAVER +5.71% SM +9.87% 하이브 +7.16% 동반 폭등 + 거래량 2배",
+      "category": "한국 콘텐츠",
+      "confidence": 60,
+      "causal_chain": [
+        {"step_no": 1, "statement": "카카오·NAVER·SM·하이브 동시 +5~10% + 거래량 2배 = 외부 catalyst 동시 발생", "confidence": 82},
+        {"step_no": 2, "statement": "동조 패턴은 외국인·기관 일제 진입 신호", "confidence": 75},
+        {"step_no": 3, "statement": "후보 catalyst: K-콘텐츠 글로벌 호조 또는 AI 광고/검색 호재 또는 정부 플랫폼 규제 완화", "confidence": 55}
+      ],
+      "disconfirming_hypotheses": [
+        "5월 14일 실제 catalyst 뉴스 미확보 상태라 가설성 — 단발성 이벤트면 3일 내 거래량 줄며 식음",
+        "거래량 폭증 1일은 보통 2-3일 연장되나 5일째 거래량 0.8x 미만이면 catch-up 전 식음 가능"
+      ],
+      "evidence": {
+        "price_volume": "카카오 +6.98% (vol 2.09x), NAVER +5.71% (vol 1.96x), SM +9.87% (vol 1.83x), 하이브 +7.16%, JYP +4.24%",
+        "context_20d": "20일 평균 +0.6~2% (거의 정체) → 오늘 +5~10% 단번에 폭발"
+      },
+      "recommendations": [
+        {
+          "rank": 1, "ticker": "035720", "grade": "Buy",
+          "rationale": "카카오. 거래량 2.09배 + 가격 +6.98%. 외인 일제 진입 의심. 단 펀더 회복 미확인이라 Strong Buy까진 아님.",
+          "fundamentals_score": 5,
+          "fundamentals": {}
+        },
+        {
+          "rank": 2, "ticker": "035420", "grade": "Buy",
+          "rationale": "NAVER. 거래량 1.96배 + AI(하이퍼클로바)/광고/이커머스 통합 노출. 카카오보다 다각화로 안정.",
+          "fundamentals_score": 6,
+          "fundamentals": {}
+        },
+        {
+          "rank": 3, "ticker": "352820", "grade": "Strong Buy",
+          "rationale": "하이브. 엔터 3사 중 시총 1위 + BTS 컴백 모멘텀 + 글로벌 IP. 오늘 +7.16% + 외인 유입.",
+          "fundamentals_score": 7,
+          "fundamentals": {}
+        },
+        {
+          "rank": 4, "ticker": "041510", "grade": "Buy",
+          "rationale": "에스엠. 오늘 +9.87%로 엔터 3사 중 상승 1위. 신인 라인업 + 카카오 자회사 시너지.",
+          "fundamentals_score": 6,
+          "fundamentals": {}
+        },
+        {
+          "rank": 5, "ticker": "035900", "grade": "Buy",
+          "rationale": "JYP. 엔터 섹터 평균 +7.09% 대비 +4.24%만 — 1-3일 catch-up 후보. 외인이 섹터 전반을 사고 있다면 따라잡기 가능성.",
+          "fundamentals_score": 5,
+          "fundamentals": {}
+        }
+      ]
+    },
+    {
+      "rank": 3,
+      "title": "빅테크 AI 매수세 부활 (시동)",
+      "summary": "GOOGL +3.94%, META +2.26% 오늘 시동. 메모리 자금이 빅테크로 회전 시작",
+      "category": "빅테크 AI",
+      "confidence": 75,
+      "causal_chain": [
+        {"step_no": 1, "statement": "NVDA/MU/ASML 신고가 → 메모리 사이클 자금이 다음 단계로 회전", "confidence": 85},
+        {"step_no": 2, "statement": "빅테크는 P/E 22~31로 NVDA(46) 대비 매력적 = 차익실현 자금의 안전지대", "confidence": 80},
+        {"step_no": 3, "statement": "GOOGL +3.94% META +2.26% 오늘 가시적 시동 = 무브 시작 확인", "confidence": 80},
+        {"step_no": 4, "statement": "역사적으로 1-2일 시차로 MSFT/AAPL이 추격 매수 들어옴", "confidence": 70}
+      ],
+      "disconfirming_hypotheses": [
+        "오늘 시동이 단발성이고 며칠 후 식을 가능성",
+        "AI 거품 디레이팅이 빅테크까지 확산되면 시동이 곧 반전"
+      ],
+      "evidence": {
+        "price": "GOOGL +3.94%, META +2.26%, AAPL +1.38%, MSFT 보합 (대기)"
+      },
+      "recommendations": [
+        {
+          "rank": 1, "ticker": "META", "grade": "Strong Buy",
+          "rationale": "빅테크 중 펀더 대비 가장 싼 종목. P/E 22, 매출 +33%, 영업이익률 41%, ROE 33%. AI 광고 효율 1위 + Reality Labs 회복.",
+          "fundamentals_score": 9,
+          "fundamentals": {"revenue_yoy_pct": 33.1, "operating_margin_pct": 40.6, "net_margin_pct": 32.8, "roe_pct": 32.9, "pe_ratio": 22.4, "ps_ratio": 7.3, "debt_to_equity": 36, "market_cap_usd_b": 1565.3, "fcf_usd_b": 25.6}
+        },
+        {
+          "rank": 2, "ticker": "GOOGL", "grade": "Strong Buy",
+          "rationale": "Alphabet. 오늘 +3.94%로 무브 시작. 매출 +22%, 영업이익률 36%, ROE 39%. Gemini AI + 검색 회복 + 클라우드.",
+          "fundamentals_score": 8,
+          "fundamentals": {"revenue_yoy_pct": 21.8, "operating_margin_pct": 36.1, "net_margin_pct": 37.9, "roe_pct": 38.9, "pe_ratio": 30.7, "market_cap_usd_b": 4877.9, "fcf_usd_b": 27.5}
+        },
+        {
+          "rank": 3, "ticker": "AAPL", "grade": "Buy",
+          "rationale": "오늘 +1.38%만으로 미온적. AI 폰 사이클 + 인도 출하 호조. 단 빅테크 중 매출 성장이 가장 둔하므로 신중.",
+          "fundamentals_score": 6,
+          "fundamentals": {}
+        }
+      ]
+    },
+    {
+      "rank": 4,
+      "title": "한국 자동차/산업재 중기 강세",
+      "summary": "현대차 20d +44.86%, 기아 +19.37%, 삼성물산 +49.32%. KRW 약세 + 외인 매수 콤보",
+      "category": "한국 자동차",
+      "confidence": 70,
+      "causal_chain": [
+        {"step_no": 1, "statement": "KRW 약세 → 수출주 환산 이익 증가", "confidence": 78},
+        {"step_no": 2, "statement": "외국인 매수 한국 시장 전반 지속", "confidence": 72},
+        {"step_no": 3, "statement": "하이브리드/SUV 글로벌 수요 호조 (현대차/기아)", "confidence": 65},
+        {"step_no": 4, "statement": "트럼프 IRA 후속 수혜 + 미국 현지화 진척", "confidence": 55}
+      ],
+      "disconfirming_hypotheses": [
+        "현대차 20일 +44.86%는 과열 신호 — 단기 차익실현 위험",
+        "관세 협상 결과에 따라 환율 변수 급반전 가능"
+      ],
+      "evidence": {
+        "price": "005380 (현대차) 20d +44.86%, 000270 (기아) +19.37%, 028260 (삼성물산) +49.32%"
+      },
+      "recommendations": [
+        {
+          "rank": 1, "ticker": "005380", "grade": "Buy",
+          "rationale": "현대차. 글로벌 3위 완성차. 하이브리드/EV 호조 + 미국 IRA 수혜. 20일 +44%로 과열 주의하되 추세 강함.",
+          "fundamentals_score": 7,
+          "fundamentals": {}
+        },
+        {
+          "rank": 2, "ticker": "000270", "grade": "Buy",
+          "rationale": "기아. 현대차 그룹. SUV/하이브리드 라인업 호조. 현대차보다 덜 과열(+19%).",
+          "fundamentals_score": 7,
+          "fundamentals": {}
+        },
+        {
+          "rank": 3, "ticker": "028260", "grade": "Hold",
+          "rationale": "삼성물산. 20일 +49%는 지배구조 이슈 + 건설/상사 회복 복합. 단발성일 수 있어 신중.",
+          "fundamentals_score": 6,
+          "fundamentals": {}
+        }
+      ]
+    },
+    {
+      "rank": 5,
+      "title": "AI 인프라 차익실현 시작",
+      "summary": "VST/NRG/PLTR/MSTR 일제 -3~5% + 거래량 동반 = 같은 펀드 동시 청산 패턴",
+      "category": "AI 인프라 조정",
+      "confidence": 65,
+      "causal_chain": [
+        {"step_no": 1, "statement": "VST/NRG/PLTR/MSTR 모두 'AI 수혜 2024-25 폭등주' 묶음", "confidence": 85},
+        {"step_no": 2, "statement": "오늘 일제 -3~5% + 거래량 동반 = 같은 펀드 동시 청산", "confidence": 78},
+        {"step_no": 3, "statement": "청산 자금이 메모리/장비로 회전 (관찰됨)", "confidence": 70},
+        {"step_no": 4, "statement": "AI 테마 내 sector rotation 또는 디레이팅 시작 신호", "confidence": 55}
+      ],
+      "disconfirming_hypotheses": [
+        "단순 차익실현이면 1-2주 후 되돌림 — 추세 전환 아님",
+        "VST/NRG는 AI 전력 수혜 1년간 폭등으로 차익실현이 정상적 패턴"
+      ],
+      "evidence": {
+        "price": "VST -2.90%, NRG -4.56% (vol 1.79x), PLTR -4.37%, MSTR -3.46%, CRM -3.19%"
+      },
+      "recommendations": [
+        {
+          "rank": 1, "ticker": "VST", "grade": "Caution",
+          "rationale": "Vistra. AI 전력 수혜로 1년 +200% 폭등 후 오늘 -2.90%. 밸류 부담 극심, 추가 차익실현 위험.",
+          "fundamentals_score": 4,
+          "fundamentals": {}
+        },
+        {
+          "rank": 2, "ticker": "NRG", "grade": "Caution",
+          "rationale": "NRG Energy. 오늘 -4.56% + 거래량 폭증(1.79x) = 매도 본격 시작 신호.",
+          "fundamentals_score": 3,
+          "fundamentals": {}
+        },
+        {
+          "rank": 3, "ticker": "PLTR", "grade": "Caution",
+          "rationale": "Palantir. AI 소프트웨어 멀티플 디레이팅 시작 가능. 오늘 -4.37%.",
+          "fundamentals_score": 4,
+          "fundamentals": {}
+        },
+        {
+          "rank": 4, "ticker": "MSTR", "grade": "Caution",
+          "rationale": "MicroStrategy. 비트코인 프록시 + AI 묶음 양쪽 흔들림. 오늘 -3.46%.",
+          "fundamentals_score": 3,
+          "fundamentals": {}
+        }
+      ]
+    }
+  ],
+  "predicted_trends": [
+    {
+      "rank": 1,
+      "title": "MSFT 합류 — 빅테크 추격 본격화",
+      "summary": "GOOGL/META 시동 후 1-2일 시차로 MSFT/AAPL 추격 패턴",
+      "category": "빅테크 AI",
+      "confidence": 70,
+      "causal_chain": [
+        {"step_no": 1, "statement": "NVDA/MU/ASML 신고가 패턴 후 1-2일 시차로 빅테크 megacap 매수 유입은 역사적 빈번 패턴", "confidence": 75},
+        {"step_no": 2, "statement": "MSFT는 오늘 보합 = 아직 안 오른 종목 = 합류 직전 대기", "confidence": 70},
+        {"step_no": 3, "statement": "Azure AI 매출 확장 + OpenAI 지분 가치 상승 + Copilot 가시화", "confidence": 70},
+        {"step_no": 4, "statement": "P/E 24의 합리적 밸류에이션이 차익실현 자금 안전지대 역할", "confidence": 70}
+      ],
+      "disconfirming_hypotheses": [
+        "MSFT가 오늘 보합인 건 이미 충분히 올랐다는 신호일 수 있음 (다른 빅테크가 추격)",
+        "1-2일 패턴은 통계적 빈도일 뿐 매번 작동하는 룰은 아님",
+        "거시 충격(금리/지정학)이 발생하면 빅테크 합류 패턴 중단"
+      ],
+      "evidence": {
+        "today_setup": "GOOGL +3.94%, META +2.26%, MSFT 보합 — 시차 패턴의 전형적 setup"
+      },
+      "recommendations": [
+        {
+          "rank": 1, "ticker": "MSFT", "grade": "Strong Buy",
+          "rationale": "Microsoft. 합류 가장 임박. 매출 +18%, 영업이익률 46%, ROE 34%, P/E 24 (빅테크 최저 수준 합리). Azure AI + OpenAI 양손에 든 빅테크.",
+          "fundamentals_score": 9,
+          "fundamentals": {"revenue_yoy_pct": 18.3, "operating_margin_pct": 46.3, "net_margin_pct": 39.3, "roe_pct": 34.0, "pe_ratio": 24.1, "ps_ratio": 9.5, "debt_to_equity": 30, "market_cap_usd_b": 3010.1, "fcf_usd_b": 37.0}
+        },
+        {
+          "rank": 2, "ticker": "CRM", "grade": "Buy",
+          "rationale": "Salesforce. AI 에이전트(Agentforce) 사업 확장. 오늘 -3.19%로 약했지만 빅테크 합류 시 동반 회복 가능.",
+          "fundamentals_score": 6,
+          "fundamentals": {}
+        },
+        {
+          "rank": 3, "ticker": "NOW", "grade": "Buy",
+          "rationale": "ServiceNow. 기업 워크플로우 자동화 + AI 통합. SaaS 빅테크 합류 시 수혜.",
+          "fundamentals_score": 7,
+          "fundamentals": {}
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "title": "GLP-1 비만치료제 재부각",
+      "summary": "LLY/NVO 매출 폭발 지속 + 신규 적응증 + 보험 커버리지 확대 모멘텀",
+      "category": "비만치료제",
+      "confidence": 55,
+      "causal_chain": [
+        {"step_no": 1, "statement": "GLP-1(젭바운드/위고비) 매출이 LLY/NVO 양사 모두 분기마다 신기록", "confidence": 75},
+        {"step_no": 2, "statement": "신규 적응증(심혈관/신장/수면무호흡증)이 시장 규모 확장", "confidence": 70},
+        {"step_no": 3, "statement": "메디케어/민간보험 커버리지 확대 흐름이 수요 가속화", "confidence": 60},
+        {"step_no": 4, "statement": "후속 약물(마리타이드, 경구 GLP-1) 임박이 2차 모멘텀", "confidence": 45}
+      ],
+      "disconfirming_hypotheses": [
+        "현재 가격 데이터에서 직접 신호 미관측 — 가설 중심 예측",
+        "보험 커버리지가 확대 안 되면 시장 한정",
+        "복제약(generic semaglutide) 출시가 빠르면 가격 압박"
+      ],
+      "evidence": {
+        "note": "오늘 가격 데이터에서 LLY/NVO는 평이. 거시·정책·임상 데이터 기반 예측"
+      },
+      "recommendations": [
+        {
+          "rank": 1, "ticker": "LLY", "grade": "Strong Buy",
+          "rationale": "Eli Lilly. GLP-1 (젭바운드/마운자로) 양강. 매출 성장 폭발 지속 + 신규 적응증 + 알츠하이머 신약 동반.",
+          "fundamentals_score": 8,
+          "fundamentals": {}
+        },
+        {
+          "rank": 2, "ticker": "NVO", "grade": "Strong Buy",
+          "rationale": "Novo Nordisk. GLP-1 원조(오젬픽/위고비). LLY와 양강.",
+          "fundamentals_score": 8,
+          "fundamentals": {}
+        },
+        {
+          "rank": 3, "ticker": "AMGN", "grade": "Buy",
+          "rationale": "Amgen. 후속 비만치료제(마리타이드) 임상 진행 중. LLY/NVO 독점 깰 잠재력.",
+          "fundamentals_score": 6,
+          "fundamentals": {}
+        }
+      ]
+    },
+    {
+      "rank": 3,
+      "title": "JYP 스필오버 + 한국 엔터 catch-up",
+      "summary": "엔터 섹터 평균 +7.09%에서 JYP만 +4.24% → 1-3일 내 따라잡기",
+      "category": "한국 콘텐츠",
+      "confidence": 60,
+      "causal_chain": [
+        {"step_no": 1, "statement": "KR 엔터 섹터 평균 +7.09%인데 JYP만 +4.24% = 3%p 뒤처짐", "confidence": 80},
+        {"step_no": 2, "statement": "외국인이 섹터 전반을 매수 중이면 JYP만 누락될 이유 없음", "confidence": 72},
+        {"step_no": 3, "statement": "통상 1-3일 내 catch-up 패턴 빈번", "confidence": 65}
+      ],
+      "disconfirming_hypotheses": [
+        "엔터 catalyst가 단발성이면 JYP catch-up 전에 섹터 전체가 식음",
+        "JYP가 따로 부진한 펀더 이슈(아티스트 공백 등)가 있을 수 있음"
+      ],
+      "evidence": {
+        "gap": "엔터 3사 평균 +7.09% vs JYP +4.24% (-2.85%p)"
+      },
+      "recommendations": [
+        {
+          "rank": 1, "ticker": "035900", "grade": "Buy",
+          "rationale": "JYP. 엔터 섹터 평균 -3%p 뒤처짐. 외인 섹터 전반 매수면 catch-up 1-3일 내 가능.",
+          "fundamentals_score": 6,
+          "fundamentals": {}
+        },
+        {
+          "rank": 2, "ticker": "041510", "grade": "Hold",
+          "rationale": "에스엠. 오늘 +9.87%로 이미 강세. 추가 catch-up 여지는 카카오 시너지 + 신인 라인업.",
+          "fundamentals_score": 6,
+          "fundamentals": {}
+        },
+        {
+          "rank": 3, "ticker": "035720", "grade": "Hold",
+          "rationale": "카카오. 거래량 폭증 1일은 보통 2-3일 연장되는 패턴.",
+          "fundamentals_score": 5,
+          "fundamentals": {}
+        }
+      ]
+    },
+    {
+      "rank": 4,
+      "title": "한국 반도체 단기 차익실현 위험",
+      "summary": "SK하이닉스 20d +78% 과열. -5% 발생 시 첫 매도 신호",
+      "category": "반도체 차익실현",
+      "confidence": 45,
+      "causal_chain": [
+        {"step_no": 1, "statement": "KR 반도체 20일 +40~78%는 명백한 단기 과열 구간", "confidence": 78},
+        {"step_no": 2, "statement": "메모리 사이클은 통상 6-9개월마다 차익실현으로 한 번 꺾임", "confidence": 70},
+        {"step_no": 3, "statement": "SK하이닉스가 -5% 이상 떨어지는 날이 첫 매도 본격 신호", "confidence": 55},
+        {"step_no": 4, "statement": "차익실현은 일반적으로 -10% 이내로 마무리되며 추세 전환은 아님", "confidence": 50}
+      ],
+      "disconfirming_hypotheses": [
+        "HBM 수요는 일반 메모리 사이클과 달리 구조적 성장 — 단기 차익실현 후 회복 가능",
+        "AI 인프라 투자 사이클은 멀티 분기 지속될 가능성 높음",
+        "차익실현은 보통 -10% 이내로 끝나고 추세는 유지됨"
+      ],
+      "evidence": {
+        "overheating": "하이닉스 20d +78%, 한미반도체 +44%, 삼성전자 +43%"
+      },
+      "recommendations": [
+        {
+          "rank": 1, "ticker": "000660", "grade": "Caution",
+          "rationale": "SK하이닉스. 가장 과열된 종목 (+78% 20d). 신규 진입은 -5~10% 조정 대기.",
+          "fundamentals_score": 9,
+          "fundamentals": {}
+        },
+        {
+          "rank": 2, "ticker": "042700", "grade": "Caution",
+          "rationale": "한미반도체. 단일 고객(SK하이닉스) 의존도 극심. 메모리 차익실현 시 직격탄.",
+          "fundamentals_score": 5,
+          "fundamentals": {}
+        },
+        {
+          "rank": 3, "ticker": "005930", "grade": "Hold",
+          "rationale": "삼성전자. 20일 +43%로 하이닉스보다 덜 과열되어 차익실현 위험 상대적 낮음.",
+          "fundamentals_score": 8,
+          "fundamentals": {}
+        }
+      ]
+    },
+    {
+      "rank": 5,
+      "title": "미국 방산 모멘텀 회복",
+      "summary": "글로벌 지정학 + 국방예산 확대 + 인도-태평양 강화로 LMT/RTX 매수세 회복 후보",
+      "category": "방산",
+      "confidence": 50,
+      "causal_chain": [
+        {"step_no": 1, "statement": "글로벌 지정학 긴장(중동/우크라이나/대만해협) 지속", "confidence": 70},
+        {"step_no": 2, "statement": "미국 국방예산 + 인도-태평양 강화 정책 지속", "confidence": 65},
+        {"step_no": 3, "statement": "LMT/RTX는 5년 장기 수주로 안정 매출", "confidence": 60},
+        {"step_no": 4, "statement": "한국 방산(한국항공우주/현대로템)도 폴란드 후속 계약 + 글로벌 확산", "confidence": 55}
+      ],
+      "disconfirming_hypotheses": [
+        "현재 가격 데이터에서 방산 모멘텀 약함 — 가설 중심 예측",
+        "방산은 정치 사이클에 좌우되는 변수 — 정권 교체 시 변동"
+      ],
+      "evidence": {
+        "note": "오늘 가격 데이터엔 직접 신호 약함. 거시·정책 기반 예측."
+      },
+      "recommendations": [
+        {
+          "rank": 1, "ticker": "LMT", "grade": "Buy",
+          "rationale": "Lockheed Martin. 미국 방산 1위. F-35 글로벌 수출 안정. 배당 매력.",
+          "fundamentals_score": 7,
+          "fundamentals": {}
+        },
+        {
+          "rank": 2, "ticker": "RTX", "grade": "Buy",
+          "rationale": "RTX(레이시온). 방산 빅3 + 항공기 엔진(P&W). 다각화.",
+          "fundamentals_score": 7,
+          "fundamentals": {}
+        },
+        {
+          "rank": 3, "ticker": "GE", "grade": "Hold",
+          "rationale": "GE Aerospace. 항공기 엔진 중심. 방산 직접 노출은 제한적.",
+          "fundamentals_score": 6,
+          "fundamentals": {}
+        }
+      ]
+    }
+  ]
+}
