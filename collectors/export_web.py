@@ -1,4 +1,4 @@
-"""DB -> web/data/analysis.json 추출.
+"""DB -> docs/data/analysis.json 추출.
 
 웹 앱이 fetch 해서 렌더링하는 단일 JSON 파일을 만든다.
 매일 run_all → save_analysis (또는 llm.run) 다음에 호출하면 새 데이터가 폰에 반영됨.
@@ -13,7 +13,7 @@ from .db import get_conn, init_db
 from .token_logger import aggregates as token_aggregates
 
 ROOT = Path(__file__).resolve().parent.parent
-OUT_PATH = ROOT / "web" / "data" / "analysis.json"
+OUT_PATH = ROOT / "docs" / "data" / "analysis.json"
 
 
 def _trend_with_recs(conn, trend_row):

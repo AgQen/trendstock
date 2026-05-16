@@ -40,7 +40,7 @@ if (-not $status) {
 }
 
 $today = Get-Date -Format "yyyy-MM-dd"
-git add web/data/analysis.json data.db 2>$null
+git add docs/data/analysis.json data.db 2>$null
 git commit -m "refresh $today" | Out-Null
 git push
 

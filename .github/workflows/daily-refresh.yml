@@ -52,7 +52,7 @@ jobs:
         run: |
           git config user.name "trendstock-bot"
           git config user.email "noreply@users.noreply.github.com"
-          git add data.db web/data/analysis.json || true
+          git add data.db docs/data/analysis.json || true
           if git diff --cached --quiet; then
             echo "no changes to commit"
           else

@@ -20,6 +20,6 @@
 python -m collectors.run_all          # 가격 수집
 python -m collectors.rerate            # 등급 재계산 (선택)
 python -m collectors.verify_predictions # 적중률 갱신
-python -m collectors.export_web        # web/data/analysis.json 갱신
-.\web\deploy.ps1                       # git push -> Pages 자동 갱신 (~30초)
+python -m collectors.export_web        # docs/data/analysis.json 갱신
+.\refresh.ps1                          # git push -> Pages 자동 갱신 (~30초)
 ```
