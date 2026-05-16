@@ -1,9 +1,10 @@
-// 최소 Service Worker — 오프라인 캐시 + "홈 화면에 추가" 가능하게.
-const CACHE = "trendstock-v1";
-const ASSETS = ["./", "./index.html", "./manifest.json", "./icon.svg"];
+// Service Worker — network-first for HTML/JSON (즉시 갱신 보장),
+// 정적 리소스(icon, manifest)만 캐시 우선.
+const CACHE = "trendstock-v3";   // UI 큰 변경 시 bump
+const STATIC_ASSETS = ["./manifest.json", "./icon.svg"];
 
 self.addEventListener("install", (e) => {
-  e.waitUntil(caches.open(CACHE).then((c) => c.addAll(ASSETS)));
+  e.waitUntil(caches.open(CACHE).then((c) => c.addAll(STATIC_ASSETS)));
   self.skipWaiting();
 });
 
@@ -17,8 +18,14 @@ self.addEventListener("activate", (e) => {
 });
 
 self.addEventListener("fetch", (e) => {
-  // data/analysis.json 은 항상 네트워크 우선 (새 데이터 표시 보장)
-  if (e.request.url.includes("/data/analysis.json")) {
+  const url = e.request.url;
+  // index.html / data JSON 은 network-first (새 배포 즉시 반영)
+  const networkFirst =
+    e.request.mode === "navigate" ||
+    url.endsWith("/") || url.endsWith("index.html") ||
+    url.includes("/data/analysis.json");
+
+  if (networkFirst) {
     e.respondWith(
       fetch(e.request)
         .then((r) => {
@@ -30,6 +37,6 @@ self.addEventListener("fetch", (e) => {
     );
     return;
   }
-  // 정적 자원은 캐시 우선
+  // 그 외 정적 자원은 캐시 우선
   e.respondWith(caches.match(e.request).then((r) => r || fetch(e.request)));
 });
