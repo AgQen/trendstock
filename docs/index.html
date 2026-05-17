@@ -370,6 +370,56 @@ footer.note {
   cursor: pointer;
 }
 .dl-btn:hover { background: var(--card-hover); }
+.dl-btn-ghost { color: var(--text-dim); }
+
+.dl-controls {
+  display: flex; align-items: center; gap: 6px; flex-wrap: wrap;
+  padding: 0 16px 12px; font-size: 12px; color: var(--text-dim);
+}
+.dl-controls label { font-size: 11px; color: var(--text-faint);
+                     text-transform: uppercase; letter-spacing: 0.05em; }
+.dl-controls input[type="date"] {
+  background: var(--bg); border: 1px solid var(--border); color: var(--text);
+  padding: 5px 8px; border-radius: 6px; font-size: 12px;
+  font-family: inherit;
+  color-scheme: dark;
+}
+.dl-controls .dl-sep { color: var(--text-faint); }
+
+/* Monthly report */
+.report-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+  padding: 0 16px 12px;
+}
+.report-cell {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 12px; padding: 12px;
+}
+.report-cell .label { font-size: 11px; color: var(--text-faint);
+                      text-transform: uppercase; letter-spacing: 0.05em; }
+.report-cell .value { font-size: 20px; font-weight: 800; margin-top: 4px; }
+.report-cell .sub { font-size: 11px; color: var(--text-dim); margin-top: 3px; }
+.report-cell.span2 { grid-column: span 2; }
+.report-cell .row {
+  display: flex; justify-content: space-between; padding: 4px 0;
+  border-top: 1px solid var(--border); font-size: 12px;
+}
+.report-cell .row:first-of-type { border-top: none; }
+.report-cell .row .v { font-weight: 700; }
+.report-cell .row .v.up { color: var(--green); }
+.report-cell .row .v.dn { color: var(--red); }
+
+.report-section-h {
+  font-size: 11px; color: var(--text-faint); text-transform: uppercase;
+  letter-spacing: 0.08em; padding: 14px 16px 4px;
+}
+
+.report-note {
+  margin: 0 16px 12px; background: rgba(251,191,36,0.08);
+  border-left: 3px solid var(--yellow); padding: 10px 12px;
+  border-radius: 0 8px 8px 0; font-size: 12.5px; color: var(--text);
+  line-height: 1.5;
+}
 
 .hist-day {
   margin: 0 16px 12px; background: var(--card);
@@ -431,6 +481,7 @@ footer.note {
       <div class="group-h">화면</div>
       <button class="nav-btn primary" data-view="today">🔥 오늘의 트렌드</button>
       <button class="nav-btn" data-view="history">🕓 히스토리</button>
+      <button class="nav-btn" data-view="report">📈 월간 보고서</button>
     </div>
 
     <div class="group">
@@ -484,10 +535,27 @@ footer.note {
   <div id="view-history" class="view">
     <div class="history-head">
       <h2>🕓 분석 히스토리</h2>
-      <button class="dl-btn" id="dlBtn">⬇ Excel 다운로드</button>
+    </div>
+    <div class="dl-controls">
+      <label>기간</label>
+      <input type="date" id="dlFrom" />
+      <span class="dl-sep">~</span>
+      <input type="date" id="dlTo" />
+      <button class="dl-btn" id="dlBtn">⬇ Excel</button>
+      <button class="dl-btn dl-btn-ghost" id="dlAllBtn">전체</button>
     </div>
     <div id="historyRoot">
       <div class="hist-empty">히스토리 로딩 중…</div>
+    </div>
+  </div>
+
+  <div id="view-report" class="view">
+    <div class="history-head">
+      <h2>📈 월간 보고서</h2>
+      <select id="reportMonth" class="dl-btn"></select>
+    </div>
+    <div id="reportRoot">
+      <div class="hist-empty">보고서 로딩 중…</div>
     </div>
   </div>
 
@@ -904,13 +972,22 @@ function renderHistory(history) {
 }
 
 // ───────────────────────── Excel 다운로드 ─────────────────────────
-function downloadExcel(history, todayDate) {
+function downloadExcel(history, fileSuffix, fromDate, toDate) {
   if (!window.XLSX) {
     alert("XLSX 라이브러리 로드 안 됨. 새로고침 후 다시 시도.");
     return;
   }
+  const filtered = history.filter(day => {
+    if (fromDate && day.date < fromDate) return false;
+    if (toDate && day.date > toDate) return false;
+    return true;
+  });
+  if (!filtered.length) {
+    alert("선택한 기간에 데이터가 없습니다.");
+    return;
+  }
   const rows = [];
-  history.forEach(day => {
+  filtered.forEach(day => {
     day.recommendations.forEach(r => {
       rows.push({
         "분석일": r.entry_date,
@@ -943,14 +1020,209 @@ function downloadExcel(history, todayDate) {
   const ws = XLSX.utils.json_to_sheet(rows);
   const wb = XLSX.utils.book_new();
   XLSX.utils.book_append_sheet(wb, ws, "TrendStock");
-  XLSX.writeFile(wb, `trendstock_${todayDate || "history"}.xlsx`);
+  XLSX.writeFile(wb, `trendstock_${fileSuffix || "history"}.xlsx`);
 }
 
 let _historyData = [];
 let _todayDate = "";
-document.getElementById("dlBtn").addEventListener("click", () =>
-  downloadExcel(_historyData, _todayDate)
+document.getElementById("dlBtn").addEventListener("click", () => {
+  const from = document.getElementById("dlFrom").value || null;
+  const to = document.getElementById("dlTo").value || null;
+  const suffix = from && to ? `${from}_${to}` : (from || to || _todayDate);
+  downloadExcel(_historyData, suffix, from, to);
+});
+document.getElementById("dlAllBtn").addEventListener("click", () =>
+  downloadExcel(_historyData, "전체_" + _todayDate)
 );
+
+// ───────────────────────── 월간 보고서 ─────────────────────────
+function buildMonthlyReport(history) {
+  // 월별 그룹 (YYYY-MM)
+  const byMonth = {};
+  history.forEach(day => {
+    const ym = day.date.slice(0, 7);
+    if (!byMonth[ym]) byMonth[ym] = [];
+    byMonth[ym].push(day);
+  });
+  return byMonth;
+}
+
+function renderMonthlyReport(history) {
+  const root = document.getElementById("reportRoot");
+  const monthSelect = document.getElementById("reportMonth");
+  const byMonth = buildMonthlyReport(history);
+  const months = Object.keys(byMonth).sort().reverse();
+
+  if (!months.length) {
+    root.innerHTML = `<div class="hist-empty">아직 누적 데이터가 없습니다.<br><small>30일 이상 분석이 쌓이면 월간 보고서가 의미를 갖습니다.</small></div>`;
+    monthSelect.innerHTML = "";
+    return;
+  }
+
+  monthSelect.innerHTML = months.map(m =>
+    `<option value="${m}">${m}</option>`
+  ).join("");
+
+  const renderFor = (ym) => {
+    const days = byMonth[ym] || [];
+    const allRecs = days.flatMap(d => d.recommendations);
+    const totalRecs = allRecs.length;
+    const totalAnalyses = days.length;
+
+    // 적중률 통계
+    const hits = { "7d": [], "30d": [], "90d": [] };
+    const alphas = { "7d": [], "30d": [], "90d": [] };
+    allRecs.forEach(r => {
+      for (const k of ["7d", "30d", "90d"]) {
+        if (r["hit_" + k] != null) hits[k].push(r["hit_" + k]);
+        if (r["alpha_" + k] != null) alphas[k].push(r["alpha_" + k] * 100);
+      }
+    });
+    const avg = (arr) => arr.length ? (arr.reduce((a, b) => a + b, 0) / arr.length) : null;
+    const hitRate = (k) => hits[k].length ? avg(hits[k]) * 100 : null;
+    const avgAlpha = (k) => alphas[k].length ? avg(alphas[k]) : null;
+
+    // 카테고리 분포
+    const catCount = {};
+    allRecs.forEach(r => {
+      const c = r.category || "(미분류)";
+      catCount[c] = (catCount[c] || 0) + 1;
+    });
+    const topCats = Object.entries(catCount).sort((a, b) => b[1] - a[1]).slice(0, 5);
+
+    // 등급 분포
+    const gradeCount = {};
+    allRecs.forEach(r => {
+      gradeCount[r.grade] = (gradeCount[r.grade] || 0) + 1;
+    });
+
+    // Best/Worst (현재 수익률 기준)
+    const withRet = allRecs.filter(r => r.current_return_pct != null);
+    withRet.sort((a, b) => b.current_return_pct - a.current_return_pct);
+    const best = withRet.slice(0, 3);
+    const worst = withRet.slice(-3).reverse();
+
+    // ! 알림 종목 수
+    const alertCount = allRecs.filter(r => r.alert).length;
+
+    // 주의 사항 자동 생성
+    const notes = [];
+    if (hits["30d"].length < 10) {
+      notes.push(`📅 30일 검증 데이터 ${hits["30d"].length}건 — 30건 이상 쌓여야 적중률이 의미 있음`);
+    }
+    if (hitRate("30d") != null && hitRate("30d") < 50) {
+      notes.push(`⚠️ 30일 적중률 ${hitRate("30d").toFixed(1)}% — 50% 미만. 룰/프롬프트 검토 필요`);
+    }
+    if (alertCount > 0) {
+      notes.push(`✨ ${alertCount}건의 ! 적중 (±10% + 방향 적중) — 강한 신호`);
+    }
+    if (topCats.length && topCats[0][1] > totalRecs * 0.5) {
+      notes.push(`🎯 카테고리 편중: '${topCats[0][0]}' 가 전체 ${Math.round(topCats[0][1] / totalRecs * 100)}% — 다양성 부족`);
+    }
+
+    const fmtPct = (v, suffix = "%") =>
+      v == null ? "—" : (v >= 0 ? "+" : "") + v.toFixed(1) + suffix;
+
+    let html = `
+      <div class="report-section-h">📊 ${ym} 요약</div>
+      <div class="report-grid">
+        <div class="report-cell">
+          <div class="label">분석 일수</div>
+          <div class="value">${totalAnalyses}</div>
+          <div class="sub">일</div>
+        </div>
+        <div class="report-cell">
+          <div class="label">추천 종목</div>
+          <div class="value">${totalRecs}</div>
+          <div class="sub">건</div>
+        </div>
+        <div class="report-cell">
+          <div class="label">30일 적중률</div>
+          <div class="value">${fmtPct(hitRate("30d"))}</div>
+          <div class="sub">n = ${hits["30d"].length}</div>
+        </div>
+        <div class="report-cell">
+          <div class="label">! 적중 신호</div>
+          <div class="value">${alertCount}</div>
+          <div class="sub">±10%+적중</div>
+        </div>
+      </div>
+
+      <div class="report-section-h">⭐ 적중률 / 평균 알파</div>
+      <div class="report-grid">
+        <div class="report-cell span2">
+          <div class="row"><span>7일 적중률</span><span class="v">${fmtPct(hitRate("7d"))} (n=${hits["7d"].length})</span></div>
+          <div class="row"><span>30일 적중률</span><span class="v">${fmtPct(hitRate("30d"))} (n=${hits["30d"].length})</span></div>
+          <div class="row"><span>90일 적중률</span><span class="v">${fmtPct(hitRate("90d"))} (n=${hits["90d"].length})</span></div>
+          <div class="row"><span>30일 평균 알파</span><span class="v">${fmtPct(avgAlpha("30d"))}</span></div>
+        </div>
+      </div>
+    `;
+
+    if (notes.length) {
+      html += `<div class="report-section-h">👀 무엇을 더 봐야 하나</div>`;
+      notes.forEach(n => {
+        html += `<div class="report-note">${n}</div>`;
+      });
+    }
+
+    html += `
+      <div class="report-section-h">🏆 Best 3 (현재 수익률 기준)</div>
+      <div class="report-grid">
+        <div class="report-cell span2">
+          ${best.length ? best.map(r => `
+            <div class="row">
+              <span>${flagBadge(r.country)} ${r.ticker} ${(r.name || "").slice(0, 12)}</span>
+              <span class="v ${r.current_return_pct >= 0 ? "up" : "dn"}">${fmtPct(r.current_return_pct)}</span>
+            </div>
+          `).join("") : '<div style="color:var(--text-faint);font-size:12px">검증 데이터 없음</div>'}
+        </div>
+      </div>
+
+      <div class="report-section-h">📉 Worst 3</div>
+      <div class="report-grid">
+        <div class="report-cell span2">
+          ${worst.length ? worst.map(r => `
+            <div class="row">
+              <span>${flagBadge(r.country)} ${r.ticker} ${(r.name || "").slice(0, 12)}</span>
+              <span class="v ${r.current_return_pct >= 0 ? "up" : "dn"}">${fmtPct(r.current_return_pct)}</span>
+            </div>
+          `).join("") : '<div style="color:var(--text-faint);font-size:12px">검증 데이터 없음</div>'}
+        </div>
+      </div>
+
+      <div class="report-section-h">📂 카테고리 분포</div>
+      <div class="report-grid">
+        <div class="report-cell span2">
+          ${topCats.map(([cat, n]) => `
+            <div class="row">
+              <span>${cat}</span>
+              <span class="v">${n}건 (${Math.round(n / totalRecs * 100)}%)</span>
+            </div>
+          `).join("")}
+        </div>
+      </div>
+
+      <div class="report-section-h">🏷️ 등급 분포</div>
+      <div class="report-grid">
+        <div class="report-cell span2">
+          ${Object.entries(gradeCount).map(([g, n]) => `
+            <div class="row">
+              <span>${g}</span>
+              <span class="v">${n}건</span>
+            </div>
+          `).join("")}
+        </div>
+      </div>
+    `;
+
+    root.innerHTML = html;
+  };
+
+  renderFor(months[0]);
+  monthSelect.value = months[0];
+  monthSelect.addEventListener("change", e => renderFor(e.target.value));
+}
 
 // ───────────────────────── 데이터 로드 후 사이드바/히스토리 채우기 ─────────────────────────
 const _origLoad = load;
@@ -969,6 +1241,7 @@ window._tsLoad = async function () {
     document.getElementById("sb-days").textContent = _historyData.length;
     renderTokenCard(data.tokens);
     renderHistory(_historyData);
+    renderMonthlyReport(_historyData);
   } catch (e) {
     console.error("사이드바/히스토리 로드 실패:", e);
   }
