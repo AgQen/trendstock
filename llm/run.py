@@ -31,7 +31,7 @@ from llm.prompt import build_messages
 from llm.schema import DailyAnalysis
 
 DEFAULT_MODEL = "claude-sonnet-4-6"
-MAX_TOKENS = 8000
+MAX_TOKENS = 16000
 
 
 def collect_context(analysis_date: str) -> dict:
