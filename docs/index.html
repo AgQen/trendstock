@@ -1096,11 +1096,16 @@ function renderMonthlyReport(history) {
       gradeCount[r.grade] = (gradeCount[r.grade] || 0) + 1;
     });
 
-    // Best/Worst (현재 수익률 기준)
-    const withRet = allRecs.filter(r => r.current_return_pct != null);
+    // Best/Worst (현재 수익률 기준, 티커 중복 제거 — 가장 오래된 예측 유지)
+    const oldestByTicker = {};
+    allRecs.forEach(r => {
+      if (!oldestByTicker[r.ticker] || r.entry_date < oldestByTicker[r.ticker].entry_date)
+        oldestByTicker[r.ticker] = r;
+    });
+    const withRet = Object.values(oldestByTicker).filter(r => r.current_return_pct != null);
     withRet.sort((a, b) => b.current_return_pct - a.current_return_pct);
-    const best = withRet.slice(0, 3);
-    const worst = withRet.slice(-3).reverse();
+    const best = withRet.slice(0, 10);
+    const worst = withRet.slice(-10).reverse();
 
     // ! 알림 종목 수
     const alertCount = allRecs.filter(r => r.alert).length;
@@ -1167,25 +1172,41 @@ function renderMonthlyReport(history) {
     }
 
     html += `
-      <div class="report-section-h">🏆 Best 3 (현재 수익률 기준)</div>
+      <div class="report-section-h">🏆 Best 10 (현재 수익률 기준, 티커별 최초 예측)</div>
       <div class="report-grid">
         <div class="report-cell span2">
           ${best.length ? best.map(r => `
-            <div class="row">
-              <span>${flagBadge(r.country)} ${r.ticker} ${(r.name || "").slice(0, 12)}</span>
-              <span class="v ${r.current_return_pct >= 0 ? "up" : "dn"}">${fmtPct(r.current_return_pct)}</span>
+            <div style="padding:6px 0;border-bottom:1px solid var(--card-border)">
+              <div style="display:flex;justify-content:space-between;align-items:center">
+                <span style="font-weight:700">${flagBadge(r.country)} ${r.ticker} <span style="font-weight:400;color:var(--text-dim);font-size:11px">${(r.name || "").slice(0, 14)}</span></span>
+                <span class="v ${r.current_return_pct >= 0 ? "up" : "dn"}" style="font-size:13px;font-weight:700">${fmtPct(r.current_return_pct)}</span>
+              </div>
+              <div style="font-size:11px;color:var(--text-dim);margin-top:2px">
+                🏷 ${r.category || "—"} · 📅 예측 ${r.entry_date}
+              </div>
+              <div style="font-size:11px;color:var(--text-dim)">
+                진입 ${priceFmt(r.country, r.entry_close)} → 현재 ${priceFmt(r.country, r.current_close)} (${r.current_date || "—"})
+              </div>
             </div>
           `).join("") : '<div style="color:var(--text-faint);font-size:12px">검증 데이터 없음</div>'}
         </div>
       </div>
 
-      <div class="report-section-h">📉 Worst 3</div>
+      <div class="report-section-h">📉 Worst 10</div>
       <div class="report-grid">
         <div class="report-cell span2">
           ${worst.length ? worst.map(r => `
-            <div class="row">
-              <span>${flagBadge(r.country)} ${r.ticker} ${(r.name || "").slice(0, 12)}</span>
-              <span class="v ${r.current_return_pct >= 0 ? "up" : "dn"}">${fmtPct(r.current_return_pct)}</span>
+            <div style="padding:6px 0;border-bottom:1px solid var(--card-border)">
+              <div style="display:flex;justify-content:space-between;align-items:center">
+                <span style="font-weight:700">${flagBadge(r.country)} ${r.ticker} <span style="font-weight:400;color:var(--text-dim);font-size:11px">${(r.name || "").slice(0, 14)}</span></span>
+                <span class="v ${r.current_return_pct >= 0 ? "up" : "dn"}" style="font-size:13px;font-weight:700">${fmtPct(r.current_return_pct)}</span>
+              </div>
+              <div style="font-size:11px;color:var(--text-dim);margin-top:2px">
+                🏷 ${r.category || "—"} · 📅 예측 ${r.entry_date}
+              </div>
+              <div style="font-size:11px;color:var(--text-dim)">
+                진입 ${priceFmt(r.country, r.entry_close)} → 현재 ${priceFmt(r.country, r.current_close)} (${r.current_date || "—"})
+              </div>
             </div>
           `).join("") : '<div style="color:var(--text-faint);font-size:12px">검증 데이터 없음</div>'}
         </div>
