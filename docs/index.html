@@ -960,6 +960,10 @@ function renderHistory(history) {
           · 7d ${fmtRet(r.alpha_7d != null ? r.alpha_7d * 100 : null)}
           · 30d ${fmtRet(r.alpha_30d != null ? r.alpha_30d * 100 : null)}
         </div>
+        <div class="meta">
+          규칙점수 <b>${r.rating_score != null ? r.rating_score : "—"}</b>
+          · 재무점수 <b>${r.fundamentals_score != null ? r.fundamentals_score : "—"}</b>
+        </div>
         <div class="rationale">📌 ${r.trend_title} · ${r.rationale || ""}</div>
       `;
       detail.appendChild(rec);
