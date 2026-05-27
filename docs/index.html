@@ -1063,6 +1063,16 @@ function renderMonthlyReport(history) {
     `<option value="${m}">${m}</option>`
   ).join("");
 
+  // 전체 히스토리에서 티커별 가장 최신 등급 (신호 감지용)
+  const newestByTicker = {};
+  history.forEach(day => {
+    day.recommendations.forEach(r => {
+      if (!newestByTicker[r.ticker] || r.entry_date > newestByTicker[r.ticker].entry_date)
+        newestByTicker[r.ticker] = r;
+    });
+  });
+  const isBuyGrade = g => g === "Strong Buy" || g === "Buy";
+
   const renderFor = (ym) => {
     const days = byMonth[ym] || [];
     const allRecs = days.flatMap(d => d.recommendations);
@@ -1175,11 +1185,21 @@ function renderMonthlyReport(history) {
       <div class="report-section-h">🏆 Best 10 (현재 수익률 기준, 티커별 최초 예측)</div>
       <div class="report-grid">
         <div class="report-cell span2">
-          ${best.length ? best.map(r => `
+          ${best.length ? best.map(r => {
+            const newest = newestByTicker[r.ticker];
+            const oldBuy = isBuyGrade(r.grade);
+            const newBuy = newest ? isBuyGrade(newest.grade) : oldBuy;
+            const signal = (oldBuy && !newBuy) ? ' <span title="추세 하락: 매도 고려" style="color:#ef4444;font-size:13px">🔴매도</span>'
+                         : (!oldBuy && newBuy) ? ' <span title="추세 상승: 매수 고려" style="color:#22c55e;font-size:13px">🟢매수</span>'
+                         : "";
+            return `
             <div style="padding:6px 0;border-bottom:1px solid var(--card-border)">
               <div style="display:flex;justify-content:space-between;align-items:center">
                 <span style="font-weight:700">${flagBadge(r.country)} ${r.ticker} <span style="font-weight:400;color:var(--text-dim);font-size:11px">${(r.name || "").slice(0, 14)}</span></span>
-                <span class="v ${r.current_return_pct >= 0 ? "up" : "dn"}" style="font-size:13px;font-weight:700">${fmtPct(r.current_return_pct)}</span>
+                <span style="display:flex;align-items:center;gap:4px">
+                  <span class="v ${r.current_return_pct >= 0 ? "up" : "dn"}" style="font-size:13px;font-weight:700">${fmtPct(r.current_return_pct)}</span>
+                  ${signal}
+                </span>
               </div>
               <div style="font-size:11px;color:var(--text-dim);margin-top:2px">
                 🏷 ${r.category || "—"} · 📅 예측 ${r.entry_date}
@@ -1187,19 +1207,35 @@ function renderMonthlyReport(history) {
               <div style="font-size:11px;color:var(--text-dim)">
                 진입 ${priceFmt(r.country, r.entry_close)} → 현재 ${priceFmt(r.country, r.current_close)} (${r.current_date || "—"})
               </div>
-            </div>
-          `).join("") : '<div style="color:var(--text-faint);font-size:12px">검증 데이터 없음</div>'}
+              <div style="font-size:11px;color:var(--text-dim);margin-top:1px">
+                📊 예측의견 <span class="grade-pill ${grade2cls(r.grade)}" style="font-size:9px">${r.grade || "—"}</span>
+                · 규칙점수 <b>${r.rating_score != null ? r.rating_score : "—"}</b>
+                · 재무점수 <b>${r.fundamentals_score != null ? r.fundamentals_score : "—"}</b>
+                ${newest && newest.grade !== r.grade ? `→ 현재 <span class="grade-pill ${grade2cls(newest.grade)}" style="font-size:9px">${newest.grade}</span>` : ""}
+              </div>
+            </div>`;
+          }).join("") : '<div style="color:var(--text-faint);font-size:12px">검증 데이터 없음</div>'}
         </div>
       </div>
 
       <div class="report-section-h">📉 Worst 10</div>
       <div class="report-grid">
         <div class="report-cell span2">
-          ${worst.length ? worst.map(r => `
+          ${worst.length ? worst.map(r => {
+            const newest = newestByTicker[r.ticker];
+            const oldBuy = isBuyGrade(r.grade);
+            const newBuy = newest ? isBuyGrade(newest.grade) : oldBuy;
+            const signal = (oldBuy && !newBuy) ? ' <span title="추세 하락: 매도 고려" style="color:#ef4444;font-size:13px">🔴매도</span>'
+                         : (!oldBuy && newBuy) ? ' <span title="추세 상승: 매수 고려" style="color:#22c55e;font-size:13px">🟢매수</span>'
+                         : "";
+            return `
             <div style="padding:6px 0;border-bottom:1px solid var(--card-border)">
               <div style="display:flex;justify-content:space-between;align-items:center">
                 <span style="font-weight:700">${flagBadge(r.country)} ${r.ticker} <span style="font-weight:400;color:var(--text-dim);font-size:11px">${(r.name || "").slice(0, 14)}</span></span>
-                <span class="v ${r.current_return_pct >= 0 ? "up" : "dn"}" style="font-size:13px;font-weight:700">${fmtPct(r.current_return_pct)}</span>
+                <span style="display:flex;align-items:center;gap:4px">
+                  <span class="v ${r.current_return_pct >= 0 ? "up" : "dn"}" style="font-size:13px;font-weight:700">${fmtPct(r.current_return_pct)}</span>
+                  ${signal}
+                </span>
               </div>
               <div style="font-size:11px;color:var(--text-dim);margin-top:2px">
                 🏷 ${r.category || "—"} · 📅 예측 ${r.entry_date}
@@ -1207,8 +1243,14 @@ function renderMonthlyReport(history) {
               <div style="font-size:11px;color:var(--text-dim)">
                 진입 ${priceFmt(r.country, r.entry_close)} → 현재 ${priceFmt(r.country, r.current_close)} (${r.current_date || "—"})
               </div>
-            </div>
-          `).join("") : '<div style="color:var(--text-faint);font-size:12px">검증 데이터 없음</div>'}
+              <div style="font-size:11px;color:var(--text-dim);margin-top:1px">
+                📊 예측의견 <span class="grade-pill ${grade2cls(r.grade)}" style="font-size:9px">${r.grade || "—"}</span>
+                · 규칙점수 <b>${r.rating_score != null ? r.rating_score : "—"}</b>
+                · 재무점수 <b>${r.fundamentals_score != null ? r.fundamentals_score : "—"}</b>
+                ${newest && newest.grade !== r.grade ? `→ 현재 <span class="grade-pill ${grade2cls(newest.grade)}" style="font-size:9px">${newest.grade}</span>` : ""}
+              </div>
+            </div>`;
+          }).join("") : '<div style="color:var(--text-faint);font-size:12px">검증 데이터 없음</div>'}
         </div>
       </div>
 
