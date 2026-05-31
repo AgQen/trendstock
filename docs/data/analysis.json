@@ -1,11 +1,11 @@
 {
-  "analysis_date": "2026-05-30",
+  "analysis_date": "2026-05-31",
   "model_name": "claude-sonnet-4-6",
-  "generated_at": "2026-05-30T22:46:14+00:00",
+  "generated_at": "2026-05-31T22:48:23+00:00",
   "summary": {
     "current_trends_count": 5,
     "predicted_trends_count": 5,
-    "total_recommendations": 30,
+    "total_recommendations": 35,
     "top_movers_1d": [
       {
         "ticker": "003550",
@@ -103,54 +103,60 @@
     "by_category": [
       {
         "category": "daily_analysis",
-        "input_tokens": 478788,
+        "input_tokens": 500141,
         "cached_input_tokens": 0,
-        "output_tokens": 225449,
-        "cost_usd": 4.8181,
-        "calls": 23
+        "output_tokens": 239205,
+        "cost_usd": 5.0885,
+        "calls": 24
       }
     ],
     "total": {
-      "input_tokens": 478788,
-      "output_tokens": 225449,
-      "cost_usd": 4.8181,
-      "cost_krw": 6745,
-      "calls": 23
+      "input_tokens": 500141,
+      "output_tokens": 239205,
+      "cost_usd": 5.0885,
+      "cost_krw": 7124,
+      "calls": 24
     }
   },
   "current_trends": [
     {
-      "trend_id": 101,
+      "trend_id": 111,
       "rank": 1,
-      "title": "AI 소프트웨어 플랫폼 강세 — 클라우드·엔터프라이즈 AI 수요 폭발",
-      "summary": "ORCL, NOW, PLTR, CRM, IBM 등 AI 엔터프라이즈 소프트웨어 전반이 5d +13~19% 급등, 거래량 이상 수반하며 AI 인프라 수요 현실화 신호 발신",
-      "category": "AI Software",
+      "title": "AI 엔터프라이즈 소프트웨어 폭발적 랠리",
+      "summary": "ORCL·CRM·PLTR·NOW·IBM 등 AI 엔터프라이즈 SW 전반이 하루 8~15% 급등하며 섹터 평균 1일 +7.32%를 기록, AI 수요가 클라우드/분석 플랫폼으로 확산되는 국면.",
+      "category": "AI 소프트웨어",
       "timeframe": "ongoing",
       "confidence": 87,
       "causal_chain": [
         {
           "step_no": 1,
-          "statement": "대형 클라우드 하이퍼스케일러들의 AI 인프라 지출 확대가 엔터프라이즈 소프트웨어 벤더의 수주 및 ARR 성장을 직접 견인하고 있다",
+          "statement": "빅테크 AI 인프라 투자 확대 발표가 엔터프라이즈 SW 수요 가속 기대를 자극",
           "confidence": 90
         },
         {
           "step_no": 2,
-          "statement": "ORCL +10.84%(1d)/+18.98%(5d), NOW +14.38%(1d)/+24.76%(5d), IBM +12.71%(1d)/+17.72%(5d) 의 가격 급등이 이를 반영하며 거래량(IBM 3.51x, NOW 2.37x, CRM 2.59x)이 신뢰성 뒷받침",
-          "confidence": 87
+          "statement": "ORCL +10.84%, NOW +14.38%, IBM +12.71% 등 실적·가이던스 서프라이즈가 섹터 전체 밸류에이션 리레이팅 유발",
+          "confidence": 85
         },
         {
           "step_no": 3,
-          "statement": "AI 워크플로우 자동화·데이터분석 도구에 대한 기업 예산 편중이 지속되면서 해당 종목군의 추세적 프리미엄 부여 가능성이 높다",
-          "confidence": 82
+          "statement": "CRM(거래량 2.59x), NOW(2.37x), MSFT(2.30x) 거래량 급증이 기관 매수 유입을 확인",
+          "confidence": 80
+        },
+        {
+          "step_no": 4,
+          "statement": "XLK ETF +2.23%(5일 +6.95%)가 테크 전반 모멘텀 유지를 지지",
+          "confidence": 76
         }
       ],
       "disconfirming_hypotheses": [
-        "기업 IT 예산 동결 또는 경기 침체 시 AI 소프트웨어 구독 갱신율 하락 가능",
-        "밸류에이션 과열로 인한 차익 실현 매물이 단기 급락을 유발할 수 있음"
+        "실적 서프라이즈 이후 '소문에 사고 뉴스에 팔기' 패턴으로 단기 차익 실현 가능",
+        "금리 장기 고원 지속 시 고밸류 SW 멀티플 압축 재개 위험",
+        "경쟁 격화(오픈소스 AI)로 구독 ASP 상승세가 꺾일 수 있음"
       ],
       "evidence": {
-        "price": "ORCL +18.98%(5d), NOW +24.76%(5d), IBM +17.72%(5d), PLTR +13.92%(5d), CRM +8.39%(5d)",
-        "volume": "IBM 3.51x, CRM 2.59x, NOW 2.37x (20일 평균 대비)",
+        "price": "ORCL +10.84%(5일 +18.98%), NOW +14.38%(5일 +24.76%), IBM +12.71%(5일 +17.72%), CRM +8.47%, PLTR +9.21%",
+        "volume": "CRM 2.59x, NOW 2.37x, MSFT 2.30x 20일 평균 대비 거래량 급증",
         "news_ids": []
       },
       "recommendations": [
@@ -160,9 +166,9 @@
           "country": "US",
           "rank": 1,
           "grade": "Strong Buy",
-          "rationale": "1일 +12.71% / 5일 +17.72% 급등에 거래량 3.51x 수반, AI 엔터프라이즈 전환 가속화 수혜. 안정적 매출 기반과 클라우드·AI 컨설팅 마진 확대 기대",
+          "rationale": "1일 +12.71%, 5일 +17.72%, 20일 +28.93%의 강한 모멘텀. 거래량 3.51x로 기관 매수 확인. 엔터프라이즈 AI·하이브리드 클라우드 수주 가속 기대. 최근 리더 이력 없어 스탈 픽 제한 없음.",
           "entry_close": 297.79998779296875,
-          "fundamentals_score": 7,
+          "fundamentals_score": 6,
           "fundamentals": {
             "revenue_yoy_pct": null,
             "operating_margin_pct": null,
@@ -209,123 +215,12 @@
           }
         },
         {
-          "ticker": "NOW",
-          "name": "ServiceNow",
-          "country": "US",
-          "rank": 2,
-          "grade": "Buy",
-          "rationale": "5일 +24.76%, 1일 +14.38%로 동종 최고 수익률 기록, 거래량 2.37x. 워크플로우 AI 자동화 플랫폼 수요 폭발적 증가 반영",
-          "entry_close": 124.37000274658203,
-          "fundamentals_score": 8,
-          "fundamentals": {
-            "revenue_yoy_pct": null,
-            "operating_margin_pct": null,
-            "net_margin_pct": null,
-            "roe_pct": null,
-            "pe_ratio": null,
-            "ps_ratio": null,
-            "debt_to_equity": null,
-            "market_cap_usd_b": null,
-            "fcf_usd_b": null
-          },
-          "rating_score": 2,
-          "rating_breakdown": {
-            "grade": "Buy",
-            "total": 2,
-            "dimensions": {
-              "fundamentals": {
-                "score": 2,
-                "reasons": [
-                  "펀더 2개 강함 (매출 YoY +22%, 부채/자본 21 (낮음))"
-                ]
-              },
-              "momentum": {
-                "score": 2,
-                "reasons": [
-                  "20d +41% & 5d +25% 강한 우상향"
-                ]
-              },
-              "timing": {
-                "score": -2,
-                "reasons": [
-                  "20일 신고가 돌파",
-                  "20d +41% 과열",
-                  "P/E 74 극심한 고평가"
-                ]
-              }
-            }
-          },
-          "validation": {
-            "close_7d": null,
-            "alpha_7d": null,
-            "hit_7d": null,
-            "close_30d": null,
-            "alpha_30d": null,
-            "hit_30d": null
-          }
-        },
-        {
-          "ticker": "PLTR",
-          "name": "Palantir Technologies",
-          "country": "US",
-          "rank": 3,
-          "grade": "Strong Buy",
-          "rationale": "1일 +9.21%, 5일 +13.92%, 20일 +12.53%로 꾸준한 상승 모멘텀. 정부·기업 AI 데이터 플랫폼 계약 확대로 매출 성장 가시성 높음",
-          "entry_close": 156.5399932861328,
-          "fundamentals_score": 7,
-          "fundamentals": {
-            "revenue_yoy_pct": null,
-            "operating_margin_pct": null,
-            "net_margin_pct": null,
-            "roe_pct": null,
-            "pe_ratio": null,
-            "ps_ratio": null,
-            "debt_to_equity": null,
-            "market_cap_usd_b": null,
-            "fcf_usd_b": null
-          },
-          "rating_score": 4,
-          "rating_breakdown": {
-            "grade": "Strong Buy",
-            "total": 4,
-            "dimensions": {
-              "fundamentals": {
-                "score": 3,
-                "reasons": [
-                  "펀더 4지표 전부 강함 (매출 YoY +85%, 영업이익률 46%, ROE 33% 등)"
-                ]
-              },
-              "momentum": {
-                "score": 2,
-                "reasons": [
-                  "20d +13% & 5d +14% 강한 우상향"
-                ]
-              },
-              "timing": {
-                "score": -1,
-                "reasons": [
-                  "20일 신고가 돌파",
-                  "P/E 176 극심한 고평가"
-                ]
-              }
-            }
-          },
-          "validation": {
-            "close_7d": null,
-            "alpha_7d": null,
-            "hit_7d": null,
-            "close_30d": null,
-            "alpha_30d": null,
-            "hit_30d": null
-          }
-        },
-        {
           "ticker": "ORCL",
           "name": "Oracle",
           "country": "US",
-          "rank": 4,
+          "rank": 2,
           "grade": "Strong Buy",
-          "rationale": "5일 +18.98%, 20일 +39.9%로 강력한 중기 추세. 클라우드 AI 인프라 백로그 확대, OCI GPU 클러스터 수요 급증",
+          "rationale": "1일 +10.84%, 5일 +18.98%, 20일 +39.90%의 추세. 클라우드 AI 인프라 계약 확장이 핵심 성장 동인. 20일 누적 상승폭 고려 시 과열 경계 필요.",
           "entry_close": 225.77999877929688,
           "fundamentals_score": 7,
           "fundamentals": {
@@ -379,9 +274,9 @@
           "ticker": "CRM",
           "name": "Salesforce",
           "country": "US",
-          "rank": 5,
+          "rank": 3,
           "grade": "Buy",
-          "rationale": "1일 +8.47%, 거래량 2.59x. Agentforce AI 에이전트 플랫폼 출시 이후 기업 도입 가속, 매출 가시성 개선",
+          "rationale": "1일 +8.47%(5일 +8.39%), 거래량 2.59x로 신규 매수 유입 확인. Agentforce AI 플랫폼 성장이 구독 매출 견인 예상.",
           "entry_close": 191.10000610351562,
           "fundamentals_score": 6,
           "fundamentals": {
@@ -428,53 +323,215 @@
             "alpha_30d": null,
             "hit_30d": null
           }
+        },
+        {
+          "ticker": "ADBE",
+          "name": "Adobe",
+          "country": "US",
+          "rank": 4,
+          "grade": "Strong Buy",
+          "rationale": "1일 +7.36%, 거래량 2.45x. AI 창작 도구 Firefly 매출화 가속 및 구독 갱신율 유지로 SW 랠리 편승 가능.",
+          "entry_close": 259.2099914550781,
+          "fundamentals_score": 7,
+          "fundamentals": {
+            "revenue_yoy_pct": null,
+            "operating_margin_pct": null,
+            "net_margin_pct": null,
+            "roe_pct": null,
+            "pe_ratio": null,
+            "ps_ratio": null,
+            "debt_to_equity": null,
+            "market_cap_usd_b": null,
+            "fcf_usd_b": null
+          },
+          "rating_score": 4,
+          "rating_breakdown": {
+            "grade": "Strong Buy",
+            "total": 4,
+            "dimensions": {
+              "fundamentals": {
+                "score": 2,
+                "reasons": [
+                  "펀더 2개 강함 (영업이익률 39%, ROE 59%)"
+                ]
+              },
+              "momentum": {
+                "score": 1,
+                "reasons": [
+                  "20d +5% 우상향"
+                ]
+              },
+              "timing": {
+                "score": 1,
+                "reasons": [
+                  "20일 신고가 돌파",
+                  "P/E 15 합리"
+                ]
+              }
+            }
+          },
+          "validation": {
+            "close_7d": null,
+            "alpha_7d": null,
+            "hit_7d": null,
+            "close_30d": null,
+            "alpha_30d": null,
+            "hit_30d": null
+          }
+        },
+        {
+          "ticker": "INTU",
+          "name": "Intuit",
+          "country": "US",
+          "rank": 5,
+          "grade": "Buy",
+          "rationale": "1일 +5.92%이나 20일 -14.66%로 중기 추세 약세. AI 세금·회계 서비스 확장 긍정적이나 단기 반등 지속성 불확실.",
+          "entry_close": 331.5299987792969,
+          "fundamentals_score": 6,
+          "fundamentals": {
+            "revenue_yoy_pct": null,
+            "operating_margin_pct": null,
+            "net_margin_pct": null,
+            "roe_pct": null,
+            "pe_ratio": null,
+            "ps_ratio": null,
+            "debt_to_equity": null,
+            "market_cap_usd_b": null,
+            "fcf_usd_b": null
+          },
+          "rating_score": 2,
+          "rating_breakdown": {
+            "grade": "Buy",
+            "total": 2,
+            "dimensions": {
+              "fundamentals": {
+                "score": 3,
+                "reasons": [
+                  "펀더 3개 강함 (영업이익률 47%, ROE 22%, 부채/자본 33 (낮음))"
+                ]
+              },
+              "momentum": {
+                "score": -1,
+                "reasons": [
+                  "20d -15% 약세"
+                ]
+              },
+              "timing": {
+                "score": 0,
+                "reasons": []
+              }
+            }
+          },
+          "validation": {
+            "close_7d": null,
+            "alpha_7d": null,
+            "hit_7d": null,
+            "close_30d": null,
+            "alpha_30d": null,
+            "hit_30d": null
+          }
         }
       ]
     },
     {
-      "trend_id": 102,
+      "trend_id": 112,
       "rank": 2,
-      "title": "사이버보안 슈퍼사이클 — AI 위협 대응 수요로 CRWD·PANW 급등",
-      "summary": "CRWD +8.94%(1d)/+12.77%(5d)/+63.99%(20d), PANW +9.28%(1d)/+11.38%(5d)/+57.09%(20d) — 사이버보안 섹터 20일 평균 +60.54%로 전 섹터 최강 수익률",
-      "category": "Cybersecurity",
+      "title": "사이버보안 주도주 급등 — AI 보안 수요 재조명",
+      "summary": "CRWD +8.94%, PANW +9.28%로 사이버보안 섹터 평균 1일 +9.11%, 20일 +60.54%에 달하는 초강세. AI 기반 위협 탐지 수요와 규제 강화가 복합 작용.",
+      "category": "사이버보안",
       "timeframe": "ongoing",
       "confidence": 85,
       "causal_chain": [
         {
           "step_no": 1,
-          "statement": "AI 기반 사이버공격 증가로 기업·정부의 보안 예산이 재량 IT 중 가장 먼저 집행되는 필수재화 성격 강화",
+          "statement": "AI 인프라 확산이 공격 면적 확대 → 엔터프라이즈 보안 예산 증가 기대",
           "confidence": 88
         },
         {
           "step_no": 2,
-          "statement": "CRWD·PANW 모두 플랫폼 통합 및 AI 탐지 엔진 차별화로 시장점유율 확대, 실적 가이던스 상향 사이클 진입",
-          "confidence": 84
+          "statement": "CRWD·PANW 실적 서프라이즈 및 플랫폼 통합(Platformization) 전략 성과 확인",
+          "confidence": 83
         },
         {
           "step_no": 3,
-          "statement": "20일 수익률 +60%대가 이미 상당한 선반영 수준이나, 단기 조정 후 추가 상승 여력은 신규 계약 공시에 달림",
+          "statement": "20일 누적 CRWD +63.99%, PANW +57.09%로 섹터 모멘텀 압도적 우위",
           "confidence": 78
         }
       ],
       "disconfirming_hypotheses": [
-        "20일 +60% 수준의 과열로 차익실현 매도 집중 시 급격한 되돌림 가능",
-        "경쟁사(MSFT Security, Google SecOps) 번들 공세로 독립 보안벤더 시장점유율 잠식 리스크"
+        "20일 +60% 누적 급등 후 밸류에이션 부담으로 차익 실현 압력 집중 가능",
+        "경기 둔화 시 기업 IT 예산 삭감이 보안 지출에도 영향"
       ],
       "evidence": {
-        "price": "CRWD +63.99%(20d), PANW +57.09%(20d); 섹터 평균 1d +9.11%",
-        "volume": "AVGO(보안 네트워크 연관) 2.25x 이상",
+        "price": "CRWD 1일 +8.94%(5일 +12.77%, 20일 +63.99%), PANW 1일 +9.28%(5일 +11.38%, 20일 +57.09%)",
+        "volume": "섹터 거래량 평균 이상 유지, MSFT 연계 보안 통합 뉴스 반영",
         "news_ids": []
       },
       "recommendations": [
         {
+          "ticker": "CRWD",
+          "name": "CrowdStrike",
+          "country": "US",
+          "rank": 1,
+          "grade": "Buy",
+          "rationale": "1일 +8.94%, 20일 +63.99%의 압도적 모멘텀. Falcon 플랫폼 ARR 성장이 구독 매출 확대 견인. 20일 급등 감안 신규 진입 시 분할 매수 권장.",
+          "entry_close": 731.0,
+          "fundamentals_score": 7,
+          "fundamentals": {
+            "revenue_yoy_pct": null,
+            "operating_margin_pct": null,
+            "net_margin_pct": null,
+            "roe_pct": null,
+            "pe_ratio": null,
+            "ps_ratio": null,
+            "debt_to_equity": null,
+            "market_cap_usd_b": null,
+            "fcf_usd_b": null
+          },
+          "rating_score": 3,
+          "rating_breakdown": {
+            "grade": "Buy",
+            "total": 3,
+            "dimensions": {
+              "fundamentals": {
+                "score": 2,
+                "reasons": [
+                  "펀더 2개 강함 (매출 YoY +23%, 부채/자본 18 (낮음))"
+                ]
+              },
+              "momentum": {
+                "score": 2,
+                "reasons": [
+                  "20d +64% & 5d +13% 강한 우상향"
+                ]
+              },
+              "timing": {
+                "score": -1,
+                "reasons": [
+                  "20일 신고가 돌파",
+                  "20d +64% 극심한 과열"
+                ]
+              }
+            }
+          },
+          "validation": {
+            "close_7d": null,
+            "alpha_7d": null,
+            "hit_7d": null,
+            "close_30d": null,
+            "alpha_30d": null,
+            "hit_30d": null
+          }
+        },
+        {
           "ticker": "PANW",
           "name": "Palo Alto Networks",
           "country": "US",
-          "rank": 1,
+          "rank": 2,
           "grade": "Hold",
-          "rationale": "1일 +9.28%, 5일 +11.38%, 20일 +57.09%. 플랫폼 통합 전략(Platformization)으로 고객당 ARR 증가, 마진 개선 구조적 진행 중",
+          "rationale": "1일 +9.28%(20일 +57.09%). AI 기반 Precision AI 플랫폼 통합 전략으로 고객 이탈률 감소 및 ARPU 상승 기대.",
           "entry_close": 281.69000244140625,
-          "fundamentals_score": 8,
+          "fundamentals_score": 7,
           "fundamentals": {
             "revenue_yoy_pct": null,
             "operating_margin_pct": null,
@@ -523,69 +580,14 @@
           }
         },
         {
-          "ticker": "CRWD",
-          "name": "CrowdStrike",
-          "country": "US",
-          "rank": 2,
-          "grade": "Buy",
-          "rationale": "1일 +8.94%, 20일 +63.99%로 업종 최고 수익률. Falcon 플랫폼 AI 확장 및 엔드포인트 점유율 1위 유지",
-          "entry_close": 731.0,
-          "fundamentals_score": 8,
-          "fundamentals": {
-            "revenue_yoy_pct": null,
-            "operating_margin_pct": null,
-            "net_margin_pct": null,
-            "roe_pct": null,
-            "pe_ratio": null,
-            "ps_ratio": null,
-            "debt_to_equity": null,
-            "market_cap_usd_b": null,
-            "fcf_usd_b": null
-          },
-          "rating_score": 3,
-          "rating_breakdown": {
-            "grade": "Buy",
-            "total": 3,
-            "dimensions": {
-              "fundamentals": {
-                "score": 2,
-                "reasons": [
-                  "펀더 2개 강함 (매출 YoY +23%, 부채/자본 18 (낮음))"
-                ]
-              },
-              "momentum": {
-                "score": 2,
-                "reasons": [
-                  "20d +64% & 5d +13% 강한 우상향"
-                ]
-              },
-              "timing": {
-                "score": -1,
-                "reasons": [
-                  "20일 신고가 돌파",
-                  "20d +64% 극심한 과열"
-                ]
-              }
-            }
-          },
-          "validation": {
-            "close_7d": null,
-            "alpha_7d": null,
-            "hit_7d": null,
-            "close_30d": null,
-            "alpha_30d": null,
-            "hit_30d": null
-          }
-        },
-        {
           "ticker": "MSFT",
           "name": "Microsoft",
           "country": "US",
           "rank": 3,
           "grade": "Strong Buy",
-          "rationale": "1일 +5.45%, 거래량 2.30x. Security Copilot 수익화 가속화로 보안 부문 매출 급증, Azure AI와의 시너지로 엔터프라이즈 고착화",
+          "rationale": "1일 +5.45%(5일 +7.43%), 거래량 2.30x. 보안 플랫폼 Defender 확장과 Azure AI 통합이 간접 수혜. 밸류 부담 존재하나 포트폴리오 안정성 높음.",
           "entry_close": 450.239990234375,
-          "fundamentals_score": 9,
+          "fundamentals_score": 8,
           "fundamentals": {
             "revenue_yoy_pct": null,
             "operating_margin_pct": null,
@@ -634,37 +636,37 @@
       ]
     },
     {
-      "trend_id": 103,
+      "trend_id": 113,
       "rank": 3,
-      "title": "한국 인터넷 플랫폼 급등 — NAVER 지주사 재편 수혜",
-      "summary": "035420(NAVER) +14.15%(1d)/+17.29%(5d), 003550(LG) +26.6%(1d)/+49.29%(20d), 거래량 각각 7.41x·8.3x — 지배구조 개편·AI 사업 재평가 기대가 복합 작용",
-      "category": "Korean Internet/Holdco",
+      "title": "한국 AI·인터넷 플랫폼 급반등 — NAVER 주도",
+      "summary": "035420(네이버) 1일 +14.15%(거래량 7.41x), 035720(카카오) +4.61%로 한국 인터넷 섹터 1일 평균 +9.38% 급등. AI 서비스 모멘텀 재평가 및 외국인 매수 유입.",
+      "category": "한국 인터넷/플랫폼",
       "timeframe": "ongoing",
-      "confidence": 80,
+      "confidence": 82,
       "causal_chain": [
         {
           "step_no": 1,
-          "statement": "003550(LG) 지주사가 거래량 8.3x에 주가 +26.6%(1d)를 기록하며 계열사 AI·배터리 자산 재평가 기대 선반영",
+          "statement": "글로벌 AI SW 랠리가 한국 AI 플랫폼 밸류에이션 리레이팅 촉발",
           "confidence": 85
         },
         {
           "step_no": 2,
-          "statement": "035420(NAVER)이 거래량 7.41x와 함께 +14.15%(1d) 급등 — AI 검색·커머스 사업 분리 또는 밸류에이션 리레이팅 기대",
-          "confidence": 81
+          "statement": "035420 거래량 7.41x 폭증 — 외국인·기관 동시 매수로 수급 개선 확인",
+          "confidence": 80
         },
         {
           "step_no": 3,
-          "statement": "035720(카카오)도 거래량 3.45x 수반한 +4.61%로 동반 강세, 인터넷 섹터 전반의 자금 유입 확인",
-          "confidence": 76
+          "statement": "KOSPI 지수(069500) 1일 +3.71%, 5일 +9.55%로 시장 전반 상승 기조가 플랫폼주 추가 상승 여력 지지",
+          "confidence": 75
         }
       ],
       "disconfirming_hypotheses": [
-        "단기 이슈성 거래량 급증으로 실제 펀더멘털 개선 없이 되돌림 가능",
-        "국내 광고 시장 침체 및 일본 라인야후 리스크 재부각 시 NAVER 추가 매도 압력"
+        "원/달러 환율 급등 시 외국인 매도 전환 가능",
+        "카카오 거버넌스 리스크 잔존, 규제 이슈 재부각 시 동반 하락 우려"
       ],
       "evidence": {
-        "price": "035420 +14.15%(1d)/+17.29%(5d), 003550 +26.6%(1d)/+49.29%(20d), 035720 +4.61%(1d)",
-        "volume": "003550 8.3x, 035420 7.41x, 035720 3.45x",
+        "price": "035420 1일 +14.15%(5일 +17.29%), 035720 1일 +4.61%(5일 +0.36%)",
+        "volume": "035420 7.41x, 035720 3.45x 20일 평균 대비 거래량 폭증",
         "news_ids": []
       },
       "recommendations": [
@@ -674,7 +676,7 @@
           "country": "KR",
           "rank": 1,
           "grade": "Buy",
-          "rationale": "거래량 7.41x와 함께 1일 +14.15% 급등. AI 검색·클라우드 사업 재평가, 5일 +17.29%의 강한 모멘텀 유지",
+          "rationale": "1일 +14.15%, 거래량 7.41x로 강력한 수급 확인. HyperCLOVA X AI 서비스 상업화 및 광고·커머스 회복이 실적 개선 동인.",
           "entry_close": 234000.0,
           "fundamentals_score": 6,
           "fundamentals": {
@@ -723,14 +725,66 @@
           }
         },
         {
+          "ticker": "035720",
+          "name": "카카오",
+          "country": "KR",
+          "rank": 2,
+          "grade": "Hold",
+          "rationale": "1일 +4.61%, 거래량 3.45x. AI 카카오톡 채널 광고 수익화 및 엔터 자회사 수익 회복 기대. 20일 -14.12%로 낙폭 과대 반등 여력 존재.",
+          "entry_close": 41950.0,
+          "fundamentals_score": 5,
+          "fundamentals": {
+            "revenue_yoy_pct": null,
+            "operating_margin_pct": null,
+            "net_margin_pct": null,
+            "roe_pct": null,
+            "pe_ratio": null,
+            "ps_ratio": null,
+            "debt_to_equity": null,
+            "market_cap_usd_b": null,
+            "fcf_usd_b": null
+          },
+          "rating_score": 0,
+          "rating_breakdown": {
+            "grade": "Hold",
+            "total": 0,
+            "dimensions": {
+              "fundamentals": {
+                "score": 1,
+                "reasons": [
+                  "펀더 일부 양호 (부채/자본 20 (낮음), 매출 YoY +11%, 영업이익률 11%)"
+                ]
+              },
+              "momentum": {
+                "score": -1,
+                "reasons": [
+                  "20d -14% 약세"
+                ]
+              },
+              "timing": {
+                "score": 0,
+                "reasons": []
+              }
+            }
+          },
+          "validation": {
+            "close_7d": null,
+            "alpha_7d": null,
+            "hit_7d": null,
+            "close_30d": null,
+            "alpha_30d": null,
+            "hit_30d": null
+          }
+        },
+        {
           "ticker": "003550",
           "name": "LG",
           "country": "KR",
-          "rank": 2,
+          "rank": 3,
           "grade": "Strong Buy",
-          "rationale": "거래량 8.3x 극단적 이상 수반 +26.6%(1d). LG그룹 지배구조 개편 및 AI·배터리 계열사 가치 재평가 모멘텀",
+          "rationale": "1일 +26.6%, 거래량 8.3x로 단기 급등. LG그룹 AI 사업 재편 기대감이 선반영, 지주 구조상 밸류 할인 지속 가능성으로 추격 매수 주의.",
           "entry_close": 146600.0,
-          "fundamentals_score": 5,
+          "fundamentals_score": 4,
           "fundamentals": {
             "revenue_yoy_pct": null,
             "operating_margin_pct": null,
@@ -778,13 +832,260 @@
           }
         },
         {
-          "ticker": "035720",
-          "name": "카카오",
+          "ticker": "028260",
+          "name": "삼성물산",
+          "country": "KR",
+          "rank": 4,
+          "grade": "Buy",
+          "rationale": "1일 +8.26%(20일 +39.74%). 삼성물산 건설·상사 부문 AI 데이터센터 수혜 기대. 지주 할인 감안 시 추가 상승 여력 제한적.",
+          "entry_close": 432500.0,
+          "fundamentals_score": 5,
+          "fundamentals": {
+            "revenue_yoy_pct": null,
+            "operating_margin_pct": null,
+            "net_margin_pct": null,
+            "roe_pct": null,
+            "pe_ratio": null,
+            "ps_ratio": null,
+            "debt_to_equity": null,
+            "market_cap_usd_b": null,
+            "fcf_usd_b": null
+          },
+          "rating_score": 2,
+          "rating_breakdown": {
+            "grade": "Buy",
+            "total": 2,
+            "dimensions": {
+              "fundamentals": {
+                "score": 1,
+                "reasons": [
+                  "펀더 일부 양호 (부채/자본 7 (낮음))"
+                ]
+              },
+              "momentum": {
+                "score": 2,
+                "reasons": [
+                  "20d +40% & 5d +3% 강한 우상향"
+                ]
+              },
+              "timing": {
+                "score": -1,
+                "reasons": [
+                  "20d +40% 과열"
+                ]
+              }
+            }
+          },
+          "validation": {
+            "close_7d": null,
+            "alpha_7d": null,
+            "hit_7d": null,
+            "close_30d": null,
+            "alpha_30d": null,
+            "hit_30d": null
+          }
+        }
+      ]
+    },
+    {
+      "trend_id": 114,
+      "rank": 4,
+      "title": "한국 자동차·화학/배터리 동반 반등",
+      "summary": "005380(현대차) +6.79%, 000270(기아) +2.98%, 051910(LG화학) +6.53%로 자동차·배터리 밸류체인이 미-중 관세 완화 기대 및 EV 수요 회복 신호에 반응.",
+      "category": "한국 자동차/배터리",
+      "timeframe": "ongoing",
+      "confidence": 78,
+      "causal_chain": [
+        {
+          "step_no": 1,
+          "statement": "미-중 무역 협상 부분 타결 기대가 글로벌 자동차 수출 리스크 완화로 해석",
+          "confidence": 80
+        },
+        {
+          "step_no": 2,
+          "statement": "현대차 5일 +8.56%, 20일 +30.27%로 추세적 상승 확인 — 미국 공장 생산 확대 및 HEV 라인업 호조",
+          "confidence": 76
+        },
+        {
+          "step_no": 3,
+          "statement": "LG화학 1일 +6.53%로 배터리 소재 마진 회복 기대 선반영",
+          "confidence": 71
+        }
+      ],
+      "disconfirming_hypotheses": [
+        "중국 전기차 업체의 글로벌 점유율 확대로 한국 OEM 경쟁력 지속 위협",
+        "원자재(리튬·코발트) 가격 재상승 시 배터리 소재 마진 압박 재현"
+      ],
+      "evidence": {
+        "price": "005380 1일 +6.79%(5일 +8.56%, 20일 +30.27%), 000270 1일 +2.98%, 051910 1일 +6.53%",
+        "volume": "006400 거래량 2.37x — 배터리 섹터 매수 유입 확인",
+        "news_ids": []
+      },
+      "recommendations": [
+        {
+          "ticker": "051910",
+          "name": "LG화학",
+          "country": "KR",
+          "rank": 1,
+          "grade": "Caution",
+          "rationale": "1일 +6.53%(20일 -6.85%로 저평가 구간). LG에너지솔루션 배터리 소재 공급 회복 및 EV 수요 반등 시 마진 레버리지 높음.",
+          "entry_close": 367000.0,
+          "fundamentals_score": 6,
+          "fundamentals": {
+            "revenue_yoy_pct": null,
+            "operating_margin_pct": null,
+            "net_margin_pct": null,
+            "roe_pct": null,
+            "pe_ratio": null,
+            "ps_ratio": null,
+            "debt_to_equity": null,
+            "market_cap_usd_b": null,
+            "fcf_usd_b": null
+          },
+          "rating_score": -1,
+          "rating_breakdown": {
+            "grade": "Caution",
+            "total": -1,
+            "dimensions": {
+              "fundamentals": {
+                "score": 0,
+                "reasons": [
+                  "매출 감소 (-3%)"
+                ]
+              },
+              "momentum": {
+                "score": -1,
+                "reasons": [
+                  "20d -7% 약세"
+                ]
+              },
+              "timing": {
+                "score": 0,
+                "reasons": []
+              }
+            }
+          },
+          "validation": {
+            "close_7d": null,
+            "alpha_7d": null,
+            "hit_7d": null,
+            "close_30d": null,
+            "alpha_30d": null,
+            "hit_30d": null
+          }
+        },
+        {
+          "ticker": "006400",
+          "name": "삼성SDI",
+          "country": "KR",
+          "rank": 2,
+          "grade": "Hold",
+          "rationale": "1일 +1.78%(5일 +11.69%), 거래량 2.37x. 삼성SDI 프리미엄 원통형 배터리 공급 확대 및 유럽 OEM 계약 모멘텀.",
+          "entry_close": 688000.0,
+          "fundamentals_score": 6,
+          "fundamentals": {
+            "revenue_yoy_pct": null,
+            "operating_margin_pct": null,
+            "net_margin_pct": null,
+            "roe_pct": null,
+            "pe_ratio": null,
+            "ps_ratio": null,
+            "debt_to_equity": null,
+            "market_cap_usd_b": null,
+            "fcf_usd_b": null
+          },
+          "rating_score": 1,
+          "rating_breakdown": {
+            "grade": "Hold",
+            "total": 1,
+            "dimensions": {
+              "fundamentals": {
+                "score": 1,
+                "reasons": [
+                  "펀더 일부 양호 (부채/자본 48 (낮음), 매출 YoY +13%)"
+                ]
+              },
+              "momentum": {
+                "score": 0,
+                "reasons": [
+                  "20d +1% 횡보"
+                ]
+              },
+              "timing": {
+                "score": 0,
+                "reasons": []
+              }
+            }
+          },
+          "validation": {
+            "close_7d": null,
+            "alpha_7d": null,
+            "hit_7d": null,
+            "close_30d": null,
+            "alpha_30d": null,
+            "hit_30d": null
+          }
+        },
+        {
+          "ticker": "000270",
+          "name": "기아",
           "country": "KR",
           "rank": 3,
+          "grade": "Buy",
+          "rationale": "1일 +2.98%(20일 +8.74%). 기아 HEV·EV 글로벌 판매 호조. 미국 관세 불확실성 일부 잔존으로 Hold 유지.",
+          "entry_close": 169200.0,
+          "fundamentals_score": 6,
+          "fundamentals": {
+            "revenue_yoy_pct": null,
+            "operating_margin_pct": null,
+            "net_margin_pct": null,
+            "roe_pct": null,
+            "pe_ratio": null,
+            "ps_ratio": null,
+            "debt_to_equity": null,
+            "market_cap_usd_b": null,
+            "fcf_usd_b": null
+          },
+          "rating_score": 2,
+          "rating_breakdown": {
+            "grade": "Buy",
+            "total": 2,
+            "dimensions": {
+              "fundamentals": {
+                "score": 1,
+                "reasons": [
+                  "펀더 일부 양호 (부채/자본 4 (낮음), ROE 12%)"
+                ]
+              },
+              "momentum": {
+                "score": 1,
+                "reasons": [
+                  "20d +9% 우상향"
+                ]
+              },
+              "timing": {
+                "score": 0,
+                "reasons": []
+              }
+            }
+          },
+          "validation": {
+            "close_7d": null,
+            "alpha_7d": null,
+            "hit_7d": null,
+            "close_30d": null,
+            "alpha_30d": null,
+            "hit_30d": null
+          }
+        },
+        {
+          "ticker": "247540",
+          "name": "에코프로비엠",
+          "country": "KR",
+          "rank": 4,
           "grade": "Hold",
-          "rationale": "거래량 3.45x와 함께 +4.61%(1d). 인터넷 섹터 동반 수혜지만 20일 -14.12%의 중기 하락 추세 미회복 상태",
-          "entry_close": 41950.0,
+          "rationale": "1일 -0.69%이나 5일 +11.28%. 에코프로비엠 양극재 수주 증가 기대. 20일 +1.64%로 추세 전환 초기, 추격보다 눌림 매수 권장.",
+          "entry_close": 217000.0,
           "fundamentals_score": 5,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -803,15 +1104,15 @@
             "total": 0,
             "dimensions": {
               "fundamentals": {
-                "score": 1,
+                "score": 0,
                 "reasons": [
-                  "펀더 일부 양호 (부채/자본 20 (낮음), 매출 YoY +11%, 영업이익률 11%)"
+                  "매출 감소 (-4%)"
                 ]
               },
               "momentum": {
-                "score": -1,
+                "score": 0,
                 "reasons": [
-                  "20d -14% 약세"
+                  "20d +2% 횡보"
                 ]
               },
               "timing": {
@@ -832,37 +1133,761 @@
       ]
     },
     {
-      "trend_id": 104,
-      "rank": 4,
-      "title": "한국 반도체·자동차 동반 강세 — 코스피 AI·수출 리레이팅",
-      "summary": "005930(삼성전자) +5.84%(1d), 000660(SK하이닉스) +1.92%(1d)/+20.26%(5d), 005380(현대차) +6.79%(1d)/+30.27%(20d) — 코스피 ETF 3.71%(1d)/+33.88%(20d)",
-      "category": "Korean Semiconductors & Auto",
+      "trend_id": 115,
+      "rank": 5,
+      "title": "에너지 섹터 약세 지속 — 유가 하락 압력",
+      "summary": "XLE ETF 1일 -1.16%(5일 -4.80%), XOM·CVX·COP·SLB 전반 하락. OPEC+ 증산 우려와 수요 둔화 전망이 복합 작용해 에너지 섹터 언더퍼폼 지속.",
+      "category": "에너지",
       "timeframe": "ongoing",
+      "confidence": 80,
+      "causal_chain": [
+        {
+          "step_no": 1,
+          "statement": "OPEC+ 2026년 하반기 증산 합의 가능성이 원유 공급 과잉 우려 자극",
+          "confidence": 82
+        },
+        {
+          "step_no": 2,
+          "statement": "글로벌 제조업 PMI 둔화 신호가 원유 수요 성장 전망 하향으로 이어짐",
+          "confidence": 78
+        },
+        {
+          "step_no": 3,
+          "statement": "SLB 거래량 2.64x 급증하며 대규모 매도 확인 — 유전서비스 수주 감소 선반영",
+          "confidence": 73
+        },
+        {
+          "step_no": 4,
+          "statement": "XLE 20일 -5.63%로 섹터 전반 하락 추세 구조적 지속",
+          "confidence": 68
+        }
+      ],
+      "disconfirming_hypotheses": [
+        "중동 지정학 리스크 재부각 시 유가 급반등으로 에너지주 단기 강세 전환 가능",
+        "달러 약세 심화 시 원자재 가격 지지로 에너지주 낙폭 제한"
+      ],
+      "evidence": {
+        "price": "XOM 1일 -1.16%(5일 -6.46%), CVX 1일 -0.31%(5일 -4.48%), COP 1일 -0.88%(5일 -5.45%), SLB 1일 -1.03%(5일 -4.72%)",
+        "volume": "SLB 2.64x — 유전서비스 매도 압력 확인",
+        "news_ids": []
+      },
+      "recommendations": [
+        {
+          "ticker": "CVX",
+          "name": "Chevron",
+          "country": "US",
+          "rank": 1,
+          "grade": "Hold",
+          "rationale": "1일 -0.31%로 섹터 내 상대적 방어력. 배당 수익률 및 자사주 매입 프로그램이 하방 지지. 유가 반등 시 가장 먼저 수혜.",
+          "entry_close": 182.4600067138672,
+          "fundamentals_score": 6,
+          "fundamentals": {
+            "revenue_yoy_pct": null,
+            "operating_margin_pct": null,
+            "net_margin_pct": null,
+            "roe_pct": null,
+            "pe_ratio": null,
+            "ps_ratio": null,
+            "debt_to_equity": null,
+            "market_cap_usd_b": null,
+            "fcf_usd_b": null
+          },
+          "rating_score": 0,
+          "rating_breakdown": {
+            "grade": "Hold",
+            "total": 0,
+            "dimensions": {
+              "fundamentals": {
+                "score": 1,
+                "reasons": [
+                  "펀더 일부 양호 (부채/자본 24 (낮음))"
+                ]
+              },
+              "momentum": {
+                "score": -1,
+                "reasons": [
+                  "20d -6% 약세"
+                ]
+              },
+              "timing": {
+                "score": 0,
+                "reasons": []
+              }
+            }
+          },
+          "validation": {
+            "close_7d": null,
+            "alpha_7d": null,
+            "hit_7d": null,
+            "close_30d": null,
+            "alpha_30d": null,
+            "hit_30d": null
+          }
+        },
+        {
+          "ticker": "XOM",
+          "name": "Exxon Mobil",
+          "country": "US",
+          "rank": 2,
+          "grade": "Hold",
+          "rationale": "1일 -1.16%(20일 -5.88%). 대규모 Permian 생산 효율화로 원가 구조 견고. 유가 하락 리스크 부분 헤지. 단기 추세 불리.",
+          "entry_close": 145.25999450683594,
+          "fundamentals_score": 6,
+          "fundamentals": {
+            "revenue_yoy_pct": null,
+            "operating_margin_pct": null,
+            "net_margin_pct": null,
+            "roe_pct": null,
+            "pe_ratio": null,
+            "ps_ratio": null,
+            "debt_to_equity": null,
+            "market_cap_usd_b": null,
+            "fcf_usd_b": null
+          },
+          "rating_score": 0,
+          "rating_breakdown": {
+            "grade": "Hold",
+            "total": 0,
+            "dimensions": {
+              "fundamentals": {
+                "score": 1,
+                "reasons": [
+                  "펀더 일부 양호 (부채/자본 18 (낮음))"
+                ]
+              },
+              "momentum": {
+                "score": -1,
+                "reasons": [
+                  "20d -6% 약세"
+                ]
+              },
+              "timing": {
+                "score": 0,
+                "reasons": []
+              }
+            }
+          },
+          "validation": {
+            "close_7d": null,
+            "alpha_7d": null,
+            "hit_7d": null,
+            "close_30d": null,
+            "alpha_30d": null,
+            "hit_30d": null
+          }
+        },
+        {
+          "ticker": "SLB",
+          "name": "Schlumberger",
+          "country": "US",
+          "rank": 3,
+          "grade": "Hold",
+          "rationale": "1일 -1.03%, 거래량 2.64x 매도. 유전서비스는 E&P 예산 삭감에 직접 노출. 유가 추가 하락 시 수주 감소 → 이익 하향 리스크.",
+          "entry_close": 54.54999923706055,
+          "fundamentals_score": 5,
+          "fundamentals": {
+            "revenue_yoy_pct": null,
+            "operating_margin_pct": null,
+            "net_margin_pct": null,
+            "roe_pct": null,
+            "pe_ratio": null,
+            "ps_ratio": null,
+            "debt_to_equity": null,
+            "market_cap_usd_b": null,
+            "fcf_usd_b": null
+          },
+          "rating_score": 1,
+          "rating_breakdown": {
+            "grade": "Hold",
+            "total": 1,
+            "dimensions": {
+              "fundamentals": {
+                "score": 1,
+                "reasons": [
+                  "펀더 일부 양호 (부채/자본 43 (낮음), 영업이익률 12%, ROE 14%)"
+                ]
+              },
+              "momentum": {
+                "score": 0,
+                "reasons": [
+                  "20d -4% 횡보"
+                ]
+              },
+              "timing": {
+                "score": 0,
+                "reasons": []
+              }
+            }
+          },
+          "validation": {
+            "close_7d": null,
+            "alpha_7d": null,
+            "hit_7d": null,
+            "close_30d": null,
+            "alpha_30d": null,
+            "hit_30d": null
+          }
+        }
+      ]
+    }
+  ],
+  "predicted_trends": [
+    {
+      "trend_id": 116,
+      "rank": 1,
+      "title": "클라우드 데이터 플랫폼 모멘텀 지속 — SNOW·DDOG 고공행진",
+      "summary": "SNOW 5일 +54.37%, DDOG 5일 +13.44%·20일 +87.12%로 데이터·옵저버빌리티 플랫폼이 AI 분석 수요 급증을 실적으로 입증. 향후 1~3거래일 추세 연장 예상.",
+      "category": "AI 소프트웨어",
+      "timeframe": "imminent",
+      "confidence": 78,
+      "causal_chain": [
+        {
+          "step_no": 1,
+          "statement": "AI 소프트웨어 랠리(현재 트렌드 #1)가 데이터 파이프라인·모니터링 플랫폼 수요 기대로 전이",
+          "confidence": 82
+        },
+        {
+          "step_no": 2,
+          "statement": "SNOW 5일 +54.37% 급등 — 어닝 서프라이즈 및 AI 기능 출시가 구독 성장 가속 시사",
+          "confidence": 78
+        },
+        {
+          "step_no": 3,
+          "statement": "DDOG 20일 +87.12%로 AI 옵저버빌리티 독점적 지위 강화, 기관 목표가 상향 릴레이 예상",
+          "confidence": 73
+        },
+        {
+          "step_no": 4,
+          "statement": "QQQ 5일 +3.33%의 나스닥 상승 기조가 고베타 SW 추가 상승 여력 제공",
+          "confidence": 68
+        }
+      ],
+      "disconfirming_hypotheses": [
+        "SNOW은 이미 recent_leaders 6일 연속 상위권 — 스탈 픽 리스크로 신규 매수 둔화 가능",
+        "단기 과매수 RSI 구간 진입 시 기술적 되돌림 압력"
+      ],
+      "evidence": {
+        "price": "SNOW 1일 +6.84%(5일 +54.37%, 20일 +87.26%), DDOG 1일 +9.82%(5일 +13.44%, 20일 +87.12%)",
+        "volume": "두 종목 모두 5일 연속 평균 이상 거래량 유지",
+        "news_ids": []
+      },
+      "recommendations": [
+        {
+          "ticker": "DDOG",
+          "name": "Datadog",
+          "country": "US",
+          "rank": 1,
+          "grade": "Buy",
+          "rationale": "1일 +9.82%, 20일 +87.12%. AI 인프라 모니터링 수요 증가로 ARR 성장 가속. SNOW 대비 recent_leaders 노출 동일하나 옵저버빌리티 독점성 더 높음.",
+          "entry_close": 247.35000610351562,
+          "fundamentals_score": 7,
+          "fundamentals": {
+            "revenue_yoy_pct": null,
+            "operating_margin_pct": null,
+            "net_margin_pct": null,
+            "roe_pct": null,
+            "pe_ratio": null,
+            "ps_ratio": null,
+            "debt_to_equity": null,
+            "market_cap_usd_b": null,
+            "fcf_usd_b": null
+          },
+          "rating_score": 2,
+          "rating_breakdown": {
+            "grade": "Buy",
+            "total": 2,
+            "dimensions": {
+              "fundamentals": {
+                "score": 2,
+                "reasons": [
+                  "펀더 2개 강함 (매출 YoY +32%, 부채/자본 32 (낮음))"
+                ]
+              },
+              "momentum": {
+                "score": 2,
+                "reasons": [
+                  "20d +87% & 5d +13% 강한 우상향"
+                ]
+              },
+              "timing": {
+                "score": -2,
+                "reasons": [
+                  "20일 신고가 돌파",
+                  "20d +87% 극심한 과열",
+                  "P/E 618 극심한 고평가"
+                ]
+              }
+            }
+          },
+          "validation": {
+            "close_7d": null,
+            "alpha_7d": null,
+            "hit_7d": null,
+            "close_30d": null,
+            "alpha_30d": null,
+            "hit_30d": null
+          }
+        },
+        {
+          "ticker": "PLTR",
+          "name": "Palantir Technologies",
+          "country": "US",
+          "rank": 2,
+          "grade": "Strong Buy",
+          "rationale": "1일 +9.21%(5일 +13.92%). 정부·민간 AI 데이터 분석 플랫폼 AIP 확산. SNOW/DDOG 과열 시 대체 수혜 가능성.",
+          "entry_close": 156.5399932861328,
+          "fundamentals_score": 6,
+          "fundamentals": {
+            "revenue_yoy_pct": null,
+            "operating_margin_pct": null,
+            "net_margin_pct": null,
+            "roe_pct": null,
+            "pe_ratio": null,
+            "ps_ratio": null,
+            "debt_to_equity": null,
+            "market_cap_usd_b": null,
+            "fcf_usd_b": null
+          },
+          "rating_score": 4,
+          "rating_breakdown": {
+            "grade": "Strong Buy",
+            "total": 4,
+            "dimensions": {
+              "fundamentals": {
+                "score": 3,
+                "reasons": [
+                  "펀더 4지표 전부 강함 (매출 YoY +85%, 영업이익률 46%, ROE 33% 등)"
+                ]
+              },
+              "momentum": {
+                "score": 2,
+                "reasons": [
+                  "20d +13% & 5d +14% 강한 우상향"
+                ]
+              },
+              "timing": {
+                "score": -1,
+                "reasons": [
+                  "20일 신고가 돌파",
+                  "P/E 176 극심한 고평가"
+                ]
+              }
+            }
+          },
+          "validation": {
+            "close_7d": null,
+            "alpha_7d": null,
+            "hit_7d": null,
+            "close_30d": null,
+            "alpha_30d": null,
+            "hit_30d": null
+          }
+        },
+        {
+          "ticker": "MRVL",
+          "name": "Marvell Technology",
+          "country": "US",
+          "rank": 3,
+          "grade": "Buy",
+          "rationale": "1일 +0.08%(5일 +7.50%, 20일 +24.13%). AI 데이터센터 커스텀 실리콘·고속 인터커넥트 수요 수혜. SW 랠리의 인프라 수혜주로 리스크 분산 효과.",
+          "entry_close": 205.0,
+          "fundamentals_score": 6,
+          "fundamentals": {
+            "revenue_yoy_pct": null,
+            "operating_margin_pct": null,
+            "net_margin_pct": null,
+            "roe_pct": null,
+            "pe_ratio": null,
+            "ps_ratio": null,
+            "debt_to_equity": null,
+            "market_cap_usd_b": null,
+            "fcf_usd_b": null
+          },
+          "rating_score": 2,
+          "rating_breakdown": {
+            "grade": "Buy",
+            "total": 2,
+            "dimensions": {
+              "fundamentals": {
+                "score": 2,
+                "reasons": [
+                  "펀더 2개 강함 (매출 YoY +28%, 부채/자본 29 (낮음))"
+                ]
+              },
+              "momentum": {
+                "score": 2,
+                "reasons": [
+                  "20d +24% & 5d +8% 강한 우상향"
+                ]
+              },
+              "timing": {
+                "score": -2,
+                "reasons": [
+                  "P/E 70 극심한 고평가"
+                ]
+              }
+            }
+          },
+          "validation": {
+            "close_7d": null,
+            "alpha_7d": null,
+            "hit_7d": null,
+            "close_30d": null,
+            "alpha_30d": null,
+            "hit_30d": null
+          }
+        },
+        {
+          "ticker": "CDNS",
+          "name": "Cadence Design Systems",
+          "country": "US",
+          "rank": 4,
+          "grade": "Buy",
+          "rationale": "1일 +0.29%(5일 +4.59%, 20일 +13.76%). EDA 소프트웨어 AI 칩 설계 수혜. 상대적으로 안정적인 성장세로 포트폴리오 방어 역할.",
+          "entry_close": 374.92999267578125,
+          "fundamentals_score": 7,
+          "fundamentals": {
+            "revenue_yoy_pct": null,
+            "operating_margin_pct": null,
+            "net_margin_pct": null,
+            "roe_pct": null,
+            "pe_ratio": null,
+            "ps_ratio": null,
+            "debt_to_equity": null,
+            "market_cap_usd_b": null,
+            "fcf_usd_b": null
+          },
+          "rating_score": 3,
+          "rating_breakdown": {
+            "grade": "Buy",
+            "total": 3,
+            "dimensions": {
+              "fundamentals": {
+                "score": 3,
+                "reasons": [
+                  "펀더 3개 강함 (영업이익률 30%, ROE 21%, 부채/자본 47 (낮음))"
+                ]
+              },
+              "momentum": {
+                "score": 2,
+                "reasons": [
+                  "20d +14% & 5d +5% 강한 우상향"
+                ]
+              },
+              "timing": {
+                "score": -2,
+                "reasons": [
+                  "P/E 88 극심한 고평가"
+                ]
+              }
+            }
+          },
+          "validation": {
+            "close_7d": null,
+            "alpha_7d": null,
+            "hit_7d": null,
+            "close_30d": null,
+            "alpha_30d": null,
+            "hit_30d": null
+          }
+        }
+      ]
+    },
+    {
+      "trend_id": 117,
+      "rank": 2,
+      "title": "AVGO·MU 주도 AI 반도체 선택적 재편",
+      "summary": "AVGO 1일 +4.73%(5일 +7.77%), MU 1일 +5.14%(5일 +27.41%, 20일 +87.76%)로 AI 칩 수요가 범용(NVDA 약세)보다 커스텀 ASIC·HBM 메모리로 이동. 향후 3~5거래일 차별화 강화 예상.",
+      "category": "AI 반도체",
+      "timeframe": "imminent",
+      "confidence": 80,
+      "causal_chain": [
+        {
+          "step_no": 1,
+          "statement": "하이퍼스케일러들의 자체 AI 칩 설계 확대가 AVGO 커스텀 ASIC 수주 급증으로 이어짐",
+          "confidence": 83
+        },
+        {
+          "step_no": 2,
+          "statement": "AI 서버 메모리 병목 해소 위한 HBM3E 수요 급증 — MU 5일 +27.41%가 실적 기대 선반영",
+          "confidence": 79
+        },
+        {
+          "step_no": 3,
+          "statement": "NVDA 1일 -1.45%(5일 -3.81%) 약세가 투자자 자금을 대안 칩 플레이어로 순환시킴",
+          "confidence": 74
+        },
+        {
+          "step_no": 4,
+          "statement": "AVGO 거래량 2.25x, SMH ETF 5일 +5.47%가 반도체 섹터 내 선택적 자금 유입 확인",
+          "confidence": 69
+        }
+      ],
+      "disconfirming_hypotheses": [
+        "MU 20일 +87.76% 과열 — 숏커버 종료 후 급격한 차익 실현 가능",
+        "NVDA 반등 시 커스텀 ASIC 수혜 논리 희석"
+      ],
+      "evidence": {
+        "price": "AVGO 1일 +4.73%(5일 +7.77%), MU 1일 +5.14%(5일 +27.41%, 20일 +87.76%), ARM 1일 +5.37%(5일 +18.46%)",
+        "volume": "AVGO 2.25x 거래량 급증",
+        "news_ids": []
+      },
+      "recommendations": [
+        {
+          "ticker": "AVGO",
+          "name": "Broadcom",
+          "country": "US",
+          "rank": 1,
+          "grade": "Buy",
+          "rationale": "1일 +4.73%, 거래량 2.25x. 커스텀 ASIC+네트워킹 듀얼 성장 엔진. AI 칩 다변화 수혜 핵심주. recent_leaders 미포함으로 스탈 픽 위험 없음.",
+          "entry_close": 446.7699890136719,
+          "fundamentals_score": 8,
+          "fundamentals": {
+            "revenue_yoy_pct": null,
+            "operating_margin_pct": null,
+            "net_margin_pct": null,
+            "roe_pct": null,
+            "pe_ratio": null,
+            "ps_ratio": null,
+            "debt_to_equity": null,
+            "market_cap_usd_b": null,
+            "fcf_usd_b": null
+          },
+          "rating_score": 3,
+          "rating_breakdown": {
+            "grade": "Buy",
+            "total": 3,
+            "dimensions": {
+              "fundamentals": {
+                "score": 3,
+                "reasons": [
+                  "펀더 3개 강함 (매출 YoY +30%, 영업이익률 45%, ROE 33%)"
+                ]
+              },
+              "momentum": {
+                "score": 1,
+                "reasons": [
+                  "20d +7% 우상향"
+                ]
+              },
+              "timing": {
+                "score": -1,
+                "reasons": [
+                  "20일 신고가 돌파",
+                  "P/E 87 극심한 고평가"
+                ]
+              }
+            }
+          },
+          "validation": {
+            "close_7d": null,
+            "alpha_7d": null,
+            "hit_7d": null,
+            "close_30d": null,
+            "alpha_30d": null,
+            "hit_30d": null
+          }
+        },
+        {
+          "ticker": "QCOM",
+          "name": "Qualcomm",
+          "country": "US",
+          "rank": 2,
+          "grade": "Strong Buy",
+          "rationale": "1일 +3.18%(5일 +17.62%, 20일 +39.78%). 엣지 AI 칩 수요 및 PC·모바일 AI 전환 사이클 수혜. AVGO 대비 낮은 밸류로 상승 여력 존재.",
+          "entry_close": 251.02000427246094,
+          "fundamentals_score": 6,
+          "fundamentals": {
+            "revenue_yoy_pct": null,
+            "operating_margin_pct": null,
+            "net_margin_pct": null,
+            "roe_pct": null,
+            "pe_ratio": null,
+            "ps_ratio": null,
+            "debt_to_equity": null,
+            "market_cap_usd_b": null,
+            "fcf_usd_b": null
+          },
+          "rating_score": 4,
+          "rating_breakdown": {
+            "grade": "Strong Buy",
+            "total": 4,
+            "dimensions": {
+              "fundamentals": {
+                "score": 2,
+                "reasons": [
+                  "펀더 2개 강함 (영업이익률 22%, ROE 36%)"
+                ]
+              },
+              "momentum": {
+                "score": 2,
+                "reasons": [
+                  "20d +40% & 5d +18% 강한 우상향"
+                ]
+              },
+              "timing": {
+                "score": 0,
+                "reasons": [
+                  "20일 신고가 돌파",
+                  "20d +40% 과열"
+                ]
+              }
+            }
+          },
+          "validation": {
+            "close_7d": null,
+            "alpha_7d": null,
+            "hit_7d": null,
+            "close_30d": null,
+            "alpha_30d": null,
+            "hit_30d": null
+          }
+        },
+        {
+          "ticker": "TSM",
+          "name": "Taiwan Semiconductor",
+          "country": "US",
+          "rank": 3,
+          "grade": "Strong Buy",
+          "rationale": "1일 -1.51%이나 5일 +2.78%. AVGO·QCOM 커스텀 칩 수탁생산 독점 위치. AI 칩 수요 증가의 최종 수혜자이나 단기 모멘텀 약함.",
+          "entry_close": 418.45001220703125,
+          "fundamentals_score": 7,
+          "fundamentals": {
+            "revenue_yoy_pct": null,
+            "operating_margin_pct": null,
+            "net_margin_pct": null,
+            "roe_pct": null,
+            "pe_ratio": null,
+            "ps_ratio": null,
+            "debt_to_equity": null,
+            "market_cap_usd_b": null,
+            "fcf_usd_b": null
+          },
+          "rating_score": 4,
+          "rating_breakdown": {
+            "grade": "Strong Buy",
+            "total": 4,
+            "dimensions": {
+              "fundamentals": {
+                "score": 3,
+                "reasons": [
+                  "펀더 4지표 전부 강함 (매출 YoY +35%, 영업이익률 58%, ROE 36% 등)"
+                ]
+              },
+              "momentum": {
+                "score": 1,
+                "reasons": [
+                  "20d +6% 우상향"
+                ]
+              },
+              "timing": {
+                "score": 0,
+                "reasons": []
+              }
+            }
+          },
+          "validation": {
+            "close_7d": null,
+            "alpha_7d": null,
+            "hit_7d": null,
+            "close_30d": null,
+            "alpha_30d": null,
+            "hit_30d": null
+          }
+        },
+        {
+          "ticker": "AMAT",
+          "name": "Applied Materials",
+          "country": "US",
+          "rank": 4,
+          "grade": "Strong Buy",
+          "rationale": "1일 +0.08%(5일 +5.31%, 20일 +14.09%). HBM·첨단 패키징 장비 수요 수혜. 반도체 장비 섹터 내 가장 균형 잡힌 포트폴리오.",
+          "entry_close": 450.05999755859375,
+          "fundamentals_score": 6,
+          "fundamentals": {
+            "revenue_yoy_pct": null,
+            "operating_margin_pct": null,
+            "net_margin_pct": null,
+            "roe_pct": null,
+            "pe_ratio": null,
+            "ps_ratio": null,
+            "debt_to_equity": null,
+            "market_cap_usd_b": null,
+            "fcf_usd_b": null
+          },
+          "rating_score": 4,
+          "rating_breakdown": {
+            "grade": "Strong Buy",
+            "total": 4,
+            "dimensions": {
+              "fundamentals": {
+                "score": 3,
+                "reasons": [
+                  "펀더 3개 강함 (영업이익률 32%, ROE 40%, 부채/자본 30 (낮음))"
+                ]
+              },
+              "momentum": {
+                "score": 2,
+                "reasons": [
+                  "20d +14% & 5d +5% 강한 우상향"
+                ]
+              },
+              "timing": {
+                "score": -1,
+                "reasons": [
+                  "P/E 42 고평가"
+                ]
+              }
+            }
+          },
+          "validation": {
+            "close_7d": null,
+            "alpha_7d": null,
+            "hit_7d": null,
+            "close_30d": null,
+            "alpha_30d": null,
+            "hit_30d": null
+          }
+        }
+      ]
+    },
+    {
+      "trend_id": 118,
+      "rank": 3,
+      "title": "한국 반도체 추가 상승 — 삼성전자·SK하이닉스 외국인 매수 지속",
+      "summary": "005930(삼성전자) 1일 +5.84%(5일 +5.84%, 20일 +42.79%), 000660(SK하이닉스) 1일 +1.92%(5일 +20.26%, 20일 +79.46%)로 HBM·DRAM 슈퍼사이클 확인. KOSPI 지수 강세와 함께 외국인 순매수 지속 전망.",
+      "category": "한국 반도체",
+      "timeframe": "imminent",
       "confidence": 82,
       "causal_chain": [
         {
           "step_no": 1,
-          "statement": "글로벌 HBM 수요 폭증으로 SK하이닉스·삼성전자의 AI 메모리 수출 실적 기대감이 주가에 선반영되고 있음",
-          "confidence": 86
+          "statement": "미국 AI 반도체 랠리(MU +87.76% 20일)가 한국 HBM 공급업체 밸류에이션 재평가 촉발",
+          "confidence": 85
         },
         {
           "step_no": 2,
-          "statement": "현대차그룹(005380 +30.27%, 000270 +8.74% 20d)은 미국 관세 완화 기대 및 전기차 라인업 확대로 수출 실적 개선 기대",
-          "confidence": 83
+          "statement": "005930 1일 +5.84%로 단기 거래량 폭증 — MSCI 리밸런싱 전후 외국인 매수 집중",
+          "confidence": 81
         },
         {
           "step_no": 3,
-          "statement": "코스피 벤치마크(069500) 5일 +9.55%, 20일 +33.88%로 외국인 자금 유입이 지속되며 대형주 전반 수급 개선",
-          "confidence": 78
+          "statement": "KOSPI(069500) 5일 +9.55%의 강한 시장 모멘텀이 반도체 대형주 추가 상승 환경 조성",
+          "confidence": 76
+        },
+        {
+          "step_no": 4,
+          "statement": "000660 20일 +79.46%로 HBM3E 독점 공급 프리미엄 지속 반영 예상",
+          "confidence": 71
         }
       ],
       "disconfirming_hypotheses": [
-        "원화 강세 가속 시 수출 기업 환차손 발생으로 실적 감소 우려",
-        "삼성전자 HBM 퀄 테스트 지연 또는 중국 수출 규제 강화 시 급락 가능"
+        "삼성전자 HBM 품질 인증 지연 이슈 재부각 시 투자심리 위축",
+        "원화 강세 급속 진행 시 수출 기업 실적 추정치 하향 압박"
       ],
       "evidence": {
-        "price": "005930 +5.84%(1d)/+42.79%(20d), 000660 +20.26%(5d)/+79.46%(20d), 005380 +6.79%(1d)/+30.27%(20d), 069500 +33.88%(20d)",
-        "volume": "006400 2.37x 동반",
+        "price": "005930 1일 +5.84%(20일 +42.79%), 000660 1일 +1.92%(5일 +20.26%, 20일 +79.46%), 069500 1일 +3.71%(5일 +9.55%)",
+        "volume": "005930 당일 거래량 급증, 외국인 순매수 추정",
         "news_ids": []
       },
       "recommendations": [
@@ -872,9 +1897,9 @@
           "country": "KR",
           "rank": 1,
           "grade": "Strong Buy",
-          "rationale": "5일 +20.26%, 20일 +79.46%로 업종 최강 모멘텀. HBM3E 독점 공급 지위 강화로 AI 메모리 사이클 최대 수혜",
+          "rationale": "5일 +20.26%, 20일 +79.46%. SK하이닉스 HBM3E 독점 공급·엔비디아 우선 파트너 지위. 단기 과열 감안 시 분할 접근 권장.",
           "entry_close": 2333000.0,
-          "fundamentals_score": 8,
+          "fundamentals_score": 7,
           "fundamentals": {
             "revenue_yoy_pct": null,
             "operating_margin_pct": null,
@@ -927,7 +1952,7 @@
           "country": "KR",
           "rank": 2,
           "grade": "Strong Buy",
-          "rationale": "1일 +5.84%, 20일 +42.79%. HBM 퀄 테스트 통과 기대 및 파운드리 수주 확대, 저PBR 주주환원 정책 지속",
+          "rationale": "1일 +5.84%, 20일 +42.79%. HBM 품질 인증 성공 시 2H26 대규모 납품 기대. 밸류에이션 000660 대비 저렴, 추가 상승 여력 상대적으로 큼.",
           "entry_close": 317000.0,
           "fundamentals_score": 7,
           "fundamentals": {
@@ -977,14 +2002,14 @@
           }
         },
         {
-          "ticker": "005380",
-          "name": "현대차",
+          "ticker": "069500",
+          "name": "KODEX 200",
           "country": "KR",
           "rank": 3,
           "grade": "Buy",
-          "rationale": "1일 +6.79%, 20일 +30.27%. 미국 관세 협상 완화 및 전기차 현지 생산 확대, 밸류에이션 여전히 저평가 구간",
-          "entry_close": 723000.0,
-          "fundamentals_score": 7,
+          "rationale": "KOSPI200 ETF 1일 +3.71%(5일 +9.55%). 반도체 비중 높아 간접 수혜. 개별 종목 리스크 없이 시장 상승 참여 가능. 포트폴리오 헷지 역할.",
+          "entry_close": 134815.0,
+          "fundamentals_score": 5,
           "fundamentals": {
             "revenue_yoy_pct": null,
             "operating_margin_pct": null,
@@ -1010,521 +2035,14 @@
               "momentum": {
                 "score": 2,
                 "reasons": [
-                  "20d +30% & 5d +9% 강한 우상향"
+                  "20d +34% & 5d +10% 강한 우상향"
                 ]
               },
               "timing": {
                 "score": 0,
                 "reasons": [
                   "20일 신고가 돌파",
-                  "20d +30% 과열"
-                ]
-              }
-            }
-          },
-          "validation": {
-            "close_7d": null,
-            "alpha_7d": null,
-            "hit_7d": null,
-            "close_30d": null,
-            "alpha_30d": null,
-            "hit_30d": null
-          }
-        },
-        {
-          "ticker": "000270",
-          "name": "기아",
-          "country": "KR",
-          "rank": 4,
-          "grade": "Buy",
-          "rationale": "1일 +2.98%, 20일 +8.74%. 기아 SUV·PBV 플랫폼 확장으로 글로벌 점유율 상승, 현대차 그룹 연동 수혜",
-          "entry_close": 169200.0,
-          "fundamentals_score": 6,
-          "fundamentals": {
-            "revenue_yoy_pct": null,
-            "operating_margin_pct": null,
-            "net_margin_pct": null,
-            "roe_pct": null,
-            "pe_ratio": null,
-            "ps_ratio": null,
-            "debt_to_equity": null,
-            "market_cap_usd_b": null,
-            "fcf_usd_b": null
-          },
-          "rating_score": 2,
-          "rating_breakdown": {
-            "grade": "Buy",
-            "total": 2,
-            "dimensions": {
-              "fundamentals": {
-                "score": 1,
-                "reasons": [
-                  "펀더 일부 양호 (부채/자본 4 (낮음), ROE 12%)"
-                ]
-              },
-              "momentum": {
-                "score": 1,
-                "reasons": [
-                  "20d +9% 우상향"
-                ]
-              },
-              "timing": {
-                "score": 0,
-                "reasons": []
-              }
-            }
-          },
-          "validation": {
-            "close_7d": null,
-            "alpha_7d": null,
-            "hit_7d": null,
-            "close_30d": null,
-            "alpha_30d": null,
-            "hit_30d": null
-          }
-        }
-      ]
-    },
-    {
-      "trend_id": 105,
-      "rank": 5,
-      "title": "에너지 섹터 약세 — 유가 하락·AI 전력주 피로감",
-      "summary": "XLE -1.16%(1d)/-4.80%(5d), XOM/CVX/COP 5일 -4~-6%, GEV -7.23%(5d)/-10.63%(20d), NRG -13.82%(20d) — 에너지·전력주 전반 하방 압력",
-      "category": "Energy/Power",
-      "timeframe": "ongoing",
-      "confidence": 78,
-      "causal_chain": [
-        {
-          "step_no": 1,
-          "statement": "OPEC+ 증산 우려 및 글로벌 수요 둔화 전망으로 WTI 유가 하방 압력 지속, 정유·에너지 주 실적 하향 조정",
-          "confidence": 82
-        },
-        {
-          "step_no": 2,
-          "statement": "AI 데이터센터 전력 수요 테마로 급등했던 GEV·NRG 등 전력주가 밸류에이션 부담으로 되돌림 진행",
-          "confidence": 79
-        },
-        {
-          "step_no": 3,
-          "statement": "XLE ETF 5일 -4.80%로 섹터 전반 투자자 이탈이 가속화되며 추가 하락 리스크 존재",
-          "confidence": 74
-        }
-      ],
-      "disconfirming_hypotheses": [
-        "중동 지정학적 긴장 재고조 시 유가 급반등으로 에너지주 급반전 가능",
-        "폭염·전력 수요 급증 시 전력주(VST, NRG) 재평가 가능성"
-      ],
-      "evidence": {
-        "price": "XLE -4.80%(5d)/-5.63%(20d), XOM -6.46%(5d), GEV -7.23%(5d)/-10.63%(20d), NRG -13.82%(20d)",
-        "volume": "SLB 2.64x (패닉 매도 수반), GEV 2.36x",
-        "news_ids": []
-      },
-      "recommendations": [
-        {
-          "ticker": "VST",
-          "name": "Vistra",
-          "country": "US",
-          "rank": 1,
-          "grade": "Buy",
-          "rationale": "1일 -0.03%로 낙폭 방어, 5일 +7.48%로 전력주 중 상대적 강세. AI 데이터센터 전력 공급 계약 기반 하방 지지",
-          "entry_close": 160.22999572753906,
-          "fundamentals_score": 6,
-          "fundamentals": {
-            "revenue_yoy_pct": null,
-            "operating_margin_pct": null,
-            "net_margin_pct": null,
-            "roe_pct": null,
-            "pe_ratio": null,
-            "ps_ratio": null,
-            "debt_to_equity": null,
-            "market_cap_usd_b": null,
-            "fcf_usd_b": null
-          },
-          "rating_score": 3,
-          "rating_breakdown": {
-            "grade": "Buy",
-            "total": 3,
-            "dimensions": {
-              "fundamentals": {
-                "score": 3,
-                "reasons": [
-                  "펀더 3개 강함 (매출 YoY +43%, 영업이익률 27%, ROE 43%)"
-                ]
-              },
-              "momentum": {
-                "score": 0,
-                "reasons": [
-                  "20d +2% 횡보"
-                ]
-              },
-              "timing": {
-                "score": 0,
-                "reasons": []
-              }
-            }
-          },
-          "validation": {
-            "close_7d": null,
-            "alpha_7d": null,
-            "hit_7d": null,
-            "close_30d": null,
-            "alpha_30d": null,
-            "hit_30d": null
-          }
-        },
-        {
-          "ticker": "CCJ",
-          "name": "Cameco",
-          "country": "US",
-          "rank": 2,
-          "grade": "Caution",
-          "rationale": "1일 +1.87%, 5일 +7.0%로 우라늄 섹터 내 상대 강세. AI 전력 수요 → 원전 르네상스 테마 유효하나 20일 -8.4%로 중기 추세 미회복",
-          "entry_close": 112.69999694824219,
-          "fundamentals_score": 5,
-          "fundamentals": {
-            "revenue_yoy_pct": null,
-            "operating_margin_pct": null,
-            "net_margin_pct": null,
-            "roe_pct": null,
-            "pe_ratio": null,
-            "ps_ratio": null,
-            "debt_to_equity": null,
-            "market_cap_usd_b": null,
-            "fcf_usd_b": null
-          },
-          "rating_score": -2,
-          "rating_breakdown": {
-            "grade": "Caution",
-            "total": -2,
-            "dimensions": {
-              "fundamentals": {
-                "score": 1,
-                "reasons": [
-                  "펀더 일부 양호 (부채/자본 14 (낮음), 영업이익률 18%)"
-                ]
-              },
-              "momentum": {
-                "score": -1,
-                "reasons": [
-                  "20d -8% 약세"
-                ]
-              },
-              "timing": {
-                "score": -2,
-                "reasons": [
-                  "P/E 105 극심한 고평가"
-                ]
-              }
-            }
-          },
-          "validation": {
-            "close_7d": null,
-            "alpha_7d": null,
-            "hit_7d": null,
-            "close_30d": null,
-            "alpha_30d": null,
-            "hit_30d": null
-          }
-        },
-        {
-          "ticker": "XOM",
-          "name": "Exxon Mobil",
-          "country": "US",
-          "rank": 3,
-          "grade": "Hold",
-          "rationale": "5일 -6.46%, 20일 -5.88%. 유가 하락 사이클에서 실적 하향 리스크 높음. 배당 안정성은 유지되나 자본이득 기대 제한적",
-          "entry_close": 145.25999450683594,
-          "fundamentals_score": 6,
-          "fundamentals": {
-            "revenue_yoy_pct": null,
-            "operating_margin_pct": null,
-            "net_margin_pct": null,
-            "roe_pct": null,
-            "pe_ratio": null,
-            "ps_ratio": null,
-            "debt_to_equity": null,
-            "market_cap_usd_b": null,
-            "fcf_usd_b": null
-          },
-          "rating_score": 0,
-          "rating_breakdown": {
-            "grade": "Hold",
-            "total": 0,
-            "dimensions": {
-              "fundamentals": {
-                "score": 1,
-                "reasons": [
-                  "펀더 일부 양호 (부채/자본 18 (낮음))"
-                ]
-              },
-              "momentum": {
-                "score": -1,
-                "reasons": [
-                  "20d -6% 약세"
-                ]
-              },
-              "timing": {
-                "score": 0,
-                "reasons": []
-              }
-            }
-          },
-          "validation": {
-            "close_7d": null,
-            "alpha_7d": null,
-            "hit_7d": null,
-            "close_30d": null,
-            "alpha_30d": null,
-            "hit_30d": null
-          }
-        }
-      ]
-    }
-  ],
-  "predicted_trends": [
-    {
-      "trend_id": 106,
-      "rank": 1,
-      "title": "반도체 장비·메모리 업사이클 확장 — AVGO·MU·ARM 추가 상승",
-      "summary": "MU +5.14%(1d)/+27.41%(5d)/+87.76%(20d), ARM +5.37%(1d)/+18.46%(5d), AVGO +4.73%(1d)/거래량 2.25x — AI 칩 수요 현실화가 장비·설계IP까지 확산 예상",
-      "category": "Semiconductors",
-      "timeframe": "imminent",
-      "confidence": 83,
-      "causal_chain": [
-        {
-          "step_no": 1,
-          "statement": "AI 소프트웨어 수요 확인(현재 트렌드 #1)이 하드웨어·메모리 수요 증가로 전파되며 MU·AVGO 실적 상향 사이클 진입",
-          "confidence": 86
-        },
-        {
-          "step_no": 2,
-          "statement": "ARM의 AI 칩 설계 IP 라이선스 수익이 NVIDIA·Qualcomm 등 주요 고객의 차세대 칩 테이프아웃 증가로 가속화",
-          "confidence": 83
-        },
-        {
-          "step_no": 3,
-          "statement": "AMAT·KLAC·LRCX 장비 3사도 5일 +4~5% 수준으로 후행 상승 중, 향후 1~5일 내 추가 수익률 확대 예상",
-          "confidence": 78
-        }
-      ],
-      "disconfirming_hypotheses": [
-        "미국의 추가 반도체 수출 규제 발표 시 전 섹터 급락 촉발 가능",
-        "NVDA 1일 -1.45%의 단기 조정이 섹터 전반 심리 위축으로 번질 경우 단기 되돌림 가능"
-      ],
-      "evidence": {
-        "price": "MU +87.76%(20d), ARM +67.98%(20d), AVGO +7.03%(20d), AMAT/LRCX 5d +5%대",
-        "volume": "AVGO 2.25x",
-        "news_ids": []
-      },
-      "recommendations": [
-        {
-          "ticker": "MU",
-          "name": "Micron Technology",
-          "country": "US",
-          "rank": 1,
-          "grade": "Buy",
-          "rationale": "1일 +5.14%, 5일 +27.41%, 20일 +87.76%. HBM 및 고용량 DRAM 수요 폭증으로 분기 실적 대폭 상향 기대, 동종 내 최고 모멘텀",
-          "entry_close": 971.0,
-          "fundamentals_score": 8,
-          "fundamentals": {
-            "revenue_yoy_pct": null,
-            "operating_margin_pct": null,
-            "net_margin_pct": null,
-            "roe_pct": null,
-            "pe_ratio": null,
-            "ps_ratio": null,
-            "debt_to_equity": null,
-            "market_cap_usd_b": null,
-            "fcf_usd_b": null
-          },
-          "rating_score": 3,
-          "rating_breakdown": {
-            "grade": "Buy",
-            "total": 3,
-            "dimensions": {
-              "fundamentals": {
-                "score": 3,
-                "reasons": [
-                  "펀더 4지표 전부 강함 (매출 YoY +196%, 영업이익률 68%, ROE 40% 등)"
-                ]
-              },
-              "momentum": {
-                "score": 2,
-                "reasons": [
-                  "20d +88% & 5d +27% 강한 우상향"
-                ]
-              },
-              "timing": {
-                "score": -2,
-                "reasons": [
-                  "20일 신고가 돌파",
-                  "20d +88% 극심한 과열",
-                  "P/E 46 고평가"
-                ]
-              }
-            }
-          },
-          "validation": {
-            "close_7d": null,
-            "alpha_7d": null,
-            "hit_7d": null,
-            "close_30d": null,
-            "alpha_30d": null,
-            "hit_30d": null
-          }
-        },
-        {
-          "ticker": "AVGO",
-          "name": "Broadcom",
-          "country": "US",
-          "rank": 2,
-          "grade": "Buy",
-          "rationale": "1일 +4.73%, 거래량 2.25x. 맞춤형 AI ASIC 설계 및 네트워킹 칩으로 하이퍼스케일러 수요 직접 수혜, 높은 마진 구조",
-          "entry_close": 446.7699890136719,
-          "fundamentals_score": 8,
-          "fundamentals": {
-            "revenue_yoy_pct": null,
-            "operating_margin_pct": null,
-            "net_margin_pct": null,
-            "roe_pct": null,
-            "pe_ratio": null,
-            "ps_ratio": null,
-            "debt_to_equity": null,
-            "market_cap_usd_b": null,
-            "fcf_usd_b": null
-          },
-          "rating_score": 3,
-          "rating_breakdown": {
-            "grade": "Buy",
-            "total": 3,
-            "dimensions": {
-              "fundamentals": {
-                "score": 3,
-                "reasons": [
-                  "펀더 3개 강함 (매출 YoY +30%, 영업이익률 45%, ROE 33%)"
-                ]
-              },
-              "momentum": {
-                "score": 1,
-                "reasons": [
-                  "20d +7% 우상향"
-                ]
-              },
-              "timing": {
-                "score": -1,
-                "reasons": [
-                  "20일 신고가 돌파",
-                  "P/E 87 극심한 고평가"
-                ]
-              }
-            }
-          },
-          "validation": {
-            "close_7d": null,
-            "alpha_7d": null,
-            "hit_7d": null,
-            "close_30d": null,
-            "alpha_30d": null,
-            "hit_30d": null
-          }
-        },
-        {
-          "ticker": "ARM",
-          "name": "Arm Holdings",
-          "country": "US",
-          "rank": 3,
-          "grade": "Buy",
-          "rationale": "1일 +5.37%, 5일 +18.46%, 20일 +67.98%. AI 엣지·데이터센터 칩 설계 표준으로 부상, 로열티 수익 확장성 높음",
-          "entry_close": 353.2900085449219,
-          "fundamentals_score": 7,
-          "fundamentals": {
-            "revenue_yoy_pct": null,
-            "operating_margin_pct": null,
-            "net_margin_pct": null,
-            "roe_pct": null,
-            "pe_ratio": null,
-            "ps_ratio": null,
-            "debt_to_equity": null,
-            "market_cap_usd_b": null,
-            "fcf_usd_b": null
-          },
-          "rating_score": 3,
-          "rating_breakdown": {
-            "grade": "Buy",
-            "total": 3,
-            "dimensions": {
-              "fundamentals": {
-                "score": 3,
-                "reasons": [
-                  "펀더 3개 강함 (매출 YoY +20%, 영업이익률 30%, 부채/자본 6 (낮음))"
-                ]
-              },
-              "momentum": {
-                "score": 2,
-                "reasons": [
-                  "20d +68% & 5d +18% 강한 우상향"
-                ]
-              },
-              "timing": {
-                "score": -2,
-                "reasons": [
-                  "20일 신고가 돌파",
-                  "20d +68% 극심한 과열",
-                  "P/E 416 극심한 고평가"
-                ]
-              }
-            }
-          },
-          "validation": {
-            "close_7d": null,
-            "alpha_7d": null,
-            "hit_7d": null,
-            "close_30d": null,
-            "alpha_30d": null,
-            "hit_30d": null
-          }
-        },
-        {
-          "ticker": "AMAT",
-          "name": "Applied Materials",
-          "country": "US",
-          "rank": 4,
-          "grade": "Strong Buy",
-          "rationale": "5일 +5.31%, 20일 +14.09%. HBM·첨단 패키징 장비 수주 증가로 수익성 개선 진행 중, 후행 상승 여력 보유",
-          "entry_close": 450.05999755859375,
-          "fundamentals_score": 7,
-          "fundamentals": {
-            "revenue_yoy_pct": null,
-            "operating_margin_pct": null,
-            "net_margin_pct": null,
-            "roe_pct": null,
-            "pe_ratio": null,
-            "ps_ratio": null,
-            "debt_to_equity": null,
-            "market_cap_usd_b": null,
-            "fcf_usd_b": null
-          },
-          "rating_score": 4,
-          "rating_breakdown": {
-            "grade": "Strong Buy",
-            "total": 4,
-            "dimensions": {
-              "fundamentals": {
-                "score": 3,
-                "reasons": [
-                  "펀더 3개 강함 (영업이익률 32%, ROE 40%, 부채/자본 30 (낮음))"
-                ]
-              },
-              "momentum": {
-                "score": 2,
-                "reasons": [
-                  "20d +14% & 5d +5% 강한 우상향"
-                ]
-              },
-              "timing": {
-                "score": -1,
-                "reasons": [
-                  "P/E 42 고평가"
+                  "20d +34% 과열"
                 ]
               }
             }
@@ -1541,432 +2059,37 @@
       ]
     },
     {
-      "trend_id": 107,
-      "rank": 2,
-      "title": "클라우드 데이터 플랫폼 재가속 — SNOW·DDOG 실적 서프라이즈 후속 상승",
-      "summary": "SNOW +54.37%(5d)/+87.26%(20d), DDOG +13.44%(5d)/+87.12%(20d) — 이미 강세지만 AI 쿼리 폭증에 따른 소비 기반 매출 가속이 추가 상승 촉매",
-      "category": "AI Software",
+      "trend_id": 119,
+      "rank": 4,
+      "title": "미국 금융주 차별적 강세 — 투자은행·자산운용 수혜",
+      "summary": "GS 1일 +1.70%(5일 +3.78%, 20일 +11.02%), MS 1일 +2.07%(5일 +3.74%), 투자은행 계열이 IPO·M&A 파이프라인 회복 기대로 상업은행 대비 초과 수익 시현. 향후 3~5거래일 추세 지속 전망.",
+      "category": "금융",
       "timeframe": "imminent",
-      "confidence": 80,
+      "confidence": 73,
       "causal_chain": [
         {
           "step_no": 1,
-          "statement": "AI 소프트웨어 플랫폼 수요 폭발(현재 트렌드 #1)이 클라우드 데이터 처리량 급증으로 이어져 SNOW·DDOG의 소비 기반 수익 가속",
-          "confidence": 84
-        },
-        {
-          "step_no": 2,
-          "statement": "SNOW의 5일 +54.37%는 실적 발표 후 서프라이즈 인식이지만, AI Cortex 신기능 도입에 따른 신규 계약 파이프라인 확대가 추가 상승 근거",
-          "confidence": 80
-        },
-        {
-          "step_no": 3,
-          "statement": "DDOG의 APM·LLM 모니터링 수요 급증으로 1~5일 내 추가 실적 가이던스 상향 가능성 높음",
-          "confidence": 75
-        }
-      ],
-      "disconfirming_hypotheses": [
-        "SNOW·DDOG 모두 7일 top3 출현 6회로 최다 — 단기 과열 지표, 차익실현 가능성 가장 높은 종목군",
-        "소비 기반 모델 특성상 고객 예산 통제 강화 시 매출 성장률 급감 리스크"
-      ],
-      "evidence": {
-        "price": "SNOW +87.26%(20d)/+54.37%(5d), DDOG +87.12%(20d)/+13.44%(5d)",
-        "volume": "recent_leaders_history 최다 출현(6회씩) — 모멘텀 지속 확인",
-        "news_ids": []
-      },
-      "recommendations": [
-        {
-          "ticker": "DDOG",
-          "name": "Datadog",
-          "country": "US",
-          "rank": 1,
-          "grade": "Buy",
-          "rationale": "1일 +9.82%, 5일 +13.44%. AI 인프라 모니터링 수요 급증, LLM Observability 신제품 채택 가속화로 NRR 상승 기대",
-          "entry_close": 247.35000610351562,
-          "fundamentals_score": 7,
-          "fundamentals": {
-            "revenue_yoy_pct": null,
-            "operating_margin_pct": null,
-            "net_margin_pct": null,
-            "roe_pct": null,
-            "pe_ratio": null,
-            "ps_ratio": null,
-            "debt_to_equity": null,
-            "market_cap_usd_b": null,
-            "fcf_usd_b": null
-          },
-          "rating_score": 2,
-          "rating_breakdown": {
-            "grade": "Buy",
-            "total": 2,
-            "dimensions": {
-              "fundamentals": {
-                "score": 2,
-                "reasons": [
-                  "펀더 2개 강함 (매출 YoY +32%, 부채/자본 32 (낮음))"
-                ]
-              },
-              "momentum": {
-                "score": 2,
-                "reasons": [
-                  "20d +87% & 5d +13% 강한 우상향"
-                ]
-              },
-              "timing": {
-                "score": -2,
-                "reasons": [
-                  "20일 신고가 돌파",
-                  "20d +87% 극심한 과열",
-                  "P/E 618 극심한 고평가"
-                ]
-              }
-            }
-          },
-          "validation": {
-            "close_7d": null,
-            "alpha_7d": null,
-            "hit_7d": null,
-            "close_30d": null,
-            "alpha_30d": null,
-            "hit_30d": null
-          }
-        },
-        {
-          "ticker": "SNOW",
-          "name": "Snowflake",
-          "country": "US",
-          "rank": 2,
-          "grade": "Buy",
-          "rationale": "5일 +54.37%의 이미 가파른 상승으로 단기 과열 경계. AI Cortex 채택 확대는 긍정적이나 차익실현 압력 상존",
-          "entry_close": 255.5500030517578,
-          "fundamentals_score": 6,
-          "fundamentals": {
-            "revenue_yoy_pct": null,
-            "operating_margin_pct": null,
-            "net_margin_pct": null,
-            "roe_pct": null,
-            "pe_ratio": null,
-            "ps_ratio": null,
-            "debt_to_equity": null,
-            "market_cap_usd_b": null,
-            "fcf_usd_b": null
-          },
-          "rating_score": 2,
-          "rating_breakdown": {
-            "grade": "Buy",
-            "total": 2,
-            "dimensions": {
-              "fundamentals": {
-                "score": 1,
-                "reasons": [
-                  "펀더 일부 양호 (매출 YoY +34%)"
-                ]
-              },
-              "momentum": {
-                "score": 2,
-                "reasons": [
-                  "20d +87% & 5d +54% 강한 우상향"
-                ]
-              },
-              "timing": {
-                "score": -1,
-                "reasons": [
-                  "20일 신고가 돌파",
-                  "20d +87% 극심한 과열"
-                ]
-              }
-            }
-          },
-          "validation": {
-            "close_7d": null,
-            "alpha_7d": null,
-            "hit_7d": null,
-            "close_30d": null,
-            "alpha_30d": null,
-            "hit_30d": null
-          }
-        },
-        {
-          "ticker": "MRVL",
-          "name": "Marvell Technology",
-          "country": "US",
-          "rank": 3,
-          "grade": "Buy",
-          "rationale": "5일 +7.5%, 20일 +24.13%. 데이터센터 맞춤형 실리콘 및 광 인터커넥트 수요 증가로 AI 데이터 플랫폼 인프라 수혜",
-          "entry_close": 205.0,
-          "fundamentals_score": 7,
-          "fundamentals": {
-            "revenue_yoy_pct": null,
-            "operating_margin_pct": null,
-            "net_margin_pct": null,
-            "roe_pct": null,
-            "pe_ratio": null,
-            "ps_ratio": null,
-            "debt_to_equity": null,
-            "market_cap_usd_b": null,
-            "fcf_usd_b": null
-          },
-          "rating_score": 2,
-          "rating_breakdown": {
-            "grade": "Buy",
-            "total": 2,
-            "dimensions": {
-              "fundamentals": {
-                "score": 2,
-                "reasons": [
-                  "펀더 2개 강함 (매출 YoY +28%, 부채/자본 29 (낮음))"
-                ]
-              },
-              "momentum": {
-                "score": 2,
-                "reasons": [
-                  "20d +24% & 5d +8% 강한 우상향"
-                ]
-              },
-              "timing": {
-                "score": -2,
-                "reasons": [
-                  "P/E 70 극심한 고평가"
-                ]
-              }
-            }
-          },
-          "validation": {
-            "close_7d": null,
-            "alpha_7d": null,
-            "hit_7d": null,
-            "close_30d": null,
-            "alpha_30d": null,
-            "hit_30d": null
-          }
-        }
-      ]
-    },
-    {
-      "trend_id": 108,
-      "rank": 3,
-      "title": "한국 배터리·소재 리바운드 — 글로벌 전기차 정책 기대 재점화",
-      "summary": "006400(삼성SDI) +11.69%(5d), 051910(LG화학) +6.53%(1d), 247540·086520 배터리소재 5d +7~11% — 거래량(006400 2.37x) 수반 반등",
-      "category": "Korean Battery/Materials",
-      "timeframe": "imminent",
-      "confidence": 75,
-      "causal_chain": [
-        {
-          "step_no": 1,
-          "statement": "미국 IRA 보조금 유지 기대 및 유럽 전기차 목표 재확인으로 한국 배터리셀·소재 기업 수혜 기대 회복",
-          "confidence": 79
-        },
-        {
-          "step_no": 2,
-          "statement": "006400(삼성SDI) 5일 +11.69%, 거래량 2.37x로 외국인 매수세 유입 확인. 051910(LG화학) 1일 +6.53%로 동반 강세",
+          "statement": "증시 랠리 지속이 자본시장 거래 수수료 및 자산운용 AUM 증가로 직결",
           "confidence": 76
         },
         {
-          "step_no": 3,
-          "statement": "배터리소재(247540 +11.28%, 086520 +7.09% 5d)의 후행 상승이 향후 1~3일 추가 수익률로 이어질 가능성",
-          "confidence": 71
-        }
-      ],
-      "disconfirming_hypotheses": [
-        "중국 CATL·BYD의 가격 공세 지속으로 한국 배터리 업체 수익성 압박 리스크",
-        "미국 IRA 규정 변경 또는 관세 정책 불확실성 재부각 시 급락 전환 가능"
-      ],
-      "evidence": {
-        "price": "006400 +11.69%(5d)/+1.18%(20d), 051910 +6.53%(1d)/+5.46%(5d), 247540 +11.28%(5d), 086520 +7.09%(5d)",
-        "volume": "006400 2.37x",
-        "news_ids": []
-      },
-      "recommendations": [
-        {
-          "ticker": "006400",
-          "name": "삼성SDI",
-          "country": "KR",
-          "rank": 1,
-          "grade": "Hold",
-          "rationale": "5일 +11.69%, 거래량 2.37x. 원통형·파우치 하이브리드 배터리 라인업으로 유럽·북미 수주 확대, 실적 반등 시작",
-          "entry_close": 688000.0,
-          "fundamentals_score": 6,
-          "fundamentals": {
-            "revenue_yoy_pct": null,
-            "operating_margin_pct": null,
-            "net_margin_pct": null,
-            "roe_pct": null,
-            "pe_ratio": null,
-            "ps_ratio": null,
-            "debt_to_equity": null,
-            "market_cap_usd_b": null,
-            "fcf_usd_b": null
-          },
-          "rating_score": 1,
-          "rating_breakdown": {
-            "grade": "Hold",
-            "total": 1,
-            "dimensions": {
-              "fundamentals": {
-                "score": 1,
-                "reasons": [
-                  "펀더 일부 양호 (부채/자본 48 (낮음), 매출 YoY +13%)"
-                ]
-              },
-              "momentum": {
-                "score": 0,
-                "reasons": [
-                  "20d +1% 횡보"
-                ]
-              },
-              "timing": {
-                "score": 0,
-                "reasons": []
-              }
-            }
-          },
-          "validation": {
-            "close_7d": null,
-            "alpha_7d": null,
-            "hit_7d": null,
-            "close_30d": null,
-            "alpha_30d": null,
-            "hit_30d": null
-          }
-        },
-        {
-          "ticker": "051910",
-          "name": "LG화학",
-          "country": "KR",
-          "rank": 2,
-          "grade": "Caution",
-          "rationale": "1일 +6.53%, 5일 +5.46%. 배터리 소재(양극재) 수직계열화 및 석유화학 구조조정으로 마진 개선 기대",
-          "entry_close": 367000.0,
-          "fundamentals_score": 5,
-          "fundamentals": {
-            "revenue_yoy_pct": null,
-            "operating_margin_pct": null,
-            "net_margin_pct": null,
-            "roe_pct": null,
-            "pe_ratio": null,
-            "ps_ratio": null,
-            "debt_to_equity": null,
-            "market_cap_usd_b": null,
-            "fcf_usd_b": null
-          },
-          "rating_score": -1,
-          "rating_breakdown": {
-            "grade": "Caution",
-            "total": -1,
-            "dimensions": {
-              "fundamentals": {
-                "score": 0,
-                "reasons": [
-                  "매출 감소 (-3%)"
-                ]
-              },
-              "momentum": {
-                "score": -1,
-                "reasons": [
-                  "20d -7% 약세"
-                ]
-              },
-              "timing": {
-                "score": 0,
-                "reasons": []
-              }
-            }
-          },
-          "validation": {
-            "close_7d": null,
-            "alpha_7d": null,
-            "hit_7d": null,
-            "close_30d": null,
-            "alpha_30d": null,
-            "hit_30d": null
-          }
-        },
-        {
-          "ticker": "247540",
-          "name": "에코프로비엠",
-          "country": "KR",
-          "rank": 3,
-          "grade": "Hold",
-          "rationale": "5일 +11.28%로 모멘텀 양호. 에코프로비엠 양극재 공급 확대 기대되나 20일 기준 +1.64%로 중기 추세 아직 약함",
-          "entry_close": 217000.0,
-          "fundamentals_score": 5,
-          "fundamentals": {
-            "revenue_yoy_pct": null,
-            "operating_margin_pct": null,
-            "net_margin_pct": null,
-            "roe_pct": null,
-            "pe_ratio": null,
-            "ps_ratio": null,
-            "debt_to_equity": null,
-            "market_cap_usd_b": null,
-            "fcf_usd_b": null
-          },
-          "rating_score": 0,
-          "rating_breakdown": {
-            "grade": "Hold",
-            "total": 0,
-            "dimensions": {
-              "fundamentals": {
-                "score": 0,
-                "reasons": [
-                  "매출 감소 (-4%)"
-                ]
-              },
-              "momentum": {
-                "score": 0,
-                "reasons": [
-                  "20d +2% 횡보"
-                ]
-              },
-              "timing": {
-                "score": 0,
-                "reasons": []
-              }
-            }
-          },
-          "validation": {
-            "close_7d": null,
-            "alpha_7d": null,
-            "hit_7d": null,
-            "close_30d": null,
-            "alpha_30d": null,
-            "hit_30d": null
-          }
-        }
-      ]
-    },
-    {
-      "trend_id": 109,
-      "rank": 4,
-      "title": "미국 금융주 선별 강세 — 투자은행·자산관리 실적 모멘텀",
-      "summary": "GS +1.70%(1d)/+3.78%(5d)/+11.02%(20d), MS +2.07%(1d)/+3.74%(5d)/+9.13%(20d) — IB 딜·자산관리 수익 확대로 대형 투자은행 선별 강세 지속",
-      "category": "Financials",
-      "timeframe": "imminent",
-      "confidence": 76,
-      "causal_chain": [
-        {
-          "step_no": 1,
-          "statement": "AI·기술 섹터 M&A·IPO 재개 기대로 골드만삭스·모건스탠리 IB 수익 회복 전망 강화",
-          "confidence": 80
-        },
-        {
           "step_no": 2,
-          "statement": "주식시장 강세로 자산관리(WM) 부문 AUM 증가 → 수수료 수익 자동 상승 메커니즘 작동",
-          "confidence": 77
+          "statement": "GS·MS의 5일 수익률이 상업은행(JPM +0.87%, BAC +1.63%)을 상회 — IB·트레이딩 부문 선호 심화",
+          "confidence": 73
         },
         {
           "step_no": 3,
-          "statement": "XLF ETF는 5일 -0.29%로 섹터 전반 혼조지만 GS·MS는 20일 +9~11%로 차별화 — 투자은행 중심 선별 강세 예상",
-          "confidence": 72
+          "statement": "XLF ETF 5일 -0.29% 전체 부진 속에도 IB 계열 차별화 지속 — 섹터 내 로테이션 진행 중",
+          "confidence": 68
         }
       ],
       "disconfirming_hypotheses": [
-        "연준 금리 인하 지연 또는 신용 스프레드 확대 시 금융주 전반 하방 압력",
-        "지정학적 불확실성으로 M&A 딜 파이프라인 취소 시 IB 수익 기대 소멸"
+        "연준 금리 장기 동결 시 NIM 압박이 금융주 전반 재평가 위험",
+        "크레딧 스프레드 확대 시 트레이딩 손실 및 충당금 증가 우려"
       ],
       "evidence": {
-        "price": "GS +11.02%(20d)/+3.78%(5d), MS +9.13%(20d)/+3.74%(5d), BAC +1.63%(1d), JPM +0.87%(1d)",
-        "volume": "섹터 ETF XLF 평이 수준",
+        "price": "GS 1일 +1.70%(5일 +3.78%, 20일 +11.02%), MS 1일 +2.07%(5일 +3.74%, 20일 +9.13%)",
+        "volume": "XLF 섹터 내 IB 계열 상대적 거래량 우위",
         "news_ids": []
       },
       "recommendations": [
@@ -1976,9 +2099,9 @@
           "country": "US",
           "rank": 1,
           "grade": "Strong Buy",
-          "rationale": "20일 +11.02%, 5일 +3.78%. IB 딜 재개 및 AI 관련 자문·자산관리 수익 확대. ROE 우수, 자사주 매입 지속",
+          "rationale": "1일 +1.70%(20일 +11.02%). IB·자산운용·트레이딩 트리플 성장 엔진. 증시 랠리 수혜 가장 직접적. P/B 밸류 역사적 중간 수준.",
           "entry_close": 1025.56005859375,
-          "fundamentals_score": 8,
+          "fundamentals_score": 7,
           "fundamentals": {
             "revenue_yoy_pct": null,
             "operating_margin_pct": null,
@@ -2031,7 +2154,7 @@
           "country": "US",
           "rank": 2,
           "grade": "Buy",
-          "rationale": "20일 +9.13%, 1일 +2.07%. 웰스매니지먼트 AUM 사상 최고치 경신 기대, E*TRADE 플랫폼 성장으로 리테일 고객 기반 확대",
+          "rationale": "1일 +2.07%(20일 +9.13%). 웰스매니지먼트·기관 증권 부문 균형 성장. IB 파이프라인 회복 기대로 실적 상향 가능성.",
           "entry_close": 208.0,
           "fundamentals_score": 7,
           "fundamentals": {
@@ -2086,7 +2209,7 @@
           "country": "US",
           "rank": 3,
           "grade": "Buy",
-          "rationale": "1일 +1.51%, 5일 +1.99%. 채권 발행 증가로 신용평가 수익 확대, AI 데이터 솔루션 사업 고성장으로 구조적 마진 개선",
+          "rationale": "1일 +1.51%(5일 +1.99%). 채권 발행 확대 시 신용평가 수수료 수혜. 금리 변동성 낮아지는 환경에서 안정적 성장.",
           "entry_close": 424.0,
           "fundamentals_score": 7,
           "fundamentals": {
@@ -2133,105 +2256,14 @@
           }
         },
         {
-          "ticker": "BAC",
-          "name": "Bank of America",
+          "ticker": "WFC",
+          "name": "Wells Fargo",
           "country": "US",
           "rank": 4,
           "grade": "Hold",
-          "rationale": "1일 +1.63%, 5일 +0.21%. 금리 민감도 높아 연준 정책 불확실성 영향 크나, 소비자 대출 건전성 양호하여 하방 지지",
-          "entry_close": 51.599998474121094,
-          "fundamentals_score": 6,
-          "fundamentals": {
-            "revenue_yoy_pct": null,
-            "operating_margin_pct": null,
-            "net_margin_pct": null,
-            "roe_pct": null,
-            "pe_ratio": null,
-            "ps_ratio": null,
-            "debt_to_equity": null,
-            "market_cap_usd_b": null,
-            "fcf_usd_b": null
-          },
-          "rating_score": 1,
-          "rating_breakdown": {
-            "grade": "Hold",
-            "total": 1,
-            "dimensions": {
-              "fundamentals": {
-                "score": 1,
-                "reasons": [
-                  "펀더 일부 양호 (영업이익률 36%, ROE 11%)"
-                ]
-              },
-              "momentum": {
-                "score": 0,
-                "reasons": [
-                  "20d -3% 횡보"
-                ]
-              },
-              "timing": {
-                "score": 0,
-                "reasons": [
-                  "P/E 13 합리"
-                ]
-              }
-            }
-          },
-          "validation": {
-            "close_7d": null,
-            "alpha_7d": null,
-            "hit_7d": null,
-            "close_30d": null,
-            "alpha_30d": null,
-            "hit_30d": null
-          }
-        }
-      ]
-    },
-    {
-      "trend_id": 110,
-      "rank": 5,
-      "title": "소비재·리테일 약세 지속 — 관세·인플레이션 이중 압박",
-      "summary": "WMT -2.65%(1d)/-4.61%(5d)/-12.26%(20d), COST -3.91%(1d)/-8.96%(5d) 거래량 3.36x, PEP -3.13%(5d)/-9.02%(20d) — 소비재·리테일 섹터 전반 하방 추세",
-      "category": "Consumer/Retail",
-      "timeframe": "imminent",
-      "confidence": 79,
-      "causal_chain": [
-        {
-          "step_no": 1,
-          "statement": "미국 관세 부과에 따른 수입 상품 원가 상승이 대형 리테일러의 마진 압박으로 이어지며 실적 하향 우려 확산",
-          "confidence": 83
-        },
-        {
-          "step_no": 2,
-          "statement": "COST 거래량 3.36x와 함께 -3.91%(1d)/-8.96%(5d) 급락은 기관 투자자의 리테일 섹터 포지션 정리를 시사",
-          "confidence": 80
-        },
-        {
-          "step_no": 3,
-          "statement": "소비자 신뢰지수 하락 및 가처분소득 감소 우려로 KO·PEP·PG 등 소비재 필수재도 약세 동조화",
-          "confidence": 75
-        }
-      ],
-      "disconfirming_hypotheses": [
-        "관세 협상 타결 또는 원가 부담 소비자 전가 성공 시 마진 압박 완화로 반등 가능",
-        "디플레이션 우려 심화 시 소비재 필수재가 방어주로 재평가될 수 있음"
-      ],
-      "evidence": {
-        "price": "WMT -12.26%(20d)/-4.61%(5d), COST -8.96%(5d)/-5.74%(20d), PEP -9.02%(20d), KO -2.66%(5d)",
-        "volume": "COST 3.36x, KO 2.34x",
-        "news_ids": []
-      },
-      "recommendations": [
-        {
-          "ticker": "COST",
-          "name": "Costco",
-          "country": "US",
-          "rank": 1,
-          "grade": "Hold",
-          "rationale": "거래량 3.36x와 함께 5일 -8.96% 급락. 멤버십 모델 안정성은 장기 강점이나 단기 관세 마진 압박으로 추가 하락 리스크 높음",
-          "entry_close": 956.3200073242188,
-          "fundamentals_score": 7,
+          "rationale": "1일 +1.16%(5일 +2.13%). 상업은행 중 자산 한도 해제 기대감 유지. 금리 인하 사이클 진입 시 대출 수요 회복 수혜.",
+          "entry_close": 77.54000091552734,
+          "fundamentals_score": 5,
           "fundamentals": {
             "revenue_yoy_pct": null,
             "operating_margin_pct": null,
@@ -2249,9 +2281,9 @@
             "total": 0,
             "dimensions": {
               "fundamentals": {
-                "score": 2,
+                "score": 1,
                 "reasons": [
-                  "펀더 2개 강함 (매출 YoY +22%, ROE 30%)"
+                  "펀더 일부 양호 (영업이익률 29%, ROE 12%)"
                 ]
               },
               "momentum": {
@@ -2261,9 +2293,152 @@
                 ]
               },
               "timing": {
-                "score": -1,
+                "score": 0,
                 "reasons": [
-                  "P/E 50 고평가"
+                  "P/E 12 합리"
+                ]
+              }
+            }
+          },
+          "validation": {
+            "close_7d": null,
+            "alpha_7d": null,
+            "hit_7d": null,
+            "close_30d": null,
+            "alpha_30d": null,
+            "hit_30d": null
+          }
+        }
+      ]
+    },
+    {
+      "trend_id": 120,
+      "rank": 5,
+      "title": "의약품·GLP-1 성장주 반등 — LLY 중심 제약 섹터 재조명",
+      "summary": "LLY 1일 -1.93%이나 5일 +6.08%(20일 +18.23%)로 중기 상승 추세 유지. GLP-1 비만치료제 시장 급성장 및 AI 신약 개발 결합이 제약 섹터 프리미엄 밸류 지지.",
+      "category": "헬스케어/제약",
+      "timeframe": "imminent",
+      "confidence": 72,
+      "causal_chain": [
+        {
+          "step_no": 1,
+          "statement": "GLP-1 시장 TAM 확대(심혈관·신장 적응증 추가)로 LLY 장기 성장 궤도 유지",
+          "confidence": 76
+        },
+        {
+          "step_no": 2,
+          "statement": "TMO 5일 +9.60%로 AI 신약 분석 플랫폼 수요가 CDMO·임상 장비로 파급",
+          "confidence": 72
+        },
+        {
+          "step_no": 3,
+          "statement": "XLV ETF 5일 +0.89%로 헬스케어 섹터 저점 매수 유입 신호 포착",
+          "confidence": 67
+        }
+      ],
+      "disconfirming_hypotheses": [
+        "GLP-1 경쟁 심화(NVO·암젠 진입)로 LLY 가격 결정력 약화 우려",
+        "미국 약가 규제 법안 재추진 시 제약주 밸류에이션 멀티플 압축"
+      ],
+      "evidence": {
+        "price": "LLY 1일 -1.93%(5일 +6.08%, 20일 +18.23%), TMO 1일 +1.09%(5일 +9.60%), MRK 5일 +2.45%",
+        "volume": "GILD 거래량 2.85x — 바이오파마 전반 관심 증가",
+        "news_ids": []
+      },
+      "recommendations": [
+        {
+          "ticker": "LLY",
+          "name": "Eli Lilly",
+          "country": "US",
+          "rank": 1,
+          "grade": "Strong Buy",
+          "rationale": "20일 +18.23%의 중기 추세. GLP-1 글로벌 수요 폭발적 성장. 1일 -1.93% 일시 조정은 분할 매수 기회. recent_leaders 4회 포함이나 5월 28일 이후 미포함.",
+          "entry_close": 1105.0,
+          "fundamentals_score": 8,
+          "fundamentals": {
+            "revenue_yoy_pct": null,
+            "operating_margin_pct": null,
+            "net_margin_pct": null,
+            "roe_pct": null,
+            "pe_ratio": null,
+            "ps_ratio": null,
+            "debt_to_equity": null,
+            "market_cap_usd_b": null,
+            "fcf_usd_b": null
+          },
+          "rating_score": 5,
+          "rating_breakdown": {
+            "grade": "Strong Buy",
+            "total": 5,
+            "dimensions": {
+              "fundamentals": {
+                "score": 3,
+                "reasons": [
+                  "펀더 3개 강함 (매출 YoY +56%, 영업이익률 49%, ROE 107%)"
+                ]
+              },
+              "momentum": {
+                "score": 2,
+                "reasons": [
+                  "20d +18% & 5d +6% 강한 우상향"
+                ]
+              },
+              "timing": {
+                "score": 0,
+                "reasons": []
+              }
+            }
+          },
+          "validation": {
+            "close_7d": null,
+            "alpha_7d": null,
+            "hit_7d": null,
+            "close_30d": null,
+            "alpha_30d": null,
+            "hit_30d": null
+          }
+        },
+        {
+          "ticker": "TMO",
+          "name": "Thermo Fisher",
+          "country": "US",
+          "rank": 2,
+          "grade": "Buy",
+          "rationale": "1일 +1.09%(5일 +9.60%). AI 신약 개발·임상 분석 플랫폼 수요 수혜. 헬스케어 인프라로서 방어적 성장성 보유.",
+          "entry_close": 492.510009765625,
+          "fundamentals_score": 7,
+          "fundamentals": {
+            "revenue_yoy_pct": null,
+            "operating_margin_pct": null,
+            "net_margin_pct": null,
+            "roe_pct": null,
+            "pe_ratio": null,
+            "ps_ratio": null,
+            "debt_to_equity": null,
+            "market_cap_usd_b": null,
+            "fcf_usd_b": null
+          },
+          "rating_score": 2,
+          "rating_breakdown": {
+            "grade": "Buy",
+            "total": 2,
+            "dimensions": {
+              "fundamentals": {
+                "score": 1,
+                "reasons": [
+                  "펀더 일부 양호 (영업이익률 18%, ROE 14%)"
+                ]
+              },
+              "momentum": {
+                "score": 0,
+                "reasons": [
+                  "20d +3% 횡보"
+                ]
+              },
+              "timing": {
+                "score": 1,
+                "reasons": [
+                  "20일 신고가 돌파"
                 ]
               }
             }
@@ -2278,13 +2453,13 @@
           }
         },
         {
-          "ticker": "WMT",
-          "name": "Walmart",
+          "ticker": "ABBV",
+          "name": "AbbVie",
           "country": "US",
-          "rank": 2,
+          "rank": 3,
           "grade": "Caution",
-          "rationale": "20일 -12.26%로 중기 하락 추세 강화. 관세 비용 전가 한계 우려 및 소비자 지출 위축으로 가이던스 하향 리스크",
-          "entry_close": 115.75,
+          "rationale": "1일 -0.42%(5일 +1.50%, 20일 +3.03%). 임뮤놀로지·신경과학 파이프라인 다각화. 배당 수익률 안정적, 방어주 역할 수행.",
+          "entry_close": 217.72000122070312,
           "fundamentals_score": 6,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -2305,19 +2480,19 @@
               "fundamentals": {
                 "score": 1,
                 "reasons": [
-                  "펀더 일부 양호 (ROE 24%)"
+                  "펀더 일부 양호 (영업이익률 32%, 매출 YoY +12%)"
                 ]
               },
               "momentum": {
-                "score": -1,
+                "score": 0,
                 "reasons": [
-                  "20d -12% 약세"
+                  "20d +3% 횡보"
                 ]
               },
               "timing": {
-                "score": -1,
+                "score": -2,
                 "reasons": [
-                  "P/E 41 고평가"
+                  "P/E 106 극심한 고평가"
                 ]
               }
             }
@@ -2332,14 +2507,14 @@
           }
         },
         {
-          "ticker": "PG",
-          "name": "Procter & Gamble",
+          "ticker": "NVO",
+          "name": "Novo Nordisk",
           "country": "US",
-          "rank": 3,
-          "grade": "Buy",
-          "rationale": "1일 -1.61%, 20일 -2.40%. 필수소비재 특성상 하방 제한적이나 프리미엄 밸류에이션 대비 성장 동력 부족. 방어적 보유 적합",
-          "entry_close": 143.55999755859375,
-          "fundamentals_score": 6,
+          "rank": 4,
+          "grade": "Strong Buy",
+          "rationale": "1일 +0.15%(5일 +2.68%, 20일 +7.96%). LLY 대비 낮은 밸류에이션으로 GLP-1 경쟁 완화 시 추가 상승 가능. 단기 모멘텀 약해 포지션 유지 수준.",
+          "entry_close": 45.58000183105469,
+          "fundamentals_score": 7,
           "fundamentals": {
             "revenue_yoy_pct": null,
             "operating_margin_pct": null,
@@ -2351,26 +2526,28 @@
             "market_cap_usd_b": null,
             "fcf_usd_b": null
           },
-          "rating_score": 2,
+          "rating_score": 4,
           "rating_breakdown": {
-            "grade": "Buy",
-            "total": 2,
+            "grade": "Strong Buy",
+            "total": 4,
             "dimensions": {
               "fundamentals": {
-                "score": 2,
+                "score": 3,
                 "reasons": [
-                  "펀더 2개 강함 (영업이익률 23%, ROE 31%)"
+                  "펀더 3개 강함 (매출 YoY +24%, 영업이익률 62%, ROE 71%)"
                 ]
               },
               "momentum": {
-                "score": 0,
+                "score": 1,
                 "reasons": [
-                  "20d -2% 횡보"
+                  "20d +8% 우상향"
                 ]
               },
               "timing": {
                 "score": 0,
-                "reasons": []
+                "reasons": [
+                  "P/E 11 합리"
+                ]
               }
             }
           },
@@ -2387,6 +2564,1190 @@
     }
   ],
   "history": [
+    {
+      "date": "2026-05-31",
+      "recommendations": [
+        {
+          "ticker": "IBM",
+          "name": "IBM",
+          "country": "US",
+          "trend_title": "AI 엔터프라이즈 소프트웨어 폭발적 랠리",
+          "trend_kind": "current",
+          "category": "AI 소프트웨어",
+          "timeframe": "ongoing",
+          "trend_confidence": 87,
+          "grade": "Strong Buy",
+          "rating_score": 4,
+          "fundamentals_score": 6,
+          "rank": 1,
+          "rationale": "1일 +12.71%, 5일 +17.72%, 20일 +28.93%의 강한 모멘텀. 거래량 3.51x로 기관 매수 확인. 엔터프라이즈 AI·하이브리드 클라우드 수주 가속 기대. 최근 리더 이력 없어 스탈 픽 제한 없음.",
+          "entry_close": 297.79998779296875,
+          "entry_date": "2026-05-31",
+          "current_close": 297.79998779296875,
+          "current_date": "2026-05-29",
+          "current_return_pct": 0.0,
+          "close_7d": null,
+          "alpha_7d": null,
+          "hit_7d": null,
+          "close_30d": null,
+          "alpha_30d": null,
+          "hit_30d": null,
+          "close_90d": null,
+          "alpha_90d": null,
+          "hit_90d": null,
+          "verified_at": null,
+          "alert": false
+        },
+        {
+          "ticker": "ORCL",
+          "name": "Oracle",
+          "country": "US",
+          "trend_title": "AI 엔터프라이즈 소프트웨어 폭발적 랠리",
+          "trend_kind": "current",
+          "category": "AI 소프트웨어",
+          "timeframe": "ongoing",
+          "trend_confidence": 87,
+          "grade": "Strong Buy",
+          "rating_score": 4,
+          "fundamentals_score": 7,
+          "rank": 2,
+          "rationale": "1일 +10.84%, 5일 +18.98%, 20일 +39.90%의 추세. 클라우드 AI 인프라 계약 확장이 핵심 성장 동인. 20일 누적 상승폭 고려 시 과열 경계 필요.",
+          "entry_close": 225.77999877929688,
+          "entry_date": "2026-05-31",
+          "current_close": 225.77999877929688,
+          "current_date": "2026-05-29",
+          "current_return_pct": 0.0,
+          "close_7d": null,
+          "alpha_7d": null,
+          "hit_7d": null,
+          "close_30d": null,
+          "alpha_30d": null,
+          "hit_30d": null,
+          "close_90d": null,
+          "alpha_90d": null,
+          "hit_90d": null,
+          "verified_at": null,
+          "alert": false
+        },
+        {
+          "ticker": "CRM",
+          "name": "Salesforce",
+          "country": "US",
+          "trend_title": "AI 엔터프라이즈 소프트웨어 폭발적 랠리",
+          "trend_kind": "current",
+          "category": "AI 소프트웨어",
+          "timeframe": "ongoing",
+          "trend_confidence": 87,
+          "grade": "Buy",
+          "rating_score": 3,
+          "fundamentals_score": 6,
+          "rank": 3,
+          "rationale": "1일 +8.47%(5일 +8.39%), 거래량 2.59x로 신규 매수 유입 확인. Agentforce AI 플랫폼 성장이 구독 매출 견인 예상.",
+          "entry_close": 191.10000610351562,
+          "entry_date": "2026-05-31",
+          "current_close": 191.10000610351562,
+          "current_date": "2026-05-29",
+          "current_return_pct": 0.0,
+          "close_7d": null,
+          "alpha_7d": null,
+          "hit_7d": null,
+          "close_30d": null,
+          "alpha_30d": null,
+          "hit_30d": null,
+          "close_90d": null,
+          "alpha_90d": null,
+          "hit_90d": null,
+          "verified_at": null,
+          "alert": false
+        },
+        {
+          "ticker": "ADBE",
+          "name": "Adobe",
+          "country": "US",
+          "trend_title": "AI 엔터프라이즈 소프트웨어 폭발적 랠리",
+          "trend_kind": "current",
+          "category": "AI 소프트웨어",
+          "timeframe": "ongoing",
+          "trend_confidence": 87,
+          "grade": "Strong Buy",
+          "rating_score": 4,
+          "fundamentals_score": 7,
+          "rank": 4,
+          "rationale": "1일 +7.36%, 거래량 2.45x. AI 창작 도구 Firefly 매출화 가속 및 구독 갱신율 유지로 SW 랠리 편승 가능.",
+          "entry_close": 259.2099914550781,
+          "entry_date": "2026-05-31",
+          "current_close": 259.2099914550781,
+          "current_date": "2026-05-29",
+          "current_return_pct": 0.0,
+          "close_7d": null,
+          "alpha_7d": null,
+          "hit_7d": null,
+          "close_30d": null,
+          "alpha_30d": null,
+          "hit_30d": null,
+          "close_90d": null,
+          "alpha_90d": null,
+          "hit_90d": null,
+          "verified_at": null,
+          "alert": false
+        },
+        {
+          "ticker": "INTU",
+          "name": "Intuit",
+          "country": "US",
+          "trend_title": "AI 엔터프라이즈 소프트웨어 폭발적 랠리",
+          "trend_kind": "current",
+          "category": "AI 소프트웨어",
+          "timeframe": "ongoing",
+          "trend_confidence": 87,
+          "grade": "Buy",
+          "rating_score": 2,
+          "fundamentals_score": 6,
+          "rank": 5,
+          "rationale": "1일 +5.92%이나 20일 -14.66%로 중기 추세 약세. AI 세금·회계 서비스 확장 긍정적이나 단기 반등 지속성 불확실.",
+          "entry_close": 331.5299987792969,
+          "entry_date": "2026-05-31",
+          "current_close": 331.5299987792969,
+          "current_date": "2026-05-29",
+          "current_return_pct": 0.0,
+          "close_7d": null,
+          "alpha_7d": null,
+          "hit_7d": null,
+          "close_30d": null,
+          "alpha_30d": null,
+          "hit_30d": null,
+          "close_90d": null,
+          "alpha_90d": null,
+          "hit_90d": null,
+          "verified_at": null,
+          "alert": false
+        },
+        {
+          "ticker": "CRWD",
+          "name": "CrowdStrike",
+          "country": "US",
+          "trend_title": "사이버보안 주도주 급등 — AI 보안 수요 재조명",
+          "trend_kind": "current",
+          "category": "사이버보안",
+          "timeframe": "ongoing",
+          "trend_confidence": 85,
+          "grade": "Buy",
+          "rating_score": 3,
+          "fundamentals_score": 7,
+          "rank": 1,
+          "rationale": "1일 +8.94%, 20일 +63.99%의 압도적 모멘텀. Falcon 플랫폼 ARR 성장이 구독 매출 확대 견인. 20일 급등 감안 신규 진입 시 분할 매수 권장.",
+          "entry_close": 731.0,
+          "entry_date": "2026-05-31",
+          "current_close": 731.0,
+          "current_date": "2026-05-29",
+          "current_return_pct": 0.0,
+          "close_7d": null,
+          "alpha_7d": null,
+          "hit_7d": null,
+          "close_30d": null,
+          "alpha_30d": null,
+          "hit_30d": null,
+          "close_90d": null,
+          "alpha_90d": null,
+          "hit_90d": null,
+          "verified_at": null,
+          "alert": false
+        },
+        {
+          "ticker": "PANW",
+          "name": "Palo Alto Networks",
+          "country": "US",
+          "trend_title": "사이버보안 주도주 급등 — AI 보안 수요 재조명",
+          "trend_kind": "current",
+          "category": "사이버보안",
+          "timeframe": "ongoing",
+          "trend_confidence": 85,
+          "grade": "Hold",
+          "rating_score": 1,
+          "fundamentals_score": 7,
+          "rank": 2,
+          "rationale": "1일 +9.28%(20일 +57.09%). AI 기반 Precision AI 플랫폼 통합 전략으로 고객 이탈률 감소 및 ARPU 상승 기대.",
+          "entry_close": 281.69000244140625,
+          "entry_date": "2026-05-31",
+          "current_close": 281.69000244140625,
+          "current_date": "2026-05-29",
+          "current_return_pct": 0.0,
+          "close_7d": null,
+          "alpha_7d": null,
+          "hit_7d": null,
+          "close_30d": null,
+          "alpha_30d": null,
+          "hit_30d": null,
+          "close_90d": null,
+          "alpha_90d": null,
+          "hit_90d": null,
+          "verified_at": null,
+          "alert": false
+        },
+        {
+          "ticker": "MSFT",
+          "name": "Microsoft",
+          "country": "US",
+          "trend_title": "사이버보안 주도주 급등 — AI 보안 수요 재조명",
+          "trend_kind": "current",
+          "category": "사이버보안",
+          "timeframe": "ongoing",
+          "trend_confidence": 85,
+          "grade": "Strong Buy",
+          "rating_score": 6,
+          "fundamentals_score": 8,
+          "rank": 3,
+          "rationale": "1일 +5.45%(5일 +7.43%), 거래량 2.30x. 보안 플랫폼 Defender 확장과 Azure AI 통합이 간접 수혜. 밸류 부담 존재하나 포트폴리오 안정성 높음.",
+          "entry_close": 450.239990234375,
+          "entry_date": "2026-05-31",
+          "current_close": 450.239990234375,
+          "current_date": "2026-05-29",
+          "current_return_pct": 0.0,
+          "close_7d": null,
+          "alpha_7d": null,
+          "hit_7d": null,
+          "close_30d": null,
+          "alpha_30d": null,
+          "hit_30d": null,
+          "close_90d": null,
+          "alpha_90d": null,
+          "hit_90d": null,
+          "verified_at": null,
+          "alert": false
+        },
+        {
+          "ticker": "035420",
+          "name": "NAVER",
+          "country": "KR",
+          "trend_title": "한국 AI·인터넷 플랫폼 급반등 — NAVER 주도",
+          "trend_kind": "current",
+          "category": "한국 인터넷/플랫폼",
+          "timeframe": "ongoing",
+          "trend_confidence": 82,
+          "grade": "Buy",
+          "rating_score": 3,
+          "fundamentals_score": 6,
+          "rank": 1,
+          "rationale": "1일 +14.15%, 거래량 7.41x로 강력한 수급 확인. HyperCLOVA X AI 서비스 상업화 및 광고·커머스 회복이 실적 개선 동인.",
+          "entry_close": 234000.0,
+          "entry_date": "2026-05-31",
+          "current_close": 234000.0,
+          "current_date": "2026-05-29",
+          "current_return_pct": 0.0,
+          "close_7d": null,
+          "alpha_7d": null,
+          "hit_7d": null,
+          "close_30d": null,
+          "alpha_30d": null,
+          "hit_30d": null,
+          "close_90d": null,
+          "alpha_90d": null,
+          "hit_90d": null,
+          "verified_at": null,
+          "alert": false
+        },
+        {
+          "ticker": "035720",
+          "name": "카카오",
+          "country": "KR",
+          "trend_title": "한국 AI·인터넷 플랫폼 급반등 — NAVER 주도",
+          "trend_kind": "current",
+          "category": "한국 인터넷/플랫폼",
+          "timeframe": "ongoing",
+          "trend_confidence": 82,
+          "grade": "Hold",
+          "rating_score": 0,
+          "fundamentals_score": 5,
+          "rank": 2,
+          "rationale": "1일 +4.61%, 거래량 3.45x. AI 카카오톡 채널 광고 수익화 및 엔터 자회사 수익 회복 기대. 20일 -14.12%로 낙폭 과대 반등 여력 존재.",
+          "entry_close": 41950.0,
+          "entry_date": "2026-05-31",
+          "current_close": 41950.0,
+          "current_date": "2026-05-29",
+          "current_return_pct": 0.0,
+          "close_7d": null,
+          "alpha_7d": null,
+          "hit_7d": null,
+          "close_30d": null,
+          "alpha_30d": null,
+          "hit_30d": null,
+          "close_90d": null,
+          "alpha_90d": null,
+          "hit_90d": null,
+          "verified_at": null,
+          "alert": false
+        },
+        {
+          "ticker": "003550",
+          "name": "LG",
+          "country": "KR",
+          "trend_title": "한국 AI·인터넷 플랫폼 급반등 — NAVER 주도",
+          "trend_kind": "current",
+          "category": "한국 인터넷/플랫폼",
+          "timeframe": "ongoing",
+          "trend_confidence": 82,
+          "grade": "Strong Buy",
+          "rating_score": 4,
+          "fundamentals_score": 4,
+          "rank": 3,
+          "rationale": "1일 +26.6%, 거래량 8.3x로 단기 급등. LG그룹 AI 사업 재편 기대감이 선반영, 지주 구조상 밸류 할인 지속 가능성으로 추격 매수 주의.",
+          "entry_close": 146600.0,
+          "entry_date": "2026-05-31",
+          "current_close": 146600.0,
+          "current_date": "2026-05-29",
+          "current_return_pct": 0.0,
+          "close_7d": null,
+          "alpha_7d": null,
+          "hit_7d": null,
+          "close_30d": null,
+          "alpha_30d": null,
+          "hit_30d": null,
+          "close_90d": null,
+          "alpha_90d": null,
+          "hit_90d": null,
+          "verified_at": null,
+          "alert": false
+        },
+        {
+          "ticker": "028260",
+          "name": "삼성물산",
+          "country": "KR",
+          "trend_title": "한국 AI·인터넷 플랫폼 급반등 — NAVER 주도",
+          "trend_kind": "current",
+          "category": "한국 인터넷/플랫폼",
+          "timeframe": "ongoing",
+          "trend_confidence": 82,
+          "grade": "Buy",
+          "rating_score": 2,
+          "fundamentals_score": 5,
+          "rank": 4,
+          "rationale": "1일 +8.26%(20일 +39.74%). 삼성물산 건설·상사 부문 AI 데이터센터 수혜 기대. 지주 할인 감안 시 추가 상승 여력 제한적.",
+          "entry_close": 432500.0,
+          "entry_date": "2026-05-31",
+          "current_close": 432500.0,
+          "current_date": "2026-05-29",
+          "current_return_pct": 0.0,
+          "close_7d": null,
+          "alpha_7d": null,
+          "hit_7d": null,
+          "close_30d": null,
+          "alpha_30d": null,
+          "hit_30d": null,
+          "close_90d": null,
+          "alpha_90d": null,
+          "hit_90d": null,
+          "verified_at": null,
+          "alert": false
+        },
+        {
+          "ticker": "051910",
+          "name": "LG화학",
+          "country": "KR",
+          "trend_title": "한국 자동차·화학/배터리 동반 반등",
+          "trend_kind": "current",
+          "category": "한국 자동차/배터리",
+          "timeframe": "ongoing",
+          "trend_confidence": 78,
+          "grade": "Caution",
+          "rating_score": -1,
+          "fundamentals_score": 6,
+          "rank": 1,
+          "rationale": "1일 +6.53%(20일 -6.85%로 저평가 구간). LG에너지솔루션 배터리 소재 공급 회복 및 EV 수요 반등 시 마진 레버리지 높음.",
+          "entry_close": 367000.0,
+          "entry_date": "2026-05-31",
+          "current_close": 367000.0,
+          "current_date": "2026-05-29",
+          "current_return_pct": 0.0,
+          "close_7d": null,
+          "alpha_7d": null,
+          "hit_7d": null,
+          "close_30d": null,
+          "alpha_30d": null,
+          "hit_30d": null,
+          "close_90d": null,
+          "alpha_90d": null,
+          "hit_90d": null,
+          "verified_at": null,
+          "alert": false
+        },
+        {
+          "ticker": "006400",
+          "name": "삼성SDI",
+          "country": "KR",
+          "trend_title": "한국 자동차·화학/배터리 동반 반등",
+          "trend_kind": "current",
+          "category": "한국 자동차/배터리",
+          "timeframe": "ongoing",
+          "trend_confidence": 78,
+          "grade": "Hold",
+          "rating_score": 1,
+          "fundamentals_score": 6,
+          "rank": 2,
+          "rationale": "1일 +1.78%(5일 +11.69%), 거래량 2.37x. 삼성SDI 프리미엄 원통형 배터리 공급 확대 및 유럽 OEM 계약 모멘텀.",
+          "entry_close": 688000.0,
+          "entry_date": "2026-05-31",
+          "current_close": 688000.0,
+          "current_date": "2026-05-29",
+          "current_return_pct": 0.0,
+          "close_7d": null,
+          "alpha_7d": null,
+          "hit_7d": null,
+          "close_30d": null,
+          "alpha_30d": null,
+          "hit_30d": null,
+          "close_90d": null,
+          "alpha_90d": null,
+          "hit_90d": null,
+          "verified_at": null,
+          "alert": false
+        },
+        {
+          "ticker": "000270",
+          "name": "기아",
+          "country": "KR",
+          "trend_title": "한국 자동차·화학/배터리 동반 반등",
+          "trend_kind": "current",
+          "category": "한국 자동차/배터리",
+          "timeframe": "ongoing",
+          "trend_confidence": 78,
+          "grade": "Buy",
+          "rating_score": 2,
+          "fundamentals_score": 6,
+          "rank": 3,
+          "rationale": "1일 +2.98%(20일 +8.74%). 기아 HEV·EV 글로벌 판매 호조. 미국 관세 불확실성 일부 잔존으로 Hold 유지.",
+          "entry_close": 169200.0,
+          "entry_date": "2026-05-31",
+          "current_close": 169200.0,
+          "current_date": "2026-05-29",
+          "current_return_pct": 0.0,
+          "close_7d": null,
+          "alpha_7d": null,
+          "hit_7d": null,
+          "close_30d": null,
+          "alpha_30d": null,
+          "hit_30d": null,
+          "close_90d": null,
+          "alpha_90d": null,
+          "hit_90d": null,
+          "verified_at": null,
+          "alert": false
+        },
+        {
+          "ticker": "247540",
+          "name": "에코프로비엠",
+          "country": "KR",
+          "trend_title": "한국 자동차·화학/배터리 동반 반등",
+          "trend_kind": "current",
+          "category": "한국 자동차/배터리",
+          "timeframe": "ongoing",
+          "trend_confidence": 78,
+          "grade": "Hold",
+          "rating_score": 0,
+          "fundamentals_score": 5,
+          "rank": 4,
+          "rationale": "1일 -0.69%이나 5일 +11.28%. 에코프로비엠 양극재 수주 증가 기대. 20일 +1.64%로 추세 전환 초기, 추격보다 눌림 매수 권장.",
+          "entry_close": 217000.0,
+          "entry_date": "2026-05-31",
+          "current_close": 217000.0,
+          "current_date": "2026-05-29",
+          "current_return_pct": 0.0,
+          "close_7d": null,
+          "alpha_7d": null,
+          "hit_7d": null,
+          "close_30d": null,
+          "alpha_30d": null,
+          "hit_30d": null,
+          "close_90d": null,
+          "alpha_90d": null,
+          "hit_90d": null,
+          "verified_at": null,
+          "alert": false
+        },
+        {
+          "ticker": "CVX",
+          "name": "Chevron",
+          "country": "US",
+          "trend_title": "에너지 섹터 약세 지속 — 유가 하락 압력",
+          "trend_kind": "current",
+          "category": "에너지",
+          "timeframe": "ongoing",
+          "trend_confidence": 80,
+          "grade": "Hold",
+          "rating_score": 0,
+          "fundamentals_score": 6,
+          "rank": 1,
+          "rationale": "1일 -0.31%로 섹터 내 상대적 방어력. 배당 수익률 및 자사주 매입 프로그램이 하방 지지. 유가 반등 시 가장 먼저 수혜.",
+          "entry_close": 182.4600067138672,
+          "entry_date": "2026-05-31",
+          "current_close": 182.4600067138672,
+          "current_date": "2026-05-29",
+          "current_return_pct": 0.0,
+          "close_7d": null,
+          "alpha_7d": null,
+          "hit_7d": null,
+          "close_30d": null,
+          "alpha_30d": null,
+          "hit_30d": null,
+          "close_90d": null,
+          "alpha_90d": null,
+          "hit_90d": null,
+          "verified_at": null,
+          "alert": false
+        },
+        {
+          "ticker": "XOM",
+          "name": "Exxon Mobil",
+          "country": "US",
+          "trend_title": "에너지 섹터 약세 지속 — 유가 하락 압력",
+          "trend_kind": "current",
+          "category": "에너지",
+          "timeframe": "ongoing",
+          "trend_confidence": 80,
+          "grade": "Hold",
+          "rating_score": 0,
+          "fundamentals_score": 6,
+          "rank": 2,
+          "rationale": "1일 -1.16%(20일 -5.88%). 대규모 Permian 생산 효율화로 원가 구조 견고. 유가 하락 리스크 부분 헤지. 단기 추세 불리.",
+          "entry_close": 145.25999450683594,
+          "entry_date": "2026-05-31",
+          "current_close": 145.25999450683594,
+          "current_date": "2026-05-29",
+          "current_return_pct": 0.0,
+          "close_7d": null,
+          "alpha_7d": null,
+          "hit_7d": null,
+          "close_30d": null,
+          "alpha_30d": null,
+          "hit_30d": null,
+          "close_90d": null,
+          "alpha_90d": null,
+          "hit_90d": null,
+          "verified_at": null,
+          "alert": false
+        },
+        {
+          "ticker": "SLB",
+          "name": "Schlumberger",
+          "country": "US",
+          "trend_title": "에너지 섹터 약세 지속 — 유가 하락 압력",
+          "trend_kind": "current",
+          "category": "에너지",
+          "timeframe": "ongoing",
+          "trend_confidence": 80,
+          "grade": "Hold",
+          "rating_score": 1,
+          "fundamentals_score": 5,
+          "rank": 3,
+          "rationale": "1일 -1.03%, 거래량 2.64x 매도. 유전서비스는 E&P 예산 삭감에 직접 노출. 유가 추가 하락 시 수주 감소 → 이익 하향 리스크.",
+          "entry_close": 54.54999923706055,
+          "entry_date": "2026-05-31",
+          "current_close": 54.54999923706055,
+          "current_date": "2026-05-29",
+          "current_return_pct": 0.0,
+          "close_7d": null,
+          "alpha_7d": null,
+          "hit_7d": null,
+          "close_30d": null,
+          "alpha_30d": null,
+          "hit_30d": null,
+          "close_90d": null,
+          "alpha_90d": null,
+          "hit_90d": null,
+          "verified_at": null,
+          "alert": false
+        },
+        {
+          "ticker": "DDOG",
+          "name": "Datadog",
+          "country": "US",
+          "trend_title": "클라우드 데이터 플랫폼 모멘텀 지속 — SNOW·DDOG 고공행진",
+          "trend_kind": "predicted",
+          "category": "AI 소프트웨어",
+          "timeframe": "imminent",
+          "trend_confidence": 78,
+          "grade": "Buy",
+          "rating_score": 2,
+          "fundamentals_score": 7,
+          "rank": 1,
+          "rationale": "1일 +9.82%, 20일 +87.12%. AI 인프라 모니터링 수요 증가로 ARR 성장 가속. SNOW 대비 recent_leaders 노출 동일하나 옵저버빌리티 독점성 더 높음.",
+          "entry_close": 247.35000610351562,
+          "entry_date": "2026-05-31",
+          "current_close": 247.35000610351562,
+          "current_date": "2026-05-29",
+          "current_return_pct": 0.0,
+          "close_7d": null,
+          "alpha_7d": null,
+          "hit_7d": null,
+          "close_30d": null,
+          "alpha_30d": null,
+          "hit_30d": null,
+          "close_90d": null,
+          "alpha_90d": null,
+          "hit_90d": null,
+          "verified_at": null,
+          "alert": false
+        },
+        {
+          "ticker": "PLTR",
+          "name": "Palantir Technologies",
+          "country": "US",
+          "trend_title": "클라우드 데이터 플랫폼 모멘텀 지속 — SNOW·DDOG 고공행진",
+          "trend_kind": "predicted",
+          "category": "AI 소프트웨어",
+          "timeframe": "imminent",
+          "trend_confidence": 78,
+          "grade": "Strong Buy",
+          "rating_score": 4,
+          "fundamentals_score": 6,
+          "rank": 2,
+          "rationale": "1일 +9.21%(5일 +13.92%). 정부·민간 AI 데이터 분석 플랫폼 AIP 확산. SNOW/DDOG 과열 시 대체 수혜 가능성.",
+          "entry_close": 156.5399932861328,
+          "entry_date": "2026-05-31",
+          "current_close": 156.5399932861328,
+          "current_date": "2026-05-29",
+          "current_return_pct": 0.0,
+          "close_7d": null,
+          "alpha_7d": null,
+          "hit_7d": null,
+          "close_30d": null,
+          "alpha_30d": null,
+          "hit_30d": null,
+          "close_90d": null,
+          "alpha_90d": null,
+          "hit_90d": null,
+          "verified_at": null,
+          "alert": false
+        },
+        {
+          "ticker": "MRVL",
+          "name": "Marvell Technology",
+          "country": "US",
+          "trend_title": "클라우드 데이터 플랫폼 모멘텀 지속 — SNOW·DDOG 고공행진",
+          "trend_kind": "predicted",
+          "category": "AI 소프트웨어",
+          "timeframe": "imminent",
+          "trend_confidence": 78,
+          "grade": "Buy",
+          "rating_score": 2,
+          "fundamentals_score": 6,
+          "rank": 3,
+          "rationale": "1일 +0.08%(5일 +7.50%, 20일 +24.13%). AI 데이터센터 커스텀 실리콘·고속 인터커넥트 수요 수혜. SW 랠리의 인프라 수혜주로 리스크 분산 효과.",
+          "entry_close": 205.0,
+          "entry_date": "2026-05-31",
+          "current_close": 205.0,
+          "current_date": "2026-05-29",
+          "current_return_pct": 0.0,
+          "close_7d": null,
+          "alpha_7d": null,
+          "hit_7d": null,
+          "close_30d": null,
+          "alpha_30d": null,
+          "hit_30d": null,
+          "close_90d": null,
+          "alpha_90d": null,
+          "hit_90d": null,
+          "verified_at": null,
+          "alert": false
+        },
+        {
+          "ticker": "CDNS",
+          "name": "Cadence Design Systems",
+          "country": "US",
+          "trend_title": "클라우드 데이터 플랫폼 모멘텀 지속 — SNOW·DDOG 고공행진",
+          "trend_kind": "predicted",
+          "category": "AI 소프트웨어",
+          "timeframe": "imminent",
+          "trend_confidence": 78,
+          "grade": "Buy",
+          "rating_score": 3,
+          "fundamentals_score": 7,
+          "rank": 4,
+          "rationale": "1일 +0.29%(5일 +4.59%, 20일 +13.76%). EDA 소프트웨어 AI 칩 설계 수혜. 상대적으로 안정적인 성장세로 포트폴리오 방어 역할.",
+          "entry_close": 374.92999267578125,
+          "entry_date": "2026-05-31",
+          "current_close": 374.92999267578125,
+          "current_date": "2026-05-29",
+          "current_return_pct": 0.0,
+          "close_7d": null,
+          "alpha_7d": null,
+          "hit_7d": null,
+          "close_30d": null,
+          "alpha_30d": null,
+          "hit_30d": null,
+          "close_90d": null,
+          "alpha_90d": null,
+          "hit_90d": null,
+          "verified_at": null,
+          "alert": false
+        },
+        {
+          "ticker": "AVGO",
+          "name": "Broadcom",
+          "country": "US",
+          "trend_title": "AVGO·MU 주도 AI 반도체 선택적 재편",
+          "trend_kind": "predicted",
+          "category": "AI 반도체",
+          "timeframe": "imminent",
+          "trend_confidence": 80,
+          "grade": "Buy",
+          "rating_score": 3,
+          "fundamentals_score": 8,
+          "rank": 1,
+          "rationale": "1일 +4.73%, 거래량 2.25x. 커스텀 ASIC+네트워킹 듀얼 성장 엔진. AI 칩 다변화 수혜 핵심주. recent_leaders 미포함으로 스탈 픽 위험 없음.",
+          "entry_close": 446.7699890136719,
+          "entry_date": "2026-05-31",
+          "current_close": 446.7699890136719,
+          "current_date": "2026-05-29",
+          "current_return_pct": 0.0,
+          "close_7d": null,
+          "alpha_7d": null,
+          "hit_7d": null,
+          "close_30d": null,
+          "alpha_30d": null,
+          "hit_30d": null,
+          "close_90d": null,
+          "alpha_90d": null,
+          "hit_90d": null,
+          "verified_at": null,
+          "alert": false
+        },
+        {
+          "ticker": "QCOM",
+          "name": "Qualcomm",
+          "country": "US",
+          "trend_title": "AVGO·MU 주도 AI 반도체 선택적 재편",
+          "trend_kind": "predicted",
+          "category": "AI 반도체",
+          "timeframe": "imminent",
+          "trend_confidence": 80,
+          "grade": "Strong Buy",
+          "rating_score": 4,
+          "fundamentals_score": 6,
+          "rank": 2,
+          "rationale": "1일 +3.18%(5일 +17.62%, 20일 +39.78%). 엣지 AI 칩 수요 및 PC·모바일 AI 전환 사이클 수혜. AVGO 대비 낮은 밸류로 상승 여력 존재.",
+          "entry_close": 251.02000427246094,
+          "entry_date": "2026-05-31",
+          "current_close": 251.02000427246094,
+          "current_date": "2026-05-29",
+          "current_return_pct": 0.0,
+          "close_7d": null,
+          "alpha_7d": null,
+          "hit_7d": null,
+          "close_30d": null,
+          "alpha_30d": null,
+          "hit_30d": null,
+          "close_90d": null,
+          "alpha_90d": null,
+          "hit_90d": null,
+          "verified_at": null,
+          "alert": false
+        },
+        {
+          "ticker": "TSM",
+          "name": "Taiwan Semiconductor",
+          "country": "US",
+          "trend_title": "AVGO·MU 주도 AI 반도체 선택적 재편",
+          "trend_kind": "predicted",
+          "category": "AI 반도체",
+          "timeframe": "imminent",
+          "trend_confidence": 80,
+          "grade": "Strong Buy",
+          "rating_score": 4,
+          "fundamentals_score": 7,
+          "rank": 3,
+          "rationale": "1일 -1.51%이나 5일 +2.78%. AVGO·QCOM 커스텀 칩 수탁생산 독점 위치. AI 칩 수요 증가의 최종 수혜자이나 단기 모멘텀 약함.",
+          "entry_close": 418.45001220703125,
+          "entry_date": "2026-05-31",
+          "current_close": 418.45001220703125,
+          "current_date": "2026-05-29",
+          "current_return_pct": 0.0,
+          "close_7d": null,
+          "alpha_7d": null,
+          "hit_7d": null,
+          "close_30d": null,
+          "alpha_30d": null,
+          "hit_30d": null,
+          "close_90d": null,
+          "alpha_90d": null,
+          "hit_90d": null,
+          "verified_at": null,
+          "alert": false
+        },
+        {
+          "ticker": "AMAT",
+          "name": "Applied Materials",
+          "country": "US",
+          "trend_title": "AVGO·MU 주도 AI 반도체 선택적 재편",
+          "trend_kind": "predicted",
+          "category": "AI 반도체",
+          "timeframe": "imminent",
+          "trend_confidence": 80,
+          "grade": "Strong Buy",
+          "rating_score": 4,
+          "fundamentals_score": 6,
+          "rank": 4,
+          "rationale": "1일 +0.08%(5일 +5.31%, 20일 +14.09%). HBM·첨단 패키징 장비 수요 수혜. 반도체 장비 섹터 내 가장 균형 잡힌 포트폴리오.",
+          "entry_close": 450.05999755859375,
+          "entry_date": "2026-05-31",
+          "current_close": 450.05999755859375,
+          "current_date": "2026-05-29",
+          "current_return_pct": 0.0,
+          "close_7d": null,
+          "alpha_7d": null,
+          "hit_7d": null,
+          "close_30d": null,
+          "alpha_30d": null,
+          "hit_30d": null,
+          "close_90d": null,
+          "alpha_90d": null,
+          "hit_90d": null,
+          "verified_at": null,
+          "alert": false
+        },
+        {
+          "ticker": "000660",
+          "name": "SK하이닉스",
+          "country": "KR",
+          "trend_title": "한국 반도체 추가 상승 — 삼성전자·SK하이닉스 외국인 매수 지속",
+          "trend_kind": "predicted",
+          "category": "한국 반도체",
+          "timeframe": "imminent",
+          "trend_confidence": 82,
+          "grade": "Strong Buy",
+          "rating_score": 4,
+          "fundamentals_score": 7,
+          "rank": 1,
+          "rationale": "5일 +20.26%, 20일 +79.46%. SK하이닉스 HBM3E 독점 공급·엔비디아 우선 파트너 지위. 단기 과열 감안 시 분할 접근 권장.",
+          "entry_close": 2333000.0,
+          "entry_date": "2026-05-31",
+          "current_close": 2333000.0,
+          "current_date": "2026-05-29",
+          "current_return_pct": 0.0,
+          "close_7d": null,
+          "alpha_7d": null,
+          "hit_7d": null,
+          "close_30d": null,
+          "alpha_30d": null,
+          "hit_30d": null,
+          "close_90d": null,
+          "alpha_90d": null,
+          "hit_90d": null,
+          "verified_at": null,
+          "alert": false
+        },
+        {
+          "ticker": "005930",
+          "name": "삼성전자",
+          "country": "KR",
+          "trend_title": "한국 반도체 추가 상승 — 삼성전자·SK하이닉스 외국인 매수 지속",
+          "trend_kind": "predicted",
+          "category": "한국 반도체",
+          "timeframe": "imminent",
+          "trend_confidence": 82,
+          "grade": "Strong Buy",
+          "rating_score": 5,
+          "fundamentals_score": 7,
+          "rank": 2,
+          "rationale": "1일 +5.84%, 20일 +42.79%. HBM 품질 인증 성공 시 2H26 대규모 납품 기대. 밸류에이션 000660 대비 저렴, 추가 상승 여력 상대적으로 큼.",
+          "entry_close": 317000.0,
+          "entry_date": "2026-05-31",
+          "current_close": 317000.0,
+          "current_date": "2026-05-29",
+          "current_return_pct": 0.0,
+          "close_7d": null,
+          "alpha_7d": null,
+          "hit_7d": null,
+          "close_30d": null,
+          "alpha_30d": null,
+          "hit_30d": null,
+          "close_90d": null,
+          "alpha_90d": null,
+          "hit_90d": null,
+          "verified_at": null,
+          "alert": false
+        },
+        {
+          "ticker": "069500",
+          "name": "KODEX 200",
+          "country": "KR",
+          "trend_title": "한국 반도체 추가 상승 — 삼성전자·SK하이닉스 외국인 매수 지속",
+          "trend_kind": "predicted",
+          "category": "한국 반도체",
+          "timeframe": "imminent",
+          "trend_confidence": 82,
+          "grade": "Buy",
+          "rating_score": 2,
+          "fundamentals_score": 5,
+          "rank": 3,
+          "rationale": "KOSPI200 ETF 1일 +3.71%(5일 +9.55%). 반도체 비중 높아 간접 수혜. 개별 종목 리스크 없이 시장 상승 참여 가능. 포트폴리오 헷지 역할.",
+          "entry_close": 134815.0,
+          "entry_date": "2026-05-31",
+          "current_close": 134815.0,
+          "current_date": "2026-05-29",
+          "current_return_pct": 0.0,
+          "close_7d": null,
+          "alpha_7d": null,
+          "hit_7d": null,
+          "close_30d": null,
+          "alpha_30d": null,
+          "hit_30d": null,
+          "close_90d": null,
+          "alpha_90d": null,
+          "hit_90d": null,
+          "verified_at": null,
+          "alert": false
+        },
+        {
+          "ticker": "GS",
+          "name": "Goldman Sachs",
+          "country": "US",
+          "trend_title": "미국 금융주 차별적 강세 — 투자은행·자산운용 수혜",
+          "trend_kind": "predicted",
+          "category": "금융",
+          "timeframe": "imminent",
+          "trend_confidence": 73,
+          "grade": "Strong Buy",
+          "rating_score": 4,
+          "fundamentals_score": 7,
+          "rank": 1,
+          "rationale": "1일 +1.70%(20일 +11.02%). IB·자산운용·트레이딩 트리플 성장 엔진. 증시 랠리 수혜 가장 직접적. P/B 밸류 역사적 중간 수준.",
+          "entry_close": 1025.56005859375,
+          "entry_date": "2026-05-31",
+          "current_close": 1025.56005859375,
+          "current_date": "2026-05-29",
+          "current_return_pct": 0.0,
+          "close_7d": null,
+          "alpha_7d": null,
+          "hit_7d": null,
+          "close_30d": null,
+          "alpha_30d": null,
+          "hit_30d": null,
+          "close_90d": null,
+          "alpha_90d": null,
+          "hit_90d": null,
+          "verified_at": null,
+          "alert": false
+        },
+        {
+          "ticker": "MS",
+          "name": "Morgan Stanley",
+          "country": "US",
+          "trend_title": "미국 금융주 차별적 강세 — 투자은행·자산운용 수혜",
+          "trend_kind": "predicted",
+          "category": "금융",
+          "timeframe": "imminent",
+          "trend_confidence": 73,
+          "grade": "Buy",
+          "rating_score": 3,
+          "fundamentals_score": 7,
+          "rank": 2,
+          "rationale": "1일 +2.07%(20일 +9.13%). 웰스매니지먼트·기관 증권 부문 균형 성장. IB 파이프라인 회복 기대로 실적 상향 가능성.",
+          "entry_close": 208.0,
+          "entry_date": "2026-05-31",
+          "current_close": 208.0,
+          "current_date": "2026-05-29",
+          "current_return_pct": 0.0,
+          "close_7d": null,
+          "alpha_7d": null,
+          "hit_7d": null,
+          "close_30d": null,
+          "alpha_30d": null,
+          "hit_30d": null,
+          "close_90d": null,
+          "alpha_90d": null,
+          "hit_90d": null,
+          "verified_at": null,
+          "alert": false
+        },
+        {
+          "ticker": "SPGI",
+          "name": "S&P Global",
+          "country": "US",
+          "trend_title": "미국 금융주 차별적 강세 — 투자은행·자산운용 수혜",
+          "trend_kind": "predicted",
+          "category": "금융",
+          "timeframe": "imminent",
+          "trend_confidence": 73,
+          "grade": "Buy",
+          "rating_score": 2,
+          "fundamentals_score": 7,
+          "rank": 3,
+          "rationale": "1일 +1.51%(5일 +1.99%). 채권 발행 확대 시 신용평가 수수료 수혜. 금리 변동성 낮아지는 환경에서 안정적 성장.",
+          "entry_close": 424.0,
+          "entry_date": "2026-05-31",
+          "current_close": 424.0,
+          "current_date": "2026-05-29",
+          "current_return_pct": 0.0,
+          "close_7d": null,
+          "alpha_7d": null,
+          "hit_7d": null,
+          "close_30d": null,
+          "alpha_30d": null,
+          "hit_30d": null,
+          "close_90d": null,
+          "alpha_90d": null,
+          "hit_90d": null,
+          "verified_at": null,
+          "alert": false
+        },
+        {
+          "ticker": "WFC",
+          "name": "Wells Fargo",
+          "country": "US",
+          "trend_title": "미국 금융주 차별적 강세 — 투자은행·자산운용 수혜",
+          "trend_kind": "predicted",
+          "category": "금융",
+          "timeframe": "imminent",
+          "trend_confidence": 73,
+          "grade": "Hold",
+          "rating_score": 0,
+          "fundamentals_score": 5,
+          "rank": 4,
+          "rationale": "1일 +1.16%(5일 +2.13%). 상업은행 중 자산 한도 해제 기대감 유지. 금리 인하 사이클 진입 시 대출 수요 회복 수혜.",
+          "entry_close": 77.54000091552734,
+          "entry_date": "2026-05-31",
+          "current_close": 77.54000091552734,
+          "current_date": "2026-05-29",
+          "current_return_pct": 0.0,
+          "close_7d": null,
+          "alpha_7d": null,
+          "hit_7d": null,
+          "close_30d": null,
+          "alpha_30d": null,
+          "hit_30d": null,
+          "close_90d": null,
+          "alpha_90d": null,
+          "hit_90d": null,
+          "verified_at": null,
+          "alert": false
+        },
+        {
+          "ticker": "LLY",
+          "name": "Eli Lilly",
+          "country": "US",
+          "trend_title": "의약품·GLP-1 성장주 반등 — LLY 중심 제약 섹터 재조명",
+          "trend_kind": "predicted",
+          "category": "헬스케어/제약",
+          "timeframe": "imminent",
+          "trend_confidence": 72,
+          "grade": "Strong Buy",
+          "rating_score": 5,
+          "fundamentals_score": 8,
+          "rank": 1,
+          "rationale": "20일 +18.23%의 중기 추세. GLP-1 글로벌 수요 폭발적 성장. 1일 -1.93% 일시 조정은 분할 매수 기회. recent_leaders 4회 포함이나 5월 28일 이후 미포함.",
+          "entry_close": 1105.0,
+          "entry_date": "2026-05-31",
+          "current_close": 1105.0,
+          "current_date": "2026-05-29",
+          "current_return_pct": 0.0,
+          "close_7d": null,
+          "alpha_7d": null,
+          "hit_7d": null,
+          "close_30d": null,
+          "alpha_30d": null,
+          "hit_30d": null,
+          "close_90d": null,
+          "alpha_90d": null,
+          "hit_90d": null,
+          "verified_at": null,
+          "alert": false
+        },
+        {
+          "ticker": "TMO",
+          "name": "Thermo Fisher",
+          "country": "US",
+          "trend_title": "의약품·GLP-1 성장주 반등 — LLY 중심 제약 섹터 재조명",
+          "trend_kind": "predicted",
+          "category": "헬스케어/제약",
+          "timeframe": "imminent",
+          "trend_confidence": 72,
+          "grade": "Buy",
+          "rating_score": 2,
+          "fundamentals_score": 7,
+          "rank": 2,
+          "rationale": "1일 +1.09%(5일 +9.60%). AI 신약 개발·임상 분석 플랫폼 수요 수혜. 헬스케어 인프라로서 방어적 성장성 보유.",
+          "entry_close": 492.510009765625,
+          "entry_date": "2026-05-31",
+          "current_close": 492.510009765625,
+          "current_date": "2026-05-29",
+          "current_return_pct": 0.0,
+          "close_7d": null,
+          "alpha_7d": null,
+          "hit_7d": null,
+          "close_30d": null,
+          "alpha_30d": null,
+          "hit_30d": null,
+          "close_90d": null,
+          "alpha_90d": null,
+          "hit_90d": null,
+          "verified_at": null,
+          "alert": false
+        },
+        {
+          "ticker": "ABBV",
+          "name": "AbbVie",
+          "country": "US",
+          "trend_title": "의약품·GLP-1 성장주 반등 — LLY 중심 제약 섹터 재조명",
+          "trend_kind": "predicted",
+          "category": "헬스케어/제약",
+          "timeframe": "imminent",
+          "trend_confidence": 72,
+          "grade": "Caution",
+          "rating_score": -1,
+          "fundamentals_score": 6,
+          "rank": 3,
+          "rationale": "1일 -0.42%(5일 +1.50%, 20일 +3.03%). 임뮤놀로지·신경과학 파이프라인 다각화. 배당 수익률 안정적, 방어주 역할 수행.",
+          "entry_close": 217.72000122070312,
+          "entry_date": "2026-05-31",
+          "current_close": 217.72000122070312,
+          "current_date": "2026-05-29",
+          "current_return_pct": 0.0,
+          "close_7d": null,
+          "alpha_7d": null,
+          "hit_7d": null,
+          "close_30d": null,
+          "alpha_30d": null,
+          "hit_30d": null,
+          "close_90d": null,
+          "alpha_90d": null,
+          "hit_90d": null,
+          "verified_at": null,
+          "alert": false
+        },
+        {
+          "ticker": "NVO",
+          "name": "Novo Nordisk",
+          "country": "US",
+          "trend_title": "의약품·GLP-1 성장주 반등 — LLY 중심 제약 섹터 재조명",
+          "trend_kind": "predicted",
+          "category": "헬스케어/제약",
+          "timeframe": "imminent",
+          "trend_confidence": 72,
+          "grade": "Strong Buy",
+          "rating_score": 4,
+          "fundamentals_score": 7,
+          "rank": 4,
+          "rationale": "1일 +0.15%(5일 +2.68%, 20일 +7.96%). LLY 대비 낮은 밸류에이션으로 GLP-1 경쟁 완화 시 추가 상승 가능. 단기 모멘텀 약해 포지션 유지 수준.",
+          "entry_close": 45.58000183105469,
+          "entry_date": "2026-05-31",
+          "current_close": 45.58000183105469,
+          "current_date": "2026-05-29",
+          "current_return_pct": 0.0,
+          "close_7d": null,
+          "alpha_7d": null,
+          "hit_7d": null,
+          "close_30d": null,
+          "alpha_30d": null,
+          "hit_30d": null,
+          "close_90d": null,
+          "alpha_90d": null,
+          "hit_90d": null,
+          "verified_at": null,
+          "alert": false
+        }
+      ],
+      "alert_count": 0
+    },
     {
       "date": "2026-05-30",
       "recommendations": [
