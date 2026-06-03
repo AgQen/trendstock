@@ -902,10 +902,12 @@ function computeSignals(history) {
 
   function isBuyCond(r) {
     const g = r.grade;
-    if (!g) return false;
-    const fs = r.fundamentals_score;
-    if (fs == null || fs < avgFund) return g === "Strong Buy";
-    return g !== "Caution";
+    if (g === "Strong Buy") return true;
+    if (g === "Buy") {
+      const fs = r.fundamentals_score;
+      return fs != null && fs >= avgFund;  // Buy는 재무 평균 이상이어야 신호
+    }
+    return false;  // Hold / Caution → 매수 신호 없음
   }
 
   function isSellSig(curr, prev) {
@@ -1298,15 +1300,18 @@ function renderMonthlyReport(history) {
     const withRet = Object.values(oldestByTicker).filter(r => r.current_return_pct != null);
     withRet.sort((a, b) => b.current_return_pct - a.current_return_pct);
 
-    // 이번 달 신호(신규 매수/매도) 종목만 필터링
+    // 이번 달 추천된 모든 티커 (분석 데이터 기준)
+    const thisMonthTickers = new Set(allRecs.map(r => r.ticker));
+
+    // 신호 분류: computeSignals 기준 + 이번 달 allRecs에 있으면 신호 섹션으로
     const signalsThisMonth = new Set();
     const ongoingThisMonth = new Set();
     for (const [ticker, state] of Object.entries(_signalData.tickerState || {})) {
       const inMonth = s => s.date.startsWith(ym);
       const hadBuy  = state.buySignals.some(s => inMonth(s));
       const hadSell = state.sellSignals.some(s => inMonth(s));
-      if (hadBuy || hadSell) {
-        signalsThisMonth.add(ticker);
+      if (hadBuy || hadSell || thisMonthTickers.has(ticker)) {
+        signalsThisMonth.add(ticker);  // 이번 달 추천이면 신호 섹션 표시
       } else if (state.isOngoingBuy) {
         ongoingThisMonth.add(ticker);
       }
@@ -1318,7 +1323,7 @@ function renderMonthlyReport(history) {
     const best  = signalRets.slice(0, 10);
     const worst = signalRets.slice(-10).reverse();
 
-    // 지속 보유 중 — 이번 달 Best/Worst 10에 이미 있는 티커 제외 (방어적 이중 필터)
+    // 지속 보유 중 — 이번 달 추천/신호 있는 티커 모두 제외
     const ongoingRecs = Object.values(oldestByTicker)
       .filter(r => ongoingThisMonth.has(r.ticker) && !signalsThisMonth.has(r.ticker));
 
