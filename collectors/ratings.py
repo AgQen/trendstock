@@ -133,6 +133,33 @@ def timing_dim(prices_asc: list[float], info: dict) -> tuple[int, list[str]]:
     return score, reasons
 
 
+# --- 거래량 -------------------------------------------------------------------
+
+def volume_dim(volumes_asc: list[float], prices_asc: list[float]) -> tuple[int, list[str]]:
+    """5일 평균 거래량 vs 이전 평균, 가격 방향 확인."""
+    if len(volumes_asc) < 6 or len(prices_asc) < 6:
+        return 0, []
+
+    avg_recent5 = sum(volumes_asc[-5:]) / 5
+    n_old = max(len(volumes_asc) - 5, 1)
+    avg_old = sum(volumes_asc[:-5]) / n_old if len(volumes_asc) > 5 else avg_recent5
+    if avg_old == 0:
+        return 0, []
+
+    vol_ratio = avg_recent5 / avg_old
+    now = prices_asc[-1]
+    p5  = prices_asc[-6]
+    r5  = (now / p5 - 1) * 100 if p5 else 0
+
+    if vol_ratio >= 1.6:
+        if r5 >= 5:
+            return 1, [f"거래량 {vol_ratio:.1f}배 급증 · 5d {r5:+.0f}% 상승 동반"]
+        if r5 <= -5:
+            return -1, [f"거래량 {vol_ratio:.1f}배 급증 · 5d {r5:+.0f}% 하락 동반"]
+
+    return 0, []
+
+
 # --- 종합 ---------------------------------------------------------------------
 
 def grade_from_total(total: int) -> str:
@@ -142,11 +169,13 @@ def grade_from_total(total: int) -> str:
     return "Caution"
 
 
-def compute_rating(info: dict, prices_asc: list[float]) -> dict:
+def compute_rating(info: dict, prices_asc: list[float],
+                   volumes_asc: list[float] | None = None) -> dict:
     f_score, f_reasons = fundamental_dim(info)
     m_score, m_reasons = momentum_dim(prices_asc)
     t_score, t_reasons = timing_dim(prices_asc, info)
-    total = f_score + m_score + t_score
+    v_score, v_reasons = volume_dim(volumes_asc or [], prices_asc)
+    total = f_score + m_score + t_score + v_score
     return {
         "grade": grade_from_total(total),
         "total": total,
@@ -154,6 +183,7 @@ def compute_rating(info: dict, prices_asc: list[float]) -> dict:
             "fundamentals": {"score": f_score, "reasons": f_reasons},
             "momentum":     {"score": m_score, "reasons": m_reasons},
             "timing":       {"score": t_score, "reasons": t_reasons},
+            "volume":       {"score": v_score, "reasons": v_reasons},
         },
     }
 

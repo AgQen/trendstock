@@ -41,6 +41,16 @@ def _prices_asc(conn, asset_id: int, base_date: str, n: int = 21) -> list[float]
     return [float(r["close"]) for r in reversed(rows)]
 
 
+def _volumes_asc(conn, asset_id: int, base_date: str, n: int = 21) -> list[float]:
+    rows = conn.execute(
+        "SELECT volume FROM price_history "
+        "WHERE asset_id = ? AND date <= ? AND volume > 0 "
+        "ORDER BY date DESC LIMIT ?",
+        (asset_id, base_date, n),
+    ).fetchall()
+    return [float(r["volume"]) for r in reversed(rows)]
+
+
 def rerate(date: str | None = None) -> None:
     """date 가 None 이면 모든 recommendations 대상."""
     init_db()
@@ -74,9 +84,10 @@ def rerate(date: str | None = None) -> None:
 
             yf_tk = yahoo_ticker(asset["ticker"], asset["exchange"], asset["country"])
             info = _fetch_info(yf_tk)
-            prices = _prices_asc(conn, rec["asset_id"], rec["analysis_date"], 21)
+            prices  = _prices_asc(conn, rec["asset_id"], rec["analysis_date"], 21)
+            volumes = _volumes_asc(conn, rec["asset_id"], rec["analysis_date"], 21)
 
-            rating = compute_rating(info, prices)
+            rating = compute_rating(info, prices, volumes)
 
             # 기존 grade
             old_grade_row = conn.execute(
@@ -112,7 +123,8 @@ def rerate(date: str | None = None) -> None:
                   f"(총점 {rating['total']:+d}: 펀더 "
                   f"{rating['dimensions']['fundamentals']['score']:+d}, "
                   f"모멘텀 {rating['dimensions']['momentum']['score']:+d}, "
-                  f"타이밍 {rating['dimensions']['timing']['score']:+d})")
+                  f"타이밍 {rating['dimensions']['timing']['score']:+d}, "
+                  f"거래량 {rating['dimensions']['volume']['score']:+d})")
 
             time.sleep(0.05)  # yfinance 정중함
 

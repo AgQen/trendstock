@@ -651,6 +651,10 @@ function renderCard(t, kind) {
     const scoreCls = rs == null ? "" : (rs >= 2 ? "pos" : (rs < 0 ? "neg" : ""));
     const scorePill = rs == null ? "" :
       `<span class="rating-pill ${scoreCls}">${rs >= 0 ? "+" : ""}${rs}</span>`;
+    const tkState = _signalData.tickerState[r.ticker];
+    const buyBadge = tkState && tkState.isOngoingBuy
+      ? `<span style="background:#14532d;color:#4ade80;font-size:10px;padding:1px 6px;border-radius:99px;font-weight:700;margin-left:4px">🟢매수</span>`
+      : "";
     div.innerHTML = `
       <div class="grade-pill ${grade2cls(r.grade)}">${r.grade}${scorePill}</div>
       <div class="info">
@@ -658,6 +662,7 @@ function renderCard(t, kind) {
           ${flagBadge(r.country)}
           <span class="tk">${r.ticker}</span>
           <span class="nm">${r.name || ""}</span>
+          ${buyBadge}
         </div>
         <div class="rationale">${r.rationale || ""}${f_line}</div>
       </div>
@@ -730,6 +735,7 @@ function renderCard(t, kind) {
         ${cell("펀더 0~+3", bd.fundamentals)}
         ${cell("모멘텀 -2~+2", bd.momentum)}
         ${cell("타이밍 -2~+1", bd.timing)}
+        ${cell("거래량 -1~+1", bd.volume)}
       </div>
     `;
     rEl.appendChild(block);
@@ -774,6 +780,65 @@ function renderMovers(top, bottom) {
   wrap.appendChild(mkCol("오늘 상승 Top 5", top, "up"));
   wrap.appendChild(mkCol("오늘 하락 Top 5", bottom, "dn"));
   return wrap;
+}
+
+let _signalData = { tickerState: {}, avgFund: 4 };
+
+function computeSignals(history) {
+  if (!history || !history.length) return { tickerState: {}, avgFund: 4 };
+
+  let fundSum = 0, fundN = 0;
+  history.forEach(day => {
+    day.recommendations.forEach(r => {
+      if (r.fundamentals_score != null) { fundSum += r.fundamentals_score; fundN++; }
+    });
+  });
+  const avgFund = fundN > 0 ? fundSum / fundN : 4;
+
+  function isBuyCond(r) {
+    const g = r.grade;
+    if (!g) return false;
+    const fs = r.fundamentals_score;
+    if (fs == null || fs < avgFund) return g === "Strong Buy";
+    return g !== "Caution";
+  }
+
+  function isSellSig(curr, prev) {
+    const pf = prev.fundamentals_score;
+    if (pf == null) return false;
+    if (pf >= avgFund) {
+      const cf = curr.fundamentals_score;
+      return cf != null && cf <= pf - 2;
+    }
+    const isBG = g => g === "Buy" || g === "Strong Buy";
+    return isBG(prev.grade) && !isBG(curr.grade);
+  }
+
+  const byTicker = {}, seen = {};
+  history.slice().reverse().forEach(day => {
+    day.recommendations.forEach(r => {
+      const k = r.ticker + "_" + r.entry_date;
+      if (seen[k]) return;
+      seen[k] = true;
+      (byTicker[r.ticker] = byTicker[r.ticker] || []).push(r);
+    });
+  });
+
+  const tickerState = {};
+  for (const [ticker, recs] of Object.entries(byTicker)) {
+    let isOngoingBuy = false, prev = null;
+    const buySignals = [], sellSignals = [];
+    for (const r of recs) {
+      if (!isOngoingBuy) {
+        if (isBuyCond(r)) { isOngoingBuy = true; buySignals.push({ date: r.entry_date, rec: r }); }
+      } else {
+        if (prev && isSellSig(r, prev)) { isOngoingBuy = false; sellSignals.push({ date: r.entry_date, rec: r }); }
+      }
+      prev = r;
+    }
+    tickerState[ticker] = { isOngoingBuy, buySignals, sellSignals };
+  }
+  return { tickerState, avgFund };
 }
 
 async function load() {
@@ -1118,8 +1183,30 @@ function renderMonthlyReport(history) {
     });
     const withRet = Object.values(oldestByTicker).filter(r => r.current_return_pct != null);
     withRet.sort((a, b) => b.current_return_pct - a.current_return_pct);
-    const best = withRet.slice(0, 10);
-    const worst = withRet.slice(-10).reverse();
+
+    // 이번 달 신호(신규 매수/매도) 종목만 필터링
+    const signalsThisMonth = new Set();
+    const ongoingThisMonth = new Set();
+    for (const [ticker, state] of Object.entries(_signalData.tickerState || {})) {
+      const inMonth = s => s.date.startsWith(ym);
+      const hadBuy  = state.buySignals.some(s => inMonth(s));
+      const hadSell = state.sellSignals.some(s => inMonth(s));
+      if (hadBuy || hadSell) {
+        signalsThisMonth.add(ticker);
+      } else if (state.isOngoingBuy) {
+        ongoingThisMonth.add(ticker);
+      }
+    }
+    const hasSignalData = signalsThisMonth.size > 0 || ongoingThisMonth.size > 0;
+    const signalRets = hasSignalData
+      ? withRet.filter(r => signalsThisMonth.has(r.ticker))
+      : withRet;
+    const best  = signalRets.slice(0, 10);
+    const worst = signalRets.slice(-10).reverse();
+
+    // 지속 보유 중 (이번 달 신호 없는 온고잉)
+    const ongoingRecs = Object.values(oldestByTicker)
+      .filter(r => ongoingThisMonth.has(r.ticker));
 
     // ! 알림 종목 수
     const alertCount = allRecs.filter(r => r.alert).length;
@@ -1186,14 +1273,20 @@ function renderMonthlyReport(history) {
     }
 
     html += `
-      <div class="report-section-h">🏆 Best 10 (현재 수익률 기준, 티커별 최초 예측)</div>
+      <div class="report-section-h">🏆 Best 10 ${hasSignalData ? "(이번 달 신규 매수·매도 신호)" : "(현재 수익률 기준)"}</div>
       <div class="report-grid">
         <div class="report-cell span2">
           ${best.length ? best.map(r => {
+
             const newest = newestByTicker[r.ticker];
+            const st = _signalData.tickerState[r.ticker];
+            const isSellSignalTicker = st && st.sellSignals.some(s => s.date.startsWith(ym));
+            const isBuySignalTicker  = st && st.buySignals.some(s => s.date.startsWith(ym));
             const oldBuy = isBuyGrade(r.grade);
             const newBuy = newest ? isBuyGrade(newest.grade) : oldBuy;
-            const signal = (oldBuy && !newBuy) ? ' <span title="추세 하락: 매도 고려" style="color:#ef4444;font-size:13px">🔴매도</span>'
+            const signal = isSellSignalTicker ? ' <span title="매도 신호 발생" style="color:#ef4444;font-size:13px">🔴매도</span>'
+                         : isBuySignalTicker  ? ' <span title="신규 매수 신호" style="color:#22c55e;font-size:13px">🟢매수</span>'
+                         : (oldBuy && !newBuy) ? ' <span title="추세 하락: 매도 고려" style="color:#ef4444;font-size:13px">🔴매도</span>'
                          : (!oldBuy && newBuy) ? ' <span title="추세 상승: 매수 고려" style="color:#22c55e;font-size:13px">🟢매수</span>'
                          : "";
             return `
@@ -1218,18 +1311,23 @@ function renderMonthlyReport(history) {
                 ${newest && newest.grade !== r.grade ? `→ 현재 <span class="grade-pill ${grade2cls(newest.grade)}" style="font-size:9px">${newest.grade}</span>` : ""}
               </div>
             </div>`;
-          }).join("") : '<div style="color:var(--text-faint);font-size:12px">검증 데이터 없음</div>'}
+          }).join("") : `<div style="color:var(--text-faint);font-size:12px">${hasSignalData ? "이번 달 신호 종목 없음" : "검증 데이터 없음"}</div>`}
         </div>
       </div>
 
-      <div class="report-section-h">📉 Worst 10</div>
+      <div class="report-section-h">📉 Worst 10 ${hasSignalData ? "(이번 달 신규 매수·매도 신호)" : ""}</div>
       <div class="report-grid">
         <div class="report-cell span2">
           ${worst.length ? worst.map(r => {
             const newest = newestByTicker[r.ticker];
+            const st = _signalData.tickerState[r.ticker];
+            const isSellSignalTicker = st && st.sellSignals.some(s => s.date.startsWith(ym));
+            const isBuySignalTicker  = st && st.buySignals.some(s => s.date.startsWith(ym));
             const oldBuy = isBuyGrade(r.grade);
             const newBuy = newest ? isBuyGrade(newest.grade) : oldBuy;
-            const signal = (oldBuy && !newBuy) ? ' <span title="추세 하락: 매도 고려" style="color:#ef4444;font-size:13px">🔴매도</span>'
+            const signal = isSellSignalTicker ? ' <span title="매도 신호 발생" style="color:#ef4444;font-size:13px">🔴매도</span>'
+                         : isBuySignalTicker  ? ' <span title="신규 매수 신호" style="color:#22c55e;font-size:13px">🟢매수</span>'
+                         : (oldBuy && !newBuy) ? ' <span title="추세 하락: 매도 고려" style="color:#ef4444;font-size:13px">🔴매도</span>'
                          : (!oldBuy && newBuy) ? ' <span title="추세 상승: 매수 고려" style="color:#22c55e;font-size:13px">🟢매수</span>'
                          : "";
             return `
@@ -1254,10 +1352,35 @@ function renderMonthlyReport(history) {
                 ${newest && newest.grade !== r.grade ? `→ 현재 <span class="grade-pill ${grade2cls(newest.grade)}" style="font-size:9px">${newest.grade}</span>` : ""}
               </div>
             </div>`;
-          }).join("") : '<div style="color:var(--text-faint);font-size:12px">검증 데이터 없음</div>'}
+          }).join("") : `<div style="color:var(--text-faint);font-size:12px">${hasSignalData ? "이번 달 신호 종목 없음" : "검증 데이터 없음"}</div>`}
         </div>
       </div>
+    `;
 
+    // 지속 보유 중 섹션
+    if (ongoingRecs.length) {
+      html += `
+        <div class="report-section-h">🔄 지속 보유 중 <span style="font-size:11px;color:var(--text-dim);font-weight:400">(이번 달 신규 신호 없음 — 계속 유지)</span></div>
+        <div class="report-grid">
+          <div class="report-cell span2">
+            ${ongoingRecs.map(r => `
+            <div style="padding:6px 0;border-bottom:1px solid var(--card-border)">
+              <div style="display:flex;justify-content:space-between;align-items:center">
+                <span style="font-weight:700">${flagBadge(r.country)} ${r.ticker} <span style="font-weight:400;color:var(--text-dim);font-size:11px">${(r.name || "").slice(0, 14)}</span></span>
+                <span class="v ${(r.current_return_pct || 0) >= 0 ? "up" : "dn"}" style="font-size:13px;font-weight:700">${fmtPct(r.current_return_pct)}</span>
+              </div>
+              <div style="font-size:11px;color:var(--text-dim);margin-top:1px">
+                진입 ${priceFmt(r.country, r.entry_close)} → 현재 ${priceFmt(r.country, r.current_close)} (${r.current_date || "—"})
+                · <span class="grade-pill ${grade2cls(r.grade)}" style="font-size:9px">${r.grade || "—"}</span>
+                · 규칙 <b>${r.rating_score ?? "—"}</b> · 재무 <b>${r.fundamentals_score ?? "—"}</b>
+              </div>
+            </div>`).join("")}
+          </div>
+        </div>
+      `;
+    }
+
+    html += `
       <div class="report-section-h">📂 카테고리 분포</div>
       <div class="report-grid">
         <div class="report-cell span2">
@@ -1294,12 +1417,25 @@ function renderMonthlyReport(history) {
 // ───────────────────────── 데이터 로드 후 사이드바/히스토리 채우기 ─────────────────────────
 const _origLoad = load;
 window._tsLoad = async function () {
-  await _origLoad();
+  // 1) Pre-fetch: compute signals before renderCard runs (so buy badges appear on first render)
+  let preData = null;
   try {
-    const res = await fetch("data/analysis.json?_=" + Date.now());
-    const data = await res.json();
+    const pr = await fetch("data/analysis.json?_=" + Date.now());
+    preData = await pr.json();
+    _historyData = preData.history || [];
+    _signalData  = computeSignals(_historyData);
+  } catch (e) {
+    console.warn("[signal pre-fetch 실패]", e);
+  }
+
+  // 2) Main render (renderCard now reads _signalData for buy badges)
+  await _origLoad();
+
+  // 3) Sidebar / history / monthly (use pre-fetched data to avoid 2nd network round-trip)
+  try {
+    const data = preData || await fetch("data/analysis.json?_=" + Date.now()).then(r => r.json());
     _historyData = data.history || [];
-    _todayDate = data.analysis_date;
+    _todayDate   = data.analysis_date;
     document.getElementById("sb-sub").textContent =
       data.analysis_date + " · " + data.model_name;
     document.getElementById("sb-date").textContent = data.analysis_date;
