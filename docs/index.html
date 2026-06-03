@@ -1678,8 +1678,25 @@ function renderSettings(data) {
       <div class="signal-rule" style="border-left-color:var(--purple)">
         <b>경기침체 우려</b> → 국채(TLT) 강세 → <b>방어주·소비재 회전</b>
       </div>
+    </div>
+
+    <div class="settings-section">📌 항상 모니터링하는 관심 테마</div>
+    <div class="settings-card">
+      <h3>3대 필수 포함 그룹 — 매일 트렌드 브리프에 최소 1개 포함</h3>
+      <div class="signal-rule" style="border-left-color:var(--yellow)">
+        <b>🥇 금·귀금속</b> (GLD, GDX, GOLD, AEM, SLV, WPM)<br>
+        상승 중 → current/predicted 트렌드 편입. 횡보/하락 중 → 진입 촉매 조건 명시 (watchlist)
+      </div>
+      <div class="signal-rule" style="border-left-color:var(--green)">
+        <b>🧬 바이오테크</b> (XBI, MRNA, REGN, BIIB, VRTX, AMGN, GILD)<br>
+        섹터 모멘텀 또는 FDA 결정·M&A 신호 → 반드시 평가. 상승 아니어도 predicted에 포함
+      </div>
+      <div class="signal-rule" style="border-left-color:var(--orange)">
+        <b>⛏️ 자원·원자재</b> (RIO, BHP, FCX, MP희토류, XLE, USO, XOM)<br>
+        원유·구리·희토류 사이클 위치를 매일 brief에 기술. 강세 → current, 반등 예상 → predicted
+      </div>
       <div style="font-size:11px;color:var(--text-faint);margin-top:8px">
-        예측 트렌드에서 evidence.theme_flow 필드로 확인 가능
+        각 예측 트렌드의 evidence.theme_flow 에서 흐름 추적 가능
       </div>
     </div>
   `;

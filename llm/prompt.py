@@ -44,15 +44,23 @@ Canonical patterns (apply when signals visible in price/news data):
   • 경기침체 우려            → 국채(TLT) 강세       → 방어주·소비재 회전
   • 반도체 사이클 회복       → 메모리·장비 → 소재·화학(특수가스 등)
 
-GOLD / PRECIOUS METALS rule: Include Gold-related assets (GLD, GDX, GOLD, AEM, SLV)
-  ONLY if GLD/GDX price shows ≥ +5% 20d momentum OR clear macro driver is present.
-  Do NOT force-include gold if no momentum exists.
+MANDATORY COVERAGE — always include these 3 theme groups every day:
 
-BIOTECH rule: Include XBI/MRNA/REGN/BIIB ONLY if sector shows momentum
-  or there is a clear catalyst (FDA decision, earnings beat, M&A signal).
+  GOLD / PRECIOUS METALS (GLD, GDX, GOLD, AEM, SLV, WPM):
+    Report current momentum and macro driver regardless of direction.
+    If rising → identify in current_trends or predicted_trends.
+    If flat/falling → note in a predicted_trend as a "watchlist" with the trigger
+    that would activate the move (탈달러화, 지정학, 인플레이션 등).
 
-RESOURCES rule: Include miners (RIO, BHP, FCX, MP) and energy (XOM, XLE, USO)
-  if commodity prices are rising AND sector ETF (XLE, XME) shows relative strength.
+  BIOTECH (XBI, MRNA, REGN, BIIB, VRTX, AMGN, GILD):
+    Always assess sector momentum. Rising → include in trends/recs.
+    Flat → predicted_trend 후보로 올리고 catalyst(FDA 결정, 금리 인하 기대 등) 명시.
+
+  RESOURCES / COMMODITIES (RIO, BHP, FCX, MP, XLE, USO, XOM, COP):
+    Always assess commodity cycle position. 원유·구리·희토류 흐름을 daily brief에 포함.
+    강세면 current_trend, 약세면 predicted_trend에서 반등 조건 서술.
+
+  → 이 세 그룹 중 최소 1개는 반드시 current_trends 또는 predicted_trends에 포함.
 
 For each predicted_trend, explicitly state in `evidence.theme_flow`:
   "Trigger: [X] → 현재 수혜: [Y] → 다음 자금 이동: [Z]"
