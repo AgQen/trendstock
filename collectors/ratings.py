@@ -170,20 +170,28 @@ def grade_from_total(total: int) -> str:
 
 
 def compute_rating(info: dict, prices_asc: list[float],
-                   volumes_asc: list[float] | None = None) -> dict:
+                   volumes_asc: list[float] | None = None,
+                   weights: dict | None = None) -> dict:
+    fw = (weights or {}).get("fund_weight",     1.0)
+    mw = (weights or {}).get("momentum_weight", 0.7)
+    tw = (weights or {}).get("timing_weight",   1.3)
+    vw = (weights or {}).get("volume_weight",   1.3)
+
     f_score, f_reasons = fundamental_dim(info)
     m_score, m_reasons = momentum_dim(prices_asc)
     t_score, t_reasons = timing_dim(prices_asc, info)
     v_score, v_reasons = volume_dim(volumes_asc or [], prices_asc)
-    total = f_score + m_score + t_score + v_score
+
+    total = round(f_score * fw + m_score * mw + t_score * tw + v_score * vw)
     return {
-        "grade": grade_from_total(total),
-        "total": total,
+        "grade":   grade_from_total(total),
+        "total":   total,
+        "weights": {"fund": fw, "momentum": mw, "timing": tw, "volume": vw},
         "dimensions": {
-            "fundamentals": {"score": f_score, "reasons": f_reasons},
-            "momentum":     {"score": m_score, "reasons": m_reasons},
-            "timing":       {"score": t_score, "reasons": t_reasons},
-            "volume":       {"score": v_score, "reasons": v_reasons},
+            "fundamentals": {"score": f_score, "weighted": round(f_score * fw, 2), "reasons": f_reasons},
+            "momentum":     {"score": m_score, "weighted": round(m_score * mw, 2), "reasons": m_reasons},
+            "timing":       {"score": t_score, "weighted": round(t_score * tw, 2), "reasons": t_reasons},
+            "volume":       {"score": v_score, "weighted": round(v_score * vw, 2), "reasons": v_reasons},
         },
     }
 

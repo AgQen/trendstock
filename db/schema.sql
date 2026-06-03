@@ -140,3 +140,16 @@ CREATE TABLE IF NOT EXISTS token_usage (
 
 CREATE INDEX IF NOT EXISTS idx_token_date ON token_usage(date DESC);
 CREATE INDEX IF NOT EXISTS idx_token_cat  ON token_usage(category);
+
+-- 룰 기반 점수 가중치 이력.
+-- effective_date 최신 행이 현재 활성 가중치.
+CREATE TABLE IF NOT EXISTS rule_weights (
+    weight_id       INTEGER PRIMARY KEY AUTOINCREMENT,
+    effective_date  TEXT NOT NULL UNIQUE,
+    fund_weight     REAL NOT NULL DEFAULT 1.0,
+    momentum_weight REAL NOT NULL DEFAULT 0.7,
+    timing_weight   REAL NOT NULL DEFAULT 1.3,
+    volume_weight   REAL NOT NULL DEFAULT 1.3,
+    note            TEXT,
+    created_at      TEXT NOT NULL
+);

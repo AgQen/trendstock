@@ -9,7 +9,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from .db import get_conn, init_db
+from .db import get_conn, init_db, load_weights, weight_history
 from .token_logger import aggregates as token_aggregates
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -249,6 +249,8 @@ def export(date: str | None = None) -> Path:
         },
         "accuracy": accuracy,
         "tokens": token_aggregates(days=30),
+        "weights": load_weights(conn),
+        "weight_history": weight_history(conn),
         "current_trends": [_trend_with_recs(conn, t) for t in current],
         "predicted_trends": [_trend_with_recs(conn, t) for t in predicted],
         "history": history,

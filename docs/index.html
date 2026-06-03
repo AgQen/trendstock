@@ -184,9 +184,54 @@ body { padding-bottom: env(safe-area-inset-bottom); }
 
 /* 등급 산정 breakdown */
 .breakdown-grid {
-  display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 6px;
   margin-bottom: 8px;
 }
+
+/* Settings view */
+.settings-section {
+  padding: 14px 16px 0;
+  font-size: 11px; font-weight: 700; color: var(--text-faint);
+  text-transform: uppercase; letter-spacing: 0.08em;
+}
+.settings-card {
+  margin: 8px 16px 0; background: var(--card);
+  border: 1px solid var(--border); border-radius: 14px; padding: 14px 16px;
+}
+.settings-card + .settings-card { margin-top: 8px; }
+.settings-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 10px; }
+.w-row {
+  display: flex; align-items: center; gap: 10px;
+  padding: 8px 0; border-top: 1px solid var(--border);
+}
+.w-row:first-of-type { border-top: none; }
+.w-label { flex: 1; font-size: 13px; }
+.w-label small { display: block; font-size: 11px; color: var(--text-faint); margin-top: 1px; }
+.w-bar-wrap { flex: 2; height: 8px; background: var(--border); border-radius: 99px; overflow: hidden; }
+.w-bar { height: 100%; border-radius: 99px; transition: width 0.4s; }
+.w-num { font-size: 14px; font-weight: 800; min-width: 32px; text-align: right; }
+.w-num.hi { color: var(--green); }
+.w-num.lo { color: var(--yellow); }
+.grade-row {
+  display: flex; align-items: center; gap: 10px; padding: 7px 0;
+  border-top: 1px solid var(--border); font-size: 13px;
+}
+.grade-row:first-of-type { border-top: none; }
+.grade-row .g-range { color: var(--text-dim); font-size: 12px; flex: 1; }
+.signal-rule {
+  padding: 9px 12px; margin-top: 6px;
+  background: var(--bg); border-radius: 8px; border-left: 3px solid var(--border);
+  font-size: 12px; line-height: 1.6; color: var(--text-dim);
+}
+.signal-rule b { color: var(--text); }
+.signal-rule + .signal-rule { margin-top: 6px; }
+.wh-row {
+  display: flex; align-items: baseline; gap: 8px; padding: 6px 0;
+  border-top: 1px solid var(--border); font-size: 12px;
+}
+.wh-row:first-of-type { border-top: none; }
+.wh-date { color: var(--text-faint); font-size: 11px; min-width: 70px; }
+.wh-note { color: var(--text-dim); flex: 1; line-height: 1.4; }
 .bd-cell {
   background: var(--bg); border-radius: 8px; padding: 8px;
   border: 1px solid var(--border);
@@ -482,6 +527,7 @@ footer.note {
       <button class="nav-btn primary" data-view="today">🔥 오늘의 트렌드</button>
       <button class="nav-btn" data-view="history">🕓 히스토리</button>
       <button class="nav-btn" data-view="report">📈 월간 보고서</button>
+      <button class="nav-btn" data-view="settings">⚙️ 점수·신호 설정</button>
     </div>
 
     <div class="group">
@@ -556,6 +602,15 @@ footer.note {
     </div>
     <div id="reportRoot">
       <div class="hist-empty">보고서 로딩 중…</div>
+    </div>
+  </div>
+
+  <div id="view-settings" class="view">
+    <div class="history-head">
+      <h2>⚙️ 점수·신호 설정</h2>
+    </div>
+    <div id="settingsRoot">
+      <div class="hist-empty">설정 로딩 중…</div>
     </div>
   </div>
 
@@ -1414,6 +1469,154 @@ function renderMonthlyReport(history) {
   monthSelect.addEventListener("change", e => renderFor(e.target.value));
 }
 
+// ───────────────────────── 점수·신호 설정 렌더 ─────────────────────────
+function renderSettings(data) {
+  const root = document.getElementById("settingsRoot");
+  if (!root) return;
+
+  const w  = data.weights || { fund_weight:1.0, momentum_weight:0.7, timing_weight:1.3, volume_weight:1.3 };
+  const wh = data.weight_history || [];
+  const avgFund = (_signalData && _signalData.avgFund != null) ? _signalData.avgFund.toFixed(1) : "—";
+
+  // 가중치 막대 색상 (높을수록 초록, 낮을수록 노랑)
+  function wColor(v) { return v >= 1.1 ? "#4ade80" : (v <= 0.85 ? "#fbbf24" : "#60a5fa"); }
+  function wWidth(v) { return Math.round(Math.min(100, v / 2.0 * 100)) + "%"; }
+  function wCls(v)   { return v >= 1.1 ? "hi" : (v <= 0.85 ? "lo" : ""); }
+
+  const dims = [
+    { key: "fund_weight",     label: "재무(펀더)",  desc: "매출성장·영업이익률·ROE·부채비율 (0~+3, 후행 6개월)",  val: w.fund_weight },
+    { key: "momentum_weight", label: "모멘텀",      desc: "20일 가격 추세 (-2~+2, 이미 벌어진 사실 → 가중치↓)",  val: w.momentum_weight },
+    { key: "timing_weight",   label: "타이밍",      desc: "20일 신고가 돌파·과열·P/E (-2~+1, 진입 타이밍 선행)", val: w.timing_weight },
+    { key: "volume_weight",   label: "거래량",      desc: "5d 거래량 급증 + 방향 (-1~+1, 수급 선행 신호→가중치↑)", val: w.volume_weight },
+  ];
+
+  let html = `
+    <div class="settings-section">📐 현재 차원 가중치</div>
+    <div class="settings-card">
+      <h3>차원별 가중치 <span style="font-size:11px;font-weight:400;color:var(--text-faint)">— weight_tune.py 가 월별 자동 조정</span></h3>
+      ${dims.map(d => `
+        <div class="w-row">
+          <div class="w-label">
+            ${d.label}
+            <small>${d.desc}</small>
+          </div>
+          <div class="w-bar-wrap">
+            <div class="w-bar" style="width:${wWidth(d.val)};background:${wColor(d.val)}"></div>
+          </div>
+          <div class="w-num ${wCls(d.val)}">×${d.val.toFixed(2)}</div>
+        </div>`).join("")}
+    </div>
+
+    <div class="settings-section">🏷️ 등급 기준 (가중 합산 기준)</div>
+    <div class="settings-card">
+      <div class="grade-row">
+        <span class="grade-pill grade-strongbuy" style="flex-shrink:0">Strong Buy</span>
+        <span class="g-range">총점 ≥ 4</span>
+        <span style="font-size:12px;color:var(--text-dim)">매우 강한 매수 신호 — 모든 차원 양호</span>
+      </div>
+      <div class="grade-row">
+        <span class="grade-pill grade-buy" style="flex-shrink:0">Buy</span>
+        <span class="g-range">총점 ≥ 2</span>
+        <span style="font-size:12px;color:var(--text-dim)">매수 신호 — 복수 차원 긍정적</span>
+      </div>
+      <div class="grade-row">
+        <span class="grade-pill grade-hold" style="flex-shrink:0">Hold</span>
+        <span class="g-range">총점 ≥ 0</span>
+        <span style="font-size:12px;color:var(--text-dim)">관망 — 매도 근거 없지만 적극 매수도 아님</span>
+      </div>
+      <div class="grade-row">
+        <span class="grade-pill grade-caution" style="flex-shrink:0">Caution</span>
+        <span class="g-range">총점 &lt; 0</span>
+        <span style="font-size:12px;color:var(--text-dim)">위험 신호 — 모멘텀 붕괴 또는 과열·고평가</span>
+      </div>
+    </div>
+
+    <div class="settings-section">🟢 매수 / 🔴 매도 신호 로직</div>
+    <div class="settings-card">
+      <h3>신호 발동 조건 <span style="font-size:11px;font-weight:400;color:var(--text-faint)">— 재무점수 평균 ${avgFund}/9 기준</span></h3>
+      <div class="signal-rule">
+        <b>🟢 매수 신호 — 재무점수 ≥ 평균 (고재무)</b><br>
+        등급이 <b>Hold / Buy / Strong Buy</b> 상태가 처음 됐을 때<br>
+        <span style="color:var(--text-faint)">→ Caution에서 Hold로 전환되는 순간도 포함</span>
+      </div>
+      <div class="signal-rule">
+        <b>🟢 매수 신호 — 재무점수 &lt; 평균 (저재무)</b><br>
+        등급이 <b>Strong Buy</b>가 됐을 때만 신호 발동<br>
+        <span style="color:var(--text-faint)">→ 재무가 약한 종목은 더 엄격한 조건 적용</span>
+      </div>
+      <div class="signal-rule">
+        <b>🔴 매도 신호 — 고재무 종목</b><br>
+        재무점수가 이전 대비 <b>2점 이상 하락</b>할 때<br>
+        <span style="color:var(--text-faint)">→ 펀더멘털 악화가 핵심 매도 트리거</span>
+      </div>
+      <div class="signal-rule">
+        <b>🔴 매도 신호 — 저재무 종목</b><br>
+        등급이 <b>Buy / Strong Buy → Hold / Caution</b>으로 하락할 때<br>
+        <span style="color:var(--text-faint)">→ 모멘텀에 의존하는 종목이므로 빠른 매도</span>
+      </div>
+      <div class="signal-rule">
+        <b>🔄 지속 보유</b><br>
+        매수 진입 후 매도 조건 미충족 → 월간 보고서에서 별도 섹션으로 표시<br>
+        <span style="color:var(--text-faint)">→ 신규 신호 없으면 Best/Worst에 포함 안 됨</span>
+      </div>
+    </div>
+
+    <div class="settings-section">📊 점수 세부 구조</div>
+    <div class="settings-card">
+      <h3>재무(펀더) 0~+3</h3>
+      <div class="signal-rule">
+        +3 : 매출YoY≥20%, 영업이익률≥20%, ROE≥20%, 부채비율&lt;50 — 4지표 전부 강<br>
+        +2 : 위 중 2개 이상 강함<br>
+        +1 : 1개 강하거나 2개 중간(10~20%)<br>
+        &nbsp;0 : 데이터 부족 또는 매출 역성장
+      </div>
+      <h3 style="margin-top:12px">모멘텀 -2~+2 (×${w.momentum_weight.toFixed(2)})</h3>
+      <div class="signal-rule">
+        +2 : 20일 +10% 이상 &amp; 5일도 플러스 — 강한 우상향<br>
+        +1 : 20일 +5~10%<br>
+        &nbsp;0 : 20일 -5~+5% 횡보<br>
+        -1 : 20일 -5~-15% 약세<br>
+        -2 : 20일 -15% 초과 — 추세 붕괴
+      </div>
+      <h3 style="margin-top:12px">타이밍 -2~+1 (×${w.timing_weight.toFixed(2)})</h3>
+      <div class="signal-rule">
+        +1 : 20일 신고가 돌파<br>
+        -1 : 20일 +30% 초과 과열, 또는 P/E≥40 고평가<br>
+        -2 : 20일 +50% 초과 극심한 과열, 또는 P/E≥60 극심한 고평가
+      </div>
+      <h3 style="margin-top:12px">거래량 -1~+1 (×${w.volume_weight.toFixed(2)})</h3>
+      <div class="signal-rule">
+        +1 : 최근 5일 평균거래량 ≥ 이전 평균×1.6 + 5일 가격 +5% 이상<br>
+        -1 : 최근 5일 평균거래량 ≥ 이전 평균×1.6 + 5일 가격 -5% 이하<br>
+        &nbsp;0 : 거래량 급증 없거나 방향 불명확
+      </div>
+    </div>
+  `;
+
+  if (wh.length) {
+    html += `
+      <div class="settings-section">🕓 가중치 조정 이력</div>
+      <div class="settings-card">
+        ${wh.map(r => `
+          <div class="wh-row">
+            <span class="wh-date">${r.effective_date}</span>
+            <div style="display:flex;gap:8px;font-size:11px;color:var(--text-dim);flex:1">
+              <span>펀더×${Number(r.fund_weight).toFixed(2)}</span>
+              <span>모멘텀×${Number(r.momentum_weight).toFixed(2)}</span>
+              <span>타이밍×${Number(r.timing_weight).toFixed(2)}</span>
+              <span>거래량×${Number(r.volume_weight).toFixed(2)}</span>
+            </div>
+          </div>
+          ${r.note ? `<div class="wh-note" style="padding-bottom:6px;margin-left:78px">${r.note}</div>` : ""}`
+        ).join("")}
+      </div>
+    `;
+  }
+
+  html += `<div style="height:32px"></div>`;
+  root.innerHTML = html;
+}
+
 // ───────────────────────── 데이터 로드 후 사이드바/히스토리 채우기 ─────────────────────────
 const _origLoad = load;
 window._tsLoad = async function () {
@@ -1445,6 +1648,7 @@ window._tsLoad = async function () {
     renderTokenCard(data.tokens);
     renderHistory(_historyData);
     renderMonthlyReport(_historyData);
+    renderSettings(data);
   } catch (e) {
     console.error("사이드바/히스토리 로드 실패:", e);
   }

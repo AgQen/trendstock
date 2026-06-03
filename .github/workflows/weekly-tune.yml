@@ -25,6 +25,17 @@ jobs:
       - name: Install deps
         run: pip install --quiet anthropic
 
+      - name: Install deps
+        run: pip install --quiet yfinance anthropic
+
+      - name: Weight auto-tune (skips if already tuned this month or <30 verified)
+        run: python -m collectors.weight_tune
+        continue-on-error: true
+
+      - name: Export web JSON (refresh weights in JSON)
+        run: python -m collectors.export_web
+        continue-on-error: true
+
       - name: Run prompt tuning (skips if no API key or <20 30d data)
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
@@ -35,10 +46,10 @@ jobs:
         run: |
           git config user.name "trendstock-bot"
           git config user.email "noreply@users.noreply.github.com"
-          git add llm/prompt.py llm/prompt_history.md || true
+          git add data.db docs/data/analysis.json llm/prompt.py llm/prompt_history.md || true
           if git diff --cached --quiet; then
-            echo "no prompt changes"
+            echo "no changes"
           else
-            git commit -m "auto-tune prompt $(date -u +%Y-%m-%d)"
+            git commit -m "weekly tune $(date -u +%Y-%m-%d)"
             git push
           fi

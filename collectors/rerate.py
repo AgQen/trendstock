@@ -12,7 +12,7 @@ import time
 
 import yfinance as yf
 
-from .db import get_conn, init_db
+from .db import get_conn, init_db, load_weights
 from .ratings import compute_rating, yahoo_ticker
 
 # yfinance .info 캐시 (한 회 호출 내에서 같은 티커 재조회 방지)
@@ -71,6 +71,10 @@ def rerate(date: str | None = None) -> None:
 
         print(f"  대상 recommendations : {len(recs)}건")
 
+        weights = load_weights(conn)
+        print(f"  활성 가중치: 펀더×{weights['fund_weight']}, 모멘텀×{weights['momentum_weight']}, "
+              f"타이밍×{weights['timing_weight']}, 거래량×{weights['volume_weight']}")
+
         updated = 0
         upgraded = 0
         downgraded = 0
@@ -87,7 +91,7 @@ def rerate(date: str | None = None) -> None:
             prices  = _prices_asc(conn, rec["asset_id"], rec["analysis_date"], 21)
             volumes = _volumes_asc(conn, rec["asset_id"], rec["analysis_date"], 21)
 
-            rating = compute_rating(info, prices, volumes)
+            rating = compute_rating(info, prices, volumes, weights)
 
             # 기존 grade
             old_grade_row = conn.execute(
