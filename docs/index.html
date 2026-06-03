@@ -1209,6 +1209,15 @@ document.getElementById("dlAllBtn").addEventListener("click", () =>
   downloadExcel(_historyData, "전체_" + _todayDate)
 );
 
+// ───────────────────────── 지속 보유 숨기기 (localStorage) ─────────────────────────
+function getHiddenOngoing() {
+  try { return new Set(JSON.parse(localStorage.getItem('ts_hidden_ongoing') || '[]')); }
+  catch { return new Set(); }
+}
+function setHiddenOngoing(s) {
+  localStorage.setItem('ts_hidden_ongoing', JSON.stringify([...s]));
+}
+
 // ───────────────────────── 월간 보고서 ─────────────────────────
 function buildMonthlyReport(history) {
   // 월별 그룹 (YYYY-MM)
@@ -1464,22 +1473,56 @@ function renderMonthlyReport(history) {
 
     // 지속 보유 중 섹션
     if (ongoingRecs.length) {
+      // 신규 신호 발생한 티커는 숨김 해제 (auto-reappear)
+      const hidden = getHiddenOngoing();
+      let hiddenChanged = false;
+      for (const ticker of [...hidden]) {
+        const st = _signalData.tickerState[ticker];
+        if (st && (st.buySignals.some(s => s.date.startsWith(ym)) || st.sellSignals.some(s => s.date.startsWith(ym)))) {
+          hidden.delete(ticker);
+          hiddenChanged = true;
+        }
+      }
+      if (hiddenChanged) setHiddenOngoing(hidden);
+
+      const visibleOngoing = ongoingRecs.filter(r => !hidden.has(r.ticker));
+      visibleOngoing.sort((a, b) => (b.current_return_pct || 0) - (a.current_return_pct || 0));
+      const ongoingBest  = visibleOngoing.slice(0, 10);
+      const ongoingWorst = visibleOngoing.length > 10 ? visibleOngoing.slice(-10).reverse() : [];
+
+      const mkOngoingRow = (r) => `
+        <div style="padding:8px 0;border-bottom:1px solid var(--card-border)">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <span style="font-weight:700">${flagBadge(r.country)} ${r.ticker} <span style="font-weight:400;color:var(--text-dim);font-size:11px">${(r.name || "").slice(0, 14)}</span></span>
+            <span style="display:flex;align-items:center;gap:6px">
+              <span class="v ${(r.current_return_pct || 0) >= 0 ? "up" : "dn"}" style="font-size:13px;font-weight:700">${fmtPct(r.current_return_pct)}</span>
+              <button class="ts-hide-btn" data-ticker="${r.ticker}" style="font-size:10px;padding:2px 6px;border-radius:4px;border:1px solid var(--card-border);background:transparent;color:var(--text-dim);cursor:pointer">숨기기</button>
+            </span>
+          </div>
+          <div style="font-size:11px;color:var(--text-dim);margin-top:2px">
+            🏷 ${r.category || "—"}${r.trend_title ? ` · 📌 ${r.trend_title.slice(0, 22)}` : ""}
+          </div>
+          <div style="font-size:11px;color:var(--text-dim)">
+            📅 예측 ${r.entry_date} · 진입 ${priceFmt(r.country, r.entry_close)} → 현재 ${priceFmt(r.country, r.current_close)} (${r.current_date || "—"})
+          </div>
+          <div style="font-size:11px;color:var(--text-dim);margin-top:1px">
+            <span class="grade-pill ${grade2cls(r.grade)}" style="font-size:9px">${r.grade || "—"}</span>
+            · 규칙 <b>${r.rating_score != null ? r.rating_score : "—"}</b> · 재무 <b>${r.fundamentals_score != null ? r.fundamentals_score : "—"}</b>
+            ${r.rationale ? `<span style="color:var(--text-faint)"> · ${r.rationale.slice(0, 45)}</span>` : ""}
+          </div>
+        </div>`;
+
       html += `
         <div class="report-section-h">🔄 지속 보유 중 <span style="font-size:11px;color:var(--text-dim);font-weight:400">(이번 달 신규 신호 없음 — 계속 유지)</span></div>
+        ${hidden.size ? `<div style="font-size:11px;color:var(--text-faint);padding:0 0 6px">${hidden.size}개 종목 숨김 (신규 신호 발생 시 자동 소환)</div>` : ""}
         <div class="report-grid">
           <div class="report-cell span2">
-            ${ongoingRecs.map(r => `
-            <div style="padding:6px 0;border-bottom:1px solid var(--card-border)">
-              <div style="display:flex;justify-content:space-between;align-items:center">
-                <span style="font-weight:700">${flagBadge(r.country)} ${r.ticker} <span style="font-weight:400;color:var(--text-dim);font-size:11px">${(r.name || "").slice(0, 14)}</span></span>
-                <span class="v ${(r.current_return_pct || 0) >= 0 ? "up" : "dn"}" style="font-size:13px;font-weight:700">${fmtPct(r.current_return_pct)}</span>
-              </div>
-              <div style="font-size:11px;color:var(--text-dim);margin-top:1px">
-                진입 ${priceFmt(r.country, r.entry_close)} → 현재 ${priceFmt(r.country, r.current_close)} (${r.current_date || "—"})
-                · <span class="grade-pill ${grade2cls(r.grade)}" style="font-size:9px">${r.grade || "—"}</span>
-                · 규칙 <b>${r.rating_score ?? "—"}</b> · 재무 <b>${r.fundamentals_score ?? "—"}</b>
-              </div>
-            </div>`).join("")}
+            <div style="font-size:12px;font-weight:700;color:var(--text-dim);margin-bottom:4px">📈 Best (수익률 상위)</div>
+            ${ongoingBest.length ? ongoingBest.map(mkOngoingRow).join("") : `<div style="color:var(--text-faint);font-size:12px">없음</div>`}
+            ${ongoingWorst.length ? `
+            <div style="font-size:12px;font-weight:700;color:var(--text-dim);margin:12px 0 4px">📉 Worst (수익률 하위)</div>
+            ${ongoingWorst.map(mkOngoingRow).join("")}
+            ` : ""}
           </div>
         </div>
       `;
@@ -1512,6 +1555,15 @@ function renderMonthlyReport(history) {
     `;
 
     root.innerHTML = html;
+
+    root.querySelectorAll('.ts-hide-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const h = getHiddenOngoing();
+        h.add(btn.dataset.ticker);
+        setHiddenOngoing(h);
+        renderFor(ym);
+      });
+    });
   };
 
   renderFor(months[0]);
