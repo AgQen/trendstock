@@ -105,7 +105,9 @@ CREATE TABLE IF NOT EXISTS recommendations (
     verified_at         TEXT,
     -- 룰 기반 객관 등급 (ratings.py)
     rating_score        INTEGER,            -- -4 ~ +6
-    rating_breakdown_json TEXT               -- {fundamentals, momentum, timing 각 score+reasons}
+    rating_breakdown_json TEXT,              -- {fundamentals, momentum, timing 각 score+reasons}
+    -- LLM 생성 상세 설명 (RecDetail)
+    detail_json         TEXT                -- {stock_desc, trend_link, current_flow, financials_reason, prediction}
 );
 
 CREATE INDEX IF NOT EXISTS idx_rec_date ON recommendations(analysis_date DESC);

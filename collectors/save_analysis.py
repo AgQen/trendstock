@@ -136,8 +136,8 @@ def save(analysis: dict) -> int:
                         INSERT INTO recommendations
                           (trend_id, snapshot_id, analysis_date, asset_id, rank,
                            grade, rationale, entry_close,
-                           fundamentals_score, fundamentals_json)
-                        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                           fundamentals_score, fundamentals_json, detail_json)
+                        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                         """,
                         (
                             trend_id, snapshot_id, date, aid, r.get("rank"),
@@ -145,6 +145,8 @@ def save(analysis: dict) -> int:
                             r.get("fundamentals_score"),
                             json.dumps(r.get("fundamentals", {}),
                                        ensure_ascii=False),
+                            json.dumps(r.get("detail"), ensure_ascii=False)
+                            if r.get("detail") else None,
                         ),
                     )
         conn.commit()

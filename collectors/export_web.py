@@ -21,7 +21,7 @@ def _trend_with_recs(conn, trend_row):
         """
         SELECT a.ticker, a.name, a.country, r.rank, r.grade, r.rationale,
                r.entry_close, r.fundamentals_score, r.fundamentals_json,
-               r.rating_score, r.rating_breakdown_json,
+               r.rating_score, r.rating_breakdown_json, r.detail_json,
                r.close_7d, r.alpha_7d, r.hit_7d,
                r.close_30d, r.alpha_30d, r.hit_30d
         FROM recommendations r
@@ -46,6 +46,7 @@ def _trend_with_recs(conn, trend_row):
             "fundamentals": json.loads(r["fundamentals_json"] or "{}"),
             "rating_score": r["rating_score"],
             "rating_breakdown": json.loads(r["rating_breakdown_json"] or "null"),
+            "detail": json.loads(r["detail_json"] or "null"),
             "validation": {
                 "close_7d": r["close_7d"],  "alpha_7d": r["alpha_7d"],  "hit_7d": r["hit_7d"],
                 "close_30d": r["close_30d"], "alpha_30d": r["alpha_30d"], "hit_30d": r["hit_30d"],

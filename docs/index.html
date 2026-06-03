@@ -135,11 +135,34 @@ body { padding-bottom: env(safe-area-inset-bottom); }
 
 /* Recommendations */
 .recs { padding: 0 16px 12px; }
+.rec-wrap { border-top: 1px solid var(--border); }
+.rec-wrap:first-child { border-top: none; }
 .rec {
   display: flex; align-items: center; gap: 10px;
-  padding: 10px 0; border-top: 1px solid var(--border);
+  padding: 10px 0 4px;
 }
-.rec:first-child { border-top: none; padding-top: 6px; }
+.rec-toggle {
+  display: flex; align-items: center; justify-content: flex-end;
+  padding: 2px 0 8px; font-size: 11px; color: var(--text-faint);
+  cursor: pointer; background: none; border: none; width: 100%;
+  gap: 3px; font-family: inherit;
+}
+.chev-sm { transition: transform .2s; display: inline-block; font-style: normal; }
+.rec-wrap.open .chev-sm { transform: rotate(180deg); }
+.rec-detail-panel { display: none; padding: 2px 0 10px; }
+.rec-wrap.open .rec-detail-panel { display: block; }
+.detail-block {
+  padding: 8px 10px; margin-bottom: 6px;
+  background: var(--bg); border-radius: 8px;
+  border-left: 3px solid var(--border);
+  font-size: 12px; line-height: 1.5; color: var(--text);
+}
+.detail-block:last-child { margin-bottom: 0; }
+.detail-label {
+  font-size: 10px; font-weight: 700; color: var(--text-faint);
+  text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 3px;
+}
+.detail-block.is-predict { border-left-color: var(--purple); }
 .rec .grade-pill {
   flex-shrink: 0;
   font-size: 10.5px; font-weight: 700; padding: 4px 8px; border-radius: 6px;
@@ -693,8 +716,8 @@ function renderCard(t, kind) {
   // Recommendations
   const recsEl = card.querySelector(".recs");
   (t.recommendations || []).forEach(r => {
-    const div = document.createElement("div");
-    div.className = "rec";
+    const wrap = document.createElement("div");
+    wrap.className = "rec-wrap";
     const f = r.fundamentals || {};
     const f_parts = [];
     if (f.revenue_yoy_pct != null) f_parts.push(`매출 ${f.revenue_yoy_pct >= 0 ? "+" : ""}${f.revenue_yoy_pct.toFixed(0)}%`);
@@ -710,23 +733,48 @@ function renderCard(t, kind) {
     const buyBadge = tkState && tkState.isOngoingBuy
       ? `<span style="background:#14532d;color:#4ade80;font-size:10px;padding:1px 6px;border-radius:99px;font-weight:700;margin-left:4px">🟢매수</span>`
       : "";
-    div.innerHTML = `
-      <div class="grade-pill ${grade2cls(r.grade)}">${r.grade}${scorePill}</div>
-      <div class="info">
-        <div class="tk-row">
-          ${flagBadge(r.country)}
-          <span class="tk">${r.ticker}</span>
-          <span class="nm">${r.name || ""}</span>
-          ${buyBadge}
+
+    const d = r.detail || {};
+    const hasDetail = !!(d.stock_desc || d.trend_link || d.current_flow || d.financials_reason || d.prediction);
+    const mkBlock = (label, text, extra) =>
+      text ? `<div class="detail-block${extra || ""}"><div class="detail-label">${label}</div><div>${text}</div></div>` : "";
+
+    wrap.innerHTML = `
+      <div class="rec">
+        <div class="grade-pill ${grade2cls(r.grade)}">${r.grade}${scorePill}</div>
+        <div class="info">
+          <div class="tk-row">
+            ${flagBadge(r.country)}
+            <span class="tk">${r.ticker}</span>
+            <span class="nm">${r.name || ""}</span>
+            ${buyBadge}
+          </div>
+          <div class="rationale">${r.rationale || ""}${f_line}</div>
         </div>
-        <div class="rationale">${r.rationale || ""}${f_line}</div>
+        <div class="score">
+          <div>${priceFmt(r.country, r.entry_close)}</div>
+          <div><b>${r.fundamentals_score ?? "—"}</b>/9</div>
+        </div>
       </div>
-      <div class="score">
-        <div>${priceFmt(r.country, r.entry_close)}</div>
-        <div><b>${r.fundamentals_score ?? "—"}</b>/9</div>
-      </div>
+      ${hasDetail ? `
+        <button class="rec-toggle">상세 설명 <i class="chev-sm">▼</i></button>
+        <div class="rec-detail-panel">
+          ${mkBlock("🏢 종목 소개", d.stock_desc)}
+          ${mkBlock("🔗 트렌드 연결", d.trend_link)}
+          ${mkBlock("📈 현재 흐름", d.current_flow)}
+          ${mkBlock("💰 재무 근거", d.financials_reason)}
+          ${mkBlock("🔮 예측 근거", d.prediction, " is-predict")}
+        </div>
+      ` : ""}
     `;
-    recsEl.appendChild(div);
+
+    if (hasDetail) {
+      wrap.querySelector(".rec-toggle").addEventListener("click", () => {
+        wrap.classList.toggle("open");
+      });
+    }
+
+    recsEl.appendChild(wrap);
   });
 
   // Causal chain

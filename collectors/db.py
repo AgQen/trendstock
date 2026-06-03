@@ -37,6 +37,9 @@ def init_db() -> None:
         if "rating_breakdown_json" not in cols:
             conn.execute("ALTER TABLE recommendations "
                          "ADD COLUMN rating_breakdown_json TEXT")
+        if "detail_json" not in cols:
+            conn.execute("ALTER TABLE recommendations "
+                         "ADD COLUMN detail_json TEXT")
         tcols = {r["name"] for r in
                  conn.execute("PRAGMA table_info(predicted_trends)").fetchall()}
         if "timeframe" not in tcols:
