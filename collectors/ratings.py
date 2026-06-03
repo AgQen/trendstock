@@ -1,11 +1,14 @@
-"""객관적 룰 기반 종합 등급 (펀더 + 모멘텀 + 타이밍).
+"""객관적 룰 기반 종합 등급 (펀더 + 모멘텀 + 타이밍 + 거래량 + RS + 위험도).
 
 LLM 주관 없이 동일 입력 → 동일 등급. 매일 자동 재계산 가능.
 
-총점 범위 [-4, +6]
-  - 펀더    (0 ~ +3) : yfinance info
-  - 모멘텀  (-2 ~ +2): DB 20거래일 종가
-  - 타이밍  (-2 ~ +1): 신고가 돌파, 과열, 밸류
+총점 범위 (가중치 기본값 기준 대략 [-7, +9])
+  - 펀더    (0 ~ +3)  × 0.9 : yfinance info
+  - 모멘텀  (-2 ~ +2) × 0.6 : DB 20거래일 종가 (후행 → 비중 낮음)
+  - 타이밍  (-2 ~ +1) × 1.0 : 신고가 돌파, 과열, 밸류
+  - 거래량  (-1 ~ +1) × 1.0 : 5일 거래량 급증 + 방향 (선행)
+  - 상대강도(-1 ~ +2) × 1.2 : SPY 대비 초과수익 (선행, 핵심)
+  - 위험도  (-2 ~ +1) × 0.8 : 21일 MDD (낙폭 관리)
 
 등급 매핑:
   ≥ 4 : Strong Buy
@@ -133,6 +136,56 @@ def timing_dim(prices_asc: list[float], info: dict) -> tuple[int, list[str]]:
     return score, reasons
 
 
+# --- 상대강도 (RS) -----------------------------------------------------------
+
+def rs_dim(prices_asc: list[float],
+           benchmark_prices_asc: list[float]) -> tuple[int, list[str]]:
+    """SPY 대비 초과수익률(알파) 기반 상대강도.
+
+    prices_asc, benchmark_prices_asc: 오래된 → 최신 순 (최소 6개).
+    """
+    if len(prices_asc) < 6 or len(benchmark_prices_asc) < 6:
+        return 0, []
+
+    n = min(len(prices_asc), len(benchmark_prices_asc))
+    s_r = (prices_asc[-1] / prices_asc[-n] - 1) * 100 if prices_asc[-n] else 0
+    b_r = (benchmark_prices_asc[-1] / benchmark_prices_asc[-n] - 1) * 100 \
+          if benchmark_prices_asc[-n] else 0
+    alpha = s_r - b_r
+
+    if alpha >= 15:
+        return 2, [f"vs SPY 초과 +{alpha:.0f}% (강한 RS)"]
+    if alpha >= 5:
+        return 1, [f"vs SPY 초과 +{alpha:.0f}%"]
+    if alpha > -5:
+        return 0, [f"vs SPY {alpha:+.0f}% (시장 수준)"]
+    return -1, [f"vs SPY 부진 {alpha:.0f}%"]
+
+
+# --- 위험도 / MDD -------------------------------------------------------------
+
+def mdd_dim(prices_asc: list[float]) -> tuple[int, list[str]]:
+    """21거래일 내 최대 낙폭(MDD) 기반 위험도 평가."""
+    if len(prices_asc) < 5:
+        return 0, []
+
+    peak = prices_asc[0]
+    mdd = 0.0
+    for p in prices_asc[1:]:
+        peak = max(peak, p)
+        if peak:
+            mdd = max(mdd, (peak - p) / peak)
+
+    pct = mdd * 100
+    if pct < 8:
+        return 1, [f"MDD {pct:.0f}% — 변동성 낮음 (안정)"]
+    if pct < 20:
+        return 0, [f"MDD {pct:.0f}% — 정상 범위"]
+    if pct < 35:
+        return -1, [f"MDD {pct:.0f}% — 고변동성"]
+    return -2, [f"MDD {pct:.0f}% — 극심한 낙폭"]
+
+
 # --- 거래량 -------------------------------------------------------------------
 
 def volume_dim(volumes_asc: list[float], prices_asc: list[float]) -> tuple[int, list[str]]:
@@ -171,27 +224,38 @@ def grade_from_total(total: int) -> str:
 
 def compute_rating(info: dict, prices_asc: list[float],
                    volumes_asc: list[float] | None = None,
-                   weights: dict | None = None) -> dict:
-    fw = (weights or {}).get("fund_weight",     1.0)
-    mw = (weights or {}).get("momentum_weight", 0.7)
-    tw = (weights or {}).get("timing_weight",   1.3)
-    vw = (weights or {}).get("volume_weight",   1.3)
+                   weights: dict | None = None,
+                   benchmark_prices_asc: list[float] | None = None) -> dict:
+    fw  = (weights or {}).get("fund_weight",     0.9)
+    mw  = (weights or {}).get("momentum_weight", 0.6)
+    tw  = (weights or {}).get("timing_weight",   1.0)
+    vw  = (weights or {}).get("volume_weight",   1.0)
+    rsw = (weights or {}).get("rs_weight",       1.2)
+    rkw = (weights or {}).get("risk_weight",     0.8)
 
-    f_score, f_reasons = fundamental_dim(info)
-    m_score, m_reasons = momentum_dim(prices_asc)
-    t_score, t_reasons = timing_dim(prices_asc, info)
-    v_score, v_reasons = volume_dim(volumes_asc or [], prices_asc)
+    f_score,  f_reasons  = fundamental_dim(info)
+    m_score,  m_reasons  = momentum_dim(prices_asc)
+    t_score,  t_reasons  = timing_dim(prices_asc, info)
+    v_score,  v_reasons  = volume_dim(volumes_asc or [], prices_asc)
+    rs_score, rs_reasons = rs_dim(prices_asc, benchmark_prices_asc or [])
+    rk_score, rk_reasons = mdd_dim(prices_asc)
 
-    total = round(f_score * fw + m_score * mw + t_score * tw + v_score * vw)
+    total = round(
+        f_score * fw + m_score * mw + t_score * tw +
+        v_score * vw + rs_score * rsw + rk_score * rkw
+    )
     return {
         "grade":   grade_from_total(total),
         "total":   total,
-        "weights": {"fund": fw, "momentum": mw, "timing": tw, "volume": vw},
+        "weights": {"fund": fw, "momentum": mw, "timing": tw,
+                    "volume": vw, "rs": rsw, "risk": rkw},
         "dimensions": {
-            "fundamentals": {"score": f_score, "weighted": round(f_score * fw, 2), "reasons": f_reasons},
-            "momentum":     {"score": m_score, "weighted": round(m_score * mw, 2), "reasons": m_reasons},
-            "timing":       {"score": t_score, "weighted": round(t_score * tw, 2), "reasons": t_reasons},
-            "volume":       {"score": v_score, "weighted": round(v_score * vw, 2), "reasons": v_reasons},
+            "fundamentals": {"score": f_score,  "weighted": round(f_score * fw,   2), "reasons": f_reasons},
+            "momentum":     {"score": m_score,  "weighted": round(m_score * mw,   2), "reasons": m_reasons},
+            "timing":       {"score": t_score,  "weighted": round(t_score * tw,   2), "reasons": t_reasons},
+            "volume":       {"score": v_score,  "weighted": round(v_score * vw,   2), "reasons": v_reasons},
+            "rs":           {"score": rs_score, "weighted": round(rs_score * rsw, 2), "reasons": rs_reasons},
+            "risk":         {"score": rk_score, "weighted": round(rk_score * rkw, 2), "reasons": rk_reasons},
         },
     }
 

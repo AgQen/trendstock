@@ -148,10 +148,12 @@ CREATE INDEX IF NOT EXISTS idx_token_cat  ON token_usage(category);
 CREATE TABLE IF NOT EXISTS rule_weights (
     weight_id       INTEGER PRIMARY KEY AUTOINCREMENT,
     effective_date  TEXT NOT NULL UNIQUE,
-    fund_weight     REAL NOT NULL DEFAULT 1.0,
-    momentum_weight REAL NOT NULL DEFAULT 0.7,
-    timing_weight   REAL NOT NULL DEFAULT 1.3,
-    volume_weight   REAL NOT NULL DEFAULT 1.3,
+    fund_weight     REAL NOT NULL DEFAULT 0.9,
+    momentum_weight REAL NOT NULL DEFAULT 0.6,
+    timing_weight   REAL NOT NULL DEFAULT 1.0,
+    volume_weight   REAL NOT NULL DEFAULT 1.0,
+    rs_weight       REAL NOT NULL DEFAULT 1.2,   -- 상대강도 (SPY 대비 초과수익)
+    risk_weight     REAL NOT NULL DEFAULT 0.8,   -- 위험도/MDD
     note            TEXT,
     created_at      TEXT NOT NULL
 );

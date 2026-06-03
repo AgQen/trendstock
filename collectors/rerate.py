@@ -73,7 +73,16 @@ def rerate(date: str | None = None) -> None:
 
         weights = load_weights(conn)
         print(f"  활성 가중치: 펀더×{weights['fund_weight']}, 모멘텀×{weights['momentum_weight']}, "
-              f"타이밍×{weights['timing_weight']}, 거래량×{weights['volume_weight']}")
+              f"타이밍×{weights['timing_weight']}, 거래량×{weights['volume_weight']}, "
+              f"RS×{weights.get('rs_weight', 1.2)}, 위험도×{weights.get('risk_weight', 0.8)}")
+
+        # SPY 벤치마크 asset_id (RS 차원 계산용)
+        spy_row = conn.execute(
+            "SELECT asset_id FROM assets WHERE ticker = 'SPY' AND country = 'US'"
+        ).fetchone()
+        spy_asset_id = spy_row["asset_id"] if spy_row else None
+        if not spy_asset_id:
+            print("  [WARN] SPY 가격 데이터 없음 — RS 차원 0으로 계산됨")
 
         updated = 0
         upgraded = 0
@@ -88,10 +97,12 @@ def rerate(date: str | None = None) -> None:
 
             yf_tk = yahoo_ticker(asset["ticker"], asset["exchange"], asset["country"])
             info = _fetch_info(yf_tk)
-            prices  = _prices_asc(conn, rec["asset_id"], rec["analysis_date"], 21)
-            volumes = _volumes_asc(conn, rec["asset_id"], rec["analysis_date"], 21)
+            prices    = _prices_asc(conn, rec["asset_id"], rec["analysis_date"], 21)
+            volumes   = _volumes_asc(conn, rec["asset_id"], rec["analysis_date"], 21)
+            spy_prices = _prices_asc(conn, spy_asset_id, rec["analysis_date"], 21) \
+                         if spy_asset_id else []
 
-            rating = compute_rating(info, prices, volumes, weights)
+            rating = compute_rating(info, prices, volumes, weights, spy_prices)
 
             # 기존 grade
             old_grade_row = conn.execute(
@@ -122,13 +133,16 @@ def rerate(date: str | None = None) -> None:
             sign = "↑" if new != old and order.index(new) > order.index(old or "Hold") \
                    else ("↓" if old and new != old else "·")
             name = (asset["name"] or "")[:12]
+            dims = rating["dimensions"]
             print(f"  {sign} {asset['ticker']:<8} {name:<12} "
                   f"{(old or '-'):<11} → {new:<11} "
                   f"(총점 {rating['total']:+d}: 펀더 "
-                  f"{rating['dimensions']['fundamentals']['score']:+d}, "
-                  f"모멘텀 {rating['dimensions']['momentum']['score']:+d}, "
-                  f"타이밍 {rating['dimensions']['timing']['score']:+d}, "
-                  f"거래량 {rating['dimensions']['volume']['score']:+d})")
+                  f"{dims['fundamentals']['score']:+d}, "
+                  f"모멘텀 {dims['momentum']['score']:+d}, "
+                  f"타이밍 {dims['timing']['score']:+d}, "
+                  f"거래량 {dims['volume']['score']:+d}, "
+                  f"RS {dims['rs']['score']:+d}, "
+                  f"위험도 {dims['risk']['score']:+d})")
 
             time.sleep(0.05)  # yfinance 정중함
 

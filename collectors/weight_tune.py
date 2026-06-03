@@ -29,6 +29,8 @@ DIMS = [
     ("momentum",     "momentum_weight"),
     ("timing",       "timing_weight"),
     ("volume",       "volume_weight"),
+    ("rs",           "rs_weight"),
+    ("risk",         "risk_weight"),
 ]
 
 
@@ -119,11 +121,12 @@ def tune(dry_run: bool = False) -> dict | None:
 
         conn.execute(
             "INSERT INTO rule_weights "
-            "(effective_date, fund_weight, momentum_weight, timing_weight, volume_weight, note, created_at) "
-            "VALUES (?, ?, ?, ?, ?, ?, ?)",
+            "(effective_date, fund_weight, momentum_weight, timing_weight, volume_weight, rs_weight, risk_weight, note, created_at) "
+            "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
             (today,
              new_weights["fund_weight"], new_weights["momentum_weight"],
              new_weights["timing_weight"], new_weights["volume_weight"],
+             new_weights["rs_weight"], new_weights["risk_weight"],
              note, now_iso()),
         )
         conn.commit()

@@ -839,6 +839,8 @@ function renderCard(t, kind) {
         ${cell("모멘텀 -2~+2", bd.momentum)}
         ${cell("타이밍 -2~+1", bd.timing)}
         ${cell("거래량 -1~+1", bd.volume)}
+        ${bd.rs   ? cell("상대강도(RS) -1~+2", bd.rs)   : ""}
+        ${bd.risk ? cell("위험도(MDD) -2~+1", bd.risk) : ""}
       </div>
     `;
     rEl.appendChild(block);
@@ -1532,10 +1534,12 @@ function renderSettings(data) {
   function wCls(v)   { return v >= 1.1 ? "hi" : (v <= 0.85 ? "lo" : ""); }
 
   const dims = [
-    { key: "fund_weight",     label: "재무(펀더)",  desc: "매출성장·영업이익률·ROE·부채비율 (0~+3, 후행 6개월)",  val: w.fund_weight },
-    { key: "momentum_weight", label: "모멘텀",      desc: "20일 가격 추세 (-2~+2, 이미 벌어진 사실 → 가중치↓)",  val: w.momentum_weight },
-    { key: "timing_weight",   label: "타이밍",      desc: "20일 신고가 돌파·과열·P/E (-2~+1, 진입 타이밍 선행)", val: w.timing_weight },
-    { key: "volume_weight",   label: "거래량",      desc: "5d 거래량 급증 + 방향 (-1~+1, 수급 선행 신호→가중치↑)", val: w.volume_weight },
+    { key: "fund_weight",     label: "재무(펀더)",       desc: "매출성장·영업이익률·ROE·부채비율 (0~+3, 후행 6개월)",         val: w.fund_weight },
+    { key: "momentum_weight", label: "모멘텀",           desc: "20일 가격 추세 (-2~+2, 이미 벌어진 사실 → 비중↓)",           val: w.momentum_weight },
+    { key: "timing_weight",   label: "타이밍",           desc: "20일 신고가 돌파·과열·P/E (-2~+1, 진입 타이밍 선행)",        val: w.timing_weight },
+    { key: "volume_weight",   label: "거래량",           desc: "5d 거래량 급증 + 방향 (-1~+1, 수급 선행 신호)",              val: w.volume_weight },
+    { key: "rs_weight",       label: "상대강도(RS) 🆕",  desc: "SPY 대비 초과수익률 (-1~+2, 핵심 — 시장보다 강한 종목 선별)",  val: w.rs_weight || 1.2 },
+    { key: "risk_weight",     label: "위험도(MDD) 🆕",   desc: "21일 최대낙폭 (-2~+1, 낙폭 작을수록 안정적 진입)",           val: w.risk_weight || 0.8 },
   ];
 
   let html = `
@@ -1638,6 +1642,45 @@ function renderSettings(data) {
         -1 : 최근 5일 평균거래량 ≥ 이전 평균×1.6 + 5일 가격 -5% 이하<br>
         &nbsp;0 : 거래량 급증 없거나 방향 불명확
       </div>
+      <h3 style="margin-top:12px">🆕 상대강도(RS) -1~+2 (×${(w.rs_weight||1.2).toFixed(2)})</h3>
+      <div class="signal-rule" style="border-left-color:var(--green)">
+        +2 : SPY 대비 초과수익 +15% 이상 — 압도적으로 강한 종목<br>
+        +1 : SPY 대비 초과수익 +5~15% — 시장 아웃퍼폼<br>
+        &nbsp;0 : SPY ±5% 내 — 시장 수준<br>
+        -1 : SPY 대비 -5% 이상 언더퍼폼<br>
+        <span style="color:var(--text-faint)">→ 핵심: 시장이 올라도 더 많이 오른 종목만 선별</span>
+      </div>
+      <h3 style="margin-top:12px">🆕 위험도/MDD -2~+1 (×${(w.risk_weight||0.8).toFixed(2)})</h3>
+      <div class="signal-rule" style="border-left-color:var(--yellow)">
+        +1 : 21일 최대 낙폭(MDD) &lt; 8% — 변동성 낮고 안정적<br>
+        &nbsp;0 : MDD 8~20% — 정상 범위<br>
+        -1 : MDD 20~35% — 고변동성, 리스크 주의<br>
+        -2 : MDD &gt; 35% — 극심한 낙폭, 투기 영역<br>
+        <span style="color:var(--text-faint)">→ 기대수익 30%/MDD 10% &gt; 기대수익 35%/MDD 60%</span>
+      </div>
+    </div>
+
+    <div class="settings-section">🌊 테마 플로우 엔진</div>
+    <div class="settings-card">
+      <h3>자금 이동 패턴 (LLM 분석)</h3>
+      <div class="signal-rule" style="border-left-color:var(--purple)">
+        <b>지정학 긴장/전쟁</b> → 방산·원유·달러 강세 → <b>금·구리·희토류 수요</b>
+      </div>
+      <div class="signal-rule" style="border-left-color:var(--purple)">
+        <b>금리 인하 기대</b> → 성장주·AI·반도체 강세 → <b>바이오테크 회복</b>
+      </div>
+      <div class="signal-rule" style="border-left-color:var(--purple)">
+        <b>AI 인프라 투자</b> → 전력·원전·구리 → <b>냉각장치·희토류(MP Materials)</b>
+      </div>
+      <div class="signal-rule" style="border-left-color:var(--purple)">
+        <b>탈달러화·중앙은행 금 매수</b> → 금·은·원자재 → <b>금광주(GDX/GOLD/AEM)</b>
+      </div>
+      <div class="signal-rule" style="border-left-color:var(--purple)">
+        <b>경기침체 우려</b> → 국채(TLT) 강세 → <b>방어주·소비재 회전</b>
+      </div>
+      <div style="font-size:11px;color:var(--text-faint);margin-top:8px">
+        예측 트렌드에서 evidence.theme_flow 필드로 확인 가능
+      </div>
     </div>
   `;
 
@@ -1653,6 +1696,8 @@ function renderSettings(data) {
               <span>모멘텀×${Number(r.momentum_weight).toFixed(2)}</span>
               <span>타이밍×${Number(r.timing_weight).toFixed(2)}</span>
               <span>거래량×${Number(r.volume_weight).toFixed(2)}</span>
+              ${r.rs_weight   != null ? `<span>RS×${Number(r.rs_weight).toFixed(2)}</span>` : ""}
+              ${r.risk_weight != null ? `<span>위험도×${Number(r.risk_weight).toFixed(2)}</span>` : ""}
             </div>
           </div>
           ${r.note ? `<div class="wh-note" style="padding-bottom:6px;margin-left:78px">${r.note}</div>` : ""}`

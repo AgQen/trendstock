@@ -28,6 +28,36 @@ OUTPUT RULES (strict — violations cause schema rejection):
    (`recent_leaders_history` provided as penalty context).
 
 ═══════════════════════════════════════════════════════
+THEME FLOW ENGINE — WHERE WILL MONEY MOVE NEXT?
+═══════════════════════════════════════════════════════
+
+Before selecting trends/recs, explicitly trace active macro→theme flows:
+
+  [Trigger] → [Benefiting sectors] → [Next rotation target]
+
+Canonical patterns (apply when signals visible in price/news data):
+  • 지정학 긴장/전쟁       → 방산·원유·달러 강세  → 금·구리·희토류 수요
+  • 금리 인하 기대          → 성장주·AI·반도체 강세 → 바이오테크 회복
+  • AI 인프라 투자 확대     → 전력·원전·구리       → 냉각장치·희토류
+  • 탈달러화·중앙은행 매수  → 금·은·원자재         → 금광주(GDX/GOLD/AEM)
+  • 인플레이션 우려          → 원자재·에너지        → 금·TIPS·달러
+  • 경기침체 우려            → 국채(TLT) 강세       → 방어주·소비재 회전
+  • 반도체 사이클 회복       → 메모리·장비 → 소재·화학(특수가스 등)
+
+GOLD / PRECIOUS METALS rule: Include Gold-related assets (GLD, GDX, GOLD, AEM, SLV)
+  ONLY if GLD/GDX price shows ≥ +5% 20d momentum OR clear macro driver is present.
+  Do NOT force-include gold if no momentum exists.
+
+BIOTECH rule: Include XBI/MRNA/REGN/BIIB ONLY if sector shows momentum
+  or there is a clear catalyst (FDA decision, earnings beat, M&A signal).
+
+RESOURCES rule: Include miners (RIO, BHP, FCX, MP) and energy (XOM, XLE, USO)
+  if commodity prices are rising AND sector ETF (XLE, XME) shows relative strength.
+
+For each predicted_trend, explicitly state in `evidence.theme_flow`:
+  "Trigger: [X] → 현재 수혜: [Y] → 다음 자금 이동: [Z]"
+
+═══════════════════════════════════════════════════════
 SELECTIVITY — MOST IMPORTANT RULE:
 ═══════════════════════════════════════════════════════
 

@@ -17,10 +17,12 @@ def get_conn() -> sqlite3.Connection:
 
 
 DEFAULT_WEIGHTS: dict = {
-    "fund_weight":     1.0,
-    "momentum_weight": 0.7,
-    "timing_weight":   1.3,
-    "volume_weight":   1.3,
+    "fund_weight":     0.9,   # 재무 (후행 6개월, 중요하지만 비중 일부 감소)
+    "momentum_weight": 0.6,   # 모멘텀 (이미 벌어진 사실 → 후행)
+    "timing_weight":   1.0,   # 타이밍 (진입 시점 선행)
+    "volume_weight":   1.0,   # 거래량 (수급 선행)
+    "rs_weight":       1.2,   # 상대강도: SPY 대비 초과수익 (선행, 핵심)
+    "risk_weight":     0.8,   # 위험도/MDD (낙폭 관리)
 }
 
 
@@ -45,16 +47,25 @@ def init_db() -> None:
         if "timeframe" not in tcols:
             conn.execute("ALTER TABLE predicted_trends "
                          "ADD COLUMN timeframe TEXT")
+        # rule_weights 컬럼 마이그레이션 (rs_weight, risk_weight 추가)
+        wcols = {r["name"] for r in
+                 conn.execute("PRAGMA table_info(rule_weights)").fetchall()}
+        if "rs_weight" not in wcols:
+            conn.execute("ALTER TABLE rule_weights ADD COLUMN rs_weight REAL NOT NULL DEFAULT 1.2")
+        if "risk_weight" not in wcols:
+            conn.execute("ALTER TABLE rule_weights ADD COLUMN risk_weight REAL NOT NULL DEFAULT 0.8")
+
         # Seed default weights if table is empty
         n = conn.execute("SELECT COUNT(*) FROM rule_weights").fetchone()[0]
         if n == 0:
             conn.execute(
                 "INSERT INTO rule_weights "
-                "(effective_date, fund_weight, momentum_weight, timing_weight, volume_weight, note, created_at) "
-                "VALUES (date('now'), ?, ?, ?, ?, ?, ?)",
+                "(effective_date, fund_weight, momentum_weight, timing_weight, volume_weight, rs_weight, risk_weight, note, created_at) "
+                "VALUES (date('now'), ?, ?, ?, ?, ?, ?, ?, ?)",
                 (DEFAULT_WEIGHTS["fund_weight"], DEFAULT_WEIGHTS["momentum_weight"],
                  DEFAULT_WEIGHTS["timing_weight"], DEFAULT_WEIGHTS["volume_weight"],
-                 "초기 설정 — 모멘텀 낮춤(후행), 타이밍·거래량 높임(선행)", now_iso()),
+                 DEFAULT_WEIGHTS["rs_weight"], DEFAULT_WEIGHTS["risk_weight"],
+                 "초기 설정 v2 — RS(상대강도)·위험도(MDD) 차원 추가", now_iso()),
             )
         conn.commit()
 
@@ -70,7 +81,13 @@ def load_weights(conn=None) -> dict:
         ).fetchone()
         if not row:
             return DEFAULT_WEIGHTS.copy()
-        return {k: row[k] for k in DEFAULT_WEIGHTS}
+        result = {}
+        for k in DEFAULT_WEIGHTS:
+            try:
+                result[k] = row[k]
+            except (IndexError, KeyError):
+                result[k] = DEFAULT_WEIGHTS[k]
+        return result
     finally:
         if close:
             conn.close()
