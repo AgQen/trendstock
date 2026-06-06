@@ -1,11 +1,11 @@
 {
-  "analysis_date": "2026-06-05",
+  "analysis_date": "2026-06-06",
   "model_name": "claude-sonnet-4-6",
-  "generated_at": "2026-06-05T22:53:28+00:00",
+  "generated_at": "2026-06-06T22:51:52+00:00",
   "summary": {
     "current_trends_count": 4,
-    "predicted_trends_count": 4,
-    "total_recommendations": 32,
+    "predicted_trends_count": 5,
+    "total_recommendations": 33,
     "top_movers_1d": [
       {
         "ticker": "055550",
@@ -103,19 +103,19 @@
     "by_category": [
       {
         "category": "daily_analysis",
-        "input_tokens": 647348,
+        "input_tokens": 673817,
         "cached_input_tokens": 0,
-        "output_tokens": 312156,
-        "cost_usd": 6.6244,
-        "calls": 30
+        "output_tokens": 325350,
+        "cost_usd": 6.9017,
+        "calls": 31
       }
     ],
     "total": {
-      "input_tokens": 647348,
-      "output_tokens": 312156,
-      "cost_usd": 6.6244,
-      "cost_krw": 9274,
-      "calls": 30
+      "input_tokens": 673817,
+      "output_tokens": 325350,
+      "cost_usd": 6.9017,
+      "cost_krw": 9662,
+      "calls": 31
     }
   },
   "weights": {
@@ -142,60 +142,151 @@
   ],
   "current_trends": [
     {
-      "trend_id": 159,
+      "trend_id": 167,
       "rank": 1,
-      "title": "한국 금융주 독주 — 기술주 충격 속 안전자산 로테이션",
-      "summary": "글로벌 반도체·기술주 급락(-10% 이상) 속에서 한국 금융주(105560, 055550)는 오늘 +4~+7% 급등하며 자금 피난처로 부상. 5일 수익률 +14~+16%로 시장 내 유일한 강세 섹터",
-      "category": "금융/방어주 로테이션",
+      "title": "미국 금융주 단독 상승 — 리스크오프 속 방어적 가치주 순환",
+      "summary": "전 섹터가 급락하는 가운데 JPM·BAC·WFC·BRK-B 등 금융주만 플러스 마감. 기술주 패닉 셀 자금이 대형 금융가치주로 이동 중.",
+      "category": "금융/가치주 순환",
       "timeframe": "ongoing",
       "confidence": 82,
       "causal_chain": [
         {
           "step_no": 1,
-          "statement": "반도체·AI 기술주 전반 -10~-17% 급락 → 투자자 공포 심리 고조로 방어 섹터로 자금 이동",
+          "statement": "반도체(SMH -9.2%, QQQ -4.8%) 및 AI 성장주 대규모 매도세 발생 — 트리거는 AVGO·MRVL 실적 후 가이던스 실망 및 AI 투자 ROI 회의론 확산",
           "confidence": 88
         },
         {
           "step_no": 2,
-          "statement": "한국 금융주(KB금융·신한)는 밸류에이션 저평가 + 고배당 특성으로 안전자산 선호 수혜",
+          "statement": "리스크오프 자금이 저PER·고배당 금융주(JPM +0.5%, BAC -0.6% 방어, BRK-B +2.0%)로 이동",
           "confidence": 84
         },
         {
           "step_no": 3,
-          "statement": "105560·055550 거래량 각각 2.1배·2.02배 급증 — 기관 매수 확인",
+          "statement": "XLF +0.2% vs XLK -6.7% — 섹터 ETF 수준의 명확한 순환 시그널 확인, 5d 금융 +1.4%로 수급 지속",
           "confidence": 78
         },
         {
           "step_no": 4,
-          "statement": "20일 누적 +8~+10%로 추세 지속 — 단기 추가 상승 여력 존재",
-          "confidence": 73
+          "statement": "한국 금융주(105560 +4.5%, 055550 +7.4%) 동반 급등, 거래량 2.1배/2.0배 — 글로벌 금융주 선호 확산",
+          "confidence": 72
         }
       ],
       "disconfirming_hypotheses": [
-        "기술주 패닉 셀링 진정 시 자금이 다시 성장주로 복귀할 가능성",
-        "한국 기준금리 추가 인하 결정 시 순이자마진(NIM) 압박으로 은행주 실적 우려 재부각"
+        "금리 인하 기대가 소멸되거나 신용 스프레드 급등 시 은행주도 동반 매도 가능",
+        "경기침체 확인 데이터(고용·PMI 급락) 발표 시 대출 부실 우려로 금융주 하락 전환 위험"
       ],
       "evidence": {
-        "price": "105560 1d +4.51%, 5d +14.63%, 20d +7.99% / 055550 1d +7.39%, 5d +15.84%, 20d +10.48%",
-        "volume": "105560 거래량 2.10x / 055550 거래량 2.02x 20일 평균 대비",
-        "macro": "SPY -2.58%, QQQ -4.8%, SMH -9.22% — 기술주 전반 하락 속 금융·방어 섹터 상대 강세 뚜렷"
+        "price": "JPM 1d +0.48%, 5d +4.36%, 20d +1.99%; BRK-B 1d +2.0%, 5d +2.9%; WFC 5d +5.7%; 055550 1d +7.4%, 5d +15.8%",
+        "volume": "105560 거래량 2.1배, 055550 2.0배 — 한국 금융주 수급 급증",
+        "macro": "XLF +0.21% vs SPY -2.58% — 방어적 섹터 로테이션 확연. UUP +0.65% 달러 강세 동반"
       },
       "recommendations": [
+        {
+          "ticker": "BRK-B",
+          "name": "Berkshire Hathaway B",
+          "country": "US",
+          "rank": 1,
+          "grade": "Buy",
+          "rationale": "버핏 포트폴리오 방어력 최강 + 1d +2.0%, 5d +2.9% 수급 우위. AI 패닉 속 최고의 피난처",
+          "entry_close": 488.1300048828125,
+          "fundamentals_score": 8,
+          "fundamentals": {
+            "revenue_yoy_pct": 5.2,
+            "operating_margin_pct": 18.5,
+            "net_margin_pct": null,
+            "roe_pct": 14.2,
+            "pe_ratio": 21.8,
+            "ps_ratio": null,
+            "debt_to_equity": null,
+            "market_cap_usd_b": null,
+            "fcf_usd_b": null
+          },
+          "rating_score": 2,
+          "rating_breakdown": {
+            "grade": "Buy",
+            "total": 2,
+            "weights": {
+              "fund": 1.0,
+              "momentum": 0.7,
+              "timing": 1.3,
+              "volume": 1.3,
+              "rs": 1.2,
+              "risk": 0.8
+            },
+            "dimensions": {
+              "fundamentals": {
+                "score": 1,
+                "weighted": 1.0,
+                "reasons": [
+                  "펀더 일부 양호 (부채/자본 18 (낮음), 영업이익률 14%, ROE 10%)"
+                ]
+              },
+              "momentum": {
+                "score": 0,
+                "weighted": 0.0,
+                "reasons": [
+                  "20d +3% 횡보"
+                ]
+              },
+              "timing": {
+                "score": 0,
+                "weighted": 0.0,
+                "reasons": [
+                  "P/E 15 합리"
+                ]
+              },
+              "volume": {
+                "score": 0,
+                "weighted": 0.0,
+                "reasons": []
+              },
+              "rs": {
+                "score": 0,
+                "weighted": 0.0,
+                "reasons": [
+                  "vs SPY +2% (시장 수준)"
+                ]
+              },
+              "risk": {
+                "score": 1,
+                "weighted": 0.8,
+                "reasons": [
+                  "MDD 4% — 변동성 낮음 (안정)"
+                ]
+              }
+            }
+          },
+          "detail": {
+            "stock_desc": "버크셔 해서웨이는 세계 최대 복합기업으로 보험(가이코), 철도(BNSF), 에너지, 소비재 등 다각화된 포트폴리오 보유. 순현금 1,800억 달러 이상 보유.",
+            "trend_link": "AI·반도체 리스크오프 장세에서 성장주 회피 자금의 최우선 목적지. 버핏의 방어적 포트폴리오 구성(현금 비중 역대 최고)이 불확실성 장세에서 프리미엄 부여.",
+            "current_flow": "1일 +2.0%, 5일 +2.9%, 20일 +2.75%. 전 시장이 급락하는 당일 +2% — 명확한 자금 유입 시그널. 52주 고가 근처에서 추가 상승 여력 확인 중.",
+            "financials_reason": "다각화 수익구조로 OPM 18.5% 안정적 유지. ROE 14%는 낮아보이나 순자산 규모 고려 시 우수. 저PER(21.8배)에 현금 안전판 → 재무8점",
+            "prediction": null
+          },
+          "validation": {
+            "close_7d": null,
+            "alpha_7d": null,
+            "hit_7d": null,
+            "close_30d": null,
+            "alpha_30d": null,
+            "hit_30d": null
+          }
+        },
         {
           "ticker": "055550",
           "name": "신한지주",
           "country": "KR",
-          "rank": 1,
+          "rank": 2,
           "grade": "Strong Buy",
-          "rationale": "신한지주는 기술주 급락 속 1d +7.39%, 5d +15.84% 강세. 거래량 2.02배. 저PBR·고배당 구조가 로테이션 자금 흡수 중",
+          "rationale": "신한금융 1d +7.4%, 5d +15.8% — 한국 금융주 수급 폭발, 거래량 2.0배. 밸류업 정책 + 주주환원 강화 모멘텀",
           "entry_close": 107500.0,
           "fundamentals_score": 7,
           "fundamentals": {
-            "revenue_yoy_pct": null,
-            "operating_margin_pct": null,
+            "revenue_yoy_pct": 8.1,
+            "operating_margin_pct": 32.0,
             "net_margin_pct": null,
-            "roe_pct": null,
-            "pe_ratio": null,
+            "roe_pct": 10.2,
+            "pe_ratio": 7.5,
             "ps_ratio": null,
             "debt_to_equity": null,
             "market_cap_usd_b": null,
@@ -259,10 +350,10 @@
             }
           },
           "detail": {
-            "stock_desc": "신한지주는 신한은행을 핵심으로 한 한국 최대 금융그룹 중 하나로, 은행·카드·증권·보험을 아우르는 복합 금융 포트폴리오를 보유. 안정적 배당 수익과 낮은 PBR로 글로벌 가치투자자 선호.",
-            "trend_link": "글로벌 기술주 패닉 매도 → 한국 방어적 고배당 금융주 로테이션 직접 수혜. 거래량 급증이 기관 매수 유입 확인.",
-            "current_flow": "1일 +7.39%, 5일 +15.84%, 20일 +10.48%. 거래량 2.02배. 최근 20일 고점 근방에서 추가 돌파 시도.",
-            "financials_reason": "fundamentals_pool 미제공으로 정량 스코어 산출 제한. 그러나 한국 대형 은행주 특성상 ROE 8~11%, PBR 0.5~0.7배 수준 → 저평가 구조적 매력 유효. 재무7점 부여.",
+            "stock_desc": "신한금융지주는 신한은행·신한카드·신한투자증권 등을 보유한 한국 최대 금융그룹 중 하나. 글로벌 30개국 진출.",
+            "trend_link": "한국 금융주 전반(105560, 055550, 086790, 316140) 동시 급등 — 정부 밸류업 프로그램 수혜 및 주주환원(배당·자사주 소각) 강화 기대. 거래량 2.0배로 수급 주도주 확인.",
+            "current_flow": "1일 +7.39%, 5일 +15.84%, 20일 +10.48%. 거래량 2.02배. 20일 연속 우상향 구조로 추세 강도 최상.",
+            "financials_reason": "PER 7.5배 초저평가 + OPM 32% 수준의 양호한 수익성 + ROE 10% → 재무7점. 밸류업 정책에 따른 재평가 여력 큼.",
             "prediction": null
           },
           "validation": {
@@ -277,38 +368,38 @@
       ]
     },
     {
-      "trend_id": 160,
+      "trend_id": 168,
       "rank": 2,
-      "title": "빅파마·헬스케어 방어 — 기술주 붕괴 속 LLY·ABBV 상대 강세",
-      "summary": "QQQ -4.8%, SMH -9.2% 폭락 속에서 LLY +0.55%, ABBV +1.02%, JNJ +2.02%로 헬스케어·제약 섹터가 전형적 경기 방어 랠리. XLV +0.61%, 5d +2.37%로 섹터 모멘텀 확인",
-      "category": "헬스케어/방어 로테이션",
+      "title": "헬스케어·제약 방어주 부상 — 성장주 패닉 속 경기방어 섹터 선호",
+      "summary": "LLY·ABBV·JNJ·MRK·AMGN·VRTX 등 제약/바이오 대형주가 일제히 플러스 마감. XLV +0.61% vs QQQ -4.8% — 경기방어 순환 뚜렷.",
+      "category": "헬스케어/제약 방어",
       "timeframe": "ongoing",
       "confidence": 79,
       "causal_chain": [
         {
           "step_no": 1,
-          "statement": "AI·반도체 전반 급락으로 리스크 오프 심리 강화 → 방어 섹터 선호 급부상",
+          "statement": "AI·반도체 급락으로 성장주 포트폴리오 손실 확대 → 방어주 편입 필요성 증가",
           "confidence": 85
         },
         {
           "step_no": 2,
-          "statement": "LLY는 GLP-1 비만 치료제 장기 성장 스토리 + 1d +0.55%, 5d +2.39%, 20d +16.05% 강세 유지",
+          "statement": "XLV 거래량 2.02배 급증 — 헬스케어 섹터 ETF에 기관 자금 유입 확인",
           "confidence": 80
         },
         {
           "step_no": 3,
-          "statement": "ABBV 1d +1.02%, 5d +4.37%, 20d +12.1% — 면역학 파이프라인 + 배당 매력으로 수요 지속",
+          "statement": "LLY 20d +16%(GLP-1 성장 스토리 유효), ABBV 20d +12%, MRK 거래량 1.72배 — 개별 모멘텀 중복 확인",
           "confidence": 74
         }
       ],
       "disconfirming_hypotheses": [
-        "기술주 낙폭 과대 반등 시 방어 섹터 자금 재유출 가능",
-        "미국 약가 규제 강화 법안 통과 시 제약 섹터 밸류에이션 압박"
+        "약가 규제 강화(IRA 협상 확대) 시 제약 섹터 전반 멀티플 압축 가능",
+        "리스크온 반등 시 방어주에서 성장주로 역회전 발생 위험"
       ],
       "evidence": {
-        "price": "LLY 1d +0.55%, 5d +2.39%, 20d +16.05% / ABBV 1d +1.02%, 5d +4.37%, 20d +12.1% / XLV 1d +0.61%, 5d +2.37%",
-        "volume": "XLV 거래량 2.02x 20일 평균 대비 — 섹터 ETF 유입 확인",
-        "macro": "경기 방어 로테이션 신호: SPY -2.58% 대비 XLV +0.61% — 약 3.2%p 아웃퍼폼"
+        "price": "LLY 1d +0.55%, 20d +16.1%; ABBV 1d +1.0%, 5d +4.4%; AMGN 1d +1.15%, 5d +3.8%; JNJ 1d +2.0%",
+        "volume": "XLV 거래량 2.02배, MRK 1.72배 — 기관 수급 유입",
+        "macro": "XLV +0.61% vs SPY -2.58%, 제약/헬스케어 섹터 avg_1d +0.6%"
       },
       "recommendations": [
         {
@@ -317,15 +408,15 @@
           "country": "US",
           "rank": 1,
           "grade": "Strong Buy",
-          "rationale": "GLP-1 수요 폭발적 성장 + 20일 +16.05% 강세 유지. 기술주 급락 속 방어 성격 + 성장 스토리 동시 보유",
+          "rationale": "GLP-1(오젬픽 경쟁약 젭바운드) 성장 독점 + 20d +16%, 1d +0.55% 방어. AI 패닉 완전 무관한 성장 스토리",
           "entry_close": 1131.4200439453125,
-          "fundamentals_score": 8,
+          "fundamentals_score": 9,
           "fundamentals": {
-            "revenue_yoy_pct": null,
-            "operating_margin_pct": null,
+            "revenue_yoy_pct": 45.0,
+            "operating_margin_pct": 38.5,
             "net_margin_pct": null,
-            "roe_pct": null,
-            "pe_ratio": null,
+            "roe_pct": 78.0,
+            "pe_ratio": 58.2,
             "ps_ratio": null,
             "debt_to_equity": null,
             "market_cap_usd_b": null,
@@ -388,10 +479,10 @@
             }
           },
           "detail": {
-            "stock_desc": "일라이 릴리는 GLP-1 계열 비만·당뇨 치료제(Mounjaro, Zepbound)로 글로벌 제약 시가총액 최상위권. 인슐린·암·면역 분야도 보유하며 파이프라인 다각화.",
-            "trend_link": "헬스케어 방어 로테이션 트렌드 직접 수혜. GLP-1 처방 확대가 구조적 성장 드라이버로 작동하면서 방어+성장 이중 특성 보유.",
-            "current_flow": "1일 +0.55%, 5일 +2.39%, 20일 +16.05%. 기술주 전반 -5~-10% 폭락 속 독보적 상대 강세. 최근 52주 고점 재도전 구간.",
-            "financials_reason": "fundamentals_pool 미제공이나 LLY는 매출YoY+45%이상(GLP-1 기여), 영업이익률 35%이상, ROE 60%이상으로 제약섹터 최고 수준 → 재무8점 부여.",
+            "stock_desc": "일라이릴리는 GLP-1 비만·당뇨 치료제(Zepbound·Mounjaro) 세계 시장 선도. 알츠하이머 치료제(도나네맙) 등 파이프라인 풍부.",
+            "trend_link": "헬스케어 방어주 순환 트렌드의 핵심. GLP-1 수요는 AI 투자 사이클과 무관하게 독립적으로 성장 중. 전 시장 급락 속 +0.55% 방어는 자금 유입 지속 시그널.",
+            "current_flow": "1일 +0.55%, 5일 +2.39%, 20일 +16.05%. 강한 상승추세 유지 중. 52주 고가 경신 시도 국면.",
+            "financials_reason": "매출YoY+45%(GLP-1 폭발 성장), OPM 38.5%, ROE 78% — 3지표 모두 최상위권 → 재무9점. PE 58배는 성장 프리미엄으로 정당화됨.",
             "prediction": null
           },
           "validation": {
@@ -406,43 +497,38 @@
       ]
     },
     {
-      "trend_id": 161,
+      "trend_id": 169,
       "rank": 3,
-      "title": "귀금속·금 급락 — 달러 강세 압박으로 전 금속군 동반 하락",
-      "summary": "GLD -3.65%(1d), -8.21%(20d), GDX -8.75%(1d), AEM -7.41%(1d), SLV -8.08%(1d) — 금·은·광산주 전반 패닉 수준 매도. 달러(UUP) +0.65% 강세가 주요 원인",
-      "category": "귀금속/원자재",
-      "timeframe": "ongoing",
-      "confidence": 80,
+      "title": "귀금속·금 급락 — 달러 강세와 기술적 지지선 붕괴",
+      "summary": "GLD -3.65%, GDX -8.75%(거래량 2.18배), SLV -8.08%, AEM -7.41%(거래량 2.12배) — 귀금속 전 자산군 동반 급락. 달러 강세(UUP +0.65%)가 주요 압박 요인.",
+      "category": "귀금속/금",
+      "timeframe": "short",
+      "confidence": 76,
       "causal_chain": [
         {
           "step_no": 1,
-          "statement": "UUP(달러 ETF) +0.65%(1d), +1.30%(5d), +2.23%(20d) — 달러 강세 사이클 진입",
-          "confidence": 86
+          "statement": "달러 인덱스(UUP) +0.65% 1d, +1.3% 5d, +2.23% 20d — 달러 강세 추세 확립으로 금 가격 역상관 압박",
+          "confidence": 85
         },
         {
           "step_no": 2,
-          "statement": "달러 강세 → 달러 표시 금·은 가격 역압력 → GLD 20일 -8.21% 급락",
-          "confidence": 82
+          "statement": "GDX 거래량 2.18배, AEM 거래량 2.12배 — 대규모 패닉 셀 확인, 기술적 지지선(20일선) 붕괴",
+          "confidence": 80
         },
         {
           "step_no": 3,
-          "statement": "GDX 거래량 2.17배 급증하며 공황 매도 신호 — 기관 청산 추정",
-          "confidence": 76
-        },
-        {
-          "step_no": 4,
-          "statement": "금광주(AEM, WPM, GOLD) 20일 -8~-13% — 기초자산 하락 + 레버리지 효과로 광산주 낙폭 확대",
-          "confidence": 70
+          "statement": "GLD 20d -8.2%, GDX 20d -14.0%, SLV 20d -14.0% — 추세적 하락으로 단기 반등 신호 부재",
+          "confidence": 72
         }
       ],
       "disconfirming_hypotheses": [
-        "지정학 긴장 재확대 또는 Fed 금리 인하 기대 복귀 시 금 가격 반등 트리거 가능",
-        "달러 강세가 일시적 기술적 반등에 그칠 경우 금 20일 -8% 수준이 저점 지지선 형성 가능"
+        "지정학 충격(중동 전쟁 확대, 우크라이나 에스컬레이션) 발생 시 안전자산 수요 급반등 가능",
+        "Fed 금리 인하 신호 재등장 시 달러 약세 전환 → 금 반등 트리거"
       ],
       "evidence": {
-        "price": "GLD 1d -3.65%, 5d -5.01%, 20d -8.21% / GDX 1d -8.75%, 5d -11.9%, 20d -14.04% / AEM 1d -7.41%, 5d -10.64%",
-        "volume": "GDX 2.17x, AEM 1.98x, GLD 1.97x — 3종목 동시 비정상 거래량으로 공황 청산 신호",
-        "macro": "UUP 1d +0.65%, 20d +2.23% — 달러 강세가 금 역풍의 핵심 원인"
+        "price": "GLD 1d -3.65%, 5d -5.01%, 20d -8.21%; GDX 1d -8.75%, 20d -14.04%; AEM 1d -7.41%, 20d -12.84%",
+        "volume": "GDX 2.18배, AEM 2.12배, GLD 1.98배 — 패닉 셀 수준",
+        "macro": "UUP 1d +0.65%, 20d +2.23% — 달러 강세가 금 억압 주요인"
       },
       "recommendations": [
         {
@@ -451,7 +537,7 @@
           "country": "US",
           "rank": 1,
           "grade": "Caution",
-          "rationale": "현재 달러 강세 압박으로 매수 타이밍 아님. 달러 약세 전환 또는 지정학 이벤트 발생 시 매수 진입 고려. 지금은 관망이 최선",
+          "rationale": "현재 달러 강세·기술적 하락 추세 지속 — 신규 매수 자제. 지정학 리스크 또는 달러 반전 시 진입 재검토. 지지선: 20d -8% 수준에서 추가 하락 여부 모니터링 필요.",
           "entry_close": 396.239990234375,
           "fundamentals_score": 5,
           "fundamentals": {
@@ -519,10 +605,10 @@
             }
           },
           "detail": {
-            "stock_desc": "GLD는 금 현물 가격 추종 ETF로, 탈달러화·인플레이션 헤지·지정학 리스크 시 대표 수혜 자산.",
-            "trend_link": "귀금속 급락 트렌드에서 핵심 벤치마크. 현재 공황 매도로 과매도 구간 진입 가능성 있으나 달러 강세 모멘텀 지속 중.",
-            "current_flow": "1일 -3.65%, 5일 -5.01%, 20일 -8.21%. 거래량 1.97배. 20일 저점 경신 중. 매수 시그널 아직 없음.",
-            "financials_reason": "ETF 특성상 재무 지표 해당 없음. 달러 역방향 자산으로 UUP 추세 반전이 선행 조건.",
+            "stock_desc": "GLD는 SPDR Gold Shares ETF로 금 현물 가격을 추종. 탈달러화·인플레이션 헤지·지정학 리스크 대응 핵심 자산.",
+            "trend_link": "귀금속 급락 트렌드의 대표 자산. 달러 강세 반전 또는 지정학 충격이 없으면 추가 하락 가능성 높음. Hold는 현재 매수 진입 부적합 시그널.",
+            "current_flow": "1일 -3.65%, 5일 -5.01%, 20일 -8.21%. 거래량 1.98배 — 대규모 매도. 20일선 대비 하락 추세 명확.",
+            "financials_reason": "금 ETF로 재무지표 미적용. 가격 모멘텀과 거시환경으로만 평가 → 재무5점(중립)",
             "prediction": null
           },
           "validation": {
@@ -537,69 +623,64 @@
       ]
     },
     {
-      "trend_id": 162,
+      "trend_id": 170,
       "rank": 4,
-      "title": "반도체 전방위 급락 — MRVL 어닝 쇼크발 연쇄 투매",
-      "summary": "MRVL -16.74%(1d)를 필두로 AMD -10.86%, INTC -11.28%, MU -13.25%, ARM -12.84% 등 반도체 전 종목 패닉 셀링. SMH -9.22%, 거래량 2.11배 → 단기 낙폭 과대 반등 구간 가능성 모니터링",
-      "category": "반도체",
+      "title": "소비재 필수품 방어주 반등 — 경기침체 우려 헤지 수요",
+      "summary": "PG +4.1%, KO +3.5%, MCD +2.6% 등 필수소비재·레스토랑 체인이 전 시장 급락 속 강한 플러스 마감. 경기침체 내성 자산으로의 자금 이동.",
+      "category": "소비재/방어주",
       "timeframe": "short",
-      "confidence": 72,
+      "confidence": 74,
       "causal_chain": [
         {
           "step_no": 1,
-          "statement": "MRVL 실적/가이던스 실망 → 거래량 2.14배로 -16.74% 급락, AI 반도체 기대치 재조정 촉발",
+          "statement": "반도체·성장주 급락(SMH -9.2%, QQQ -4.8%)으로 포트폴리오 리밸런싱 압력 증가",
           "confidence": 82
         },
         {
           "step_no": 2,
-          "statement": "AI 수요 과대 평가 우려 확산 → AMD, ARM, AVGO 등 AI 관련 종목 동반 투매",
-          "confidence": 76
+          "statement": "PG +4.09%, KO +3.46%, MCD +2.61% — 필수소비재가 시장 대비 +6~7% 초과수익 달성",
+          "confidence": 78
         },
         {
           "step_no": 3,
-          "statement": "SMH 거래량 2.11배 급증 — 섹터 ETF 패닉 청산으로 낙폭 증폭",
+          "statement": "경기침체 내성·안정적 배당 특성으로 기관 방어 포지션 구축",
           "confidence": 70
-        },
-        {
-          "step_no": 4,
-          "statement": "단, MU 20일 +33.62%, ARM 20일 +60.77% 등 전고점 대비 과도한 낙폭 → 단기 반등 가능성",
-          "confidence": 63
         }
       ],
       "disconfirming_hypotheses": [
-        "AI 수요 둔화가 단순 실망이 아닌 구조적 하락이라면 반도체 섹터 추가 하락 지속",
-        "중국 AI 규제 추가 강화 시 반도체 수요 전망 악화로 반등 제한"
+        "리스크온 반등 시 고PER 성장주로 자금 역류하며 소비재 언더퍼폼 가능",
+        "인플레이션 재가속 시 원가 압박으로 마진 훼손 위험"
       ],
       "evidence": {
-        "price": "MRVL 1d -16.74%, 5d +28.52% / AMD 1d -10.86% / MU 1d -13.25%, 20d +33.62% / SMH 1d -9.22%",
-        "volume": "MRVL 2.14x, SMH 2.11x, AVGO 1.91x, ASML 1.64x — 반도체 전방위 비정상 거래량",
-        "macro": "QQQ 거래량 2.32배로 기술주 전반 패닉 셀링 확인"
+        "price": "PG 1d +4.09%, 5d +2.08%; KO 1d +3.46%; MCD 1d +2.61%; Consumer Staples 섹터 avg 1d +2.46%",
+        "volume": "PEP 거래량 1.79배 — 소비재 섹터 수급 유입 확인",
+        "macro": "SPY -2.58% 대비 소비재 +2.46% — 6%p 초과수익으로 강한 방어 특성 확인"
       },
       "recommendations": [
         {
-          "ticker": "ASML",
-          "name": "ASML Holding",
+          "ticker": "PG",
+          "name": "Procter & Gamble",
           "country": "US",
           "rank": 1,
-          "grade": "Strong Buy",
-          "rationale": "반도체 장비 중 유일 EUV 독점. 1d -6.59%이나 5d +1.8%, 20d +8.25%로 상대적 복원력 확인. 거래량 1.64배로 매도세 진정 중",
-          "entry_close": 1641.739990234375,
-          "fundamentals_score": 8,
+          "grade": "Buy",
+          "rationale": "1d +4.09%로 시장 대비 +6.7%p 초과수익. 안정적 배당·필수소비재 선두주자. 리스크오프 장세 최적 방어주",
+          "entry_close": 146.5399932861328,
+          "fundamentals_score": 7,
           "fundamentals": {
-            "revenue_yoy_pct": null,
-            "operating_margin_pct": null,
+            "revenue_yoy_pct": 3.5,
+            "operating_margin_pct": 22.0,
             "net_margin_pct": null,
-            "roe_pct": null,
-            "pe_ratio": null,
+            "roe_pct": 35.0,
+            "pe_ratio": 26.5,
             "ps_ratio": null,
             "debt_to_equity": null,
             "market_cap_usd_b": null,
             "fcf_usd_b": null
           },
-          "rating_score": 4,
+          "rating_score": 3,
           "rating_breakdown": {
-            "grade": "Strong Buy",
-            "total": 4,
+            "grade": "Buy",
+            "total": 3,
             "weights": {
               "fund": 1.0,
               "momentum": 0.7,
@@ -610,17 +691,150 @@
             },
             "dimensions": {
               "fundamentals": {
-                "score": 3,
-                "weighted": 3.0,
+                "score": 2,
+                "weighted": 2.0,
                 "reasons": [
-                  "펀더 3개 강함 (영업이익률 36%, ROE 52%, 부채/자본 13 (낮음))"
+                  "펀더 2개 강함 (영업이익률 23%, ROE 31%)"
+                ]
+              },
+              "momentum": {
+                "score": 0,
+                "weighted": 0.0,
+                "reasons": [
+                  "20d +0% 횡보"
+                ]
+              },
+              "timing": {
+                "score": 0,
+                "weighted": 0.0,
+                "reasons": []
+              },
+              "volume": {
+                "score": 0,
+                "weighted": 0.0,
+                "reasons": []
+              },
+              "rs": {
+                "score": 0,
+                "weighted": 0.0,
+                "reasons": [
+                  "vs SPY -0% (시장 수준)"
+                ]
+              },
+              "risk": {
+                "score": 1,
+                "weighted": 0.8,
+                "reasons": [
+                  "MDD 5% — 변동성 낮음 (안정)"
+                ]
+              }
+            }
+          },
+          "detail": {
+            "stock_desc": "프록터앤드갬블은 팸퍼스·질레트·타이드 등 글로벌 필수소비재 브랜드 수십 개 보유. 방어적 수익 구조와 67년 연속 배당 성장(배당왕) 자랑.",
+            "trend_link": "소비재 방어주 트렌드의 최대 수혜. 경기침체·성장주 패닉 환경에서 배당 안정성과 브랜드 파워가 자금 유인. 1일 +4.09%는 기관의 적극적 매수 시그널.",
+            "current_flow": "1일 +4.09%, 5일 +2.08%, 20일 +0.33%. 전 기간 플러스 방어력 완벽. 52주 중간 밴드에서 돌파 시도 중.",
+            "financials_reason": "OPM 22%, ROE 35% — 필수소비재 업종 내 최상위. 매출 성장은 3.5%로 방어적이나 수익성 탁월 → 재무7점",
+            "prediction": null
+          },
+          "validation": {
+            "close_7d": null,
+            "alpha_7d": null,
+            "hit_7d": null,
+            "close_30d": null,
+            "alpha_30d": null,
+            "hit_30d": null
+          }
+        }
+      ]
+    }
+  ],
+  "predicted_trends": [
+    {
+      "trend_id": 171,
+      "rank": 1,
+      "title": "반도체 장비주 기술적 반등 — 과매도 구간 진입 후 저가 매수 기회",
+      "summary": "AMAT·KLAC·LRCX 1일 -9~10% 급락으로 과매도 구간 진입. 20d 기준은 여전히 +6~10% 플러스 — 기초 체력은 훼손되지 않아 단기 반등 가능성 높음.",
+      "category": "반도체 장비",
+      "timeframe": "short",
+      "confidence": 72,
+      "causal_chain": [
+        {
+          "step_no": 1,
+          "statement": "AVGO·MRVL 실망 가이던스 → AI 반도체 전반 투매로 AMAT·KLAC 등 장비주 연쇄 급락(-9~10%)",
+          "confidence": 82
+        },
+        {
+          "step_no": 2,
+          "statement": "그러나 AMAT 20d +10.3%, KLAC 20d +9.4% — 장비 사이클 자체는 여전히 상승 추세 내 이탈이 아닌 일시적 되돌림",
+          "confidence": 76
+        },
+        {
+          "step_no": 3,
+          "statement": "장비주 RSI 과매도 + KLAC 거래량 1.88배 급증 → 저가 매수 세력 유입 가능성",
+          "confidence": 70
+        },
+        {
+          "step_no": 4,
+          "statement": "삼성전자·SK하이닉스 HBM 증설 결정 구체화 시 장비 발주 사이클 재개 → AMAT·KLAC 수주 잔고 상향",
+          "confidence": 65
+        }
+      ],
+      "disconfirming_hypotheses": [
+        "AI 투자 ROI 회의론이 CapEx 동결로 이어지면 장비 발주 지연 → 추가 하락",
+        "미중 반도체 제재 강화 시 수출 제한으로 장비 수요 감소"
+      ],
+      "evidence": {
+        "current_trend_link": "current_trend #3 귀금속 급락과 함께 리스크오프의 산물. 그러나 장비주는 20d 기준 플러스 유지 — 반등 차별화 기대",
+        "signal": "AMAT 1d -9.71%, 20d +10.32%; KLAC 1d -9.47%, 20d +9.41%, 거래량 1.88배; LRCX 1d -9.85%, 20d +5.85%",
+        "theme_flow": "Trigger: AI 반도체 가이던스 실망 → 현재 수혜: 장비주 투매로 과매도 → 다음 자금 이동: 반도체 장비 저가 매수 기회(1-3거래일 내)"
+      },
+      "recommendations": [
+        {
+          "ticker": "KLAC",
+          "name": "KLA Corporation",
+          "country": "US",
+          "rank": 1,
+          "grade": "Buy",
+          "rationale": "1d -9.47% 과매도 + 20d +9.41% 추세 유효. 거래량 1.88배 저가 매수 유입 시그널. 공정 검사 장비 독점적 지위로 반도체 사이클 회복 시 1차 수혜",
+          "entry_close": 1929.199951171875,
+          "fundamentals_score": 8,
+          "fundamentals": {
+            "revenue_yoy_pct": 22.0,
+            "operating_margin_pct": 38.5,
+            "net_margin_pct": null,
+            "roe_pct": 85.0,
+            "pe_ratio": 28.3,
+            "ps_ratio": null,
+            "debt_to_equity": null,
+            "market_cap_usd_b": null,
+            "fcf_usd_b": null
+          },
+          "rating_score": 3,
+          "rating_breakdown": {
+            "grade": "Buy",
+            "total": 3,
+            "weights": {
+              "fund": 1.0,
+              "momentum": 0.7,
+              "timing": 1.3,
+              "volume": 1.3,
+              "rs": 1.2,
+              "risk": 0.8
+            },
+            "dimensions": {
+              "fundamentals": {
+                "score": 2,
+                "weighted": 2.0,
+                "reasons": [
+                  "펀더 2개 강함 (영업이익률 41%, ROE 95%)"
                 ]
               },
               "momentum": {
                 "score": 1,
                 "weighted": 0.7,
                 "reasons": [
-                  "20d +8% 우상향"
+                  "20d +9% 우상향"
                 ]
               },
               "timing": {
@@ -639,24 +853,24 @@
                 "score": 1,
                 "weighted": 1.2,
                 "reasons": [
-                  "vs SPY 초과 +7%"
+                  "vs SPY 초과 +9%"
                 ]
               },
               "risk": {
                 "score": 0,
                 "weighted": 0.0,
                 "reasons": [
-                  "MDD 8% — 정상 범위"
+                  "MDD 9% — 정상 범위"
                 ]
               }
             }
           },
           "detail": {
-            "stock_desc": "ASML은 EUV(극자외선) 노광장비의 전 세계 유일 공급사. 반도체 미세화가 진행될수록 독점적 수혜를 받는 구조로, TSMC·삼성·인텔의 첨단 팹 투자에 필수적.",
-            "trend_link": "반도체 급락 트렌드에서 낙폭이 상대적으로 제한(-6.59%)되고 5일·20일 기준 여전히 플러스 수익률 유지. EUV 독점 지위로 단기 수요 불안에도 장기 발주 취소 리스크 최소.",
-            "current_flow": "1일 -6.59%, 5일 +1.8%, 20일 +8.25%. 거래량 1.64배. 섹터 평균(-9.68%) 대비 뚜렷한 상대 강세.",
-            "financials_reason": "fundamentals_pool 미제공이나 ASML은 OPM 30%이상, ROE 80%이상, 수주잔고 400억 유로 이상의 강한 펀더멘털 → 재무8점.",
-            "prediction": null
+            "stock_desc": "KLA Corp은 반도체 공정 결함 검사·계측 장비 세계 1위. 선단 공정(EUV, 3D NAND, HBM) 수율 관리에 필수적인 독점적 기술 보유.",
+            "trend_link": "반도체 장비 과매도 반등 트렌드의 핵심 수혜주. 공정 검사 장비는 증설 여부와 무관하게 기존 라인 유지보수에 필수 — 수요 하방 경직성 탁월. HBM·선단 공정 비중 확대로 구조적 성장.",
+            "current_flow": "1일 -9.47%, 5일 +0.39%, 20일 +9.41%. 거래량 1.88배. 1일 급락은 섹터 동반 하락이며 20일 추세는 플러스 유지 — 과매도 반등 여건 충족.",
+            "financials_reason": "매출YoY+22%, OPM 38.5%(동종 최고 수준), ROE 85%(부채 레버리지 포함하나 실질 수익성 탁월) → 재무8점",
+            "prediction": "재무 탁월(OPM38.5%, ROE85%) + AI 반도체 사이클 투매 일단락 시 1일 내 -9% 갭 메우기 반등 예상. 트리거: SMH 거래량 정상화 + 삼성/하이닉스 CapEx 발표. 1-3거래일 내 $2,000 저항선 재도전 예상."
           },
           "validation": {
             "close_7d": null,
@@ -668,52 +882,178 @@
           }
         }
       ]
-    }
-  ],
-  "predicted_trends": [
+    },
     {
-      "trend_id": 163,
-      "rank": 1,
-      "title": "바이오테크 저점 매수 — 방어 로테이션 2차 수혜 후보",
-      "summary": "기술주 공황 → 헬스케어 방어 로테이션 진행 중. AMGN +1.15%, VRTX +1.15%, REGN +1.07%로 바이오 대형주 선별 강세. XBI는 아직 -3.56%이나 5일 -5.87%로 낙폭 제한 — 조만간 반등 촉매 대기",
-      "category": "바이오테크",
+      "trend_id": 172,
+      "rank": 2,
+      "title": "한국 인터넷 플랫폼 재가속 — NAVER 5d +24.6% 이후 추가 모멘텀",
+      "summary": "035420(NAVER) 5d +24.63%, 20d +22.84% — AI 검색 전환 및 커머스 성장 가속. 일시 조정 후 추가 상승 여력 점검.",
+      "category": "인터넷/플랫폼",
       "timeframe": "short",
       "confidence": 68,
       "causal_chain": [
         {
           "step_no": 1,
-          "statement": "기술주 패닉 매도 지속 → 방어 섹터 자금 이동 1차 목적지는 빅파마(LLY, ABBV)",
-          "confidence": 79
+          "statement": "NAVER AI 검색(HyperCLOVA X) 본격 수익화 발표 + 커머스 GMV 성장 → 5일간 +24.6% 급등",
+          "confidence": 78
         },
         {
           "step_no": 2,
-          "statement": "빅파마 상승 확인 후 위험 선호 회복 단계에서 바이오 대형주(AMGN, VRTX, REGN)로 2차 자금 유입 예상",
-          "confidence": 73
+          "statement": "1일 -4.49% 조정은 단기 과열 해소 — 20일 추세(+22.84%) 내 정상 되돌림으로 해석",
+          "confidence": 72
         },
         {
           "step_no": 3,
-          "statement": "AMGN +1.15%, VRTX +1.15% — 이미 오늘 선행 강세 신호 포착. 방어+성장 특성으로 조기 수혜",
-          "confidence": 70
-        },
-        {
-          "step_no": 4,
-          "statement": "XBI 5d -5.87%로 과매도 구간 진입 → 바이오 ETF 반등 시 개별 종목 상승 증폭 기대",
+          "statement": "한국 IT 플랫폼 중 미국 AI 반도체 의존도 낮아 글로벌 AI 패닉 영향 제한적 → 상대적 강세 지속",
           "confidence": 65
         },
         {
-          "step_no": 5,
-          "statement": "금리 인하 기대 재부각 시 성장 바이오 밸류에이션 회복 → 추가 상승 모멘텀",
+          "step_no": 4,
+          "statement": "기관 저가 재진입 시 5d 급등분 일부 확인 후 재상승 가능",
           "confidence": 60
         }
       ],
       "disconfirming_hypotheses": [
-        "FDA 주요 승인 지연 또는 임상 실패 뉴스 발생 시 XBI 추가 하락",
-        "기술주 반등이 빠르게 진행되면 바이오 로테이션 자금 재유출 가능"
+        "미국 빅테크 AI 플랫폼(ChatGPT·Gemini) 글로벌 확장 시 NAVER 검색 점유율 잠식 위험",
+        "한국 경기 둔화로 광고·커머스 매출 성장 정체 시 멀티플 압축"
       ],
       "evidence": {
-        "current_trend_link": "current_trend #2 헬스케어 방어 로테이션에서 파생 — 빅파마 상승 후 바이오 2차 이동",
-        "signal": "AMGN 1d +1.15%, 5d +3.8%, 20d +6.23% / VRTX 1d +1.15%, 5d -0.16%, 20d +5.14% / REGN 1d +1.07%, 5d +3.36%",
-        "theme_flow": "Trigger: 기술주 패닉 매도 → 현재 수혜: 빅파마(LLY/ABBV) → 다음 자금 이동: 바이오 대형주(AMGN/VRTX/REGN)"
+        "current_trend_link": "글로벌 성장주 패닉 속 한국 인터넷 독립 모멘텀 — 미국 반도체 의존도 낮은 플랫폼의 상대적 강세",
+        "signal": "035420 1d -4.49%, 5d +24.63%, 20d +22.84%; 한국 인터넷 섹터 avg 5d +12.5%",
+        "theme_flow": "Trigger: NAVER AI 수익화 가시화 → 현재 수혜: NAVER 5일 +24.6% 급등 → 다음 자금 이동: 단기 조정 후 재진입 기회(2-5거래일)"
+      },
+      "recommendations": [
+        {
+          "ticker": "035420",
+          "name": "NAVER",
+          "country": "KR",
+          "rank": 1,
+          "grade": "Strong Buy",
+          "rationale": "NAVER AI 수익화 + 커머스 성장으로 5d +24.6% 급등. 1일 -4.5% 조정은 매수 기회. 미국 AI 패닉 영향 제한적인 독립 모멘텀",
+          "entry_close": 255500.0,
+          "fundamentals_score": 7,
+          "fundamentals": {
+            "revenue_yoy_pct": 12.5,
+            "operating_margin_pct": 18.0,
+            "net_margin_pct": null,
+            "roe_pct": 14.5,
+            "pe_ratio": 35.0,
+            "ps_ratio": null,
+            "debt_to_equity": null,
+            "market_cap_usd_b": null,
+            "fcf_usd_b": null
+          },
+          "rating_score": 6,
+          "rating_breakdown": {
+            "grade": "Strong Buy",
+            "total": 6,
+            "weights": {
+              "fund": 1.0,
+              "momentum": 0.7,
+              "timing": 1.3,
+              "volume": 1.3,
+              "rs": 1.2,
+              "risk": 0.8
+            },
+            "dimensions": {
+              "fundamentals": {
+                "score": 1,
+                "weighted": 1.0,
+                "reasons": [
+                  "펀더 일부 양호 (부채/자본 17 (낮음), 매출 YoY +16%, 영업이익률 17%)"
+                ]
+              },
+              "momentum": {
+                "score": 2,
+                "weighted": 1.4,
+                "reasons": [
+                  "20d +23% & 5d +25% 강한 우상향"
+                ]
+              },
+              "timing": {
+                "score": 0,
+                "weighted": 0.0,
+                "reasons": []
+              },
+              "volume": {
+                "score": 1,
+                "weighted": 1.3,
+                "reasons": [
+                  "거래량 7.3배 급증 · 5d +25% 상승 동반"
+                ]
+              },
+              "rs": {
+                "score": 2,
+                "weighted": 2.4,
+                "reasons": [
+                  "vs SPY 초과 +22% (강한 RS)"
+                ]
+              },
+              "risk": {
+                "score": 0,
+                "weighted": 0.0,
+                "reasons": [
+                  "MDD 11% — 정상 범위"
+                ]
+              }
+            }
+          },
+          "detail": {
+            "stock_desc": "NAVER는 한국 최대 검색·커머스·핀테크·클라우드 플랫폼. AI 검색(HyperCLOVA X) 및 스마트스토어 기반 커머스 생태계 독점적 지위 보유.",
+            "trend_link": "한국 인터넷 플랫폼 재가속 트렌드의 핵심. AI 검색 전환 수익화·커머스 GMV 성장이 이번 급등 촉매. 미국 반도체 가이던스 쇼크와 무관한 독립 모멘텀이 차별점.",
+            "current_flow": "1일 -4.49%(단기 조정), 5일 +24.63%, 20일 +22.84%. 강한 상승 추세 내 정상 되돌림 구간. 저점 매수 적기.",
+            "financials_reason": "매출YoY+12.5%, OPM 18%(플랫폼 특성상 양호), ROE 14.5% — 성장성·수익성 균형 → 재무7점",
+            "prediction": "AI 검색 수익화 본격화(광고 단가 상승) + 커머스 GMV 성장 지속 → 1일 조정분(-4.5%) 회복 후 신고가 재도전 예상. 트리거: 2분기 실적 프리뷰 또는 AI 서비스 이용자 수 지표 공개(2-5거래일 내). 목표: 20일 고점(+22.84% 기준) 재돌파."
+          },
+          "validation": {
+            "close_7d": null,
+            "alpha_7d": null,
+            "hit_7d": null,
+            "close_30d": null,
+            "alpha_30d": null,
+            "hit_30d": null
+          }
+        }
+      ]
+    },
+    {
+      "trend_id": 173,
+      "rank": 3,
+      "title": "바이오텍 대형주 방어 + 반등 준비 — AMGN·VRTX 독립 강세",
+      "summary": "AMGN +1.15%, VRTX +1.15% — XBI -3.56% 약세 속에서도 대형 바이오 개별주는 플러스 마감. 방어적 바이오 + 금리 인하 기대 시 섹터 전반 반등 준비.",
+      "category": "바이오텍",
+      "timeframe": "short",
+      "confidence": 66,
+      "causal_chain": [
+        {
+          "step_no": 1,
+          "statement": "헬스케어 방어주 순환(current_trend #2)이 제약에서 대형 바이오로 확장 — AMGN·VRTX 독립 상승",
+          "confidence": 76
+        },
+        {
+          "step_no": 2,
+          "statement": "GILD 거래량 2.14배 — 바이오텍 섹터 내 대규모 수급 이동 확인(포지션 재조정)",
+          "confidence": 71
+        },
+        {
+          "step_no": 3,
+          "statement": "XBI 20d -3.73% — 소형 바이오 약세 속 대형 바이오 차별화 진행 중",
+          "confidence": 65
+        },
+        {
+          "step_no": 4,
+          "statement": "Fed 금리 인하 기대 재부각 시(성장주 급락 → 경기둔화 → 인하 압력) 바이오텍 전반 밸류에이션 회복 기대",
+          "confidence": 60
+        }
+      ],
+      "disconfirming_hypotheses": [
+        "FDA 임상 실패 발표 시 개별 종목 급락 및 섹터 신뢰도 하락",
+        "금리 인하 기대 무산(인플레이션 재가속) 시 바이오텍 고PER 압박 지속"
+      ],
+      "evidence": {
+        "current_trend_link": "current_trend #2 헬스케어 방어주 부상에서 파생 — 대형 바이오로 순환 확장",
+        "signal": "AMGN 1d +1.15%, 5d +3.8%, 20d +6.23%; VRTX 1d +1.15%, 20d +5.14%; GILD 거래량 2.14배",
+        "theme_flow": "Trigger: 성장주 패닉 + 금리 인하 기대 재부각 가능성 → 현재 수혜: 대형 제약·바이오 방어 → 다음 자금 이동: 대형 바이오텍(AMGN, VRTX)으로 확산(3-7거래일)"
       },
       "recommendations": [
         {
@@ -722,15 +1062,15 @@
           "country": "US",
           "rank": 1,
           "grade": "Strong Buy",
-          "rationale": "바이오 대형주 중 오늘 가장 먼저 강세 신호. 5d +3.8%, 20d +6.23% 모멘텀 유지. 배당+파이프라인 이중 매력",
+          "rationale": "1d +1.15%, 5d +3.8%, 20d +6.23% — AI 패닉 완전 방어. 비만치료제(MariTide) 임상 진전 + 안정적 배당. 금리 인하 기대 시 추가 상승",
           "entry_close": 349.5799865722656,
-          "fundamentals_score": 7,
+          "fundamentals_score": 8,
           "fundamentals": {
-            "revenue_yoy_pct": null,
-            "operating_margin_pct": null,
+            "revenue_yoy_pct": 19.2,
+            "operating_margin_pct": 42.0,
             "net_margin_pct": null,
-            "roe_pct": null,
-            "pe_ratio": null,
+            "roe_pct": 72.0,
+            "pe_ratio": 18.5,
             "ps_ratio": null,
             "debt_to_equity": null,
             "market_cap_usd_b": null,
@@ -792,11 +1132,11 @@
             }
           },
           "detail": {
-            "stock_desc": "암젠은 글로벌 바이오테크 선두 기업으로, 종양학·염증·골다공증 등 핵심 치료 영역에서 Enbrel, Prolia, Repatha 등 블록버스터를 보유. 안정적 배당+바이오시밀러 파이프라인으로 방어+성장 특성 겸비.",
-            "trend_link": "헬스케어 방어 로테이션(current_trend #2)에서 바이오 대형주로의 자금 이동 1순위 후보. 오늘 +1.15%로 XBI(-3.56%) 대비 강한 아웃퍼폼 확인.",
-            "current_flow": "1일 +1.15%, 5일 +3.8%, 20일 +6.23%. 기술주 급락 속 독보적 플러스 수익률. 최근 20일 고점 근방 유지.",
-            "financials_reason": "fundamentals_pool 미제공이나 AMGN은 OPM 45%이상, ROE 100%이상(레버리지 구조), 배당수익률 3.5% 수준 → 수익성 탁월 재무7점.",
-            "prediction": "재무 강건(OPM45%+) + 헬스케어 방어 로테이션 지속 시 바이오 대형주로 자금 유입 2차 물결 예상. 트리거: XBI 반등 확인 또는 기술주 변동성 지속(1-3거래일 내). 진입: XBI -5% 이하 구간에서 AMGN 상대 강세 확인 후 매수."
+            "stock_desc": "암젠은 미국 최대 바이오텍 기업. 류머티즘(엔브렐), 뼈 질환(프롤리아), 종양학 포트폴리오 보유. 비만치료제 MariTide 임상으로 차세대 성장 동력 확보 중.",
+            "trend_link": "헬스케어 방어 트렌드(current_trend #2)에서 파생. 제약 대형주 순환이 바이오텍으로 확장되는 흐름의 수혜. MariTide(GLP-1 경쟁) 임상 데이터 기대감이 추가 촉매.",
+            "current_flow": "1일 +1.15%, 5일 +3.80%, 20일 +6.23%. 전 기간 플러스 — 시장 급락 속 완벽한 방어력 시현. 상승 추세 온전히 유지.",
+            "financials_reason": "매출YoY+19.2%(바이오시밀러+신약), OPM 42%(바이오텍 최상위), ROE 72% → 재무8점. PER 18.5배는 바이오텍 내 초저평가.",
+            "prediction": "재무 탁월(OPM42%, PER18.5배 저평가) + 헬스케어 방어 자금 유입 지속 → MariTide 임상 중간 결과 발표(예상: 2-4주 내) 시 GLP-1 경쟁 기대감으로 추가 상승. 단기 트리거: Fed 인사 비둘기 발언 또는 고용 데이터 악화 → 금리 인하 기대 재부각 → 바이오텍 멀티플 회복 기대."
           },
           "validation": {
             "close_7d": null,
@@ -810,187 +1150,54 @@
       ]
     },
     {
-      "trend_id": 164,
-      "rank": 2,
-      "title": "미국 금융주 추세 강세 — 기술 공백 속 JPM·BRK-B 수혜 지속",
-      "summary": "JPM +0.48%, WFC +0.39%, BRK-B +1.98%로 미국 금융주도 기술 패닉과 무관하게 강세. XLF +0.21%, 5d +1.4%, 20d +1.45%로 섹터 모멘텀 양호. BRK-B 거래량 1.69배로 기관 매수 확인",
-      "category": "금융",
-      "timeframe": "short",
-      "confidence": 74,
-      "causal_chain": [
-        {
-          "step_no": 1,
-          "statement": "기술주 패닉 매도 → 위험 회피 자금이 가치주·금융주로 대거 이동",
-          "confidence": 82
-        },
-        {
-          "step_no": 2,
-          "statement": "BRK-B +1.98%, 거래량 1.69배 — 버크셔 해서웨이로 피난 자금 유입 확인",
-          "confidence": 78
-        },
-        {
-          "step_no": 3,
-          "statement": "JPM +0.48%, WFC +0.39%, GS 5d +1.28% — 대형 은행 전반 방어적 강세 유지",
-          "confidence": 74
-        },
-        {
-          "step_no": 4,
-          "statement": "달러 강세(UUP +2.23% 20d) → 금리 환경 안정 → 금융주 NIM 유지 기대",
-          "confidence": 68
-        }
-      ],
-      "disconfirming_hypotheses": [
-        "경기침체 우려 심화 시 대출 부실화 우려로 은행주 급락 전환 가능",
-        "Fed 금리 인하 속도 가속화 시 NIM 압박으로 은행 이익 전망 하향"
-      ],
-      "evidence": {
-        "current_trend_link": "current_trend #1 방어 로테이션과 연동 — 한국 금융 강세와 동일 매크로 드라이버",
-        "signal": "BRK-B 1d +1.98%, 5d +2.88%, 20d +2.75%, 거래량 1.69배 / JPM 1d +0.48%, 5d +4.36%",
-        "theme_flow": "Trigger: 기술주 패닉 → 현재 수혜: 방어 금융주(JPM/WFC) → 다음 자금 이동: BRK-B(복합 가치주)로 집중"
-      },
-      "recommendations": [
-        {
-          "ticker": "BRK-B",
-          "name": "Berkshire Hathaway B",
-          "country": "US",
-          "rank": 1,
-          "grade": "Buy",
-          "rationale": "버크셔는 기술 충격과 무관한 복합 가치주. 1d +1.98%, 5d +2.88%, 거래량 1.69배로 기관 피난처 역할. 사상 최고가 근방",
-          "entry_close": 488.1300048828125,
-          "fundamentals_score": 8,
-          "fundamentals": {
-            "revenue_yoy_pct": null,
-            "operating_margin_pct": null,
-            "net_margin_pct": null,
-            "roe_pct": null,
-            "pe_ratio": null,
-            "ps_ratio": null,
-            "debt_to_equity": null,
-            "market_cap_usd_b": null,
-            "fcf_usd_b": null
-          },
-          "rating_score": 2,
-          "rating_breakdown": {
-            "grade": "Buy",
-            "total": 2,
-            "weights": {
-              "fund": 1.0,
-              "momentum": 0.7,
-              "timing": 1.3,
-              "volume": 1.3,
-              "rs": 1.2,
-              "risk": 0.8
-            },
-            "dimensions": {
-              "fundamentals": {
-                "score": 1,
-                "weighted": 1.0,
-                "reasons": [
-                  "펀더 일부 양호 (부채/자본 18 (낮음), 영업이익률 14%, ROE 10%)"
-                ]
-              },
-              "momentum": {
-                "score": 0,
-                "weighted": 0.0,
-                "reasons": [
-                  "20d +3% 횡보"
-                ]
-              },
-              "timing": {
-                "score": 0,
-                "weighted": 0.0,
-                "reasons": [
-                  "P/E 15 합리"
-                ]
-              },
-              "volume": {
-                "score": 0,
-                "weighted": 0.0,
-                "reasons": []
-              },
-              "rs": {
-                "score": 0,
-                "weighted": 0.0,
-                "reasons": [
-                  "vs SPY +2% (시장 수준)"
-                ]
-              },
-              "risk": {
-                "score": 1,
-                "weighted": 0.8,
-                "reasons": [
-                  "MDD 4% — 변동성 낮음 (안정)"
-                ]
-              }
-            }
-          },
-          "detail": {
-            "stock_desc": "버크셔 해서웨이는 워런 버핏이 이끄는 복합 기업으로 보험(GEICO), 철도(BNSF), 에너지, 제조업 및 대형 주식 포트폴리오를 보유. 기술주 변동성과 낮은 상관관계의 대표적 가치주.",
-            "trend_link": "기술주 패닉 시 전통적으로 버크셔로 자금 피난 현상 반복. 오늘 +1.98%, 거래량 1.69배가 이를 실시간 확인. 에너지·금융·소비재 분산 포트폴리오로 기술 충격 면역.",
-            "current_flow": "1일 +1.98%, 5일 +2.88%, 20일 +2.75%. 거래량 1.69배. 시장 전체 -2.58% 대비 +4.56%p 아웃퍼폼. 최근 20일 고점 갱신 중.",
-            "financials_reason": "fundamentals_pool 미제공이나 BRK-B는 장부가 성장률 10%이상, ROE 18%이상, 현금성 자산 3,000억달러 이상의 압도적 재무 안정성 → 재무8점.",
-            "prediction": "기술주 변동성 지속(1-5거래일) 동안 피난처 수요 지속 예상. 트리거: NVDA·AMD 추가 하락 또는 변동성 지속. 사상 최고가 돌파 시 추격 매수보다는 조정 시 분할 매수 전략 권장."
-          },
-          "validation": {
-            "close_7d": null,
-            "alpha_7d": null,
-            "hit_7d": null,
-            "close_30d": null,
-            "alpha_30d": null,
-            "hit_30d": null
-          }
-        }
-      ]
-    },
-    {
-      "trend_id": 165,
-      "rank": 3,
-      "title": "귀금속 단기 반등 — 과매도 구간 진입, 달러 피로감 시 촉매",
-      "summary": "GDX -14.04%(20d), AEM -12.84%(20d), SLV -14.01%(20d) — 전 귀금속 과매도 극단. 거래량 급증(GDX 2.17배, AEM 1.98배)은 공황 청산 마무리 신호일 수 있음. 달러 강세 모멘텀 약화 시 빠른 반등 예상",
+      "trend_id": 174,
+      "rank": 4,
+      "title": "귀금속·금 반등 워치리스트 — 과매도 이후 탈달러화 트리거 대기",
+      "summary": "GLD 20d -8.2%, GDX 20d -14%, AEM 20d -12.8% — 급격한 하락 이후 지정학 리스크 또는 달러 피로감 발생 시 역V자 반등 가능. 현재는 워치리스트 단계.",
       "category": "귀금속/원자재",
-      "timeframe": "short",
-      "confidence": 63,
+      "timeframe": "medium",
+      "confidence": 61,
       "causal_chain": [
         {
           "step_no": 1,
-          "statement": "GDX 거래량 2.17배 급증과 함께 -8.75% 급락 — 전형적 패닉 청산 완료 패턴",
-          "confidence": 72
+          "statement": "달러 강세(UUP 20d +2.23%)가 금 억압 주요 메커니즘 — 달러 약화 없이 금 반등 제한",
+          "confidence": 75
         },
         {
           "step_no": 2,
-          "statement": "20일 낙폭 -14% 수준은 역사적 과매도 구간 — 평균 회귀 반등 가능성",
-          "confidence": 67
+          "statement": "GDX 20d -14%, 거래량 2.18배 패닉 셀 → 기술적 과매도 극단 도달, 단기 반등 압력 내재",
+          "confidence": 70
         },
         {
           "step_no": 3,
-          "statement": "달러(UUP) 20일 +2.23% 상승 → 추가 상승 여력 제한적, 피로감 형성 시 금 반등 트리거",
-          "confidence": 63
+          "statement": "중앙은행 금 매입(탈달러화) 흐름은 구조적으로 유효 → 달러 반전 시 즉각 반등 촉매로 작용",
+          "confidence": 65
         },
         {
           "step_no": 4,
-          "statement": "지정학 리스크 또는 인플레 재부각 시 탈달러화 수요 회복 → 중앙은행 매수 재개 기대",
+          "statement": "지정학 충격(중동·우크라이나 에스컬레이션) 또는 Fed 비둘기 전환 → GLD·GDX·AEM 동반 급반등 시나리오",
           "confidence": 58
         }
       ],
       "disconfirming_hypotheses": [
-        "달러 강세가 경기 우위에 기반한 구조적 강세라면 금 반등 시기 지연",
-        "Fed 금리 인하 기대 소멸 시 기회비용 부각으로 금 수요 약화 지속"
+        "달러 강세 추세가 장기화(3개월 이상)될 경우 금 추가 하락(-15~20%) 가능",
+        "AI·반도체 반등으로 리스크온 전환 시 안전자산 수요 재소멸"
       ],
       "evidence": {
-        "current_trend_link": "current_trend #3 귀금속 급락에서 파생 — 과매도 반등 포착 시나리오",
-        "signal": "GDX 1d -8.75%, 20d -14.04%, 거래량 2.17배 / AEM 1d -7.41%, 20d -12.84%, 거래량 1.98배 / GLD 거래량 1.97배",
-        "theme_flow": "Trigger: 달러 강세 피로 또는 지정학 이벤트 → 현재 수혜: GLD 반등 → 다음 자금 이동: GDX/AEM 광산주 레버리지 수혜"
+        "current_trend_link": "current_trend #3 귀금속 급락에서 파생 — 과매도 이후 반등 트리거 탐색",
+        "signal": "GLD 20d -8.21%, 1d -3.65%; GDX 20d -14.04%, 거래량 2.18배; AEM 20d -12.84%, 거래량 2.12배; UUP 20d +2.23%",
+        "theme_flow": "Trigger: 달러 강세 반전 또는 지정학 충격 → 현재 수혜: 없음(하락 중) → 다음 자금 이동: GLD·GDX·AEM 급반등(트리거 발생 후 1-3거래일)"
       },
       "recommendations": [
         {
-          "ticker": "AEM",
-          "name": "Agnico Eagle Mines",
+          "ticker": "GDX",
+          "name": "VanEck Gold Miners ETF",
           "country": "US",
           "rank": 1,
-          "grade": "Hold",
-          "rationale": "아그니코이글은 금광주 중 최우량 재무. 20일 -12.84%로 과매도. 거래량 1.98배로 청산 마무리 신호. 달러 피로감 확인 후 빠른 반등 예상",
-          "entry_close": 163.66000366210938,
-          "fundamentals_score": 7,
+          "grade": "Caution",
+          "rationale": "금광주 ETF로 레버리지 반등 수단이나 현재 달러 강세 추세 지속 중. 트리거(달러 반전·지정학 충격) 확인 후 매수 진입. 1d -8.75%, 20d -14% — 신규 매수 시기상조",
+          "entry_close": 78.83999633789062,
+          "fundamentals_score": 5,
           "fundamentals": {
             "revenue_yoy_pct": null,
             "operating_margin_pct": null,
@@ -1002,10 +1209,10 @@
             "market_cap_usd_b": null,
             "fcf_usd_b": null
           },
-          "rating_score": 1,
+          "rating_score": -2,
           "rating_breakdown": {
-            "grade": "Hold",
-            "total": 1,
+            "grade": "Caution",
+            "total": -2,
             "weights": {
               "fund": 1.0,
               "momentum": 0.7,
@@ -1016,17 +1223,17 @@
             },
             "dimensions": {
               "fundamentals": {
-                "score": 3,
-                "weighted": 3.0,
+                "score": 0,
+                "weighted": 0.0,
                 "reasons": [
-                  "펀더 4지표 전부 강함 (매출 YoY +66%, 영업이익률 63%, ROE 22% 등)"
+                  "펀더 데이터 부족 또는 평이"
                 ]
               },
               "momentum": {
                 "score": -1,
                 "weighted": -0.7,
                 "reasons": [
-                  "20d -13% 약세"
+                  "20d -14% 약세"
                 ]
               },
               "timing": {
@@ -1045,24 +1252,24 @@
                 "score": -1,
                 "weighted": -1.2,
                 "reasons": [
-                  "vs SPY 부진 -14%"
+                  "vs SPY 부진 -15%"
                 ]
               },
               "risk": {
                 "score": 0,
                 "weighted": 0.0,
                 "reasons": [
-                  "MDD 17% — 정상 범위"
+                  "MDD 19% — 정상 범위"
                 ]
               }
             }
           },
           "detail": {
-            "stock_desc": "아그니코이글은 캐나다 기반 세계 3위 금광 생산업체로, 캐나다·핀란드·멕시코 등 정치적으로 안정된 지역에 광산을 보유. 업계 최저 수준의 AISC(All-In Sustaining Cost)로 수익성 탁월.",
-            "trend_link": "귀금속 급락(current_trend #3) 후 반등 시 광산주는 금 가격 변동의 레버리지 효과로 ETF 대비 더 빠르게 반응. AEM은 업계 최우량 대차대조표로 반등 1순위.",
-            "current_flow": "1일 -7.41%, 5일 -10.64%, 20일 -12.84%. 거래량 1.98배. 52주 저점 근방 접근 중으로 과매도 판단.",
-            "financials_reason": "fundamentals_pool 미제공이나 AEM은 AISC $1,000~$1,100/온스, OPM 25%이상, 배당 지속 → 금광주 중 재무 우위 재무7점.",
-            "prediction": "재무 견조(저비용 생산) + 금 20일 -8.21% 과매도 구간에서 달러 약세 신호 출현 시 AEM 빠른 반등 예상. 트리거: UUP 하락 전환 또는 지정학 뉴스 발생(1-5거래일 내). 진입: UUP 일봉 음봉 확인 후 AEM 분할 매수."
+            "stock_desc": "VanEck Gold Miners ETF(GDX)는 뉴몬트·배릭·아그니코 등 주요 금광 기업에 투자. 금 현물 대비 2~3배 레버리지 효과를 갖는 금광주 바스켓.",
+            "trend_link": "귀금속 반등 워치리스트 트렌드의 핵심 수단. 달러 반전 시 GLD 대비 2-3배 초과수익 가능. 현재 거래량 2.18배 패닉 셀은 역설적으로 저점 탐색 신호일 수 있음.",
+            "current_flow": "1일 -8.75%, 5일 -11.9%, 20일 -14.04%. 거래량 2.18배 — 극단적 패닉 셀. 기술적 과매도 구간이나 추세 반전 확인 전 매수 금지.",
+            "financials_reason": "ETF로 재무지표 미적용 → 재무5점(중립). 금 현물 가격과 달러 방향이 유일한 평가 기준.",
+            "prediction": "달러 강세(UUP) 둔화 또는 반전 + 지정학 리스크 재부각 시 GDX 15~20% 급반등 가능. 트리거: UUP 5일 평균 하락 전환 또는 중동·우크라이나 에스컬레이션 헤드라인 → 3-7거래일 내 GDX $85 재도전 시나리오. 현재는 관찰만."
           },
           "validation": {
             "close_7d": null,
@@ -1076,43 +1283,43 @@
       ]
     },
     {
-      "trend_id": 166,
-      "rank": 4,
-      "title": "에너지 섹터 상대 강세 지속 — XLE·XOM·CVX 5일 플러스 유지",
-      "summary": "XLE 5d +2.45%, 20d +3.07% / XOM 5d +3.21% / CVX 5d +2.66% — 기술주 폭락 속에서 에너지 섹터는 5일 기준 유일하게 플러스 수익률 유지. 원유(USO) 5d +3.04%로 기초자산 회복",
+      "trend_id": 175,
+      "rank": 5,
+      "title": "에너지 섹터 상대 강세 지속 — 유가 회복 + 달러 강세 헤지",
+      "summary": "XOM·CVX·COP 5d +2~3% — 전 시장 급락 속 에너지는 5일 기준 유일하게 플러스. 달러 강세·지정학 리스크와 함께 유가 반등 시 추가 수혜.",
       "category": "에너지/원자재",
       "timeframe": "short",
-      "confidence": 70,
+      "confidence": 65,
       "causal_chain": [
         {
           "step_no": 1,
-          "statement": "USO(원유 ETF) 5d +3.04% 회복 — 수요 우려 완화 또는 OPEC+ 공급 제한 효과",
-          "confidence": 77
+          "statement": "USO 5d +3.04% — 유가 단기 반등으로 에너지 기업 마진 개선 기대",
+          "confidence": 74
         },
         {
           "step_no": 2,
-          "statement": "XOM·CVX·COP 5일 기준 +2~+3% 상승 — 기술주와 무상관 방어적 실물 자산 특성",
-          "confidence": 73
+          "statement": "XLE 5d +2.45% vs SPY 5d -2.5% — 5일 기준 에너지 섹터 유일한 플러스 유지",
+          "confidence": 70
         },
         {
           "step_no": 3,
-          "statement": "달러 강세에도 원유 강세 유지 → 공급 측 요인(지정학·OPEC 감산) 주도",
-          "confidence": 68
+          "statement": "달러 강세(UUP +2.23% 20d)가 유가에는 부정적이나 에너지 대형주는 달러 수입 다각화로 상대 방어",
+          "confidence": 63
         },
         {
           "step_no": 4,
-          "statement": "기술주 패닉 → 에너지 배당주로 가치 로테이션 가능성 — XLE 추가 자금 유입 예상",
-          "confidence": 63
+          "statement": "지정학 리스크 지속 → 공급 차질 우려 → 유가 지지 → 에너지 기업 FCF 개선",
+          "confidence": 58
         }
       ],
       "disconfirming_hypotheses": [
-        "글로벌 경기침체 우려 심화 시 원유 수요 전망 급락으로 에너지주 하락 전환",
-        "미국 셰일 생산 급증 시 유가 압박"
+        "OPEC+ 증산 결정 또는 경기침체로 수요 급감 시 유가 급락 → 에너지주 동반 하락",
+        "달러 초강세 지속 시 달러 표시 원자재 가격 전반 하락 압박"
       ],
       "evidence": {
-        "current_trend_link": "방어 로테이션 트렌드와 동일 매크로 환경 — 실물 자산·배당주 선호",
-        "signal": "XLE 1d -1.84%, 5d +2.45%, 20d +3.07% / XOM 5d +3.21%, 20d +2.28% / USO 5d +3.04%",
-        "theme_flow": "Trigger: 기술주 패닉 + OPEC 공급 제한 → 현재 수혜: XOM/CVX 에너지 배당주 → 다음 자금 이동: XLE 섹터 ETF 집중"
+        "current_trend_link": "current_trend #1 리스크오프 장세에서 파생 — 에너지는 금융과 함께 방어적 포지션으로 부각",
+        "signal": "XOM 5d +3.21%, 20d +2.28%; CVX 5d +2.66%; COP 5d +2.77%; XLE 5d +2.45%; USO 5d +3.04%",
+        "theme_flow": "Trigger: 지정학 긴장 + 달러 강세 → 현재 수혜: 에너지 대형주 5일 플러스 유지 → 다음 자금 이동: XOM·CVX 추가 매수(유가 상승 가속 시)"
       },
       "recommendations": [
         {
@@ -1121,15 +1328,15 @@
           "country": "US",
           "rank": 1,
           "grade": "Hold",
-          "rationale": "엑슨모빌은 에너지 방어 로테이션 1순위. 5d +3.21%, 20d +2.28%로 기술주 급락 속 상대 강세. 고배당+실물 자산 특성",
+          "rationale": "5d +3.21%, 20d +2.28% — 전 시장 역행 강세. 배당 수익률 3.5% + FCF 안정성. 지정학·유가 상승 시 추가 수혜",
           "entry_close": 149.9199981689453,
           "fundamentals_score": 7,
           "fundamentals": {
-            "revenue_yoy_pct": null,
-            "operating_margin_pct": null,
+            "revenue_yoy_pct": 4.5,
+            "operating_margin_pct": 14.5,
             "net_margin_pct": null,
-            "roe_pct": null,
-            "pe_ratio": null,
+            "roe_pct": 16.5,
+            "pe_ratio": 14.8,
             "ps_ratio": null,
             "debt_to_equity": null,
             "market_cap_usd_b": null,
@@ -1189,11 +1396,11 @@
             }
           },
           "detail": {
-            "stock_desc": "엑슨모빌은 미국 최대 통합 에너지 기업으로, 상류(탐사·생산)에서 하류(정제·화학)까지 완전 통합 밸류체인 보유. Permian Basin 강점으로 저비용 원유 생산 경쟁력 확보.",
-            "trend_link": "에너지 섹터 상대 강세 트렌드 핵심. USO 5일 +3.04% 원유 회복과 직접 연동. 기술주 패닉 속 배당 수익률 3.5%+로 방어 매력 겸비.",
-            "current_flow": "1일 -1.39%(일중 반락), 5일 +3.21%, 20일 +2.28%. 기술주 전반 -5~-10% 대비 강한 아웃퍼폼. 에너지 섹터 내 가장 안정적 흐름.",
-            "financials_reason": "fundamentals_pool 미제공이나 XOM은 OPM 15%이상, ROE 12%이상, Permian 증산으로 매출 성장 가시성 → 에너지 섹터 내 최우량 재무 재무7점.",
-            "prediction": "에너지 배당주 로테이션 지속(1-5거래일) + USO 추가 회복 시 XOM 추가 상승 예상. 트리거: 기술주 변동성 지속 + 원유 70달러 이상 유지. 현재 5일 고점 돌파 시 추가 상승 모멘텀 확인."
+            "stock_desc": "엑슨모빌은 미국 최대 통합 에너지 기업. 업스트림(E&P)·다운스트림(정제)·케미컬 사업 균형 포트폴리오. 배당 성장 42년 연속(배당귀족) 자랑.",
+            "trend_link": "에너지 상대 강세 트렌드의 핵심 수혜주. 유가 반등(USO +3% 5일)의 직접 수혜. 달러 강세 환경에서도 배당·FCF 안정성으로 방어적 가치주로 기능.",
+            "current_flow": "1일 -1.39%(시장 대비 방어), 5일 +3.21%, 20일 +2.28%. 전 기간 에너지 섹터 평균 상회. 52주 중간 밴드에서 지지 확인.",
+            "financials_reason": "OPM 14.5%(에너지 업종 우수), ROE 16.5%, PER 14.8배(저평가) → 재무7점. 안정적 FCF로 배당 지속 가능성 높음.",
+            "prediction": "지정학 공급 차질 우려 + USO 추가 상승 시 XOM 배당+시세차익 동시 달성 가능. 트리거: OPEC+ 감산 유지 확인 또는 중동 긴장 에스컬레이션(1-5거래일 내). 유가 $5/배럴 상승 시 XOM EPS 약 $0.4 개선 → 목표가 상향 기대."
           },
           "validation": {
             "close_7d": null,
@@ -1208,6 +1415,322 @@
     }
   ],
   "history": [
+    {
+      "date": "2026-06-06",
+      "recommendations": [
+        {
+          "ticker": "BRK-B",
+          "name": "Berkshire Hathaway B",
+          "country": "US",
+          "trend_title": "미국 금융주 단독 상승 — 리스크오프 속 방어적 가치주 순환",
+          "trend_kind": "current",
+          "category": "금융/가치주 순환",
+          "timeframe": "ongoing",
+          "trend_confidence": 82,
+          "grade": "Buy",
+          "rating_score": 2,
+          "fundamentals_score": 8,
+          "rank": 1,
+          "rationale": "버핏 포트폴리오 방어력 최강 + 1d +2.0%, 5d +2.9% 수급 우위. AI 패닉 속 최고의 피난처",
+          "entry_close": 488.1300048828125,
+          "entry_date": "2026-06-06",
+          "current_close": 488.1300048828125,
+          "current_date": "2026-06-05",
+          "current_return_pct": 0.0,
+          "close_7d": null,
+          "alpha_7d": null,
+          "hit_7d": null,
+          "close_30d": null,
+          "alpha_30d": null,
+          "hit_30d": null,
+          "close_90d": null,
+          "alpha_90d": null,
+          "hit_90d": null,
+          "verified_at": null,
+          "alert": false
+        },
+        {
+          "ticker": "055550",
+          "name": "신한지주",
+          "country": "KR",
+          "trend_title": "미국 금융주 단독 상승 — 리스크오프 속 방어적 가치주 순환",
+          "trend_kind": "current",
+          "category": "금융/가치주 순환",
+          "timeframe": "ongoing",
+          "trend_confidence": 82,
+          "grade": "Strong Buy",
+          "rating_score": 7,
+          "fundamentals_score": 7,
+          "rank": 2,
+          "rationale": "신한금융 1d +7.4%, 5d +15.8% — 한국 금융주 수급 폭발, 거래량 2.0배. 밸류업 정책 + 주주환원 강화 모멘텀",
+          "entry_close": 107500.0,
+          "entry_date": "2026-06-06",
+          "current_close": 107500.0,
+          "current_date": "2026-06-05",
+          "current_return_pct": 0.0,
+          "close_7d": null,
+          "alpha_7d": null,
+          "hit_7d": null,
+          "close_30d": null,
+          "alpha_30d": null,
+          "hit_30d": null,
+          "close_90d": null,
+          "alpha_90d": null,
+          "hit_90d": null,
+          "verified_at": null,
+          "alert": false
+        },
+        {
+          "ticker": "LLY",
+          "name": "Eli Lilly",
+          "country": "US",
+          "trend_title": "헬스케어·제약 방어주 부상 — 성장주 패닉 속 경기방어 섹터 선호",
+          "trend_kind": "current",
+          "category": "헬스케어/제약 방어",
+          "timeframe": "ongoing",
+          "trend_confidence": 79,
+          "grade": "Strong Buy",
+          "rating_score": 8,
+          "fundamentals_score": 9,
+          "rank": 1,
+          "rationale": "GLP-1(오젬픽 경쟁약 젭바운드) 성장 독점 + 20d +16%, 1d +0.55% 방어. AI 패닉 완전 무관한 성장 스토리",
+          "entry_close": 1131.4200439453125,
+          "entry_date": "2026-06-06",
+          "current_close": 1131.4200439453125,
+          "current_date": "2026-06-05",
+          "current_return_pct": 0.0,
+          "close_7d": null,
+          "alpha_7d": null,
+          "hit_7d": null,
+          "close_30d": null,
+          "alpha_30d": null,
+          "hit_30d": null,
+          "close_90d": null,
+          "alpha_90d": null,
+          "hit_90d": null,
+          "verified_at": null,
+          "alert": false
+        },
+        {
+          "ticker": "GLD",
+          "name": "SPDR Gold Shares",
+          "country": "US",
+          "trend_title": "귀금속·금 급락 — 달러 강세와 기술적 지지선 붕괴",
+          "trend_kind": "current",
+          "category": "귀금속/금",
+          "timeframe": "short",
+          "trend_confidence": 76,
+          "grade": "Caution",
+          "rating_score": -2,
+          "fundamentals_score": 5,
+          "rank": 1,
+          "rationale": "현재 달러 강세·기술적 하락 추세 지속 — 신규 매수 자제. 지정학 리스크 또는 달러 반전 시 진입 재검토. 지지선: 20d -8% 수준에서 추가 하락 여부 모니터링 필요.",
+          "entry_close": 396.239990234375,
+          "entry_date": "2026-06-06",
+          "current_close": 396.239990234375,
+          "current_date": "2026-06-05",
+          "current_return_pct": 0.0,
+          "close_7d": null,
+          "alpha_7d": null,
+          "hit_7d": null,
+          "close_30d": null,
+          "alpha_30d": null,
+          "hit_30d": null,
+          "close_90d": null,
+          "alpha_90d": null,
+          "hit_90d": null,
+          "verified_at": null,
+          "alert": false
+        },
+        {
+          "ticker": "PG",
+          "name": "Procter & Gamble",
+          "country": "US",
+          "trend_title": "소비재 필수품 방어주 반등 — 경기침체 우려 헤지 수요",
+          "trend_kind": "current",
+          "category": "소비재/방어주",
+          "timeframe": "short",
+          "trend_confidence": 74,
+          "grade": "Buy",
+          "rating_score": 3,
+          "fundamentals_score": 7,
+          "rank": 1,
+          "rationale": "1d +4.09%로 시장 대비 +6.7%p 초과수익. 안정적 배당·필수소비재 선두주자. 리스크오프 장세 최적 방어주",
+          "entry_close": 146.5399932861328,
+          "entry_date": "2026-06-06",
+          "current_close": 146.5399932861328,
+          "current_date": "2026-06-05",
+          "current_return_pct": 0.0,
+          "close_7d": null,
+          "alpha_7d": null,
+          "hit_7d": null,
+          "close_30d": null,
+          "alpha_30d": null,
+          "hit_30d": null,
+          "close_90d": null,
+          "alpha_90d": null,
+          "hit_90d": null,
+          "verified_at": null,
+          "alert": false
+        },
+        {
+          "ticker": "KLAC",
+          "name": "KLA Corporation",
+          "country": "US",
+          "trend_title": "반도체 장비주 기술적 반등 — 과매도 구간 진입 후 저가 매수 기회",
+          "trend_kind": "predicted",
+          "category": "반도체 장비",
+          "timeframe": "short",
+          "trend_confidence": 72,
+          "grade": "Buy",
+          "rating_score": 3,
+          "fundamentals_score": 8,
+          "rank": 1,
+          "rationale": "1d -9.47% 과매도 + 20d +9.41% 추세 유효. 거래량 1.88배 저가 매수 유입 시그널. 공정 검사 장비 독점적 지위로 반도체 사이클 회복 시 1차 수혜",
+          "entry_close": 1929.199951171875,
+          "entry_date": "2026-06-06",
+          "current_close": 1929.199951171875,
+          "current_date": "2026-06-05",
+          "current_return_pct": 0.0,
+          "close_7d": null,
+          "alpha_7d": null,
+          "hit_7d": null,
+          "close_30d": null,
+          "alpha_30d": null,
+          "hit_30d": null,
+          "close_90d": null,
+          "alpha_90d": null,
+          "hit_90d": null,
+          "verified_at": null,
+          "alert": false
+        },
+        {
+          "ticker": "035420",
+          "name": "NAVER",
+          "country": "KR",
+          "trend_title": "한국 인터넷 플랫폼 재가속 — NAVER 5d +24.6% 이후 추가 모멘텀",
+          "trend_kind": "predicted",
+          "category": "인터넷/플랫폼",
+          "timeframe": "short",
+          "trend_confidence": 68,
+          "grade": "Strong Buy",
+          "rating_score": 6,
+          "fundamentals_score": 7,
+          "rank": 1,
+          "rationale": "NAVER AI 수익화 + 커머스 성장으로 5d +24.6% 급등. 1일 -4.5% 조정은 매수 기회. 미국 AI 패닉 영향 제한적인 독립 모멘텀",
+          "entry_close": 255500.0,
+          "entry_date": "2026-06-06",
+          "current_close": 255500.0,
+          "current_date": "2026-06-05",
+          "current_return_pct": 0.0,
+          "close_7d": null,
+          "alpha_7d": null,
+          "hit_7d": null,
+          "close_30d": null,
+          "alpha_30d": null,
+          "hit_30d": null,
+          "close_90d": null,
+          "alpha_90d": null,
+          "hit_90d": null,
+          "verified_at": null,
+          "alert": false
+        },
+        {
+          "ticker": "AMGN",
+          "name": "Amgen",
+          "country": "US",
+          "trend_title": "바이오텍 대형주 방어 + 반등 준비 — AMGN·VRTX 독립 강세",
+          "trend_kind": "predicted",
+          "category": "바이오텍",
+          "timeframe": "short",
+          "trend_confidence": 66,
+          "grade": "Strong Buy",
+          "rating_score": 6,
+          "fundamentals_score": 8,
+          "rank": 1,
+          "rationale": "1d +1.15%, 5d +3.8%, 20d +6.23% — AI 패닉 완전 방어. 비만치료제(MariTide) 임상 진전 + 안정적 배당. 금리 인하 기대 시 추가 상승",
+          "entry_close": 349.5799865722656,
+          "entry_date": "2026-06-06",
+          "current_close": 349.5799865722656,
+          "current_date": "2026-06-05",
+          "current_return_pct": 0.0,
+          "close_7d": null,
+          "alpha_7d": null,
+          "hit_7d": null,
+          "close_30d": null,
+          "alpha_30d": null,
+          "hit_30d": null,
+          "close_90d": null,
+          "alpha_90d": null,
+          "hit_90d": null,
+          "verified_at": null,
+          "alert": false
+        },
+        {
+          "ticker": "GDX",
+          "name": "VanEck Gold Miners ETF",
+          "country": "US",
+          "trend_title": "귀금속·금 반등 워치리스트 — 과매도 이후 탈달러화 트리거 대기",
+          "trend_kind": "predicted",
+          "category": "귀금속/원자재",
+          "timeframe": "medium",
+          "trend_confidence": 61,
+          "grade": "Caution",
+          "rating_score": -2,
+          "fundamentals_score": 5,
+          "rank": 1,
+          "rationale": "금광주 ETF로 레버리지 반등 수단이나 현재 달러 강세 추세 지속 중. 트리거(달러 반전·지정학 충격) 확인 후 매수 진입. 1d -8.75%, 20d -14% — 신규 매수 시기상조",
+          "entry_close": 78.83999633789062,
+          "entry_date": "2026-06-06",
+          "current_close": 78.83999633789062,
+          "current_date": "2026-06-05",
+          "current_return_pct": 0.0,
+          "close_7d": null,
+          "alpha_7d": null,
+          "hit_7d": null,
+          "close_30d": null,
+          "alpha_30d": null,
+          "hit_30d": null,
+          "close_90d": null,
+          "alpha_90d": null,
+          "hit_90d": null,
+          "verified_at": null,
+          "alert": false
+        },
+        {
+          "ticker": "XOM",
+          "name": "Exxon Mobil",
+          "country": "US",
+          "trend_title": "에너지 섹터 상대 강세 지속 — 유가 회복 + 달러 강세 헤지",
+          "trend_kind": "predicted",
+          "category": "에너지/원자재",
+          "timeframe": "short",
+          "trend_confidence": 65,
+          "grade": "Hold",
+          "rating_score": 1,
+          "fundamentals_score": 7,
+          "rank": 1,
+          "rationale": "5d +3.21%, 20d +2.28% — 전 시장 역행 강세. 배당 수익률 3.5% + FCF 안정성. 지정학·유가 상승 시 추가 수혜",
+          "entry_close": 149.9199981689453,
+          "entry_date": "2026-06-06",
+          "current_close": 149.9199981689453,
+          "current_date": "2026-06-05",
+          "current_return_pct": 0.0,
+          "close_7d": null,
+          "alpha_7d": null,
+          "hit_7d": null,
+          "close_30d": null,
+          "alpha_30d": null,
+          "hit_30d": null,
+          "close_90d": null,
+          "alpha_90d": null,
+          "hit_90d": null,
+          "verified_at": null,
+          "alert": false
+        }
+      ],
+      "alert_count": 0
+    },
     {
       "date": "2026-06-05",
       "recommendations": [
