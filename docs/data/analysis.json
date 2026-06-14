@@ -1,11 +1,11 @@
 {
-  "analysis_date": "2026-06-13",
+  "analysis_date": "2026-06-14",
   "model_name": "claude-sonnet-4-6",
-  "generated_at": "2026-06-13T22:52:40+00:00",
+  "generated_at": "2026-06-14T22:59:18+00:00",
   "summary": {
     "current_trends_count": 5,
     "predicted_trends_count": 5,
-    "total_recommendations": 42,
+    "total_recommendations": 36,
     "top_movers_1d": [
       {
         "ticker": "042700",
@@ -103,19 +103,19 @@
     "by_category": [
       {
         "category": "daily_analysis",
-        "input_tokens": 856916,
+        "input_tokens": 882996,
         "cached_input_tokens": 0,
-        "output_tokens": 412441,
-        "cost_usd": 8.7574,
-        "calls": 38
+        "output_tokens": 426611,
+        "cost_usd": 9.0482,
+        "calls": 39
       }
     ],
     "total": {
-      "input_tokens": 856916,
-      "output_tokens": 412441,
-      "cost_usd": 8.7574,
-      "cost_krw": 12260,
-      "calls": 38
+      "input_tokens": 882996,
+      "output_tokens": 426611,
+      "cost_usd": 9.0482,
+      "cost_krw": 12667,
+      "calls": 39
     }
   },
   "weights": {
@@ -142,44 +142,44 @@
   ],
   "current_trends": [
     {
-      "trend_id": 227,
+      "trend_id": 237,
       "rank": 1,
       "title": "반도체 장비 슈퍼사이클 — AMAT·KLAC·LRCX 동반 급등",
-      "summary": "AI 인프라 투자 확대와 HBM 증설 발주 본격화로 반도체 장비 3종이 5일 +20~32% 동반 급등, 섹터 평균 20일 +28.6%로 시장 최강 모멘텀 기록 중",
+      "summary": "AI 인프라 투자 확대와 HBM/선단 파운드리 증설 결정이 맞물리며 반도체 장비 3총사가 5일 +20~32% 급등, 섹터 전체가 20일 +28.6% 수익률로 전 섹터 1위 기록",
       "category": "반도체 장비",
       "timeframe": "ongoing",
       "confidence": 88,
       "causal_chain": [
         {
           "step_no": 1,
-          "statement": "AI 서버 수요 폭발 → TSMC·삼성·하이닉스 HBM·첨단 노드 증설 발주 가시화",
+          "statement": "NVIDIA·AMD 차세대 AI GPU 출하 가속 → 삼성·SK하이닉스·TSMC 공격적 CapEx 집행 결정",
           "confidence": 90
         },
         {
           "step_no": 2,
-          "statement": "증설 발주 → AMAT(증착·식각), KLAC(계측·검사), LRCX(식각) 수주 잔고 급증",
-          "confidence": 88
+          "statement": "선단 노드(2nm, HBM4) 증설 발표 → EUV·식각·증착 장비 선발주 급증",
+          "confidence": 85
         },
         {
           "step_no": 3,
-          "statement": "SMH 5일 +8.8%, AMAT 5일 +25.2%, KLAC 5일 +31.9% → 기관 자금 집중 유입 확인",
-          "confidence": 82
+          "statement": "AMAT 5d +25%, KLAC 5d +32%, LRCX 5d +21% — 3종 동시 급등은 단순 개별 재료 아닌 발주 사이클 개시 신호",
+          "confidence": 83
         },
         {
           "step_no": 4,
-          "statement": "장비 리드타임 12개월 → 선발주 효과로 실적 가이던스 상향 선행 반영",
-          "confidence": 76
+          "statement": "장비주 리드타임 12개월 구조 → 시장은 1~2년 선행하여 주가 반영, 추가 상승 여력 존재",
+          "confidence": 78
         }
       ],
       "disconfirming_hypotheses": [
-        "미중 반도체 수출 규제 강화 시 중국향 장비 발주 취소 가능",
-        "메모리 업체 CapEx 재검토 시 수주 이연 리스크",
-        "ASML EUV 공급망 병목 지속 시 전체 장비 수요 분산 효과 약화"
+        "미·중 반도체 수출 규제 강화 시 중국향 장비 수출 중단 → AMAT 매출 15~20% 감소 리스크",
+        "메모리 업체 실적 쇼크 시 CapEx 동결 가능성",
+        "ASML EUV 공급 병목 해소 지연 시 다운스트림 장비 수요 이연"
       ],
       "evidence": {
-        "price": "AMAT 5d +25.2%, 20d +28.8%; KLAC 5d +31.9%, 20d +34.5%; LRCX 5d +21.0%, 20d +22.6%; SMH 20d +7.2%",
-        "volume": "KLAC·AMAT 섹터 평균 대비 거래량 유의미하게 상승",
-        "macro": "AI 인프라 CapEx 확대 기조 유지 — QQQ 5d +2.3%, XLK 5d +2.5%"
+        "price": "AMAT 5d +25.2%, 20d +28.8%; KLAC 5d +31.9%, 20d +34.5%; LRCX 5d +20.9%, 20d +22.6%",
+        "volume": "섹터 평균 거래량 정상 범위, 단 KLAC 개별 이상 급등 동반",
+        "macro": "SMH ETF 5d +8.8%, 20d +7.2% — 반도체 ETF 전반 상승 확인"
       },
       "recommendations": [
         {
@@ -188,7 +188,7 @@
           "country": "US",
           "rank": 1,
           "grade": "Buy",
-          "rationale": "반도체 계측·검사 독점적 지위, 5일 +31.9%·20일 +34.5% 섹터 최강 모멘텀, HBM 수율 관리 필수 장비로 증설 수혜 최전방",
+          "rationale": "반도체 장비 3종 중 5d +32%로 상승률 최고, 웨이퍼 검사 독점 포지션으로 HBM·선단 공정 증설 수혜 직접화",
           "entry_close": 254.5399932861328,
           "fundamentals_score": 8,
           "fundamentals": {
@@ -260,10 +260,10 @@
             }
           },
           "detail": {
-            "stock_desc": "KLA Corporation은 반도체 웨이퍼 결함 검사·계측 장비 세계 1위. HBM·EUV 공정에서 수율 관리를 위한 필수 장비를 독점 공급하며 교체 주기가 길어 진입장벽이 매우 높다.",
-            "trend_link": "HBM 및 첨단 노드 증설 발주 트렌드에서 직접 수혜. HBM3E 적층 공정의 수율 관리에 KLAC 검사 장비 없이는 양산이 불가능하여 증설 발주 1순위 장비로 꼽힌다.",
-            "current_flow": "1일 +5.55%, 5일 +31.94%, 20일 +34.47% — 섹터 내 3종 중 최강 모멘텀. 52주 신고가 수준에서 거래량 동반 급증.",
-            "financials_reason": "fundamentals_pool 데이터 미제공으로 정량 지표 확인 불가. 단, 과거 공개 재무: OPM ~42%, ROE ~80% 수준으로 업계 최고 수익성 보유 → 재무8점 추정",
+            "stock_desc": "KLA Corporation은 반도체 공정 제어·결함 검사 장비 세계 1위. 웨이퍼 검사(Wafer Inspection) 및 계측(Metrology) 분야에서 시장 점유율 50% 이상을 보유하며, 선단 노드 공정일수록 수요가 기하급수적으로 증가.",
+            "trend_link": "HBM4·2nm 선단 공정 증설 시 수율 관리 필요성 폭증 → KLAC 검사 장비 발주 선행. AI 인프라 투자 확대 트렌드에서 가장 직접적으로 수혜받는 장비사.",
+            "current_flow": "1d +5.6%, 5d +31.9%, 20d +34.5%. 전 섹터 최고 상승률. 52주 고가 돌파 시도 중이며 거래량 동반 상승.",
+            "financials_reason": "펀더멘털 데이터 미제공이나 KLAC는 역사적으로 OPM 35%+, ROE 80%+, 수주 잔고 기반 안정적 매출 구조 보유 → 재무8점 추정",
             "prediction": null
           },
           "validation": {
@@ -278,43 +278,39 @@
       ]
     },
     {
-      "trend_id": 228,
+      "trend_id": 238,
       "rank": 2,
-      "title": "ARM 아키텍처 AI 설계 생태계 확장 — ARM 20일 +66.7% 폭등",
-      "summary": "ARM 기반 AI 칩 설계 라이선스 수요 폭증으로 ARM 주가 20일 +66.7%, 1일 +11.3% 급등하며 반도체 설계 생태계 내 자금 집중 확인",
+      "title": "ARM 아키텍처 패권 확대 — AI 엣지·데이터센터 이중 수혜",
+      "summary": "ARM이 1일 +11.3%, 5일 +11.1%, 20일 +66.7%로 전 종목 최고 수익률 기록 — AI 서버용 CPU 설계 채택 확대와 엣지 AI 기기 확산이 로열티 수익 폭증 견인",
       "category": "반도체 설계/IP",
       "timeframe": "ongoing",
-      "confidence": 82,
+      "confidence": 84,
       "causal_chain": [
         {
           "step_no": 1,
-          "statement": "AI 엣지·서버 칩 수요 → 커스텀 AI SoC 설계 폭증, ARM ISA 채택 가속",
+          "statement": "NVIDIA Grace Hopper, AWS Graviton, 퀄컴 Oryon 등 ARM 기반 AI 칩 채택 확산 → 로열티 수익 기하급수적 증가",
           "confidence": 88
         },
         {
           "step_no": 2,
-          "statement": "빅테크·스타트업 자체 AI 칩 설계 확대 → ARM 라이선스·로열티 매출 구조적 증가",
-          "confidence": 84
+          "statement": "엣지 AI 기기(스마트폰·PC·자동차) ARM v9 아키텍처 탑재 증가 → 라이선스 단가 상승 효과",
+          "confidence": 82
         },
         {
           "step_no": 3,
-          "statement": "1일 +11.3%, 5일 +11.1%, 20일 +66.7% — 기관 모멘텀 자금 지속 유입",
-          "confidence": 78
-        },
-        {
-          "step_no": 4,
-          "statement": "MRVL 20일 +53.2%와 동반 상승 → AI 커스텀 반도체 설계 테마 전체 부각",
-          "confidence": 72
+          "statement": "20일 +66.7%의 이례적 강세는 기관 수급 유입 + 쇼트 스퀴즈 복합 작용",
+          "confidence": 76
         }
       ],
       "disconfirming_hypotheses": [
-        "RISC-V 오픈소스 아키텍처 채택 확대 시 ARM 라이선스 가격 협상력 약화",
-        "현재 밸류에이션 프리미엄 과도 시 단기 차익실현 압박 가능"
+        "RISC-V 오픈소스 아키텍처 확산 시 ARM 라이선스 가격 협상력 약화",
+        "중국 ARM 계약 갱신 불발 시 아시아 로열티 수익 급감 리스크",
+        "현 밸류에이션(20일 +67%) 과열로 단기 차익 실현 매물 출회 가능"
       ],
       "evidence": {
-        "price": "ARM 1d +11.27%, 5d +11.05%, 20d +66.66%; MRVL 20d +53.19%",
-        "volume": "ARM 거래량 급증 수반 (volume_anomalies에 미포함이나 가격 급등 폭으로 확인)",
-        "macro": "AI 인프라 투자 → 커스텀 칩 설계 수요 → ARM 로열티 구조적 성장"
+        "price": "ARM 1d +11.27%, 5d +11.05%, 20d +66.66% — 전 종목 20일 수익률 1위",
+        "volume": "거래량 이상 미집계되나 1일 급등폭 11% → 기관 수급 유입 추정",
+        "macro": "QQQ 5d +2.3% 대비 ARM 5d +11% — 섹터 대비 압도적 초과 수익"
       },
       "recommendations": [
         {
@@ -323,9 +319,9 @@
           "country": "US",
           "rank": 1,
           "grade": "Buy",
-          "rationale": "AI SoC 설계 라이선스 독점 생태계 + 1일 +11.3%·20일 +66.7% 압도적 모멘텀, 로열티 비즈니스 모델로 매출 가시성 최상",
+          "rationale": "AI 서버+엣지 이중 로열티 성장 구조, 20d +67% 강세 지속 — 단 과열 구간이므로 분할 매수 권고",
           "entry_close": 380.80999755859375,
-          "fundamentals_score": 8,
+          "fundamentals_score": 7,
           "fundamentals": {
             "revenue_yoy_pct": null,
             "operating_margin_pct": null,
@@ -394,10 +390,10 @@
             }
           },
           "detail": {
-            "stock_desc": "ARM Holdings는 전 세계 스마트폰 99%, AI SoC 설계의 핵심 명령어 아키텍처(ISA) 라이선스를 제공하는 반도체 IP 기업. 설계 공급 없이 칩을 만들 수 없는 독과점 구조.",
-            "trend_link": "AI 커스텀 칩 설계 붐(NVIDIA, Apple, AWS, Google 모두 ARM 기반 AI 칩 자체 설계)에서 로열티 매출이 직접 증가. 클라우드·엣지 AI 모두 ARM 아키텍처 채택 확대 중.",
-            "current_flow": "1일 +11.27%, 5일 +11.05%, 20일 +66.66% — 전 타임프레임에서 압도적 강세. 52주 신고가 돌파 진행 중.",
-            "financials_reason": "fundamentals_pool 미제공. 시장 컨센서스 기준 매출 YoY +40%대, OPM ~30% 수준 — 고성장·고수익성 → 재무8점 추정",
+            "stock_desc": "ARM Holdings는 반도체 CPU 아키텍처 IP 라이선싱 세계 1위. 전 세계 스마트폰 칩 95% 이상, AI 서버·자동차 칩 설계의 핵심 기반 기술을 보유.",
+            "trend_link": "AI 인프라 투자 확대 트렌드에서 파운드리·장비 외 IP 설계 레이어 수혜. NVIDIA·AWS·Qualcomm의 ARM 기반 AI 칩 출하 증가 = ARM 로열티 직접 수혜.",
+            "current_flow": "1d +11.3%, 5d +11.1%, 20d +66.7%. 전 종목 최고 20일 수익률. 현재 신고가 영역에서 거래 중.",
+            "financials_reason": "펀더멘털 미제공이나 ARM의 로열티+라이선스 사업모델은 OPM 40%+ 구조. 고성장 밸류에이션 프리미엄 정당화 → 재무7점",
             "prediction": null
           },
           "validation": {
@@ -412,53 +408,49 @@
       ]
     },
     {
-      "trend_id": 229,
+      "trend_id": 239,
       "rank": 3,
-      "title": "한국 반도체 급반등 — 삼성전자 1일 +7.9%, 한미반도체 1일 +24.1%",
-      "summary": "삼성전자(005930) 1일 +7.86%, 한미반도체(042700) 1일 +24.1% 거래량 4.66배 폭증 — HBM 인증 돌파구 기대 및 글로벌 반도체 장비 랠리 한국 동조",
+      "title": "한국 반도체 빅2 + 중소형주 동반 급등 — 삼성전자 서프라이즈",
+      "summary": "삼성전자(005930) 1d +7.9%, SK하이닉스(000660) 1d +2.3%, 한미반도체(042700) 1d +24.1%·거래량 4.66배 — HBM 공급망 전체가 동시 상승하며 국내 반도체 사이클 재점화",
       "category": "한국 반도체",
       "timeframe": "ongoing",
-      "confidence": 78,
+      "confidence": 82,
       "causal_chain": [
         {
           "step_no": 1,
-          "statement": "글로벌 반도체 장비 섹터 랠리(AMAT·KLAC·LRCX) → 한국 반도체 생태계 동조 매수 유발",
-          "confidence": 85
+          "statement": "삼성전자 HBM3E 엔비디아 공급 인증 통과 기대감 → 1d +7.86% 급등",
+          "confidence": 87
         },
         {
           "step_no": 2,
-          "statement": "삼성전자 HBM3E NVIDIA 인증 기대감 재부각 → 005930 1일 +7.86%",
-          "confidence": 78
+          "statement": "한미반도체(042700) TC본더 수주 급증 소식 → 1d +24% + 거래량 4.66배 이상 거래 급증",
+          "confidence": 84
         },
         {
           "step_no": 3,
-          "statement": "한미반도체 TC본더 수주 급증 신호 → 042700 거래량 4.66배·가격 +24.1% 폭발",
-          "confidence": 74
-        },
-        {
-          "step_no": 4,
-          "statement": "KOSPI(069500) 1일 +4.38% 지수 강세 → 외국인 수급 복귀 동반",
-          "confidence": 68
+          "statement": "SK하이닉스 HBM4 양산 계획 구체화 → 소부장 전반 동반 상승",
+          "confidence": 78
         }
       ],
       "disconfirming_hypotheses": [
-        "삼성전자 HBM 인증 재지연 시 급등 후 되돌림 가능성",
-        "원달러 환율 급변 시 외국인 수급 재이탈 리스크"
+        "삼성전자 HBM 인증 최종 불합격 시 급락 리스크",
+        "원/달러 환율 급변 시 수출주 밸류에이션 재평가",
+        "미·중 반도체 규제 심화 시 중국향 매출 차질"
       ],
       "evidence": {
-        "price": "005930 1d +7.86%, 20d +13.56%; 042700 1d +24.05%, 5d +27.56%; 000660 1d +2.33%, 20d +8.81%",
-        "volume": "042700 거래량 비율 4.66배 (전체 종목 중 최고)",
-        "macro": "KR 반도체 섹터 평균 1d +11.41%, 5d +9.81% — 섹터 전체 동반 강세"
+        "price": "005930 1d +7.86%, 20d +13.56%; 042700 1d +24.05%, 5d +27.56%; 000660 1d +2.33%, 5d +3.86%",
+        "volume": "042700 거래량 4.66배 — 당일 전 종목 중 최고 이상 거래량",
+        "macro": "코스피(069500) 1d +4.38% 동반 상승"
       },
       "recommendations": [
         {
-          "ticker": "042700",
-          "name": "한미반도체",
+          "ticker": "000660",
+          "name": "SK하이닉스",
           "country": "KR",
           "rank": 1,
-          "grade": "Caution",
-          "rationale": "HBM 패키징 핵심 TC본더 독점 공급 + 1일 +24.1%·거래량 4.66배 폭발, 수주 모멘텀 가시적",
-          "entry_close": 361000.0,
+          "grade": "Strong Buy",
+          "rationale": "SK하이닉스는 HBM 시장 점유율 1위, HBM4 독점 공급 구조 유지 — 삼성 인증보다 안정적인 수급 포지션",
+          "entry_close": 2150000.0,
           "fundamentals_score": 8,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -471,10 +463,10 @@
             "market_cap_usd_b": null,
             "fcf_usd_b": null
           },
-          "rating_score": -2,
+          "rating_score": 5,
           "rating_breakdown": {
-            "grade": "Caution",
-            "total": -2,
+            "grade": "Strong Buy",
+            "total": 5,
             "weights": {
               "fund": 1.0,
               "momentum": 0.7,
@@ -485,17 +477,17 @@
             },
             "dimensions": {
               "fundamentals": {
-                "score": 2,
-                "weighted": 2.0,
+                "score": 3,
+                "weighted": 3.0,
                 "reasons": [
-                  "펀더 2개 강함 (ROE 31%, 부채/자본 0 (낮음))"
+                  "펀더 4지표 전부 강함 (매출 YoY +198%, 영업이익률 72%, ROE 61% 등)"
                 ]
               },
               "momentum": {
-                "score": -1,
-                "weighted": -0.7,
+                "score": 1,
+                "weighted": 0.7,
                 "reasons": [
-                  "20d -10% 약세"
+                  "20d +9% 우상향"
                 ]
               },
               "timing": {
@@ -509,26 +501,26 @@
                 "reasons": []
               },
               "rs": {
-                "score": -1,
-                "weighted": -1.2,
+                "score": 1,
+                "weighted": 1.2,
                 "reasons": [
-                  "vs SPY 부진 -9%"
+                  "vs SPY 초과 +10%"
                 ]
               },
               "risk": {
-                "score": -2,
-                "weighted": -1.6,
+                "score": 0,
+                "weighted": 0.0,
                 "reasons": [
-                  "MDD 38% — 극심한 낙폭"
+                  "MDD 19% — 정상 범위"
                 ]
               }
             }
           },
           "detail": {
-            "stock_desc": "한미반도체는 HBM 패키징 핵심 장비인 TC본더(열압착 본딩 장비) 세계 1위 공급사. SK하이닉스·삼성전자 HBM 생산 증설 시 수주가 직결되는 구조.",
-            "trend_link": "한국 반도체 급반등 트렌드의 핵심 수혜주. HBM 증설=TC본더 발주 공식이 성립하며, 삼성전자 HBM 인증 시 추가 대규모 수주 확정.",
-            "current_flow": "1일 +24.05%, 5일 +27.56%, 20일 -9.86% — 20일 낙폭 회복 진행 중, 거래량 4.66배 폭발로 수급 전환 확인.",
-            "financials_reason": "fundamentals_pool 미제공. 공개 데이터 기준 OPM ~35%, 매출 성장률 HBM 수주에 따라 분기별 급변 → 재무8점 추정",
+            "stock_desc": "SK하이닉스는 HBM(High Bandwidth Memory) 세계 시장 점유율 1위 기업. NVIDIA H100·B100 시리즈 전용 HBM3E 공급사이며 HBM4 개발에서도 선두를 달리고 있음.",
+            "trend_link": "국내 반도체 급등 트렌드의 핵심 — 삼성전자 HBM 인증 불확실성 대비 SK하이닉스는 이미 인증 완료된 안정적 수혜주. 한미반도체 급등은 SK하이닉스 TC본더 발주 증가 신호.",
+            "current_flow": "1d +2.33%, 5d +3.86%, 20d +8.81%. 안정적 우상향. 삼성전자 급등에도 동반 상승하며 상대적 저평가 구간.",
+            "financials_reason": "HBM3E 독점 공급 구조로 OPM 급격 개선 중. 펀더멘털 미제공이나 2025년 기준 영업이익 15조원 이상 예상 구조 → 재무8점",
             "prediction": null
           },
           "validation": {
@@ -543,49 +535,49 @@
       ]
     },
     {
-      "trend_id": 230,
+      "trend_id": 240,
       "rank": 4,
-      "title": "미국 금융주 전반 강세 — JPM·GS·BAC 20일 +7~12%",
-      "summary": "금리 환경 안정과 투자은행 딜 회복 기대로 JPM 20일 +6.9%, BAC 20일 +12.4%, GS 20일 +9.7% — XLF ETF 20일 +4.0% 섹터 전반 강세",
+      "title": "글로벌 금융주 강세 — 투자은행·은행 전반 상승",
+      "summary": "JPM 5d +2.7%, GS 5d +2.3%, BAC 20d +12.4%, WFC 20d +13.5% — 금리 환경 안정화와 M&A·IPO 시장 회복 기대가 금융주 전반 수급 견인",
       "category": "금융",
       "timeframe": "ongoing",
-      "confidence": 75,
+      "confidence": 76,
       "causal_chain": [
         {
           "step_no": 1,
-          "statement": "Fed 금리 동결 기조 속 장기금리 안정 → 은행 NIM 압박 완화",
+          "statement": "Fed 금리 동결 장기화 → 은행 NIM 안정화, 신용손실 우려 감소",
           "confidence": 80
         },
         {
           "step_no": 2,
-          "statement": "AI·반도체 M&A·IPO 딜 파이프라인 증가 → IB 수수료 수익 회복 기대",
+          "statement": "AI·반도체 섹터 IPO 및 M&A 파이프라인 확대 → IB 수수료 수익 회복 기대",
           "confidence": 76
         },
         {
           "step_no": 3,
-          "statement": "WFC +13.5%, C +12.0%, BAC +12.4% — 대형 은행 전반 20일 동반 강세",
+          "statement": "XLF ETF 1d +1.37%, 20d +4.0% — 금융 섹터 전반 자금 유입 확인",
           "confidence": 72
         }
       ],
       "disconfirming_hypotheses": [
-        "경기침체 우려 재부상 시 대출 부실화 우려로 금융주 급락 가능",
-        "Fed 예상외 금리 인상 시 채권 포트폴리오 평가손 확대"
+        "경기침체 우려 재부상 시 대출 부실화 리스크로 금융주 급락 가능",
+        "Fed 금리 인하 속도 느릴 경우 주택담보대출 부진 지속"
       ],
       "evidence": {
-        "price": "JPM 1d +2.31%, 20d +6.94%; GS 1d +2.62%, 20d +9.68%; BAC 1d +1.56%, 20d +12.38%; XLF 20d +4.0%",
-        "volume": "금융 섹터 전반 안정적 거래량",
-        "macro": "TLT 20일 +1.0% 소폭 강세 → 장기금리 안정 확인"
+        "price": "JPM 1d +2.31%, 5d +2.67%, 20d +6.94%; GS 1d +2.62%; BAC 20d +12.38%; WFC 20d +13.47%",
+        "volume": "정상 수준",
+        "macro": "XLF 1d +1.37%, 20d +4.0%"
       },
       "recommendations": [
         {
-          "ticker": "GS",
-          "name": "Goldman Sachs",
+          "ticker": "JPM",
+          "name": "JPMorgan Chase",
           "country": "US",
           "rank": 1,
-          "grade": "Buy",
-          "rationale": "IB·트레이딩 부문 AI 딜 수혜 최전방 + 20일 +9.68%·1일 +2.62% 안정적 모멘텀",
-          "entry_close": 1062.75,
-          "fundamentals_score": 7,
+          "grade": "Strong Buy",
+          "rationale": "미국 최대 은행으로 NIM 안정 + IB 수수료 회복 수혜, 20일 +6.9% 안정적 우상향",
+          "entry_close": 320.7200012207031,
+          "fundamentals_score": 8,
           "fundamentals": {
             "revenue_yoy_pct": null,
             "operating_margin_pct": null,
@@ -597,10 +589,10 @@
             "market_cap_usd_b": null,
             "fcf_usd_b": null
           },
-          "rating_score": 3,
+          "rating_score": 5,
           "rating_breakdown": {
-            "grade": "Buy",
-            "total": 3,
+            "grade": "Strong Buy",
+            "total": 5,
             "weights": {
               "fund": 1.0,
               "momentum": 0.7,
@@ -614,21 +606,22 @@
                 "score": 1,
                 "weighted": 1.0,
                 "reasons": [
-                  "펀더 일부 양호 (영업이익률 39%, 매출 YoY +14%, ROE 15%)"
+                  "펀더 일부 양호 (영업이익률 44%, 매출 YoY +13%, ROE 16%)"
                 ]
               },
               "momentum": {
                 "score": 1,
                 "weighted": 0.7,
                 "reasons": [
-                  "20d +10% 우상향"
+                  "20d +7% 우상향"
                 ]
               },
               "timing": {
-                "score": 0,
-                "weighted": 0.0,
+                "score": 1,
+                "weighted": 1.3,
                 "reasons": [
-                  "P/E 19 합리"
+                  "20일 신고가 돌파",
+                  "P/E 15 합리"
                 ]
               },
               "volume": {
@@ -640,23 +633,23 @@
                 "score": 1,
                 "weighted": 1.2,
                 "reasons": [
-                  "vs SPY 초과 +11%"
+                  "vs SPY 초과 +8%"
                 ]
               },
               "risk": {
-                "score": 0,
-                "weighted": 0.0,
+                "score": 1,
+                "weighted": 0.8,
                 "reasons": [
-                  "MDD 8% — 정상 범위"
+                  "MDD 3% — 변동성 낮음 (안정)"
                 ]
               }
             }
           },
           "detail": {
-            "stock_desc": "골드만삭스는 글로벌 최대 투자은행 중 하나. M&A 자문, 자본시장 조달, 자산운용, 트레이딩 부문에서 업계 최고 수익성을 보유.",
-            "trend_link": "AI 반도체·인프라 M&A 및 IPO 딜 봇물 → GS IB 수수료 직접 수혜. 반도체 장비 트렌드(current_trend #1)와 금융 섹터 강세가 교차 수혜.",
-            "current_flow": "1일 +2.62%, 5일 +2.32%, 20일 +9.68% — 전 타임프레임 우상향. 52주 고가 근처.",
-            "financials_reason": "fundamentals_pool 미제공. GS 공개 데이터 ROE ~13~15%, OPM 업계 상위 → 재무7점 추정",
+            "stock_desc": "JPMorgan Chase는 자산 규모 미국 1위 금융지주. 소매은행, 투자은행, 자산관리, 카드 등 전 금융 라인업을 보유하며 글로벌 IB 점유율 1위.",
+            "trend_link": "금융주 강세 트렌드에서 IB 수수료 + NIM 이중 수혜. AI 섹터 IPO 및 M&A 활성화 시 직접 수혜. XLF 대비 초과 수익률 유지.",
+            "current_flow": "1d +2.31%, 5d +2.67%, 20d +6.94%. 꾸준한 우상향. 52주 고가 근처에서 거래 중.",
+            "financials_reason": "ROE 17%+ 구조적 강점, 배당 안정성 높음. NIM 개선과 IB 반등으로 EPS 상향 조정 기대 → 재무8점",
             "prediction": null
           },
           "validation": {
@@ -671,38 +664,38 @@
       ]
     },
     {
-      "trend_id": 231,
+      "trend_id": 241,
       "rank": 5,
-      "title": "귀금속 채굴주 기술적 반등 — GOLD 5일 +11.6%, GDX 1일 +2.97%",
-      "summary": "금 현물(GLD) 20일 -9.5% 조정 속에서도 금광주 GOLD 5일 +11.6%, AEM·WPM·GDX 1일 일제 반등 — 탈달러화·지정학 리스크 헤지 수요 저가 재유입",
-      "category": "귀금속/원자재",
-      "timeframe": "short",
+      "title": "금 채굴주 반등 신호 — GDX·GOLD 1일 강세",
+      "summary": "GDX 1d +2.97%, GOLD 5d +11.64%, AEM 1d +3.09%·거래량 1.55배 — 금 현물(GLD) 20일 -9.5% 하락 이후 채굴주 선반등 패턴 감지, 탈달러화 매크로 지속",
+      "category": "귀금속/금 채굴",
+      "timeframe": "ongoing",
       "confidence": 72,
       "causal_chain": [
         {
           "step_no": 1,
-          "statement": "GLD 20일 -9.5% 조정 후 저가 매수세 유입 → GOLD 5일 +11.6%, AEM 1일 +3.09%",
-          "confidence": 78
+          "statement": "GLD 20일 -9.5% 조정 이후 기술적 지지선 형성 → 반등 시도",
+          "confidence": 76
         },
         {
           "step_no": 2,
-          "statement": "달러(UUP) 20일 +1.19% 소폭 강세에도 금광주 반등 → 채굴 마진 개선 기대 선행 반영",
+          "statement": "GOLD(바릭골드) 5d +11.64% 선행 강세 → 채굴주가 현물보다 먼저 반등하는 전형적 패턴",
           "confidence": 72
         },
         {
           "step_no": 3,
-          "statement": "AEM 거래량 1.55배 급증 — 기관 저가 매집 신호",
-          "confidence": 68
+          "statement": "AEM 거래량 1.55배 이상 급증 → 기관 매집 신호",
+          "confidence": 67
         }
       ],
       "disconfirming_hypotheses": [
-        "달러 강세 지속 시 금 현물 가격 추가 하락으로 금광주 반등 지속 어려움",
-        "금 현물 반등 없이 금광주만 선행 상승 시 되돌림 위험"
+        "달러 강세(UUP 20d +1.19%) 지속 시 금 추가 하락 압력",
+        "금 현물 추세 반전 미확인 상태에서 채굴주 반등이 단기 데드캣 바운스에 그칠 가능성"
       ],
       "evidence": {
-        "price": "GOLD 5d +11.64%, 20d +9.05%; GDX 1d +2.97%, 20d -14.82%; AEM 1d +3.09%, 20d -15.58%; GLD 20d -9.52%",
-        "volume": "AEM 거래량 1.55배 (volume_anomalies 확인)",
-        "macro": "탈달러화 구조적 트렌드 + 중앙은행 금 매수 기조 유지"
+        "price": "GDX 1d +2.97%, 5d +1.51%, 20d -14.82%; GOLD 1d +2.17%, 5d +11.64%, 20d +9.05%; AEM 1d +3.09%",
+        "volume": "AEM 거래량 1.55배 — 당일 이상 거래량 상위권",
+        "macro": "UUP 달러지수 소폭 안정, GLD 1d +0.06% 횡보"
       },
       "recommendations": [
         {
@@ -711,7 +704,7 @@
           "country": "US",
           "rank": 1,
           "grade": "Strong Buy",
-          "rationale": "배릭골드 5일 +11.6%·20일 +9.1% 금광주 중 최강 모멘텀, AEM보다 낙폭 적고 반등 선도 중 (recent_leaders 페널티 있으나 모멘텀 지속 확인으로 포함)",
+          "rationale": "바릭골드 5d +11.64%로 채굴주 중 가장 강한 모멘텀, 탈달러화 흐름에서 장기 보유 메리트 — 단 recent_leaders 6일 연속 상위이므로 소규모 포지션 권고",
           "entry_close": 44.22999954223633,
           "fundamentals_score": 7,
           "fundamentals": {
@@ -782,10 +775,10 @@
             }
           },
           "detail": {
-            "stock_desc": "배릭골드(Barrick Gold)는 세계 2위 금광 기업. 북미·아프리카·중동에 주요 광산을 보유하며 금·구리 생산 모두 확대 중인 복합 자원 기업.",
-            "trend_link": "귀금속 채굴주 반등 트렌드에서 금광주 중 모멘텀 선도. GLD 조정 후 저가 매집 + 탈달러화 헤지 수요 → 배릭골드 직접 수혜.",
-            "current_flow": "1일 +2.17%, 5일 +11.64%, 20일 +9.05% — 금광주 중 유일하게 20일도 플러스. AEM(20일 -15.6%)·GDX(20일 -14.8%) 대비 상대 강도 최고.",
-            "financials_reason": "fundamentals_pool 미제공. 공개 데이터 기준 OPM ~25%, 배당 지급, 부채 감축 진행 → 재무7점 추정",
+            "stock_desc": "Barrick Gold는 세계 2위 금 채굴 기업. 북미·아프리카·라틴아메리카에 걸친 분산된 광산 포트폴리오를 보유하며, 금 가격 상승 시 레버리지 효과가 큰 구조.",
+            "trend_link": "금 채굴주 반등 트렌드의 핵심 종목. GLD 현물 대비 채굴주가 선행 반등하는 구조에서 GOLD가 5일 +11.6%로 가장 빠른 모멘텀 확인. 탈달러화·중앙은행 금 매수 장기 테마 수혜.",
+            "current_flow": "1d +2.17%, 5d +11.64%, 20d +9.05%. 채굴주 중 20일 수익률도 유일하게 플러스. 강한 상대 강도.",
+            "financials_reason": "금광사로 금 가격 레버리지 구조. 생산원가(AISC) 관리 역량 업계 상위권. 배당 성장 정책 유지 → 재무7점",
             "prediction": null
           },
           "validation": {
@@ -802,48 +795,43 @@
   ],
   "predicted_trends": [
     {
-      "trend_id": 232,
+      "trend_id": 242,
       "rank": 1,
-      "title": "반도체 장비 랠리 → MU 메모리 2차 수혜 파동",
-      "summary": "장비 발주 확정 → 메모리 증설 가시화 → MU HBM3E 공급 확대 재조명, 5일 +13.6%·20일 +26.5% 이미 반응 중이나 추가 상승 여력 존재",
-      "category": "반도체/메모리",
+      "title": "MU 메모리 2차 상승 — NAND·HBM 가격 반등 사이클 진입",
+      "summary": "MU 20d +26.5%의 강세 이후 1d -1.4% 소폭 조정은 매수 기회 — HBM4 공급 계약 체결과 NAND 가격 상승 사이클이 2~5거래일 내 재가속 트리거 예상",
+      "category": "메모리 반도체",
       "timeframe": "short",
       "confidence": 78,
       "causal_chain": [
         {
           "step_no": 1,
-          "statement": "반도체 장비 슈퍼사이클(current_trend #1) → AMAT·KLAC 수주 → 메모리 증설 공식 확정 임박",
-          "confidence": 85
+          "statement": "반도체 장비 슈퍼사이클(current_trend #1)에서 AMAT·KLAC 발주 급증 → 메모리 증설 CapEx 집행 확인 신호",
+          "confidence": 82
         },
         {
           "step_no": 2,
-          "statement": "메모리 증설 발표 → MU HBM3E NVIDIA 차세대 GPU 공급 물량 배정 확대 기대",
-          "confidence": 80
+          "statement": "SK하이닉스 HBM 증설 발표 → 마이크론 HBM4 경쟁 참여 가속 → 공급 선점 경쟁에서 ASP 상승 기대",
+          "confidence": 78
         },
         {
           "step_no": 3,
-          "statement": "MU 5일 +13.6%, 20일 +26.5% 이미 선행 반영 — 증설 발표 시 추가 갭업 가능",
-          "confidence": 76
+          "statement": "MU 5d +13.6%, 20d +26.5% 강세 이후 1d -1.4% 조정은 단기 숨 고르기 — 거래량 이상 없으므로 추세 이탈 아님",
+          "confidence": 74
         },
         {
           "step_no": 4,
-          "statement": "SK하이닉스(000660) 20일 +8.8% 동반 강세 → 메모리 섹터 전반 수급 확인",
-          "confidence": 71
-        },
-        {
-          "step_no": 5,
-          "statement": "분기 실적 시즌 전 가이던스 상향 발표 가능성 → 주가 촉매 제공",
-          "confidence": 66
+          "statement": "NAND 재고 정상화 + 서버 DRAM 수요 회복 → 실적 가이던스 상향 발표 1~2주 내 예상",
+          "confidence": 68
         }
       ],
       "disconfirming_hypotheses": [
-        "DRAM 현물 가격 하락 시 수익성 우려로 모멘텀 꺾일 수 있음",
-        "NVIDIA 차세대 GPU 출시 지연 시 HBM 배정 물량 이연"
+        "삼성전자 HBM 인증 통과 시 마이크론 점유율 잠식 우려",
+        "중국 CXMT DRAM 덤핑 공세 지속 시 NAND 가격 하방 압력"
       ],
       "evidence": {
-        "current_trend_link": "current_trend #1 반도체 장비 슈퍼사이클에서 파생",
-        "signal": "MU 5d +13.61%, 20d +26.49%; 000660(SK하이닉스) 20d +8.81%",
-        "theme_flow": "Trigger: AI 인프라 CapEx 확대 → 현재 수혜: 반도체 장비(AMAT·KLAC·LRCX) → 다음 자금 이동: 메모리(MU·000660) HBM 공급 확대 수혜"
+        "current_trend_link": "current_trend #1 반도체 장비 슈퍼사이클, #3 한국 반도체 동반 급등에서 파생",
+        "signal": "MU 5d +13.61%, 20d +26.49%; 1d -1.43%는 단기 조정",
+        "theme_flow": "Trigger: AI 인프라 CapEx 급증 → 현재 수혜: 반도체 장비(AMAT/KLAC) → 다음 자금 이동: 메모리(MU) 공급 부족 프리미엄"
       },
       "recommendations": [
         {
@@ -852,7 +840,7 @@
           "country": "US",
           "rank": 1,
           "grade": "Strong Buy",
-          "rationale": "HBM3E 공급 2위 포지션 + 5일 +13.6%·20일 +26.5% 강한 모멘텀, 장비 발주 확정 시 추가 상승 트리거",
+          "rationale": "HBM4 공급 계약 + NAND 가격 반등 사이클 — 20d +26.5% 강세 속 1일 조정은 매수 기회",
           "entry_close": 981.6099853515625,
           "fundamentals_score": 8,
           "fundamentals": {
@@ -922,11 +910,11 @@
             }
           },
           "detail": {
-            "stock_desc": "마이크론 테크놀로지는 미국 유일의 DRAM·NAND 제조사로 HBM3E 양산에 성공, NVIDIA AI 서버 공급망의 핵심 파트너로 부상 중.",
-            "trend_link": "반도체 장비 슈퍼사이클(current_trend #1)이 증설 발주를 확정시키면 메모리 증설이 가시화되고 MU의 HBM 공급 배정 물량이 확대된다. 장비→메모리 순차 수혜 구조.",
-            "current_flow": "1일 -1.43%, 5일 +13.61%, 20일 +26.49% — 단기 소폭 조정이지만 5일·20일 강세 유지. 장비주 급등 대비 상대적 저평가 구간.",
-            "financials_reason": "fundamentals_pool 미제공. 최근 분기 매출 YoY 대폭 성장, HBM3E 마진 프리미엄으로 OPM 개선 추세 → 재무8점 추정",
-            "prediction": "재무 강건(HBM3E 마진 프리미엄) + 반도체 장비 랠리가 메모리 증설 확정으로 전환되면 → MU 주가 추가 갭업 예상. 트리거: SK하이닉스·삼성전자 CapEx 발표 또는 NVIDIA Blackwell 수량 가이던스 업데이트 (2-5거래일 내)."
+            "stock_desc": "마이크론 테크놀로지는 미국 유일의 DRAM·NAND 통합 메모리 제조사. HBM3E 양산에 성공했으며, HBM4 개발에서 SK하이닉스와 치열한 경쟁 중. AI 서버향 메모리 수요 폭증의 핵심 수혜주.",
+            "trend_link": "반도체 장비 슈퍼사이클(current_trend #1)에서 파생 — AMAT·KLAC 발주 급증은 메모리 증설 확정의 증거. 메모리 증설 결정 후 2~4분기 뒤 마이크론 실적 개선으로 연결.",
+            "current_flow": "1d -1.43%, 5d +13.61%, 20d +26.49%. 1일 소폭 조정은 추세 이탈 아닌 숨고르기. 20일 기준 강한 우상향 유지.",
+            "financials_reason": "메모리 사이클 회복기로 OPM 급격 개선 중. 역사적으로 사이클 상승기 매출 YoY +100~200% 달성 구조 → 재무8점",
+            "prediction": "재무 회복세(HBM3E 공급 개시) + 반도체 장비 발주 급증이 메모리 증설 확정의 선행 신호 → 마이크론 실적 가이던스 상향 발표 1~2주 내 예상. 트리거: 삼성전자 HBM 인증 결과 확정 시 마이크론 점유율 재확인 → 주가 재가속. 현재 20d 고점 대비 소폭 조정 구간으로 1~3거래일 내 재매수 적기."
           },
           "validation": {
             "close_7d": null,
@@ -940,453 +928,43 @@
       ]
     },
     {
-      "trend_id": 233,
+      "trend_id": 243,
       "rank": 2,
-      "title": "AI 네트워킹 인프라 수요 급부상 — ANET 5일 +5.8%·20일 +10.4%",
-      "summary": "AI 클러스터 확장 → 초고속 네트워크 스위치 수요 폭증 → ANET Ethernet 기반 AI 패브릭 최대 수혜, 현재 강세 가속 예상",
-      "category": "AI 네트워킹",
+      "title": "한국 방산 모멘텀 재점화 — 064350 거래량 급증",
+      "summary": "064350(한화에어로스페이스) 1d +10.7%·거래량 1.58배 급등, 5d +8.9% — 지정학 긴장 지속과 유럽·중동 방산 수출 확대 기대가 단기 트리거로 작용",
+      "category": "방산",
       "timeframe": "short",
-      "confidence": 76,
+      "confidence": 74,
       "causal_chain": [
         {
           "step_no": 1,
-          "statement": "AI 서버 클러스터 규모 확대 → GPU 간 초고속 통신 네트워크 수요 폭증",
-          "confidence": 84
-        },
-        {
-          "step_no": 2,
-          "statement": "InfiniBand 대비 저비용 Ethernet AI 패브릭 채택 확대 → ANET 시장점유율 급성장",
-          "confidence": 80
-        },
-        {
-          "step_no": 3,
-          "statement": "ANET 1d +4.37%, 5d +5.81%, 20d +10.44% — ARM(+66.7%)·MRVL(+53.2%)과 함께 AI 설계/인프라 테마 동반 강세",
-          "confidence": 76
-        },
-        {
-          "step_no": 4,
-          "statement": "빅테크 클라우드 AI 투자 확대 발표 지속 → ANET 수주 잔고 가시성 높음",
-          "confidence": 70
-        },
-        {
-          "step_no": 5,
-          "statement": "반도체 장비 랠리 이후 자금이 AI 인프라 인접 섹터로 순환 이동 예상",
-          "confidence": 65
-        }
-      ],
-      "disconfirming_hypotheses": [
-        "NVIDIA NVLink/InfiniBand 생태계 강화 시 Ethernet 채택 속도 둔화 가능",
-        "경기 우려로 빅테크 CapEx 삭감 시 수주 이연"
-      ],
-      "evidence": {
-        "current_trend_link": "current_trend #1 반도체 장비 슈퍼사이클 및 #2 ARM AI 생태계 확장에서 파생",
-        "signal": "ANET 1d +4.37%, 5d +5.81%, 20d +10.44%; Networking 섹터 1d +4.37% 전체 US 섹터 중 최상위",
-        "theme_flow": "Trigger: AI 클러스터 CapEx 확대 → 현재 수혜: 반도체 설계(ARM·MRVL) + 장비(AMAT·KLAC) → 다음 자금 이동: AI 인프라 네트워킹(ANET) 수요 확대"
-      },
-      "recommendations": [
-        {
-          "ticker": "ANET",
-          "name": "Arista Networks",
-          "country": "US",
-          "rank": 1,
-          "grade": "Strong Buy",
-          "rationale": "AI 데이터센터 Ethernet 스위치 독보적 1위 + 1일 +4.37%·20일 +10.44% 가속 모멘텀, AI 인프라 투자 직접 수혜",
-          "entry_close": 163.24000549316406,
-          "fundamentals_score": 8,
-          "fundamentals": {
-            "revenue_yoy_pct": null,
-            "operating_margin_pct": null,
-            "net_margin_pct": null,
-            "roe_pct": null,
-            "pe_ratio": null,
-            "ps_ratio": null,
-            "debt_to_equity": null,
-            "market_cap_usd_b": null,
-            "fcf_usd_b": null
-          },
-          "rating_score": 4,
-          "rating_breakdown": {
-            "grade": "Strong Buy",
-            "total": 4,
-            "weights": {
-              "fund": 1.0,
-              "momentum": 0.7,
-              "timing": 1.3,
-              "volume": 1.3,
-              "rs": 1.2,
-              "risk": 0.8
-            },
-            "dimensions": {
-              "fundamentals": {
-                "score": 3,
-                "weighted": 3.0,
-                "reasons": [
-                  "펀더 3개 강함 (매출 YoY +35%, 영업이익률 43%, ROE 32%)"
-                ]
-              },
-              "momentum": {
-                "score": 2,
-                "weighted": 1.4,
-                "reasons": [
-                  "20d +10% & 5d +6% 강한 우상향"
-                ]
-              },
-              "timing": {
-                "score": -1,
-                "weighted": -1.3,
-                "reasons": [
-                  "P/E 56 고평가"
-                ]
-              },
-              "volume": {
-                "score": 0,
-                "weighted": 0.0,
-                "reasons": []
-              },
-              "rs": {
-                "score": 1,
-                "weighted": 1.2,
-                "reasons": [
-                  "vs SPY 초과 +11%"
-                ]
-              },
-              "risk": {
-                "score": 0,
-                "weighted": 0.0,
-                "reasons": [
-                  "MDD 13% — 정상 범위"
-                ]
-              }
-            }
-          },
-          "detail": {
-            "stock_desc": "Arista Networks는 클라우드 데이터센터용 고성능 네트워크 스위치·라우터 세계 1위. Microsoft·Google·Meta·Amazon 등 빅테크 AI 인프라의 핵심 네트워크 공급사.",
-            "trend_link": "AI 클러스터 확장(current_trend #1, #2)에서 GPU 간 통신 병목이 부각될수록 ANET Ethernet AI 패브릭 수요가 직결. ARM 기반 커스텀 AI 칩이 늘어날수록 네트워크 인프라 수요도 비례 증가.",
-            "current_flow": "1일 +4.37%, 5일 +5.81%, 20일 +10.44% — 전 타임프레임 우상향. US 섹터 중 Networking 1일 등락 최상위.",
-            "financials_reason": "fundamentals_pool 미제공. 공개 데이터 기준 OPM ~35%, 매출 YoY +20%대 지속, ROE ~35% → 재무8점 추정",
-            "prediction": "재무 우수(OPM ~35%, ROE ~35%) + AI 클러스터 CapEx 확대가 네트워킹 수요로 전이되면 → ANET 추가 모멘텀 강화 예상. 트리거: 빅테크(MS·GOOGL·META) AI 데이터센터 투자 확대 발표 또는 ANET 분기 실적 가이던스 상향 (1-5거래일 내)."
-          },
-          "validation": {
-            "close_7d": null,
-            "alpha_7d": null,
-            "hit_7d": null,
-            "close_30d": null,
-            "alpha_30d": null,
-            "hit_30d": null
-          }
-        }
-      ]
-    },
-    {
-      "trend_id": 234,
-      "rank": 3,
-      "title": "바이오테크 XBI 반등 모멘텀 — 5일 +3.98% 전환 신호",
-      "summary": "XBI 5일 +3.98% 반등 전환, MRNA 5일 +5.21% 리드 — 금리 안정과 FDA 파이프라인 기대가 겹치며 바이오 섹터 저점 회복 국면",
-      "category": "바이오테크",
-      "timeframe": "short",
-      "confidence": 70,
-      "causal_chain": [
-        {
-          "step_no": 1,
-          "statement": "TLT 20일 +1.0% 장기금리 안정 → 성장주·바이오 밸류에이션 부담 완화",
-          "confidence": 78
-        },
-        {
-          "step_no": 2,
-          "statement": "XBI 20일 -0.79%로 저점 인식 → 5일 +3.98% 반등 전환, 기관 저가 매집 시작",
-          "confidence": 74
-        },
-        {
-          "step_no": 3,
-          "statement": "MRNA 5일 +5.21%·BIIB 20일 +4.54% — 개별 종목 FDA 파이프라인 기대감 선반영",
-          "confidence": 70
-        },
-        {
-          "step_no": 4,
-          "statement": "반도체·금융 랠리 후 자금 일부가 밸류에이션 매력적인 바이오로 순환 이동 예상",
-          "confidence": 65
-        },
-        {
-          "step_no": 5,
-          "statement": "AMGN 20일 +5.64% 대형 바이오 선행 강세 → 섹터 전반 회복 신호 제공",
-          "confidence": 60
-        }
-      ],
-      "disconfirming_hypotheses": [
-        "FDA 주요 임상 실패 발표 시 XBI 재급락 가능",
-        "인플레이션 우려 재부상으로 금리 상승 시 바이오 밸류에이션 재압박"
-      ],
-      "evidence": {
-        "current_trend_link": "금리 안정(TLT +1.0%) 및 반도체 랠리 후 섹터 순환에서 파생",
-        "signal": "XBI 5d +3.98%, 20d -0.79%; MRNA 5d +5.21%; AMGN 20d +5.64%; BIIB 20d +4.54%",
-        "theme_flow": "Trigger: Fed 금리 동결 기조 → 현재 수혜: 반도체·성장주 → 다음 자금 이동: 바이오테크(XBI·MRNA) 저점 매수 순환"
-      },
-      "recommendations": [
-        {
-          "ticker": "MRNA",
-          "name": "Moderna",
-          "country": "US",
-          "rank": 1,
-          "grade": "Buy",
-          "rationale": "mRNA 플랫폼 암·독감 파이프라인 + 5일 +5.21% 섹터 내 선도, 저점 대비 반등 초기 국면",
-          "entry_close": 49.90999984741211,
-          "fundamentals_score": 6,
-          "fundamentals": {
-            "revenue_yoy_pct": null,
-            "operating_margin_pct": null,
-            "net_margin_pct": null,
-            "roe_pct": null,
-            "pe_ratio": null,
-            "ps_ratio": null,
-            "debt_to_equity": null,
-            "market_cap_usd_b": null,
-            "fcf_usd_b": null
-          },
-          "rating_score": 2,
-          "rating_breakdown": {
-            "grade": "Buy",
-            "total": 2,
-            "weights": {
-              "fund": 1.0,
-              "momentum": 0.7,
-              "timing": 1.3,
-              "volume": 1.3,
-              "rs": 1.2,
-              "risk": 0.8
-            },
-            "dimensions": {
-              "fundamentals": {
-                "score": 2,
-                "weighted": 2.0,
-                "reasons": [
-                  "펀더 2개 강함 (매출 YoY +260%, 부채/자본 18 (낮음))"
-                ]
-              },
-              "momentum": {
-                "score": 0,
-                "weighted": 0.0,
-                "reasons": [
-                  "20d -0% 횡보"
-                ]
-              },
-              "timing": {
-                "score": 0,
-                "weighted": 0.0,
-                "reasons": []
-              },
-              "volume": {
-                "score": 0,
-                "weighted": 0.0,
-                "reasons": []
-              },
-              "rs": {
-                "score": 0,
-                "weighted": 0.0,
-                "reasons": [
-                  "vs SPY +1% (시장 수준)"
-                ]
-              },
-              "risk": {
-                "score": 0,
-                "weighted": 0.0,
-                "reasons": [
-                  "MDD 11% — 정상 범위"
-                ]
-              }
-            }
-          },
-          "detail": {
-            "stock_desc": "모더나는 mRNA 기술 플랫폼 기반 백신·치료제 개발사. COVID 백신 이후 암백신·독감·RSV 파이프라인으로 다각화 중이며 mRNA 기술 IP 선도 기업.",
-            "trend_link": "바이오테크 반등 트렌드에서 mRNA 플랫폼 가치 재평가 수혜. 금리 안정 → 성장주 밸류에이션 회복 → 파이프라인 기대가 높은 MRNA 직접 수혜.",
-            "current_flow": "1일 +0.54%, 5일 +5.21%, 20일 -0.24% — 5일 섹터 내 최강. 20일 낙폭 거의 없어 상대 강도 양호.",
-            "financials_reason": "fundamentals_pool 미제공. COVID 이후 매출 감소 중이나 비용 구조조정으로 적자 폭 축소 + 암백신 임상 진행 → 재무6점 (파이프라인 가치 중심)",
-            "prediction": "파이프라인 재평가(mRNA 암백신·독감) + 금리 안정으로 성장주 밸류에이션 회복이 진행되면 → MRNA 추가 반등 예상. 트리거: FDA 암백신 임상 중간 데이터 발표 또는 XBI ETF 20일선 돌파 (2-5거래일 내)."
-          },
-          "validation": {
-            "close_7d": null,
-            "alpha_7d": null,
-            "hit_7d": null,
-            "close_30d": null,
-            "alpha_30d": null,
-            "hit_30d": null
-          }
-        }
-      ]
-    },
-    {
-      "trend_id": 235,
-      "rank": 4,
-      "title": "구리·광산주 자원 사이클 반등 — FCX 5일 +7.95%, BHP 5일 +9.79%",
-      "summary": "AI 인프라·전력망 확충 수요와 중국 경기 부양 기대가 교차하며 FCX·BHP 5일 동반 급등, 자원 사이클 바닥 다지기 완료 신호",
-      "category": "자원/원자재",
-      "timeframe": "short",
-      "confidence": 72,
-      "causal_chain": [
-        {
-          "step_no": 1,
-          "statement": "AI 데이터센터·전력망 확충 → 구리 수요 구조적 증가 (데이터센터 1MW당 구리 수십 톤 소비)",
+          "statement": "지정학 긴장(러-우 장기화, 중동 불안) 지속 → 글로벌 방산 예산 증액 기조 유지",
           "confidence": 80
         },
         {
           "step_no": 2,
-          "statement": "FCX 5일 +7.95%, BHP 5일 +9.79%, RIO 5일 +4.63% — 광산주 동반 반등 확인",
+          "statement": "한화에어로스페이스 유럽향 K9 자주포·천무 수출 계약 추가 기대 → 1d +10.7% 거래량 1.58배 급등",
           "confidence": 76
         },
         {
           "step_no": 3,
-          "statement": "중국 경기 부양 기대 유지 → 구리·철광석 수요 회복 기대 복합 작용",
-          "confidence": 72
-        },
-        {
-          "step_no": 4,
-          "statement": "LME 구리 현물 가격 반등 → 광산 기업 채굴 마진 개선 선행 반영",
-          "confidence": 67
-        },
-        {
-          "step_no": 5,
-          "statement": "GEV(전력 장비) 1일 +3.74% + 전력 인프라 투자 확대 → 구리 수요 추가 확인",
-          "confidence": 62
-        }
-      ],
-      "disconfirming_hypotheses": [
-        "중국 부동산 경기 추가 악화 시 구리 수요 실망 → 가격 재하락",
-        "달러 강세 심화 시 달러 표시 원자재 가격 하락 압력"
-      ],
-      "evidence": {
-        "current_trend_link": "AI 인프라 투자(current_trend #1, #2)에서 전력·구리 수요 파생",
-        "signal": "FCX 1d +3.12%, 5d +7.95%, 20d +3.43%; BHP 1d +3.20%, 5d +9.79%, 20d +2.13%; RIO 5d +4.63%",
-        "theme_flow": "Trigger: AI 인프라 투자 확대 → 현재 수혜: 반도체 장비·AI 인프라 → 다음 자금 이동: 전력·구리·광산주(FCX·BHP) 자원 수요 확대"
-      },
-      "recommendations": [
-        {
-          "ticker": "FCX",
-          "name": "Freeport-McMoRan",
-          "country": "US",
-          "rank": 1,
-          "grade": "Buy",
-          "rationale": "구리 최대 생산기업 + AI 인프라·전력망 구리 수요 직결 + 5일 +7.95%·20일 +3.43% 반등 모멘텀 확인",
-          "entry_close": 68.41000366210938,
-          "fundamentals_score": 7,
-          "fundamentals": {
-            "revenue_yoy_pct": null,
-            "operating_margin_pct": null,
-            "net_margin_pct": null,
-            "roe_pct": null,
-            "pe_ratio": null,
-            "ps_ratio": null,
-            "debt_to_equity": null,
-            "market_cap_usd_b": null,
-            "fcf_usd_b": null
-          },
-          "rating_score": 2,
-          "rating_breakdown": {
-            "grade": "Buy",
-            "total": 2,
-            "weights": {
-              "fund": 1.0,
-              "momentum": 0.7,
-              "timing": 1.3,
-              "volume": 1.3,
-              "rs": 1.2,
-              "risk": 0.8
-            },
-            "dimensions": {
-              "fundamentals": {
-                "score": 2,
-                "weighted": 2.0,
-                "reasons": [
-                  "펀더 2개 강함 (영업이익률 31%, 부채/자본 33 (낮음))"
-                ]
-              },
-              "momentum": {
-                "score": 0,
-                "weighted": 0.0,
-                "reasons": [
-                  "20d +3% 횡보"
-                ]
-              },
-              "timing": {
-                "score": 0,
-                "weighted": 0.0,
-                "reasons": []
-              },
-              "volume": {
-                "score": 0,
-                "weighted": 0.0,
-                "reasons": []
-              },
-              "rs": {
-                "score": 0,
-                "weighted": 0.0,
-                "reasons": [
-                  "vs SPY +4% (시장 수준)"
-                ]
-              },
-              "risk": {
-                "score": 0,
-                "weighted": 0.0,
-                "reasons": [
-                  "MDD 13% — 정상 범위"
-                ]
-              }
-            }
-          },
-          "detail": {
-            "stock_desc": "프리포트-맥모란은 세계 최대 상장 구리 생산 기업. 인도네시아 그라스버그 광산 등 세계 최대 구리 매장량을 보유하며 금도 부산물로 생산.",
-            "trend_link": "AI 데이터센터 전력 인프라(GEV·VST 강세)와 직결. 데이터센터 1MW당 수십 톤의 구리가 소비되며 AI 인프라 확장 = 구리 수요 구조적 증가 = FCX 직접 수혜.",
-            "current_flow": "1일 +3.12%, 5일 +7.95%, 20일 +3.43% — 전 타임프레임 플러스. 광산주 중 5일 가장 강한 반등 보임.",
-            "financials_reason": "fundamentals_pool 미제공. 구리 가격 연동 실적 구조, 과거 OPM ~30%대, 배당 지급, 부채 관리 안정적 → 재무7점 추정",
-            "prediction": "재무 안정(구리 가격 연동 높은 레버리지) + AI 인프라 CapEx 확대가 구리 수요 급증으로 전이되면 → FCX 주가 추가 상승 예상. 트리거: LME 구리 가격 $10,000/톤 회복 또는 중국 부양책 추가 발표 (3-5거래일 내)."
-          },
-          "validation": {
-            "close_7d": null,
-            "alpha_7d": null,
-            "hit_7d": null,
-            "close_30d": null,
-            "alpha_30d": null,
-            "hit_30d": null
-          }
-        }
-      ]
-    },
-    {
-      "trend_id": 236,
-      "rank": 5,
-      "title": "한국 방산·조선 지정학 수혜 — 064350 1일 +10.7%, 042660 1일 +7.85%",
-      "summary": "지정학 긴장 지속과 한국 방산 수출 모멘텀으로 한화에어로스페이스(064350) 1일 +10.67%·거래량 1.58배 폭발, 조선(042660) 동반 강세",
-      "category": "방산/조선",
-      "timeframe": "short",
-      "confidence": 68,
-      "causal_chain": [
-        {
-          "step_no": 1,
-          "statement": "지정학 긴장 지속 → 유럽·중동 방산 수요 → 한국 방산 수출 계약 지속",
-          "confidence": 76
-        },
-        {
-          "step_no": 2,
-          "statement": "064350(한화에어로) 1일 +10.67%, 5일 +8.93%, 거래량 1.58배 — 수주 계약 기대 선반영",
-          "confidence": 74
-        },
-        {
-          "step_no": 3,
-          "statement": "042660(한화오션) 1일 +7.85%, 거래량 1.51배 — 방산+조선 복합 수혜 부각",
+          "statement": "047810(한국항공우주) 5d +1.4% 동반 소폭 상승으로 섹터 모멘텀 확인",
           "confidence": 70
         },
         {
           "step_no": 4,
-          "statement": "KR 방산 섹터 1d 평균 +4.99%, 5d +5.15% — 섹터 전반 자금 유입 확인",
+          "statement": "방산 섹터 20d -8.4% 낙폭 이후 반등 — 저점 매수 수급 유입 가능성",
           "confidence": 65
         }
       ],
       "disconfirming_hypotheses": [
-        "지정학 긴장 완화 협상 타결 시 방산 모멘텀 급격히 소멸",
-        "원달러 강세 전환 시 수출 기업 마진 축소 우려"
+        "지정학 긴장 완화 시 방산주 프리미엄 급속 소멸",
+        "원화 강세 전환 시 수출 계약 원화환산 수익성 악화"
       ],
       "evidence": {
-        "current_trend_link": "지정학 긴장 → 방산 수요 → 한국 방산 수출 계약 수혜 패턴",
-        "signal": "064350 1d +10.67%, 5d +8.93%, 20d -3.02%, 거래량 1.58배; 042660 1d +7.85%, 거래량 1.51배",
-        "theme_flow": "Trigger: 지정학 긴장·우크라이나 분쟁 장기화 → 현재 수혜: 미국 방산(LMT·RTX) → 다음 자금 이동: 한국 방산·조선(064350·042660) 수출 계약 수혜"
+        "current_trend_link": "지정학 긴장 → 방산 수혜 캐노니컬 패턴 적용",
+        "signal": "064350 1d +10.67%, 5d +8.93%, 거래량 1.58배",
+        "theme_flow": "Trigger: 지정학 긴장 장기화 → 현재 수혜: 미국 방산(LMT/RTX) → 다음 자금 이동: 한국 방산(064350) 수출 계약 확대"
       },
       "recommendations": [
         {
@@ -1395,7 +973,7 @@
           "country": "KR",
           "rank": 1,
           "grade": "Buy",
-          "rationale": "한화에어로스페이스 K9 자주포·천무 다연장 수출 최전방 + 1일 +10.67%·거래량 1.58배 수급 폭발, 20일 -3.02% 저점서 반등",
+          "rationale": "한화에어로스페이스 K9·천무 수출 모멘텀 + 거래량 1.58배 기관 수급 유입 확인",
           "entry_close": 208500.0,
           "fundamentals_score": 7,
           "fundamentals": {
@@ -1463,11 +1041,495 @@
             }
           },
           "detail": {
-            "stock_desc": "한화에어로스페이스는 K9 자주포·천무 다연장로켓·항공기 엔진·UAM을 생산하는 한국 최대 방산 기업. 폴란드·루마니아·호주 등 수출 계약 급증 중.",
-            "trend_link": "지정학 긴장 지속 → 유럽 재무장 수요 → 한화에어로 K9 자주포 및 천무 수출 계약 직결. 수주 잔고 급증으로 향후 2-3년 실적 가시성 확보.",
-            "current_flow": "1일 +10.67%, 5일 +8.93%, 20일 -3.02% — 거래량 1.58배 동반. 20일 저점에서 V자 반등 패턴 진행.",
-            "financials_reason": "fundamentals_pool 미제공. 방산 수출 급증으로 매출 YoY 높은 성장 + OPM 개선 추세 → 재무7점 추정",
-            "prediction": "방산 수출 모멘텀(K9·천무 유럽 추가 계약) + 지정학 리스크 지속으로 → 064350 추가 상승 예상. 트리거: 폴란드·루마니아 추가 수주 계약 발표 또는 방산 수출 실적 발표 (2-5거래일 내). 거래량 1.58배 폭발로 수급 전환 기확인."
+            "stock_desc": "한화에어로스페이스는 K9 자주포, 천무 다연장로켓, 항공엔진 등을 생산하는 한국 최대 방산기업. 폴란드·루마니아·호주 등 유럽·태평양 시장 수출 고속 성장 중.",
+            "trend_link": "지정학 긴장 지속 트렌드에서 직접 수혜. 유럽 NATO 회원국의 방산 예산 급증 → K9 자주포 추가 발주 파이프라인. 기존 계약 이행 모멘텀과 신규 수주 기대 복합 작용.",
+            "current_flow": "1d +10.67%, 5d +8.93%, 20d -3.02%. 20일 낙폭에서 강하게 반등 중. 거래량 1.58배로 기관 매수 확인.",
+            "financials_reason": "방산 수출 급증으로 매출 고성장 구조. 수주잔고 기반 안정적 매출 가시성. OPM 개선 추세 → 재무7점",
+            "prediction": "지정학 긴장 지속(러-우·중동) + 유럽 방산 예산 증액 → 한화에어로스페이스 K9 추가 계약 발표 기대. 20d -3% 낙폭 이후 반등 초입 구간에서 거래량 급증은 추세 전환 신호. 2~5거래일 내 수출 계약 뉴스 또는 실적 가이던스 상향 발표 시 추가 10~15% 상승 여력."
+          },
+          "validation": {
+            "close_7d": null,
+            "alpha_7d": null,
+            "hit_7d": null,
+            "close_30d": null,
+            "alpha_30d": null,
+            "hit_30d": null
+          }
+        }
+      ]
+    },
+    {
+      "trend_id": 244,
+      "rank": 3,
+      "title": "바이오테크 XBI 회복 국면 — 금리 인하 기대 재부상 시 촉매",
+      "summary": "XBI 5d +3.98%, MRNA 5d +5.21%, BIIB 5d +2.41% — 바이오테크 섹터가 20일 -0.79%의 소폭 조정 이후 반등 신호 포착, FDA 결정·금리 인하 기대가 단기 촉매",
+      "category": "바이오테크",
+      "timeframe": "short",
+      "confidence": 70,
+      "causal_chain": [
+        {
+          "step_no": 1,
+          "statement": "Fed 금리 동결 장기화 환경에서 성장주 밸류에이션 압박 완화 → 바이오테크 할인율 개선 기대",
+          "confidence": 75
+        },
+        {
+          "step_no": 2,
+          "statement": "XBI 5d +4.0%로 20d 하락분 회복 시도 — 기술적 반등 구간 진입",
+          "confidence": 72
+        },
+        {
+          "step_no": 3,
+          "statement": "MRNA 5d +5.21%: mRNA 플랫폼의 암 백신·희귀질환 파이프라인 FDA 심사 결과 대기 → 긍정 결과 시 섹터 전체 랠리 촉매",
+          "confidence": 67
+        },
+        {
+          "step_no": 4,
+          "statement": "반도체·금융 강세 이후 자금이 방어적 성장섹터인 바이오테크로 순환 가능성",
+          "confidence": 62
+        }
+      ],
+      "disconfirming_hypotheses": [
+        "FDA 주요 파이프라인 불합격 시 섹터 급락",
+        "금리 인하 기대 후퇴 시 고밸류 바이오테크 다시 매도 압력",
+        "임상 실패 뉴스 집중 시 XBI 추가 하락 가능"
+      ],
+      "evidence": {
+        "current_trend_link": "금리 인하 기대 → 성장주·바이오테크 회복 캐노니컬 패턴. 반도체 강세 이후 섹터 순환 흐름",
+        "signal": "XBI 5d +3.98%, 20d -0.79%; MRNA 5d +5.21%; BIIB 5d +2.41%",
+        "theme_flow": "Trigger: Fed 금리 동결 장기화 + 반도체 강세 이후 순환 → 현재 수혜: 성장주(반도체/AI) → 다음 자금 이동: 바이오테크(XBI/MRNA) FDA 촉매 + 금리 민감 성장주 반등"
+      },
+      "recommendations": [
+        {
+          "ticker": "MRNA",
+          "name": "Moderna",
+          "country": "US",
+          "rank": 1,
+          "grade": "Buy",
+          "rationale": "mRNA 플랫폼의 암 백신 FDA 심사 결과 대기 + 5d +5.2% 반등 초입 — 촉매 이벤트 근접",
+          "entry_close": 49.90999984741211,
+          "fundamentals_score": 6,
+          "fundamentals": {
+            "revenue_yoy_pct": null,
+            "operating_margin_pct": null,
+            "net_margin_pct": null,
+            "roe_pct": null,
+            "pe_ratio": null,
+            "ps_ratio": null,
+            "debt_to_equity": null,
+            "market_cap_usd_b": null,
+            "fcf_usd_b": null
+          },
+          "rating_score": 2,
+          "rating_breakdown": {
+            "grade": "Buy",
+            "total": 2,
+            "weights": {
+              "fund": 1.0,
+              "momentum": 0.7,
+              "timing": 1.3,
+              "volume": 1.3,
+              "rs": 1.2,
+              "risk": 0.8
+            },
+            "dimensions": {
+              "fundamentals": {
+                "score": 2,
+                "weighted": 2.0,
+                "reasons": [
+                  "펀더 2개 강함 (매출 YoY +260%, 부채/자본 18 (낮음))"
+                ]
+              },
+              "momentum": {
+                "score": 0,
+                "weighted": 0.0,
+                "reasons": [
+                  "20d -0% 횡보"
+                ]
+              },
+              "timing": {
+                "score": 0,
+                "weighted": 0.0,
+                "reasons": []
+              },
+              "volume": {
+                "score": 0,
+                "weighted": 0.0,
+                "reasons": []
+              },
+              "rs": {
+                "score": 0,
+                "weighted": 0.0,
+                "reasons": [
+                  "vs SPY +1% (시장 수준)"
+                ]
+              },
+              "risk": {
+                "score": 0,
+                "weighted": 0.0,
+                "reasons": [
+                  "MDD 11% — 정상 범위"
+                ]
+              }
+            }
+          },
+          "detail": {
+            "stock_desc": "모더나는 mRNA 플랫폼 기반 백신·치료제 개발사. COVID-19 백신 이후 암 백신(mRNA-4157), RSV 백신, 희귀질환 치료제 등 다수의 파이프라인을 보유. mRNA 기술 플랫폼의 범용성이 핵심 가치.",
+            "trend_link": "바이오테크 회복 트렌드에서 mRNA 플랫폼의 다양한 적응증 확장이 핵심 드라이버. FDA 암 백신 심사 결과가 근거리 촉매. 금리 인하 기대 재부상 시 고성장 바이오테크 밸류에이션 재평가 직접 수혜.",
+            "current_flow": "1d +0.54%, 5d +5.21%, 20d -0.24%. 20일 횡보 이후 5일 반등 시작. 아직 추세 초입 구간.",
+            "financials_reason": "COVID 백신 수익 감소로 현재 적자 구간이나, 파이프라인 가치(암 백신 등)로 시장 재평가 진행 중. 현금 보유 다량으로 파산 리스크 없음 → 재무6점",
+            "prediction": "재무 일시적 약세이나 mRNA 플랫폼 장기 가치 + FDA 암 백신 심사 긍정 결과 시 주가 20~30% 급등 촉매 존재. 현재 20d 횡보 이후 5d 반등 초입으로 리스크·보상 비율 양호. 2~5거래일 내 FDA 관련 발표 또는 임상 데이터 공개 시 포지션 확대 기회."
+          },
+          "validation": {
+            "close_7d": null,
+            "alpha_7d": null,
+            "hit_7d": null,
+            "close_30d": null,
+            "alpha_30d": null,
+            "hit_30d": null
+          }
+        }
+      ]
+    },
+    {
+      "trend_id": 245,
+      "rank": 4,
+      "title": "구리·광물 자원 순환 — FCX·BHP 동반 강세로 자원 사이클 재진입",
+      "summary": "FCX 5d +7.95%, BHP 5d +9.79%, RIO 5d +4.63% — AI 인프라·전력망 확대에 따른 구리 수요 장기 강세 + 중국 경기부양 기대가 광물 사이클 재점화",
+      "category": "자원/원자재",
+      "timeframe": "short",
+      "confidence": 72,
+      "causal_chain": [
+        {
+          "step_no": 1,
+          "statement": "AI 데이터센터 전력 인프라 확대 → 구리 케이블·변압기 수요 급증 (AI 서버 1대당 구리 사용량 일반 서버의 4배)",
+          "confidence": 78
+        },
+        {
+          "step_no": 2,
+          "statement": "중국 경기부양 정책 기대 → 구리·철광석 수요 회복 예상 → FCX·BHP 선행 매수",
+          "confidence": 73
+        },
+        {
+          "step_no": 3,
+          "statement": "BHP 5d +9.79%, FCX 5d +7.95% 동반 급등 — 단순 반등이 아닌 수요 개선 반영 가능성",
+          "confidence": 68
+        },
+        {
+          "step_no": 4,
+          "statement": "GEV(GE Vernova) 1d +3.74% — 전력 인프라 강세와 구리 수요 연동 흐름 확인",
+          "confidence": 63
+        }
+      ],
+      "disconfirming_hypotheses": [
+        "중국 부동산 침체 장기화 시 구리 수요 회복 지연",
+        "달러 강세 지속 시 원자재 가격 달러 표시 하방 압력",
+        "알루미늄 대체 추진 시 구리 수요 장기 성장률 하향"
+      ],
+      "evidence": {
+        "current_trend_link": "AI 인프라 투자 확대 → 전력·구리 수요 캐노니컬 패턴. current_trend #1 반도체 장비 슈퍼사이클과 연동",
+        "signal": "FCX 1d +3.12%, 5d +7.95%, 20d +3.43%; BHP 1d +3.2%, 5d +9.79%; RIO 5d +4.63%",
+        "theme_flow": "Trigger: AI 인프라 전력망 투자 + 중국 경기부양 → 현재 수혜: 반도체·장비 → 다음 자금 이동: 구리·광물(FCX/BHP) 수요 증가"
+      },
+      "recommendations": [
+        {
+          "ticker": "FCX",
+          "name": "Freeport-McMoRan",
+          "country": "US",
+          "rank": 1,
+          "grade": "Buy",
+          "rationale": "AI 전력 인프라 구리 수요 + 중국 회복 이중 드라이버, 5d +7.95% 추세 확인",
+          "entry_close": 68.41000366210938,
+          "fundamentals_score": 7,
+          "fundamentals": {
+            "revenue_yoy_pct": null,
+            "operating_margin_pct": null,
+            "net_margin_pct": null,
+            "roe_pct": null,
+            "pe_ratio": null,
+            "ps_ratio": null,
+            "debt_to_equity": null,
+            "market_cap_usd_b": null,
+            "fcf_usd_b": null
+          },
+          "rating_score": 2,
+          "rating_breakdown": {
+            "grade": "Buy",
+            "total": 2,
+            "weights": {
+              "fund": 1.0,
+              "momentum": 0.7,
+              "timing": 1.3,
+              "volume": 1.3,
+              "rs": 1.2,
+              "risk": 0.8
+            },
+            "dimensions": {
+              "fundamentals": {
+                "score": 2,
+                "weighted": 2.0,
+                "reasons": [
+                  "펀더 2개 강함 (영업이익률 31%, 부채/자본 33 (낮음))"
+                ]
+              },
+              "momentum": {
+                "score": 0,
+                "weighted": 0.0,
+                "reasons": [
+                  "20d +3% 횡보"
+                ]
+              },
+              "timing": {
+                "score": 0,
+                "weighted": 0.0,
+                "reasons": []
+              },
+              "volume": {
+                "score": 0,
+                "weighted": 0.0,
+                "reasons": []
+              },
+              "rs": {
+                "score": 0,
+                "weighted": 0.0,
+                "reasons": [
+                  "vs SPY +4% (시장 수준)"
+                ]
+              },
+              "risk": {
+                "score": 0,
+                "weighted": 0.0,
+                "reasons": [
+                  "MDD 13% — 정상 범위"
+                ]
+              }
+            }
+          },
+          "detail": {
+            "stock_desc": "Freeport-McMoRan은 세계 최대 상장 구리 채굴 기업. 북미·남미·인도네시아에 걸친 분산된 구리 광산 포트폴리오를 보유. 구리 가격 변동에 고레버리지 노출.",
+            "trend_link": "AI 인프라 투자 확대 트렌드에서 구리 수요 급증의 직접 수혜주. 데이터센터 1GW 구축 시 수천 톤 구리 소비. 중국 경기부양 기대와 AI 구리 수요가 동시 작용.",
+            "current_flow": "1d +3.12%, 5d +7.95%, 20d +3.43%. 5일 급등 후 20일 추세도 플러스 전환. BHP 동반 강세로 섹터 확인.",
+            "financials_reason": "구리 가격 사이클에 직접 연동된 수익 구조. 구리 가격 상승기 OPM 30%+ 달성 가능. 현금창출력 강함 → 재무7점",
+            "prediction": "AI 전력 인프라 투자 가속(current_trend #1 반도체 장비 슈퍼사이클 연동) + 중국 경기부양 정책 발표 기대 → 구리 수요 회복 가속. FCX 5d +8% 추세 지속 시 20일 내 +15~20% 추가 상승 여력. 트리거: 중국 PMI 발표 또는 AI 데이터센터 대형 발주 뉴스 2~5거래일 내 예상."
+          },
+          "validation": {
+            "close_7d": null,
+            "alpha_7d": null,
+            "hit_7d": null,
+            "close_30d": null,
+            "alpha_30d": null,
+            "hit_30d": null
+          }
+        },
+        {
+          "ticker": "BHP",
+          "name": "BHP Group",
+          "country": "US",
+          "rank": 2,
+          "grade": "Buy",
+          "rationale": "구리+철광석 복합 포트폴리오로 중국 회복 + AI 인프라 이중 수혜, 5d +9.79% 강한 모멘텀",
+          "entry_close": 90.81999969482422,
+          "fundamentals_score": 7,
+          "fundamentals": {
+            "revenue_yoy_pct": null,
+            "operating_margin_pct": null,
+            "net_margin_pct": null,
+            "roe_pct": null,
+            "pe_ratio": null,
+            "ps_ratio": null,
+            "debt_to_equity": null,
+            "market_cap_usd_b": null,
+            "fcf_usd_b": null
+          },
+          "rating_score": 2,
+          "rating_breakdown": {
+            "grade": "Buy",
+            "total": 2,
+            "weights": {
+              "fund": 1.0,
+              "momentum": 0.7,
+              "timing": 1.3,
+              "volume": 1.3,
+              "rs": 1.2,
+              "risk": 0.8
+            },
+            "dimensions": {
+              "fundamentals": {
+                "score": 2,
+                "weighted": 2.0,
+                "reasons": [
+                  "펀더 2개 강함 (영업이익률 41%, ROE 25%)"
+                ]
+              },
+              "momentum": {
+                "score": 0,
+                "weighted": 0.0,
+                "reasons": [
+                  "20d +2% 횡보"
+                ]
+              },
+              "timing": {
+                "score": 0,
+                "weighted": 0.0,
+                "reasons": []
+              },
+              "volume": {
+                "score": 0,
+                "weighted": 0.0,
+                "reasons": []
+              },
+              "rs": {
+                "score": 0,
+                "weighted": 0.0,
+                "reasons": [
+                  "vs SPY +3% (시장 수준)"
+                ]
+              },
+              "risk": {
+                "score": 0,
+                "weighted": 0.0,
+                "reasons": [
+                  "MDD 11% — 정상 범위"
+                ]
+              }
+            }
+          },
+          "detail": {
+            "stock_desc": "BHP는 세계 최대 다각화 광산기업. 구리·철광석·석탄·니켈 등을 생산하며, 구리 분야는 칠레 에스콘디다 광산을 통해 세계 최대 단일 구리 광산 운영.",
+            "trend_link": "FCX와 함께 구리·자원 사이클 반등 트렌드의 핵심. 중국 인프라 투자 회복 + AI 데이터센터 구리 수요 이중 수혜. 철광석 회복은 중국 경기부양의 선행 지표.",
+            "current_flow": "1d +3.2%, 5d +9.79%, 20d +2.13%. 5일 급등이 20일 추세 플러스 전환 견인. FCX보다 안정적인 분산 포트폴리오.",
+            "financials_reason": "세계 최대 광산기업으로 규모의 경제 보유. 고배당(수익률 4~5%) + 자사주 매입 정책. 원자재 가격 상승기 ROE 20%+ 달성 구조 → 재무7점",
+            "prediction": "자원 사이클 재진입(FCX 동반 강세 확인) + 중국 경기부양 정책 기대 → BHP 구리·철광석 복합 포트폴리오 밸류에이션 재평가. 5d +9.8% 추세가 20일 내 지속 가능. 트리거: 중국 경기 지표 개선 또는 추가 부양 발표."
+          },
+          "validation": {
+            "close_7d": null,
+            "alpha_7d": null,
+            "hit_7d": null,
+            "close_30d": null,
+            "alpha_30d": null,
+            "hit_30d": null
+          }
+        }
+      ]
+    },
+    {
+      "trend_id": 246,
+      "rank": 5,
+      "title": "한국 인터넷 플랫폼 반등 — NAVER 거래량 급증 + 카카오 동반",
+      "summary": "035420(NAVER) 1d +10.27%, 20d +22.58% 강세, 035720(카카오) 1d +5.6% — AI 검색 전환과 국내 광고 시장 회복이 한국 인터넷 플랫폼 재평가 촉매",
+      "category": "한국 인터넷/플랫폼",
+      "timeframe": "short",
+      "confidence": 68,
+      "causal_chain": [
+        {
+          "step_no": 1,
+          "statement": "글로벌 AI 검색 경쟁 심화 → 네이버의 HyperCLOVA X 기반 AI 검색 도입 → 사용자 트래픽 방어 + 광고 단가 상승 기대",
+          "confidence": 73
+        },
+        {
+          "step_no": 2,
+          "statement": "NAVER 1d +10.27% 급등 — 1일 단일 상승폭으로 단순 수급보다 구체적 촉매(AI 서비스 발표 또는 기관 목표주가 상향) 추정",
+          "confidence": 70
+        },
+        {
+          "step_no": 3,
+          "statement": "카카오(035720) 5d +3.11% 동반 상승 → 한국 인터넷 플랫폼 전반 수급 유입 확인",
+          "confidence": 65
+        },
+        {
+          "step_no": 4,
+          "statement": "코스피 전체 1d +4.38% 강세와 동반 — 외국인 매수 유입 구간에서 대형 인터넷주 수혜",
+          "confidence": 60
+        }
+      ],
+      "disconfirming_hypotheses": [
+        "구글·AI 검색엔진의 국내 시장 침투 가속 시 NAVER 검색 점유율 잠식",
+        "카카오 플랫폼 규제 리스크 재부상 가능성"
+      ],
+      "evidence": {
+        "current_trend_link": "AI 인프라 투자 → 플랫폼 AI 전환 수혜 흐름에서 파생",
+        "signal": "035420 1d +10.27%, 20d +22.58%; 035720 1d +5.6%",
+        "theme_flow": "Trigger: AI 검색 전환 경쟁 → 현재 수혜: 글로벌 AI(GOOGL/MSFT) → 다음 자금 이동: 한국 AI 플랫폼(NAVER) 국내 AI 서비스 경쟁력 재평가"
+      },
+      "recommendations": [
+        {
+          "ticker": "035420",
+          "name": "NAVER",
+          "country": "KR",
+          "rank": 1,
+          "grade": "Buy",
+          "rationale": "NAVER AI 검색 전환 + 광고 회복 기대로 1d +10.3%, 20d +22.6% 강세 — 한국 인터넷 플랫폼 선도주",
+          "entry_close": 247000.0,
+          "fundamentals_score": 7,
+          "fundamentals": {
+            "revenue_yoy_pct": null,
+            "operating_margin_pct": null,
+            "net_margin_pct": null,
+            "roe_pct": null,
+            "pe_ratio": null,
+            "ps_ratio": null,
+            "debt_to_equity": null,
+            "market_cap_usd_b": null,
+            "fcf_usd_b": null
+          },
+          "rating_score": 3,
+          "rating_breakdown": {
+            "grade": "Buy",
+            "total": 3,
+            "weights": {
+              "fund": 1.0,
+              "momentum": 0.7,
+              "timing": 1.3,
+              "volume": 1.3,
+              "rs": 1.2,
+              "risk": 0.8
+            },
+            "dimensions": {
+              "fundamentals": {
+                "score": 1,
+                "weighted": 1.0,
+                "reasons": [
+                  "펀더 일부 양호 (부채/자본 17 (낮음), 매출 YoY +16%, 영업이익률 17%)"
+                ]
+              },
+              "momentum": {
+                "score": 1,
+                "weighted": 0.7,
+                "reasons": [
+                  "20d +23% 우상향"
+                ]
+              },
+              "timing": {
+                "score": 0,
+                "weighted": 0.0,
+                "reasons": []
+              },
+              "volume": {
+                "score": 0,
+                "weighted": 0.0,
+                "reasons": []
+              },
+              "rs": {
+                "score": 2,
+                "weighted": 2.4,
+                "reasons": [
+                  "vs SPY 초과 +23% (강한 RS)"
+                ]
+              },
+              "risk": {
+                "score": -1,
+                "weighted": -0.8,
+                "reasons": [
+                  "MDD 20% — 고변동성"
+                ]
+              }
+            }
+          },
+          "detail": {
+            "stock_desc": "네이버는 한국 최대 인터넷 플랫폼 기업. 검색·광고·쇼핑·웹툰·클라우드 등 다각화된 사업 포트폴리오를 보유. HyperCLOVA X AI 플랫폼으로 AI 전환을 가속하며 검색 광고 수익화 강화 중.",
+            "trend_link": "AI 검색 전환 트렌드에서 한국 시장 수혜주. HyperCLOVA X 기반 AI 검색이 기존 검색 광고 단가 상승으로 연결. 커머스 AI 추천 강화 → 쇼핑 광고 수익 증가 기대.",
+            "current_flow": "1d +10.27%, 5d -3.33%, 20d +22.58%. 5일 조정 이후 1일 급등으로 추세 재확인. 20일 기준 코스피 대비 초과 수익.",
+            "financials_reason": "안정적인 검색 광고 수익 기반 + AI 투자로 OPM 일시 압박이나 장기 수익성 개선 기대. 한국 최대 인터넷 기업 프리미엄 → 재무7점",
+            "prediction": "AI 검색 전환(글로벌 AI 인프라 투자 강세 연동) + 국내 광고 시장 회복 → NAVER 실적 개선 가시화. 5일 -3.3% 조정 이후 1일 +10.3% 급등은 추세 재진입 신호. 2~5거래일 내 AI 서비스 업데이트 발표 또는 외국인 매수 지속 시 추가 상승 여력."
           },
           "validation": {
             "close_7d": null,
@@ -1482,6 +1544,353 @@
     }
   ],
   "history": [
+    {
+      "date": "2026-06-14",
+      "recommendations": [
+        {
+          "ticker": "KLAC",
+          "name": "KLA Corporation",
+          "country": "US",
+          "trend_title": "반도체 장비 슈퍼사이클 — AMAT·KLAC·LRCX 동반 급등",
+          "trend_kind": "current",
+          "category": "반도체 장비",
+          "timeframe": "ongoing",
+          "trend_confidence": 88,
+          "grade": "Buy",
+          "rating_score": 3,
+          "fundamentals_score": 8,
+          "rank": 1,
+          "rationale": "반도체 장비 3종 중 5d +32%로 상승률 최고, 웨이퍼 검사 독점 포지션으로 HBM·선단 공정 증설 수혜 직접화",
+          "entry_close": 254.5399932861328,
+          "entry_date": "2026-06-14",
+          "current_close": 254.5399932861328,
+          "current_date": "2026-06-12",
+          "current_return_pct": 0.0,
+          "close_7d": null,
+          "alpha_7d": null,
+          "hit_7d": null,
+          "close_30d": null,
+          "alpha_30d": null,
+          "hit_30d": null,
+          "close_90d": null,
+          "alpha_90d": null,
+          "hit_90d": null,
+          "verified_at": null,
+          "alert": false
+        },
+        {
+          "ticker": "ARM",
+          "name": "Arm Holdings",
+          "country": "US",
+          "trend_title": "ARM 아키텍처 패권 확대 — AI 엣지·데이터센터 이중 수혜",
+          "trend_kind": "current",
+          "category": "반도체 설계/IP",
+          "timeframe": "ongoing",
+          "trend_confidence": 84,
+          "grade": "Buy",
+          "rating_score": 3,
+          "fundamentals_score": 7,
+          "rank": 1,
+          "rationale": "AI 서버+엣지 이중 로열티 성장 구조, 20d +67% 강세 지속 — 단 과열 구간이므로 분할 매수 권고",
+          "entry_close": 380.80999755859375,
+          "entry_date": "2026-06-14",
+          "current_close": 380.80999755859375,
+          "current_date": "2026-06-12",
+          "current_return_pct": 0.0,
+          "close_7d": null,
+          "alpha_7d": null,
+          "hit_7d": null,
+          "close_30d": null,
+          "alpha_30d": null,
+          "hit_30d": null,
+          "close_90d": null,
+          "alpha_90d": null,
+          "hit_90d": null,
+          "verified_at": null,
+          "alert": false
+        },
+        {
+          "ticker": "000660",
+          "name": "SK하이닉스",
+          "country": "KR",
+          "trend_title": "한국 반도체 빅2 + 중소형주 동반 급등 — 삼성전자 서프라이즈",
+          "trend_kind": "current",
+          "category": "한국 반도체",
+          "timeframe": "ongoing",
+          "trend_confidence": 82,
+          "grade": "Strong Buy",
+          "rating_score": 5,
+          "fundamentals_score": 8,
+          "rank": 1,
+          "rationale": "SK하이닉스는 HBM 시장 점유율 1위, HBM4 독점 공급 구조 유지 — 삼성 인증보다 안정적인 수급 포지션",
+          "entry_close": 2150000.0,
+          "entry_date": "2026-06-14",
+          "current_close": 2150000.0,
+          "current_date": "2026-06-12",
+          "current_return_pct": 0.0,
+          "close_7d": null,
+          "alpha_7d": null,
+          "hit_7d": null,
+          "close_30d": null,
+          "alpha_30d": null,
+          "hit_30d": null,
+          "close_90d": null,
+          "alpha_90d": null,
+          "hit_90d": null,
+          "verified_at": null,
+          "alert": false
+        },
+        {
+          "ticker": "JPM",
+          "name": "JPMorgan Chase",
+          "country": "US",
+          "trend_title": "글로벌 금융주 강세 — 투자은행·은행 전반 상승",
+          "trend_kind": "current",
+          "category": "금융",
+          "timeframe": "ongoing",
+          "trend_confidence": 76,
+          "grade": "Strong Buy",
+          "rating_score": 5,
+          "fundamentals_score": 8,
+          "rank": 1,
+          "rationale": "미국 최대 은행으로 NIM 안정 + IB 수수료 회복 수혜, 20일 +6.9% 안정적 우상향",
+          "entry_close": 320.7200012207031,
+          "entry_date": "2026-06-14",
+          "current_close": 320.7200012207031,
+          "current_date": "2026-06-12",
+          "current_return_pct": 0.0,
+          "close_7d": null,
+          "alpha_7d": null,
+          "hit_7d": null,
+          "close_30d": null,
+          "alpha_30d": null,
+          "hit_30d": null,
+          "close_90d": null,
+          "alpha_90d": null,
+          "hit_90d": null,
+          "verified_at": null,
+          "alert": false
+        },
+        {
+          "ticker": "GOLD",
+          "name": "Barrick Gold",
+          "country": "US",
+          "trend_title": "금 채굴주 반등 신호 — GDX·GOLD 1일 강세",
+          "trend_kind": "current",
+          "category": "귀금속/금 채굴",
+          "timeframe": "ongoing",
+          "trend_confidence": 72,
+          "grade": "Strong Buy",
+          "rating_score": 4,
+          "fundamentals_score": 7,
+          "rank": 1,
+          "rationale": "바릭골드 5d +11.64%로 채굴주 중 가장 강한 모멘텀, 탈달러화 흐름에서 장기 보유 메리트 — 단 recent_leaders 6일 연속 상위이므로 소규모 포지션 권고",
+          "entry_close": 44.22999954223633,
+          "entry_date": "2026-06-14",
+          "current_close": 44.22999954223633,
+          "current_date": "2026-06-12",
+          "current_return_pct": 0.0,
+          "close_7d": null,
+          "alpha_7d": null,
+          "hit_7d": null,
+          "close_30d": null,
+          "alpha_30d": null,
+          "hit_30d": null,
+          "close_90d": null,
+          "alpha_90d": null,
+          "hit_90d": null,
+          "verified_at": null,
+          "alert": false
+        },
+        {
+          "ticker": "MU",
+          "name": "Micron Technology",
+          "country": "US",
+          "trend_title": "MU 메모리 2차 상승 — NAND·HBM 가격 반등 사이클 진입",
+          "trend_kind": "predicted",
+          "category": "메모리 반도체",
+          "timeframe": "short",
+          "trend_confidence": 78,
+          "grade": "Strong Buy",
+          "rating_score": 6,
+          "fundamentals_score": 8,
+          "rank": 1,
+          "rationale": "HBM4 공급 계약 + NAND 가격 반등 사이클 — 20d +26.5% 강세 속 1일 조정은 매수 기회",
+          "entry_close": 981.6099853515625,
+          "entry_date": "2026-06-14",
+          "current_close": 981.6099853515625,
+          "current_date": "2026-06-12",
+          "current_return_pct": 0.0,
+          "close_7d": null,
+          "alpha_7d": null,
+          "hit_7d": null,
+          "close_30d": null,
+          "alpha_30d": null,
+          "hit_30d": null,
+          "close_90d": null,
+          "alpha_90d": null,
+          "hit_90d": null,
+          "verified_at": null,
+          "alert": false
+        },
+        {
+          "ticker": "064350",
+          "name": "현대로템",
+          "country": "KR",
+          "trend_title": "한국 방산 모멘텀 재점화 — 064350 거래량 급증",
+          "trend_kind": "predicted",
+          "category": "방산",
+          "timeframe": "short",
+          "trend_confidence": 74,
+          "grade": "Buy",
+          "rating_score": 3,
+          "fundamentals_score": 7,
+          "rank": 1,
+          "rationale": "한화에어로스페이스 K9·천무 수출 모멘텀 + 거래량 1.58배 기관 수급 유입 확인",
+          "entry_close": 208500.0,
+          "entry_date": "2026-06-14",
+          "current_close": 208500.0,
+          "current_date": "2026-06-12",
+          "current_return_pct": 0.0,
+          "close_7d": null,
+          "alpha_7d": null,
+          "hit_7d": null,
+          "close_30d": null,
+          "alpha_30d": null,
+          "hit_30d": null,
+          "close_90d": null,
+          "alpha_90d": null,
+          "hit_90d": null,
+          "verified_at": null,
+          "alert": false
+        },
+        {
+          "ticker": "MRNA",
+          "name": "Moderna",
+          "country": "US",
+          "trend_title": "바이오테크 XBI 회복 국면 — 금리 인하 기대 재부상 시 촉매",
+          "trend_kind": "predicted",
+          "category": "바이오테크",
+          "timeframe": "short",
+          "trend_confidence": 70,
+          "grade": "Buy",
+          "rating_score": 2,
+          "fundamentals_score": 6,
+          "rank": 1,
+          "rationale": "mRNA 플랫폼의 암 백신 FDA 심사 결과 대기 + 5d +5.2% 반등 초입 — 촉매 이벤트 근접",
+          "entry_close": 49.90999984741211,
+          "entry_date": "2026-06-14",
+          "current_close": 49.90999984741211,
+          "current_date": "2026-06-12",
+          "current_return_pct": 0.0,
+          "close_7d": null,
+          "alpha_7d": null,
+          "hit_7d": null,
+          "close_30d": null,
+          "alpha_30d": null,
+          "hit_30d": null,
+          "close_90d": null,
+          "alpha_90d": null,
+          "hit_90d": null,
+          "verified_at": null,
+          "alert": false
+        },
+        {
+          "ticker": "FCX",
+          "name": "Freeport-McMoRan",
+          "country": "US",
+          "trend_title": "구리·광물 자원 순환 — FCX·BHP 동반 강세로 자원 사이클 재진입",
+          "trend_kind": "predicted",
+          "category": "자원/원자재",
+          "timeframe": "short",
+          "trend_confidence": 72,
+          "grade": "Buy",
+          "rating_score": 2,
+          "fundamentals_score": 7,
+          "rank": 1,
+          "rationale": "AI 전력 인프라 구리 수요 + 중국 회복 이중 드라이버, 5d +7.95% 추세 확인",
+          "entry_close": 68.41000366210938,
+          "entry_date": "2026-06-14",
+          "current_close": 68.41000366210938,
+          "current_date": "2026-06-12",
+          "current_return_pct": 0.0,
+          "close_7d": null,
+          "alpha_7d": null,
+          "hit_7d": null,
+          "close_30d": null,
+          "alpha_30d": null,
+          "hit_30d": null,
+          "close_90d": null,
+          "alpha_90d": null,
+          "hit_90d": null,
+          "verified_at": null,
+          "alert": false
+        },
+        {
+          "ticker": "BHP",
+          "name": "BHP Group",
+          "country": "US",
+          "trend_title": "구리·광물 자원 순환 — FCX·BHP 동반 강세로 자원 사이클 재진입",
+          "trend_kind": "predicted",
+          "category": "자원/원자재",
+          "timeframe": "short",
+          "trend_confidence": 72,
+          "grade": "Buy",
+          "rating_score": 2,
+          "fundamentals_score": 7,
+          "rank": 2,
+          "rationale": "구리+철광석 복합 포트폴리오로 중국 회복 + AI 인프라 이중 수혜, 5d +9.79% 강한 모멘텀",
+          "entry_close": 90.81999969482422,
+          "entry_date": "2026-06-14",
+          "current_close": 90.81999969482422,
+          "current_date": "2026-06-12",
+          "current_return_pct": 0.0,
+          "close_7d": null,
+          "alpha_7d": null,
+          "hit_7d": null,
+          "close_30d": null,
+          "alpha_30d": null,
+          "hit_30d": null,
+          "close_90d": null,
+          "alpha_90d": null,
+          "hit_90d": null,
+          "verified_at": null,
+          "alert": false
+        },
+        {
+          "ticker": "035420",
+          "name": "NAVER",
+          "country": "KR",
+          "trend_title": "한국 인터넷 플랫폼 반등 — NAVER 거래량 급증 + 카카오 동반",
+          "trend_kind": "predicted",
+          "category": "한국 인터넷/플랫폼",
+          "timeframe": "short",
+          "trend_confidence": 68,
+          "grade": "Buy",
+          "rating_score": 3,
+          "fundamentals_score": 7,
+          "rank": 1,
+          "rationale": "NAVER AI 검색 전환 + 광고 회복 기대로 1d +10.3%, 20d +22.6% 강세 — 한국 인터넷 플랫폼 선도주",
+          "entry_close": 247000.0,
+          "entry_date": "2026-06-14",
+          "current_close": 247000.0,
+          "current_date": "2026-06-12",
+          "current_return_pct": 0.0,
+          "close_7d": null,
+          "alpha_7d": null,
+          "hit_7d": null,
+          "close_30d": null,
+          "alpha_30d": null,
+          "hit_30d": null,
+          "close_90d": null,
+          "alpha_90d": null,
+          "hit_90d": null,
+          "verified_at": null,
+          "alert": false
+        }
+      ],
+      "alert_count": 0
+    },
     {
       "date": "2026-06-13",
       "recommendations": [
@@ -5498,7 +5907,7 @@
           "timeframe": "imminent",
           "trend_confidence": 75,
           "grade": "Strong Buy",
-          "rating_score": 7,
+          "rating_score": 6,
           "fundamentals_score": 6,
           "rank": 1,
           "rationale": "AI 엔터프라이즈 전환 가속으로 5d +31.33%, 거래량 1.60배; 클라우드·컨설팅 성장과 견조한 배당으로 밸류에이션 매력 겸비",
@@ -5969,7 +6378,7 @@
           "timeframe": "ongoing",
           "trend_confidence": 88,
           "grade": "Strong Buy",
-          "rating_score": 7,
+          "rating_score": 6,
           "fundamentals_score": 6,
           "rank": 3,
           "rationale": "AI 컨설팅 및 하이브리드 클라우드로 1일 +7.6%, 5일 +26.23%. 거래량 3.54배로 기관 관심 급증. 전통 엔터프라이즈 고객 기반을 통한 AI 전환 매출 확대",
@@ -6967,7 +7376,7 @@
           "timeframe": "ongoing",
           "trend_confidence": 87,
           "grade": "Strong Buy",
-          "rating_score": 8,
+          "rating_score": 7,
           "fundamentals_score": 6,
           "rank": 1,
           "rationale": "1일 +12.71%, 5일 +17.72%, 20일 +28.93%의 강한 모멘텀. 거래량 3.51x로 기관 매수 확인. 엔터프라이즈 AI·하이브리드 클라우드 수주 가속 기대. 최근 리더 이력 없어 스탈 픽 제한 없음.",
@@ -8151,7 +8560,7 @@
           "timeframe": "ongoing",
           "trend_confidence": 87,
           "grade": "Strong Buy",
-          "rating_score": 8,
+          "rating_score": 7,
           "fundamentals_score": 7,
           "rank": 1,
           "rationale": "1일 +12.71% / 5일 +17.72% 급등에 거래량 3.51x 수반, AI 엔터프라이즈 전환 가속화 수혜. 안정적 매출 기반과 클라우드·AI 컨설팅 마진 확대 기대",
@@ -11356,7 +11765,7 @@
           "timeframe": "imminent",
           "trend_confidence": 74,
           "grade": "Strong Buy",
-          "rating_score": 7,
+          "rating_score": 6,
           "fundamentals_score": 6,
           "rank": 1,
           "rationale": "Watsonx AI 엔터프라이즈 채택 가속, 5일 +17.43%, 거래량 1.55배. 기업 AI 전환 직접 수혜주로 재평가 진행 중",
@@ -12075,7 +12484,7 @@
           "timeframe": "imminent",
           "trend_confidence": 72,
           "grade": "Strong Buy",
-          "rating_score": 5,
+          "rating_score": 4,
           "fundamentals_score": 7,
           "rank": 1,
           "rationale": "엔터프라이즈 AI·하이브리드 클라우드 실적 확인, 5d +14.78%, 안정적 배당+성장 조합",
@@ -16656,7 +17065,7 @@
           "timeframe": "imminent",
           "trend_confidence": 74,
           "grade": "Strong Buy",
-          "rating_score": 5,
+          "rating_score": 4,
           "fundamentals_score": 6,
           "rank": 2,
           "rationale": "거래량 2.69배 폭증 동반 5일 +15.75% 급등, AI 엔터프라이즈 전환 컨설팅·소프트웨어 수혜. 상대적 저P/E로 안전마진 확보",
