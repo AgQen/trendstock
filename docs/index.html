@@ -142,13 +142,24 @@ body { padding-bottom: env(safe-area-inset-bottom); }
   padding: 10px 0 4px;
 }
 .rec-toggle {
-  display: flex; align-items: center; justify-content: flex-end;
-  padding: 2px 0 8px; font-size: 11px; color: var(--text-faint);
-  cursor: pointer; background: none; border: none; width: 100%;
-  gap: 3px; font-family: inherit;
+  display: flex; align-items: center; justify-content: center; gap: 5px;
+  margin: 4px 0 8px; padding: 5px 12px; font-size: 12px;
+  color: var(--text-dim); cursor: pointer;
+  background: var(--border); border: none; border-radius: 8px; width: 100%;
+  font-family: inherit; font-weight: 600;
 }
+.rec-toggle:hover { background: var(--card-bg); color: var(--text); }
 .chev-sm { transition: transform .2s; display: inline-block; font-style: normal; }
 .rec-wrap.open .chev-sm { transform: rotate(180deg); }
+/* 카드 레벨 상세분석 토글 버튼 */
+.card-expand-btn {
+  margin: 0 16px 12px; padding: 8px; text-align: center;
+  font-size: 12px; font-weight: 600; color: var(--text-dim);
+  background: var(--border); border-radius: 8px; cursor: pointer;
+}
+.card-expand-btn:hover { color: var(--text); }
+.card.open .card-expand-btn-chevron { transform: rotate(180deg); }
+.card-expand-btn-chevron { display: inline-block; transition: transform .2s; }
 .rec-detail-panel { display: none; padding: 2px 0 10px; }
 .rec-wrap.open .rec-detail-panel { display: block; }
 .detail-block {
@@ -757,16 +768,17 @@ function renderCard(t, kind) {
       ${tiersHtml}
       <div class="top-pick"></div>
       <div class="card-summary">${t.summary || ""}</div>
+      <div class="card-expand-btn">상세 분석 <span class="card-expand-btn-chevron">▼</span></div>
       <div class="card-detail">
-        <div class="subhead">▼ 매수 추천 상세</div>
+        <div class="subhead">매수 추천 상세</div>
         <div class="recs"></div>
-        <div class="subhead">▼ 인과 체인</div>
+        <div class="subhead">인과 체인</div>
         <div class="chain"></div>
-        <div class="subhead">▼ 반대 가설 (틀릴 수 있는 이유)</div>
+        <div class="subhead">반대 가설 (틀릴 수 있는 이유)</div>
         <div class="disconfirms"></div>
-        <div class="subhead">▼ 등급 산정</div>
+        <div class="subhead">등급 산정</div>
         <div class="ratings-detail"></div>
-        <div class="subhead">▼ 근거</div>
+        <div class="subhead">근거</div>
         <div class="evidence"></div>
       </div>
     `;
@@ -788,14 +800,15 @@ function renderCard(t, kind) {
       </div>
       <div class="card-summary">${t.summary || ""}</div>
       <div class="recs"></div>
+      <div class="card-expand-btn">상세 분석 <span class="card-expand-btn-chevron">▼</span></div>
       <div class="card-detail">
-        <div class="subhead">▼ 인과 체인</div>
+        <div class="subhead">인과 체인</div>
         <div class="chain"></div>
-        <div class="subhead">▼ 반대 가설 (틀릴 수 있는 이유)</div>
+        <div class="subhead">반대 가설 (틀릴 수 있는 이유)</div>
         <div class="disconfirms"></div>
-        <div class="subhead">▼ 등급 산정 (대장주 기준, 객관 룰)</div>
+        <div class="subhead">등급 산정 (대장주 기준, 객관 룰)</div>
         <div class="ratings-detail"></div>
-        <div class="subhead">▼ 근거</div>
+        <div class="subhead">근거</div>
         <div class="evidence"></div>
       </div>
     `;
@@ -827,25 +840,29 @@ function renderCard(t, kind) {
     const mkBlock = (label, text, extra) =>
       text ? `<div class="detail-block${extra || ""}"><div class="detail-label">${label}</div><div>${text}</div></div>` : "";
 
+    // 매도 신호: 최신 등급이 Caution이면
+    const newestGrade = (typeof newestByTicker !== "undefined" && newestByTicker[r.ticker])
+      ? newestByTicker[r.ticker].grade : r.grade;
+    const sellBadge = (newestGrade === "Caution")
+      ? `<span style="background:#450a0a;color:#ef4444;font-size:10px;padding:1px 6px;border-radius:99px;font-weight:700">🔴매도검토</span>`
+      : "";
+
     wrap.innerHTML = `
-      <div class="rec">
-        <div class="grade-pill ${grade2cls(r.grade)}">${r.grade}${scorePill}</div>
-        <div class="info">
-          <div class="tk-row">
-            ${flagBadge(r.country)}
-            <span class="tk">${r.ticker}</span>
-            <span class="nm">${r.name || ""}</span>
-            ${buyBadge}
-          </div>
-          <div class="rationale">${r.rationale || ""}${f_line}</div>
+      <div class="rec" style="flex-direction:column;align-items:stretch;gap:0;padding:10px 0 4px">
+        <!-- Row 1: 종목 | 신호 | 재무점수 | 매수/매도 -->
+        <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:5px">
+          <span style="font-size:13px;font-weight:700">${flagBadge(r.country)} ${r.ticker}</span>
+          <span style="font-size:11px;color:var(--text-dim)">${(r.name||"").slice(0,12)}</span>
+          <span class="grade-pill ${grade2cls(r.grade)}" style="font-size:10px">${r.grade}${scorePill}</span>
+          <span style="font-size:11px;color:var(--text-dim)">재무 <b style="color:var(--text)">${r.fundamentals_score ?? "—"}</b>/9</span>
+          ${buyBadge}${sellBadge}
         </div>
-        <div class="score">
-          <div>${priceFmt(r.country, r.entry_close)}</div>
-          <div><b>${r.fundamentals_score ?? "—"}</b>/9</div>
-        </div>
+        <!-- Row 2: 설명 -->
+        <div class="rationale" style="font-size:12px">${r.rationale || ""}${f_line}</div>
+        <div style="font-size:11px;color:var(--text-faint);margin-top:3px">${priceFmt(r.country, r.entry_close)}</div>
       </div>
       ${hasDetail ? `
-        <button class="rec-toggle">상세 설명 <i class="chev-sm">▼</i></button>
+        <button class="rec-toggle">▼ 상세 분석 <i class="chev-sm"></i></button>
         <div class="rec-detail-panel">
           ${mkBlock("🏢 종목 소개", d.stock_desc)}
           ${mkBlock("🔗 트렌드 연결", d.trend_link)}
@@ -958,11 +975,23 @@ function renderCard(t, kind) {
     ? Object.entries(ev).map(([k, v]) => `<div><b>${k}:</b> ${v}</div>`).join("")
     : "—";
 
-  // toggle — predicted 카드는 card-head 없이 제목 전체 클릭
-  const toggleTarget = card.querySelector(".card-head") || card.querySelector(".title");
-  if (toggleTarget) {
-    toggleTarget.style.cursor = "pointer";
-    toggleTarget.addEventListener("click", () => card.classList.toggle("open"));
+  // 상세 분석 버튼으로 통일 — card-expand-btn 클릭으로 open/close
+  const expandBtn = card.querySelector(".card-expand-btn");
+  if (expandBtn) {
+    expandBtn.addEventListener("click", () => {
+      card.classList.toggle("open");
+      const chev = expandBtn.querySelector(".card-expand-btn-chevron");
+      if (chev) chev.textContent = card.classList.contains("open") ? "▲" : "▼";
+    });
+  }
+  // card-head 클릭도 유지 (현재 트렌드 호환)
+  const cardHead = card.querySelector(".card-head");
+  if (cardHead) {
+    cardHead.addEventListener("click", () => {
+      card.classList.toggle("open");
+      const chev = card.querySelector(".card-expand-btn-chevron");
+      if (chev) chev.textContent = card.classList.contains("open") ? "▲" : "▼";
+    });
   }
 
   return card;
