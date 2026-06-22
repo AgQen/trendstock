@@ -1789,6 +1789,77 @@ function renderSettings(data) {
     `;
   }
 
+  // ───── 추천 종목 상세 뷰 ─────
+  const history = data.history || [];
+  if (history.length) {
+    const fmtR = (v) => v == null ? "—" : (v >= 0 ? "+" : "") + v.toFixed(1) + "%";
+    const fmtN = (v, d = 1) => v == null ? "—" : v.toFixed(d);
+
+    // 티커별 가장 최신 Strong Buy / Buy 추천 1건씩
+    const buyMap = {};
+    [...history].reverse().forEach(day => {
+      day.recommendations.forEach(r => {
+        if (!buyMap[r.ticker] && (r.grade === "Strong Buy" || r.grade === "Buy"))
+          buyMap[r.ticker] = r;
+      });
+    });
+    const buyRecs = Object.values(buyMap)
+      .sort((a, b) => (b.current_return_pct || 0) - (a.current_return_pct || 0));
+
+    if (buyRecs.length) {
+      html += `
+        <div class="settings-section">📦 추천 종목 상세 <span style="font-size:11px;font-weight:400;color:var(--text-dim)">(Strong Buy / Buy 신호 기준 — 티커별 최신 1건)</span></div>
+        <div class="settings-card" style="padding:0">
+          ${buyRecs.map(r => {
+            const d = r.detail || {};
+            const f = r.fundamentals || {};
+            const ret = r.current_return_pct;
+            const retColor = (ret || 0) >= 0 ? "var(--green)" : "#ef4444";
+            return `
+            <details style="border-bottom:1px solid var(--card-border)">
+              <summary style="padding:10px 12px;cursor:pointer;list-style:none;display:flex;align-items:center;gap:8px;user-select:none">
+                <span style="font-weight:700;font-size:13px">${flagBadge(r.country)} ${r.ticker}</span>
+                <span class="grade-pill ${grade2cls(r.grade)}" style="font-size:9px">${r.grade}</span>
+                <span style="color:${retColor};font-size:12px;font-weight:700">${fmtR(ret)}</span>
+                <span style="flex:1;font-size:11px;color:var(--text-dim);overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${r.trend_title || r.category || "—"}</span>
+                <span style="font-size:10px;color:var(--text-faint)">${r.entry_date || ""}</span>
+              </summary>
+              <div style="padding:0 12px 12px;font-size:12px">
+                ${d.stock_desc ? `<div style="color:var(--text);line-height:1.5;margin-bottom:8px">${d.stock_desc}</div>` : ""}
+                ${d.trend_link ? `
+                <div style="background:var(--bg);border-radius:6px;padding:8px;margin-bottom:8px">
+                  <b style="font-size:11px;color:var(--text-dim)">🔗 트렌드 연결</b>
+                  <div style="color:var(--text);line-height:1.5;margin-top:4px">${d.trend_link}</div>
+                </div>` : ""}
+                ${(f.revenue_yoy_pct != null || f.operating_margin_pct != null || f.roe_pct != null) ? `
+                <div style="background:var(--bg);border-radius:6px;padding:8px;margin-bottom:8px">
+                  <b style="font-size:11px;color:var(--text-dim)">💰 재무 (점수 ${r.fundamentals_score ?? "—"}/9)</b>
+                  <div style="display:grid;grid-template-columns:1fr 1fr;gap:3px 16px;margin-top:6px">
+                    ${f.revenue_yoy_pct      != null ? `<span style="color:var(--text-dim)">매출YoY</span><span style="font-weight:600;color:var(--text)">${fmtR(f.revenue_yoy_pct)}</span>` : ""}
+                    ${f.operating_margin_pct != null ? `<span style="color:var(--text-dim)">영업이익률</span><span style="font-weight:600;color:var(--text)">${fmtN(f.operating_margin_pct)}%</span>` : ""}
+                    ${f.roe_pct  != null ? `<span style="color:var(--text-dim)">ROE</span><span style="font-weight:600;color:var(--text)">${fmtN(f.roe_pct)}%</span>` : ""}
+                    ${f.pe_ratio != null ? `<span style="color:var(--text-dim)">P/E</span><span style="font-weight:600;color:var(--text)">${fmtN(f.pe_ratio)}x</span>` : ""}
+                  </div>
+                  ${d.financials_reason ? `<div style="margin-top:6px;color:var(--text-dim);line-height:1.4">${d.financials_reason}</div>` : ""}
+                </div>` : ""}
+                ${d.prediction ? `
+                <div style="background:var(--bg);border-radius:6px;padding:8px;border-left:3px solid var(--green);margin-bottom:8px">
+                  <b style="font-size:11px;color:var(--text-dim)">🔮 예측 근거</b>
+                  <div style="color:var(--text);line-height:1.5;margin-top:4px">${d.prediction}</div>
+                </div>` : ""}
+                <div style="font-size:11px;color:var(--text-faint);display:flex;gap:12px;flex-wrap:wrap">
+                  <span>진입 ${priceFmt(r.country, r.entry_close)}</span>
+                  ${r.current_close != null ? `<span>현재 ${priceFmt(r.country, r.current_close)} (${r.current_date || "—"})</span>` : ""}
+                  <span>규칙점수 ${r.rating_score ?? "—"}</span>
+                </div>
+              </div>
+            </details>`;
+          }).join("")}
+        </div>
+      `;
+    }
+  }
+
   html += `<div style="height:32px"></div>`;
   root.innerHTML = html;
 }

@@ -28,23 +28,86 @@ OUTPUT RULES (strict — violations cause schema rejection):
    (`recent_leaders_history` provided as penalty context).
 
 ═══════════════════════════════════════════════════════
-THEME FLOW ENGINE — WHERE WILL MONEY MOVE NEXT?
+THEME FLOW ENGINE — FOLLOW THE MONEY 3 LEVELS DEEP
 ═══════════════════════════════════════════════════════
 
-Before selecting trends/recs, explicitly trace active macro→theme flows:
+The #1 miss pattern: analysts see Trigger → L1 (obvious), but miss L2 → L3
+where real alpha lives. ALWAYS trace 3 levels before finalizing predicted_trends.
 
-  [Trigger] → [Benefiting sectors] → [Next rotation target]
+REFERENCE EXAMPLE (the "VRT pattern" — never miss this type again):
+  NVIDIA earnings beat → AI CAPEX boom confirmed
+  L1 (obvious): NVDA, AMD, TSM surge
+  L2 (common):  Data center builders — SMCI, DLR, EQIX
+  L3 (alpha):   Data centers need POWER + COOLING → VRT, ETN, GEV, MOD ← missed here
+  L4 (next):    Copper demand for power infrastructure → FCX, COPX
 
-Canonical patterns (apply when signals visible in price/news data):
-  • 지정학 긴장/전쟁       → 방산·원유·달러 강세  → 금·구리·희토류 수요
-  • 금리 인하 기대          → 성장주·AI·반도체 강세 → 바이오테크 회복
-  • AI 인프라 투자 확대     → 전력·원전·구리       → 냉각장치·희토류
-  • 탈달러화·중앙은행 매수  → 금·은·원자재         → 금광주(GDX/GOLD/AEM)
-  • 인플레이션 우려          → 원자재·에너지        → 금·TIPS·달러
-  • 경기침체 우려            → 국채(TLT) 강세       → 방어주·소비재 회전
-  • 반도체 사이클 회복       → 메모리·장비 → 소재·화학(특수가스 등)
+PROPAGATION CHAINS — apply when trigger signals visible in price/news data:
 
-MANDATORY COVERAGE — always include these 3 theme groups every day:
+1. AI CAPEX EXPANSION (GPU orders, cloud CapEx guidance, hyperscaler announcements):
+   L1: NVDA, AMD, AVGO, MU, SK하이닉스 (직접 수혜)
+   L2: SMCI, AMAT, LRCX, KLAC, ASML (장비·인프라)
+   L3: VRT, ETN, GEV, MOD (전력관리·냉각 솔루션) ← 반드시 확인
+   L4: FCX, CCJ, URA (구리·원전 — 전력수요 급증)
+
+2. GEOPOLITICAL TENSION / WAR:
+   L1: LMT, RTX, NOC (방산) + XOM, CVX, XLE (에너지)
+   L2: GLD, GDX, GOLD (금) + ZIM, HMM (해운)
+   L3: CRWD, PANW, ZS (사이버보안) + CCJ, URA (원전)
+
+3. RATE CUT EXPECTATIONS:
+   L1: QQQ, NVDA, MSFT (성장주)
+   L2: XBI, MRNA, REGN (바이오) + VNQ, DLR (REIT)
+   L3: GLD (금) + EEM (신흥국)
+
+4. DE-DOLLARIZATION / CENTRAL BANK GOLD BUYING:
+   L1: GLD, IAU, SLV (귀금속 ETF)
+   L2: GDX, GOLD, AEM, WPM (금광주)
+   L3: FCX, BHP, RIO (구리·원자재)
+
+5. SEMICONDUCTOR CYCLE RECOVERY:
+   L1: MU, TSM (메모리·파운드리)
+   L2: ASML, AMAT, LRCX, KLAC (장비)
+   L3: Entegris, 동진쎄미켐, 솔브레인 (소재) + 한미반도체 (후공정)
+
+6. INFLATION CONCERN:
+   L1: XLE, XOM (에너지) + commodity ETFs
+   L2: GLD, GDX (금) + TIPS
+   L3: JPM, BAC (은행 — 금리 수혜)
+
+7. RECESSION FEAR:
+   L1: TLT (장기채) + PG, KO (방어주)
+   L2: GLD (금) + healthcare
+   L3: Tech 비중 축소 → 소비재 회전
+
+8. GLP-1 / OBESITY DRUG EXPANSION:
+   L1: LLY, NVO (직접 수혜)
+   L2: REGN, VRTX, AMGN (파이프라인 기대)
+   L3: 삼성바이오로직스, ISRG (CDMO·수술로봇)
+
+9. NUCLEAR / DATA CENTER POWER DEMAND:
+   L1: CCJ, URA (우라늄)
+   L2: GEV, ETN (전력설비) + 두산에너빌리티
+   L3: FSLR, ENPH (재생에너지 포함 전력 믹스)
+
+10. CHINA STIMULUS:
+    L1: BABA, JD, FXI (중국 테크)
+    L2: FCX, BHP, RIO (구리·소재) + 한국 수출주
+    L3: ZIM, HMM (해운) + 배터리 소재
+
+SCORING HEURISTIC (predicted_trend confidence 가이드):
+  단일 트리거 + 주요 언론 1~2개: confidence 55-65
+  트리거 + 가격 반응 확인:       confidence 65-75
+  복수 트리거 + 가격 + 거래량:   confidence 75-85
+  CapEx 발표·정책 전환 등 구조적 확인: confidence 85+
+
+MANDATORY CHECKLIST — before finalizing predicted_trends:
+  □ AI CAPEX 트렌드가 current_trends에 있다면 → VRT/ETN/GEV 점검했는가?
+  □ 지정학 긴장이 높다면 → CRWD/PANW/ZS (사이버보안) 점검했는가?
+  □ 데이터센터 전력 수요가 있다면 → CCJ/URA (원전) 점검했는가?
+  □ 금리 인하 기대가 있다면 → XBI/MRNA (바이오) 점검했는가?
+  □ L3 수혜주가 allowed_assets에 있는가? 없으면 closest proxy로 대체.
+
+MANDATORY COVERAGE — always include these 4 theme groups every day:
 
   GOLD / PRECIOUS METALS (GLD, GDX, GOLD, AEM, SLV, WPM):
     Report current momentum and macro driver regardless of direction.
@@ -60,10 +123,15 @@ MANDATORY COVERAGE — always include these 3 theme groups every day:
     Always assess commodity cycle position. 원유·구리·희토류 흐름을 daily brief에 포함.
     강세면 current_trend, 약세면 predicted_trend에서 반등 조건 서술.
 
-  → 이 세 그룹 중 최소 1개는 반드시 current_trends 또는 predicted_trends에 포함.
+  POWER / DATA CENTER INFRASTRUCTURE (VRT, ETN, GEV, CCJ, URA, FSLR):
+    If AI CAPEX or data center trend is active → ALWAYS check this group.
+    VRT (냉각), ETN (전력관리), GEV (발전설비), CCJ (우라늄), URA (원전 ETF).
+    상승 중이면 current_trend, 트리거 대기 중이면 predicted_trend 후보로 등록.
+
+  → 이 네 그룹 중 최소 1개는 반드시 current_trends 또는 predicted_trends에 포함.
 
 For each predicted_trend, explicitly state in `evidence.theme_flow`:
-  "Trigger: [X] → 현재 수혜: [Y] → 다음 자금 이동: [Z]"
+  "Trigger: [X] → L1 수혜: [Y] → L2 수혜: [Z] → L3 수혜: [W]"
 
 ═══════════════════════════════════════════════════════
 SELECTIVITY — MOST IMPORTANT RULE:
