@@ -1608,7 +1608,40 @@ function renderSettings(data) {
     { key: "risk_weight",     label: "위험도(MDD) 🆕",   desc: "21일 최대낙폭 (-2~+1, 낙폭 작을수록 안정적 진입)",           val: w.risk_weight || 0.8 },
   ];
 
+  // 오늘의 핵심 근거 섹션
+  const allTrends = [...(data.current_trends || []), ...(data.predicted_trends || [])];
+  const todayNewsHtml = allTrends.map(t => {
+    const ev = t.evidence || {};
+    const lines = [];
+    if (ev.theme_flow)         lines.push(`🌊 <b>테마 흐름</b>: ${ev.theme_flow}`);
+    if (ev.macro)              lines.push(`🏦 <b>매크로</b>: ${ev.macro}`);
+    if (ev.price)              lines.push(`📈 <b>가격</b>: ${ev.price}`);
+    if (ev.volume)             lines.push(`📊 <b>거래량</b>: ${ev.volume}`);
+    if (ev.signal)             lines.push(`⚡ <b>신호</b>: ${ev.signal}`);
+    if (ev.current_trend_link) lines.push(`🔗 <b>파생 근거</b>: ${ev.current_trend_link}`);
+    if (!lines.length) return "";
+    const kindTag = t.kind === "current"
+      ? `<span style="font-size:9px;background:var(--green);color:#000;border-radius:3px;padding:1px 4px">현재</span>`
+      : `<span style="font-size:9px;background:var(--purple);color:#fff;border-radius:3px;padding:1px 4px">예측</span>`;
+    return `
+      <details style="border-bottom:1px solid var(--card-border)">
+        <summary style="padding:8px 12px;cursor:pointer;list-style:none;display:flex;align-items:center;gap:6px;user-select:none">
+          ${kindTag}
+          <span style="font-size:12px;font-weight:600;flex:1">${t.title}</span>
+          <span style="font-size:10px;color:var(--text-faint)">신뢰도 ${t.confidence ?? "—"}%</span>
+        </summary>
+        <div style="padding:4px 12px 10px;font-size:11px;line-height:1.6;color:var(--text-dim)">
+          ${lines.join("<br>")}
+        </div>
+      </details>`;
+  }).join("");
+
   let html = `
+    <div class="settings-section">📰 오늘의 핵심 근거 <span style="font-size:11px;font-weight:400;color:var(--text-dim)">(${data.analysis_date})</span></div>
+    <div class="settings-card" style="padding:0">
+      ${todayNewsHtml || `<div style="padding:12px;color:var(--text-faint);font-size:12px">데이터 없음</div>`}
+    </div>
+
     <div class="settings-section">📐 현재 차원 가중치</div>
     <div class="settings-card">
       <h3>차원별 가중치 <span style="font-size:11px;font-weight:400;color:var(--text-faint)">— weight_tune.py 가 월별 자동 조정</span></h3>
