@@ -1928,15 +1928,21 @@ function renderPortfolio(data) {
         buyMap[r.ticker] = r;
     });
   });
+
+  // 현재 isOngoingBuy 신호 중인 티커만
   const buyRecs = Object.values(buyMap)
+    .filter(r => {
+      const st = _signalData && _signalData.tickerState[r.ticker];
+      return st && st.isOngoingBuy;
+    })
     .sort((a, b) => (b.current_return_pct || 0) - (a.current_return_pct || 0));
 
-  if (!buyRecs.length) { root.innerHTML = `<div class="hist-empty">매수 신호 기록 없음</div>`; return; }
+  if (!buyRecs.length) { root.innerHTML = `<div class="hist-empty">현재 활성 매수 신호 없음</div>`; return; }
 
   root.innerHTML = `
     <div style="padding:0">
       <div style="padding:10px 16px;font-size:12px;color:var(--text-dim)">
-        Strong Buy / Buy 기록 · 티커별 최신 1건 · 수익률 순 · 총 ${buyRecs.length}종목
+        현재 매수 신호 유지 중 · 수익률 순 · 총 ${buyRecs.length}종목
       </div>
       ${buyRecs.map(r => {
         const d = r.detail || {};
