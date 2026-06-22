@@ -704,7 +704,10 @@ function renderCard(t, kind) {
   const card = document.createElement("article");
   card.className = "card " + cls;
 
-  const score = (kind === "predicted" && t.trend_score != null) ? t.trend_score : t.confidence;
+  // 예측 트렌드: (v3점수 + 신뢰도) / 2 평균 → 추후 실적 기반 가중치 자동 조정 예정
+  const score = (kind === "predicted" && t.trend_score != null)
+    ? Math.round((t.trend_score + t.confidence) / 2)
+    : t.confidence;
   const scoreColor = score >= 80 ? "#4ade80" : score >= 70 ? "#60a5fa" : "#facc15";
   const dirColor = t.trend_direction === "UP" ? "var(--green)" : (t.trend_direction === "DOWN" ? "#ef4444" : "var(--text-dim)");
   const dirLabel = t.trend_direction === "UP" ? "▲ 상승" : (t.trend_direction === "DOWN" ? "▼ 하락" : "");
@@ -746,9 +749,9 @@ function renderCard(t, kind) {
           </div>
         </div>
         <div class="conf">
-          <div class="conf-num" style="color:${scoreColor}">${score}<span style="font-size:11px">pt</span></div>
-          <div class="conf-label" title="뉴스·이벤트 강도 기반 트렌드 발생 가능성 (0-100)">점수</div>
-          <div style="font-size:10px;color:var(--text-faint);margin-top:2px" title="분석 논리 확신도">신뢰 ${t.confidence}%</div>
+          <div class="conf-num" style="color:${scoreColor}">${score}</div>
+          <div class="conf-label" title="종합점수 = (v3점수 + 신뢰도) / 2 · 추후 실적 기반 가중치 적용 예정">종합점수</div>
+          <div style="font-size:9px;color:var(--text-faint);margin-top:2px">${t.trend_score != null ? `v3 ${Math.round(t.trend_score)}·신뢰 ${t.confidence}` : ""}</div>
         </div>
       </div>
       ${tiersHtml}
