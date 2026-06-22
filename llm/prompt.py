@@ -168,10 +168,18 @@ PREDICTED TRENDS: each must have a clear mechanism linking it to a CURRENT trend
 DETAIL FIELDS (required for each recommendation):
 ═══════════════════════════════════════════════════════
 
-For predicted_trends, `related_tickers` (REQUIRED): list 3-6 tickers that benefit from
-this trend. Include ALL stocks the trend touches, not just the ones you recommend to buy.
-The recommendations array is the SUBSET you actually recommend buying.
-Users see related_tickers first to understand the full scope, then see which ones to buy.
+For predicted_trends, REQUIRED tier structure:
+  `tier1_tickers`: 2-3 DIRECT beneficiaries (핵심 직접 수혜 — 트렌드 발생 시 1순위 상승)
+  `tier2_tickers`: 2-4 SECONDARY beneficiaries (응용/파생 수혜 — 약간 늦게 따라오는 종목)
+
+EXAMPLE (ARM ecosystem):
+  tier1: ["ARM", "TSM"]          ← 라이선스/생산 직접 수혜
+  tier2: ["QCOM", "AVGO", "AMD"] ← SoC 응용 수혜
+
+`recommendations` = the 1-2 highest-conviction buys FROM tier1+tier2 combined.
+IMPORTANT grading rule: If a stock has recently surged (5d >+10%) WITHOUT fundamental
+  confirmation, use "Buy" NOT "Strong Buy" and note "추격 매수 주의" in rationale.
+  Only "Strong Buy" if: fundamentals strong + price action confirms + not overextended.
 
 Each `recommendation` must include a `detail` object:
 - `stock_desc`: 2–3 sentences on what the company does and its market position.
@@ -312,7 +320,8 @@ GENERATION ORDER (follow exactly):
       "trend_direction": "UP",
       "secondary_effect": "소재·특수가스 → 한미반도체 후공정까지 수혜",
       "trend_risk": "삼성 CapEx 동결 시 발주 취소 가능",
-      "related_tickers": ["ASML", "AMAT", "LRCX", "KLAC", "한미반도체"],
+      "tier1_tickers": ["ASML", "AMAT", "LRCX"],
+      "tier2_tickers": ["KLAC", "한미반도체", "KLAC"],
       "causal_chain": [
         {"step_no": 1, "statement": "AI 메모리 수요 폭발 → 삼성·하이닉스 HBM 증설 발표 임박", "confidence": 80},
         {"step_no": 2, "statement": "증설 결정 → ASML EUV 장비 발주 계약 체결 시작", "confidence": 74},

@@ -59,10 +59,11 @@ class TrendCard(BaseModel):
     confidence: int = Field(ge=0, le=100)
     # v3 트렌드 엔진 점수 (predicted_trends에 직접 포함 — 별도 매칭 불필요)
     trend_score: float | None = Field(default=None, ge=0, le=100)
-    trend_direction: Literal["UP", "DOWN"] | None = None
+    trend_direction: str | None = None  # UP/DOWN/WATCH — 자유 텍스트 허용
     secondary_effect: str | None = None   # 2차 파급 효과
     trend_risk: str | None = None         # 틀릴 수 있는 변수
-    related_tickers: list[str] = Field(default_factory=list)  # 트렌드 관련 종목 전체 (추천 포함)
+    tier1_tickers: list[str] = Field(default_factory=list)  # 1차 직접 수혜 (트렌드 핵심)
+    tier2_tickers: list[str] = Field(default_factory=list)  # 2차 응용 수혜 (파생 수혜)
     causal_chain: list[CausalStep] = Field(min_length=1)
     disconfirming_hypotheses: list[str] = Field(min_length=1)
     evidence: dict = Field(default_factory=dict)
@@ -88,7 +89,7 @@ class TrendCard(BaseModel):
 
 class DetectedEvent(BaseModel):
     event: str
-    impact: Literal["약함", "보통", "강함", "매우 강함"]
+    impact: str  # 약함/보통/중간/강함/매우 강함 — 자유 텍스트 허용
     source_type: str   # 공식/주요언론/일반언론/소셜/시장가격 등 — 자유 텍스트 허용
     time_weight: float = Field(ge=0.0, le=1.5)
     reason: str
@@ -98,7 +99,7 @@ class TrendCandidate(BaseModel):
     rank: int = Field(ge=1)
     theme: str
     score: float = Field(ge=0, le=100)
-    direction: Literal["UP", "DOWN"]
+    direction: str  # UP/DOWN/WATCH — 자유 텍스트 허용
     representative_stocks: list[str] = Field(min_length=1)  # 추천 종목 티커와 1:1 정렬
     reason: str
     secondary_effect: str
@@ -148,16 +149,25 @@ class DailyAnalysis(BaseModel):
 
     @field_validator("predicted_trends")
     @classmethod
-    def predicted_must_have_score(cls, v: list[TrendCard]) -> list[TrendCard]:
-        """예측 트렌드는 반드시 v3 점수(trend_score, trend_direction)를 포함해야 함."""
+    def predicted_must_have_score_and_tiers(cls, v: list[TrendCard]) -> list[TrendCard]:
+        """예측 트렌드는 v3 점수 + tier1/tier2 수혜주를 반드시 포함해야 함."""
         for t in v:
             if t.trend_score is None:
                 raise ValueError(
-                    f"predicted_trend '{t.title}' is missing trend_score. "
-                    "Each predicted_trend MUST include trend_score (0-100) and trend_direction."
+                    f"predicted_trend '{t.title}' missing trend_score (0-100)."
                 )
             if t.trend_direction is None:
                 raise ValueError(
-                    f"predicted_trend '{t.title}' is missing trend_direction (UP/DOWN)."
+                    f"predicted_trend '{t.title}' missing trend_direction (UP/DOWN/WATCH)."
+                )
+            if not t.tier1_tickers:
+                raise ValueError(
+                    f"predicted_trend '{t.title}' missing tier1_tickers. "
+                    "REQUIRED: list 2-3 direct beneficiary tickers in tier1_tickers."
+                )
+            if not t.tier2_tickers:
+                raise ValueError(
+                    f"predicted_trend '{t.title}' missing tier2_tickers. "
+                    "REQUIRED: list 2-4 secondary beneficiary tickers in tier2_tickers."
                 )
         return v

@@ -710,16 +710,24 @@ function renderCard(t, kind) {
   const dirLabel = t.trend_direction === "UP" ? "▲ 상승" : (t.trend_direction === "DOWN" ? "▼ 하락" : "");
 
   if (kind === "predicted") {
-    // related_tickers에서 추천 종목 구분
     const recTickers = new Set((t.recommendations || []).map(r => r.ticker));
-    const related = (t.related_tickers || []);
-    const relatedHtml = related.length ? `
-      <div style="font-size:11px;color:var(--text-dim);margin-bottom:4px">관련 수혜주</div>
-      <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px">
-        ${related.map(tk => recTickers.has(tk)
-          ? `<span style="font-size:13px;font-weight:700;color:var(--text);background:var(--card-bg);border:1.5px solid var(--green);border-radius:5px;padding:3px 9px">${tk} <span style="color:var(--green);font-size:10px">▲ 매수</span></span>`
-          : `<span style="font-size:12px;color:var(--text-dim);background:var(--card-bg);border:1px solid var(--card-border);border-radius:5px;padding:3px 8px">${tk}</span>`
-        ).join("")}
+    const t1 = t.tier1_tickers || [];
+    const t2 = t.tier2_tickers || [];
+
+    const tierChip = (tk, isBuy) => isBuy
+      ? `<span style="font-size:13px;font-weight:700;color:var(--text);background:var(--card-bg);border:2px solid var(--green);border-radius:5px;padding:3px 10px">${tk}<span style="color:var(--green);font-size:10px;margin-left:3px">▲매수</span></span>`
+      : `<span style="font-size:12px;color:var(--text-dim);background:var(--card-bg);border:1px solid var(--card-border);border-radius:5px;padding:3px 8px">${tk}</span>`;
+
+    const tierRow = (label, tickers) => tickers.length ? `
+      <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:6px">
+        <span style="font-size:10px;font-weight:700;color:var(--text-faint);white-space:nowrap">${label}</span>
+        ${tickers.map(tk => tierChip(tk, recTickers.has(tk))).join("")}
+      </div>` : "";
+
+    const tiersHtml = (t1.length || t2.length) ? `
+      <div style="margin-bottom:10px">
+        ${tierRow("1차 직접수혜", t1)}
+        ${tierRow("2차 응용수혜", t2)}
       </div>` : "";
 
     card.innerHTML = `
@@ -729,7 +737,7 @@ function renderCard(t, kind) {
         <span class="cat">${t.category}</span>
       </div>
       <div class="title" style="font-size:15px;font-weight:700;margin-bottom:10px">${t.title}</div>
-      ${relatedHtml}
+      ${tiersHtml}
       <div class="top-pick"></div>
       <div class="recs"></div>
       <div class="card-summary" style="margin-top:8px;font-size:12px">${t.summary || ""}</div>
@@ -932,10 +940,12 @@ function renderCard(t, kind) {
     ? Object.entries(ev).map(([k, v]) => `<div><b>${k}:</b> ${v}</div>`).join("")
     : "—";
 
-  // toggle
-  card.querySelector(".card-head").addEventListener("click", () => {
-    card.classList.toggle("open");
-  });
+  // toggle — predicted 카드는 card-head 없이 제목 전체 클릭
+  const toggleTarget = card.querySelector(".card-head") || card.querySelector(".title");
+  if (toggleTarget) {
+    toggleTarget.style.cursor = "pointer";
+    toggleTarget.addEventListener("click", () => card.classList.toggle("open"));
+  }
 
   return card;
 }
