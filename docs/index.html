@@ -1813,39 +1813,101 @@ function renderSettings(data) {
   root.innerHTML = html;
 }
 
-// ───────────────────────── 오늘의 뉴스 렌더 ─────────────────────────
+// ───────────────────────── 오늘의 뉴스 렌더 (v3 market_brief) ─────────────────────────
 function renderNews(data) {
   const root = document.getElementById("newsRoot");
   if (!root) return;
-  const allTrends = [...(data.current_trends || []), ...(data.predicted_trends || [])];
-  let html = `<div style="padding:0 0 8px">`;
-  allTrends.forEach(t => {
-    const ev = t.evidence || {};
-    const lines = [];
-    if (ev.theme_flow)         lines.push(`🌊 <b>테마 흐름</b>: ${ev.theme_flow}`);
-    if (ev.macro)              lines.push(`🏦 <b>매크로</b>: ${ev.macro}`);
-    if (ev.price)              lines.push(`📈 <b>가격</b>: ${ev.price}`);
-    if (ev.volume)             lines.push(`📊 <b>거래량</b>: ${ev.volume}`);
-    if (ev.signal)             lines.push(`⚡ <b>신호</b>: ${ev.signal}`);
-    if (ev.current_trend_link) lines.push(`🔗 <b>파생 근거</b>: ${ev.current_trend_link}`);
-    if (!lines.length) return;
-    const kindTag = t.kind === "current"
-      ? `<span style="font-size:9px;background:var(--green);color:#000;border-radius:3px;padding:1px 5px">현재</span>`
-      : `<span style="font-size:9px;background:var(--purple);color:#fff;border-radius:3px;padding:1px 5px">예측</span>`;
-    html += `
-      <details style="border-bottom:1px solid var(--card-border)">
-        <summary style="padding:10px 16px;cursor:pointer;list-style:none;display:flex;align-items:center;gap:8px;user-select:none">
-          ${kindTag}
-          <span style="font-size:13px;font-weight:600;flex:1">${t.title}</span>
-          <span style="font-size:11px;color:var(--text-faint)">신뢰도 ${t.confidence ?? "—"}%</span>
-        </summary>
-        <div style="padding:0 16px 12px;font-size:12px;line-height:1.7;color:var(--text-dim)">
-          ${lines.join("<br>")}
+  const mb = data.market_brief;
+
+  if (!mb) {
+    // market_brief 없는 구버전 데이터 — evidence 기반 폴백
+    const allTrends = [...(data.current_trends || []), ...(data.predicted_trends || [])];
+    let html = `<div style="padding:8px 0">`;
+    allTrends.forEach(t => {
+      const ev = t.evidence || {};
+      const lines = [];
+      if (ev.theme_flow)         lines.push(`🌊 <b>테마 흐름</b>: ${ev.theme_flow}`);
+      if (ev.macro)              lines.push(`🏦 <b>매크로</b>: ${ev.macro}`);
+      if (ev.price)              lines.push(`📈 <b>가격</b>: ${ev.price}`);
+      if (!lines.length) return;
+      html += `<div style="padding:10px 16px;border-bottom:1px solid var(--card-border)"><b>${t.title}</b><br><span style="font-size:12px;color:var(--text-dim)">${lines.join(" · ")}</span></div>`;
+    });
+    html += `</div>`;
+    root.innerHTML = allTrends.length ? html : `<div class="hist-empty">오늘 분석을 다시 실행하면 v3 뉴스 포맷이 표시됩니다</div>`;
+    return;
+  }
+
+  const impactColor = (i) => ({"매우 강함":"#ef4444","강함":"#f97316","보통":"#facc15","약함":"#94a3b8"}[i] || "#94a3b8");
+  const dirTag = (d) => d === "UP"
+    ? `<span style="color:var(--green);font-weight:700">▲ UP</span>`
+    : `<span style="color:#ef4444;font-weight:700">▼ DOWN</span>`;
+
+  let html = `
+    <!-- 시장 요약 -->
+    <div style="padding:12px 16px;background:var(--card-bg);margin-bottom:1px">
+      <div style="font-size:11px;color:var(--text-dim);font-weight:600;margin-bottom:4px">📰 뉴스 요약</div>
+      <div style="font-size:13px;color:var(--text);line-height:1.5">${mb.news_summary}</div>
+    </div>
+    <div style="padding:10px 16px;background:var(--card-bg);margin-bottom:8px;border-left:3px solid var(--purple)">
+      <div style="font-size:11px;color:var(--text-dim);font-weight:600;margin-bottom:3px">🌐 시장 국면</div>
+      <div style="font-size:12px;color:var(--text)">${mb.market_context}</div>
+    </div>
+
+    <!-- 감지된 이벤트 -->
+    ${(mb.detected_events || []).length ? `
+    <div style="padding:8px 16px 4px;font-size:11px;font-weight:700;color:var(--text-dim)">⚡ 감지된 이벤트</div>
+    <div style="margin-bottom:8px">
+      ${mb.detected_events.map(e => `
+        <div style="padding:8px 16px;border-bottom:1px solid var(--card-border);display:flex;align-items:flex-start;gap:8px">
+          <span style="font-size:10px;font-weight:700;color:${impactColor(e.impact)};white-space:nowrap;padding-top:2px">${e.impact}</span>
+          <div>
+            <div style="font-size:12px;font-weight:600;color:var(--text)">${e.event}</div>
+            <div style="font-size:11px;color:var(--text-dim);margin-top:2px">${e.reason} <span style="color:var(--text-faint)">· 출처: ${e.source_type} · 시간가중 ×${e.time_weight}</span></div>
+          </div>
+        </div>`).join("")}
+    </div>` : ""}
+
+    <!-- 트렌드 후보 (핵심) -->
+    <div style="padding:8px 16px 4px;font-size:11px;font-weight:700;color:var(--text-dim)">🏆 다음 트렌드 후보 (점수 순)</div>
+    ${(mb.top_trend_candidates || []).map(c => `
+    <details style="border-bottom:1px solid var(--card-border)">
+      <summary style="padding:10px 16px;cursor:pointer;list-style:none;display:flex;align-items:center;gap:8px;user-select:none">
+        <span style="font-size:11px;font-weight:700;background:var(--purple);color:#fff;border-radius:3px;padding:1px 5px">점수 ${c.score}</span>
+        ${dirTag(c.direction)}
+        <span style="font-size:13px;font-weight:700;flex:1">${c.theme}</span>
+        <span style="font-size:11px;color:var(--text-faint)">${(c.representative_stocks || []).slice(0,3).join(" · ")}</span>
+      </summary>
+      <div style="padding:6px 16px 12px;font-size:12px;line-height:1.6">
+        <div style="color:var(--text);margin-bottom:6px">📌 <b>이유</b>: ${c.reason}</div>
+        <div style="color:var(--text-dim);margin-bottom:6px">🔗 <b>2차 파급</b>: ${c.secondary_effect}</div>
+        <div style="color:#f97316">⚠️ <b>변수</b>: ${c.risk}</div>
+        <div style="margin-top:8px;padding:6px 8px;background:var(--card-bg);border-radius:4px;font-size:11px;color:var(--text-dim)">
+          대표주: ${(c.representative_stocks || []).join(", ")}
         </div>
-      </details>`;
-  });
-  html += `</div>`;
-  if (allTrends.length === 0) html = `<div class="hist-empty">데이터 없음</div>`;
+      </div>
+    </details>`).join("")}
+
+    <!-- 관련 후보 -->
+    ${(mb.related_candidates || []).length ? `
+    <div style="padding:8px 16px 4px;font-size:11px;font-weight:700;color:var(--text-dim)">📋 관련 후보</div>
+    ${mb.related_candidates.map(c => `
+      <div style="padding:7px 16px;border-bottom:1px solid var(--card-border);display:flex;align-items:center;gap:8px">
+        <span style="font-size:10px;color:var(--text-faint);white-space:nowrap">점수 ${c.score}</span>
+        <span style="font-size:12px;font-weight:600;color:var(--text)">${c.theme}</span>
+        <span style="font-size:11px;color:var(--text-dim)">${c.short_reason}</span>
+      </div>`).join("")}` : ""}
+
+    <!-- 제외된 후보 -->
+    ${(mb.excluded_or_weak_candidates || []).length ? `
+    <div style="padding:8px 16px 4px;font-size:11px;font-weight:700;color:var(--text-dim)">✖ 약세·상쇄 후보</div>
+    ${mb.excluded_or_weak_candidates.map(c => `
+      <div style="padding:7px 16px;border-bottom:1px solid var(--card-border);display:flex;gap:8px">
+        <span style="font-size:12px;color:var(--text-dim);flex:none">${c.theme}</span>
+        <span style="font-size:11px;color:var(--text-faint)">${c.reason}</span>
+      </div>`).join("")}` : ""}
+
+    <div style="padding:10px 16px;font-size:11px;color:var(--text-faint)">전체 신뢰도 ${Math.round((mb.confidence||0)*100)}%</div>
+  `;
   root.innerHTML = html;
 }
 
@@ -1899,7 +1961,7 @@ function renderPortfolio(data) {
             </div>` : ""}
             ${(f.revenue_yoy_pct != null || f.operating_margin_pct != null || f.roe_pct != null) ? `
             <div style="background:var(--card-bg);border-radius:6px;padding:8px;margin-bottom:8px">
-              <b style="font-size:11px;color:var(--text-dim)">💰 재무 (점수 ${r.fundamentals_score ?? "—"}/9)</b>
+              <b style="font-size:11px;color:var(--text-dim)">💰 재무지표 (점수 ${r.fundamentals_score ?? "—"}/9)</b>
               <div style="display:grid;grid-template-columns:1fr 1fr;gap:3px 16px;margin-top:6px">
                 ${f.revenue_yoy_pct      != null ? `<span style="color:var(--text-dim)">매출YoY</span><span style="font-weight:600;color:var(--text)">${fmtR(f.revenue_yoy_pct)}</span>` : ""}
                 ${f.operating_margin_pct != null ? `<span style="color:var(--text-dim)">영업이익률</span><span style="font-weight:600;color:var(--text)">${fmtN(f.operating_margin_pct)}%</span>` : ""}
@@ -1908,9 +1970,24 @@ function renderPortfolio(data) {
               </div>
               ${d.financials_reason ? `<div style="margin-top:6px;color:var(--text-dim);line-height:1.4">${d.financials_reason}</div>` : ""}
             </div>` : ""}
+            ${d.financials_trajectory ? `
+            <div style="background:var(--card-bg);border-radius:6px;padding:8px;margin-bottom:8px;border-left:3px solid #60a5fa">
+              <b style="font-size:11px;color:var(--text-dim)">📈 재무 개선 추이 (과거→현재)</b>
+              <div style="color:var(--text);line-height:1.5;margin-top:4px">${d.financials_trajectory}</div>
+            </div>` : ""}
+            ${d.momentum_direction ? `
+            <div style="background:var(--card-bg);border-radius:6px;padding:8px;margin-bottom:8px">
+              <b style="font-size:11px;color:var(--text-dim)">⚡ 현재 모멘텀</b>
+              <span style="margin-left:8px;font-size:12px;font-weight:600;color:${d.momentum_direction.startsWith("상승") ? "var(--green)" : d.momentum_direction.startsWith("하락") ? "#ef4444" : "var(--text-dim)"}">${d.momentum_direction}</span>
+            </div>` : ""}
+            ${d.current_flow ? `
+            <div style="background:var(--card-bg);border-radius:6px;padding:8px;margin-bottom:8px">
+              <b style="font-size:11px;color:var(--text-dim)">📊 가격 흐름</b>
+              <div style="color:var(--text-dim);line-height:1.4;margin-top:4px">${d.current_flow}</div>
+            </div>` : ""}
             ${d.prediction ? `
             <div style="background:var(--card-bg);border-radius:6px;padding:8px;border-left:3px solid var(--green);margin-bottom:8px">
-              <b style="font-size:11px;color:var(--text-dim)">🔮 예측 근거</b>
+              <b style="font-size:11px;color:var(--text-dim)">🔮 트렌드 예측</b>
               <div style="color:var(--text);line-height:1.5;margin-top:4px">${d.prediction}</div>
             </div>` : ""}
             <div style="font-size:11px;color:var(--text-faint);display:flex;gap:12px;flex-wrap:wrap">

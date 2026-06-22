@@ -31,11 +31,13 @@ class Fundamentals(BaseModel):
 
 class RecDetail(BaseModel):
     """추천 종목 상세 설명 (expandable 섹션용)."""
-    stock_desc: str | None = None         # 회사가 하는 일, 포지션 (2~3문장)
-    trend_link: str | None = None         # 이 트렌드에서 왜 이 종목이 파생됐는지
-    current_flow: str | None = None       # 현재 주가·거래량·모멘텀 흐름
-    financials_reason: str | None = None  # 재무점수 산출 근거 (주요 지표 언급)
-    prediction: str | None = None         # 상승/하락 예측 근거 (predicted에 필수)
+    stock_desc: str | None = None               # 회사가 하는 일, 포지션 (2~3문장)
+    trend_link: str | None = None               # 이 트렌드에서 왜 이 종목이 파생됐는지
+    current_flow: str | None = None             # 현재 주가·거래량·모멘텀 흐름 (1d/5d/20d %)
+    financials_reason: str | None = None        # 현재 시점 재무점수 근거 (주요 지표)
+    financials_trajectory: str | None = None    # 과거→현재 재무 변화 (예: OPM 32%→67% +35%p)
+    momentum_direction: str | None = None       # "상승" | "하락" | "횡보" + 근거 한 줄
+    prediction: str | None = None               # 상승/하락 예측 근거 (predicted에 필수)
 
 
 class Recommendation(BaseModel):
@@ -74,11 +76,57 @@ class TrendCard(BaseModel):
         return v
 
 
+# ──────────────────────────────────────────────────────
+# AI Investment Trend Engine v3 — 시장 브리프 모델
+# ──────────────────────────────────────────────────────
+
+class DetectedEvent(BaseModel):
+    event: str
+    impact: Literal["약함", "보통", "강함", "매우 강함"]
+    source_type: Literal["공식", "주요언론", "일반언론", "소셜"]
+    time_weight: float = Field(ge=0.0, le=1.5)
+    reason: str
+
+
+class TrendCandidate(BaseModel):
+    rank: int = Field(ge=1)
+    theme: str
+    score: float = Field(ge=0, le=100)
+    direction: Literal["UP", "DOWN"]
+    representative_stocks: list[str] = Field(min_length=3)
+    reason: str
+    secondary_effect: str
+    risk: str
+
+
+class RelatedCandidate(BaseModel):
+    theme: str
+    score: float = Field(ge=0, le=100)
+    short_reason: str
+
+
+class ExcludedCandidate(BaseModel):
+    theme: str
+    reason: str
+
+
+class MarketBrief(BaseModel):
+    """AI Investment Trend Engine v3 출력 — 시장 국면 + 트렌드 후보 분석."""
+    news_summary: str
+    market_context: str
+    detected_events: list[DetectedEvent] = Field(default_factory=list)
+    top_trend_candidates: list[TrendCandidate] = Field(min_length=2, max_length=6)
+    related_candidates: list[RelatedCandidate] = Field(default_factory=list, max_length=5)
+    excluded_or_weak_candidates: list[ExcludedCandidate] = Field(default_factory=list)
+    confidence: float = Field(ge=0.0, le=1.0)
+
+
 class DailyAnalysis(BaseModel):
     analysis_date: str  # 'YYYY-MM-DD'
     model_name: str
+    market_brief: MarketBrief         # v3 트렌드 분석 (필수)
     current_trends: list[TrendCard] = Field(min_length=1, max_length=5)
-    predicted_trends: list[TrendCard] = Field(min_length=1, max_length=5)
+    predicted_trends: list[TrendCard] = Field(min_length=2, max_length=5)  # 최소 2개
 
     @field_validator("current_trends", "predicted_trends")
     @classmethod

@@ -137,6 +137,7 @@ For each predicted_trend, explicitly state in `evidence.theme_flow`:
 SELECTIVITY — MOST IMPORTANT RULE:
 ═══════════════════════════════════════════════════════
 
+predicted_trends: MINIMUM 2, maximum 5. Never output fewer than 2.
 Total recommendations across ALL trends: 6–10 tickers only.
 - current_trends  : 3–5 recs total across all current trends
 - predicted_trends: 3–5 recs total across all predicted trends
@@ -173,19 +174,77 @@ Each `recommendation` must include a `detail` object:
   contracts, or business lines connect it to the trend theme.
 - `current_flow`: Current price momentum (1d/5d/20d % change), volume anomaly
   ratio, and whether it's at a high/low relative to recent range.
-- `financials_reason`: Key metrics that drove the fundamentals_score (e.g.
-  "매출YoY+122%, 영업이익률55%, ROE42% → 재무8점"). Be specific.
+- `financials_reason`: Current fundamentals snapshot — key metrics that drove the
+  fundamentals_score (e.g. "매출YoY+122%, 영업이익률55%, ROE42% → 재무8점").
+- `financials_trajectory`: Financial IMPROVEMENT trend over time.
+  Format: "FY이전 OPM X% → 현재 Y% (+Zp); 매출성장 이전 A% → 현재 B%"
+  Write why these financials improved (cost cuts, new product, market share gain).
+- `momentum_direction`: "상승" | "하락" | "횡보" + one-line reason.
+  e.g. "상승 — 20일선 돌파 후 거래량 2배 증가로 추세 전환 확인"
 - `prediction`: (REQUIRED for predicted_trends, optional for current)
-  Explicit prediction: "재무 [strong/weak]이므로 + 트렌드 [X]가 [Y]로 전환되면
-  → 주가 상승 예상. 근거: [specific catalyst]."
+  "재무 궤적([trajectory_key])이 개선 중 + 트렌드 [X]가 [Y]로 전환되면
+  → 주가 상승 가능성. 촉매: [specific catalyst], 기간: [1-5일]."
 
 ═══════════════════════════════════════════════════════
 SCHEMA (emit JSON matching this structure exactly):
 ═══════════════════════════════════════════════════════
 
+STEP 1 — market_brief (AI Investment Trend Engine v3):
+  Before writing current_trends/predicted_trends, output a `market_brief` block:
+  1. Summarize key price movements and news from `price_movements` / `news_pool`.
+  2. Detect events → assign impact (약함/보통/강함/매우 강함) and time_weight.
+  3. Apply scoring: base 50 + Σ(event_impact × time_weight × trend_persistence).
+  4. Select top_trend_candidates ≥ 2 (score ≥ 71; if fewer, fill from ≥ 60).
+  5. List related_candidates ≤ 5 (brief) and excluded_or_weak_candidates.
+
+STEP 2 — current_trends / predicted_trends:
+  Derive these from the market_brief analysis. predicted_trends MUST be ≥ 2.
+
 {
   "analysis_date": "YYYY-MM-DD",
   "model_name": "<model id>",
+  "market_brief": {
+    "news_summary": "최근 24시간 핵심 뉴스 요약 — 가장 중요한 이벤트 3개",
+    "market_context": "현재 시장이 어떤 국면인지 — risk-on/off, 섹터 로테이션 방향",
+    "detected_events": [
+      {
+        "event": "AI CAPEX 투자 확대 — 메타·마이크로소프트 데이터센터 발표",
+        "impact": "매우 강함",
+        "source_type": "공식",
+        "time_weight": 1.2,
+        "reason": "시장 가격이 즉시 반응 + 복수 기업 동시 발표"
+      }
+    ],
+    "top_trend_candidates": [
+      {
+        "rank": 1,
+        "theme": "AI 데이터센터 전력·냉각 인프라",
+        "score": 82,
+        "direction": "UP",
+        "representative_stocks": ["VRT", "ETN", "GEV"],
+        "reason": "AI CAPEX 확대 → L3 수혜: 데이터센터 전력관리·냉각 솔루션 수요 직결",
+        "secondary_effect": "L4: FCX(구리) + CCJ(우라늄) 전력 수요 연쇄 상승",
+        "risk": "AI 투자 축소 발표 시 수요 급감 가능"
+      },
+      {
+        "rank": 2,
+        "theme": "반도체 장비 2차 수혜",
+        "score": 74,
+        "direction": "UP",
+        "representative_stocks": ["AMAT", "LRCX", "KLAC"],
+        "reason": "HBM 증설 결정 → 장비 발주 사이클 시작",
+        "secondary_effect": "소재·특수가스 → 한미반도체 후공정",
+        "risk": "삼성 CapEx 동결 시 발주 취소 가능"
+      }
+    ],
+    "related_candidates": [
+      {"theme": "금·귀금속", "score": 63, "short_reason": "달러 약세 + 중앙은행 매수 지속"}
+    ],
+    "excluded_or_weak_candidates": [
+      {"theme": "항공·여행", "reason": "유가 상승 + 경기 불안으로 수혜 약화"}
+    ],
+    "confidence": 0.78
+  },
   "current_trends": [
     {
       "rank": 1,
@@ -226,6 +285,8 @@ SCHEMA (emit JSON matching this structure exactly):
             "trend_link": "AI 메모리 트렌드에서 HBM 수요 급증이 핵심 드라이버. 마이크론은 SK하이닉스에 이어 HBM3E 공급 개시, NVIDIA 차세대 GPU 배정 물량 증가 중.",
             "current_flow": "20일 +18%, 5일 +4%, 거래량 1.9배 급증. 52주 신고가 근처에서 돌파 시도 중.",
             "financials_reason": "매출YoY+196%(분기), 영업이익률67.6%, ROE39.8% — 3지표 모두 20% 이상 → 재무8점",
+            "financials_trajectory": "OPM: FY22 0% → FY23 67.6%(+67.6%p) — HBM 공급 독점 전환으로 수익성 급반전. 매출YoY: FY22 -22% → FY23 +196% — AI 메모리 사이클 전환 확인.",
+            "momentum_direction": "상승 — 20일선 돌파 후 거래량 급증, 52주 신고가 재도전 중",
             "prediction": null
           }
         }
@@ -272,7 +333,9 @@ SCHEMA (emit JSON matching this structure exactly):
             "trend_link": "AI 메모리 슈퍼사이클(current_trend #1)에서 파생 — HBM 증설 발주는 필연적으로 AMAT의 식각·증착 장비 수요를 끌어올린다. 하이닉스·마이크론 증설 계획이 구체화되면 1순위 수혜.",
             "current_flow": "5일 +3%, 거래량 1.5배. 현재 52주 고가 대비 -8% 위치로 돌파 여력 존재.",
             "financials_reason": "OPM 29%, ROE 48% — 2지표 강함. 매출 성장은 7%로 보통이지만 수익성 탁월 → 재무7점",
-            "prediction": "재무 탄탄(OPM29%, ROE48%) + AI 메모리 증설 결정이 가시화되면 장비주 선행 상승 패턴 반복 예상. 트리거: 삼성전자·SK하이닉스 CapEx 발표 (2-5거래일 내 예상). 거래량 급증 + 신고가 돌파 시 매수 진입."
+            "financials_trajectory": "OPM: FY21 24% → FY23 29%(+5%p) — 가격결정력 유지. ROE: FY21 38% → FY23 48%(+10%p) — 자본 효율성 개선. 매출성장은 반도체 다운사이클로 둔화됐으나 수익성 지표 견조.",
+            "momentum_direction": "횡보 후 상승 전환 시도 — 52주 고가 -8% 구간에서 거래량 증가, 돌파 대기 중",
+            "prediction": "재무 탄탄(OPM29%, ROE48%로 꾸준히 개선 중) + AI 메모리 증설 결정이 가시화되면 장비주 선행 상승 패턴 반복 가능성. 트리거: 삼성전자·SK하이닉스 CapEx 발표 (2-5거래일 내 예상). 거래량 급증 + 신고가 돌파 시 자금 유입 가능성."
           }
         }
       ]

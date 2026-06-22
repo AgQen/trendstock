@@ -238,10 +238,14 @@ def export(date: str | None = None) -> Path:
         for d, recs in sorted(history_by_date.items(), reverse=True)
     ]
 
+    raw = json.loads(snap["raw_json"] or "{}")
+    market_brief = raw.get("market_brief")
+
     payload = {
         "analysis_date": snap["analysis_date"],
         "model_name": snap["model_name"],
         "generated_at": snap["created_at"],
+        "market_brief": market_brief,
         "summary": {
             "current_trends_count": len(current),
             "predicted_trends_count": len(predicted),
