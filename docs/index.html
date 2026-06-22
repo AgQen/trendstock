@@ -730,16 +730,30 @@ function renderCard(t, kind) {
         ${tierRow("2차 응용수혜", t2)}
       </div>` : "";
 
+    const dirTag = t.trend_direction
+      ? `<span style="font-size:11px;font-weight:700;color:${dirColor}">${t.trend_direction === "UP" ? "▲ 상승" : t.trend_direction === "DOWN" ? "▼ 하락" : "👁 관찰"}</span>`
+      : "";
+
     card.innerHTML = `
-      <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
-        <div class="rank" style="flex-shrink:0">${t.rank}</div>
-        <span style="font-size:12px;font-weight:700;color:${scoreColor};background:rgba(0,0,0,.3);border-radius:4px;padding:3px 8px">점수 ${score}</span>
-        <span class="cat">${t.category}</span>
+      <div class="card-head">
+        <div class="rank">${t.rank}</div>
+        <div class="title-wrap">
+          <div class="title">${t.title}</div>
+          <div class="cat-row">
+            <span class="cat">${t.category}</span>
+            ${timeframeChip(t.timeframe)}
+            ${dirTag}
+          </div>
+        </div>
+        <div class="conf">
+          <div class="conf-num" style="color:${scoreColor}">${score}<span style="font-size:11px">pt</span></div>
+          <div class="conf-label" title="뉴스·이벤트 강도 기반 트렌드 발생 가능성 (0-100)">점수</div>
+          <div style="font-size:10px;color:var(--text-faint);margin-top:2px" title="분석 논리 확신도">신뢰 ${t.confidence}%</div>
+        </div>
       </div>
-      <div class="title" style="font-size:15px;font-weight:700;margin-bottom:10px">${t.title}</div>
       ${tiersHtml}
       <div class="top-pick"></div>
-      <div class="card-summary" style="margin-top:6px;font-size:12px;color:var(--text-dim)">${t.summary || ""}</div>
+      <div class="card-summary">${t.summary || ""}</div>
       <div class="card-detail">
         <div class="subhead">▼ 매수 추천 상세</div>
         <div class="recs"></div>
