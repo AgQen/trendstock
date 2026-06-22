@@ -1038,6 +1038,38 @@ async function load() {
     root.appendChild(pH);
     data.predicted_trends.forEach(t => root.appendChild(renderCard(t, "predicted")));
 
+    // market_brief top_trend_candidates — 점수 기반 트렌드 후보
+    const mb = data.market_brief;
+    if (mb && (mb.top_trend_candidates || []).length) {
+      const mbH = document.createElement("div");
+      mbH.className = "section-h";
+      mbH.innerHTML = `<h2>📊 트렌드 점수 분석</h2><div class="count">${mb.top_trend_candidates.length}후보</div>`;
+      root.appendChild(mbH);
+
+      const mbWrap = document.createElement("div");
+      mbWrap.style.padding = "0 0 8px";
+      mbWrap.innerHTML = mb.top_trend_candidates.map(c => {
+        const dirColor = c.direction === "UP" ? "var(--green)" : "#ef4444";
+        const dirLabel = c.direction === "UP" ? "▲ 상승 가능성" : "▼ 하락 가능성";
+        const scoreColor = c.score >= 80 ? "#4ade80" : c.score >= 70 ? "#60a5fa" : "#facc15";
+        return `
+        <div class="card" style="margin:0 16px 10px">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
+            <span style="font-size:12px;font-weight:700;color:${scoreColor}">점수 ${c.score}</span>
+            <span style="font-size:12px;font-weight:700;color:${dirColor}">${dirLabel}</span>
+            <span style="flex:1;font-size:14px;font-weight:700;color:var(--text)">${c.theme}</span>
+          </div>
+          <div style="font-size:12px;color:var(--text-dim);line-height:1.5;margin-bottom:6px">${c.reason}</div>
+          <div style="font-size:11px;color:var(--text-faint);margin-bottom:4px">🔗 2차 파급: ${c.secondary_effect}</div>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:6px">
+            ${c.representative_stocks.map(s => `<span style="font-size:11px;font-weight:600;background:var(--card-bg);border:1px solid var(--card-border);border-radius:4px;padding:2px 6px;color:var(--text)">${s}</span>`).join("")}
+          </div>
+          <div style="font-size:11px;color:#f97316">⚠ 변수: ${c.risk}</div>
+        </div>`;
+      }).join("");
+      root.appendChild(mbWrap);
+    }
+
   } catch (e) {
     root.innerHTML = `<div class="err">데이터 로드 실패: ${e.message}<br>
       <small style="color:var(--text-faint)">app 폴더에서 <code>python -m collectors.export_web</code> 실행 후 새로고침</small></div>`;
@@ -1939,12 +1971,16 @@ function renderPortfolio(data) {
 
   if (!buyRecs.length) { root.innerHTML = `<div class="hist-empty">현재 활성 매수 신호 없음</div>`; return; }
 
-  root.innerHTML = `
-    <div style="padding:0">
-      <div style="padding:10px 16px;font-size:12px;color:var(--text-dim)">
-        현재 매수 신호 유지 중 · 수익률 순 · 총 ${buyRecs.length}종목
-      </div>
-      ${buyRecs.map(r => {
+  // 월별 그룹화 (매수 신호 최초 발생 날짜 기준)
+  const byMonth = {};
+  buyRecs.forEach(r => {
+    const ym = (r.entry_date || "").slice(0, 7) || "미분류";
+    if (!byMonth[ym]) byMonth[ym] = [];
+    byMonth[ym].push(r);
+  });
+  const months = Object.keys(byMonth).sort().reverse();
+
+  const recRow = (r) => {
         const d = r.detail || {};
         const f = r.fundamentals || {};
         const ret = r.current_return_pct;
@@ -1956,7 +1992,6 @@ function renderPortfolio(data) {
             <span class="grade-pill ${grade2cls(r.grade)}" style="font-size:9px">${r.grade}</span>
             <span style="color:${retColor};font-size:12px;font-weight:700">${fmtR(ret)}</span>
             <span style="flex:1;font-size:11px;color:var(--text-dim);overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${r.trend_title || r.category || "—"}</span>
-            <span style="font-size:10px;color:var(--text-faint)">${r.entry_date || ""}</span>
           </summary>
           <div style="padding:0 16px 14px;font-size:12px">
             ${d.stock_desc ? `<div style="color:var(--text);line-height:1.5;margin-bottom:8px">${d.stock_desc}</div>` : ""}
@@ -1997,13 +2032,26 @@ function renderPortfolio(data) {
               <div style="color:var(--text);line-height:1.5;margin-top:4px">${d.prediction}</div>
             </div>` : ""}
             <div style="font-size:11px;color:var(--text-faint);display:flex;gap:12px;flex-wrap:wrap">
+              <span>📅 매수신호 ${r.entry_date || "—"}</span>
               <span>진입 ${priceFmt(r.country, r.entry_close)}</span>
               ${r.current_close != null ? `<span>현재 ${priceFmt(r.country, r.current_close)} (${r.current_date || "—"})</span>` : ""}
               <span>규칙점수 ${r.rating_score ?? "—"}</span>
             </div>
           </div>
         </details>`;
-      }).join("")}
+  };
+
+  root.innerHTML = `
+    <div style="padding:0">
+      <div style="padding:10px 16px;font-size:12px;color:var(--text-dim)">
+        현재 매수 신호 유지 중 · 월별 · 총 ${buyRecs.length}종목
+      </div>
+      ${months.map(ym => `
+        <div style="padding:8px 16px 4px;font-size:12px;font-weight:700;color:var(--text-dim);background:var(--card-bg)">
+          📅 ${ym} <span style="font-weight:400;font-size:11px">(${byMonth[ym].length}종목)</span>
+        </div>
+        ${byMonth[ym].map(recRow).join("")}
+      `).join("")}
     </div>`;
 }
 
