@@ -93,7 +93,7 @@ class TrendCandidate(BaseModel):
     theme: str
     score: float = Field(ge=0, le=100)
     direction: Literal["UP", "DOWN"]
-    representative_stocks: list[str] = Field(min_length=2)  # 2개 이상 (프롬프트에서 3개 요청)
+    representative_stocks: list[str] = Field(min_length=1)  # 추천 종목 티커와 1:1 정렬
     reason: str
     secondary_effect: str
     risk: str

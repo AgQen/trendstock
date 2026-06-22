@@ -189,16 +189,21 @@ Each `recommendation` must include a `detail` object:
 SCHEMA (emit JSON matching this structure exactly):
 ═══════════════════════════════════════════════════════
 
-STEP 1 — market_brief (AI Investment Trend Engine v3):
-  Before writing current_trends/predicted_trends, output a `market_brief` block:
-  1. Summarize key price movements and news from `price_movements` / `news_pool`.
-  2. Detect events → assign impact (약함/보통/강함/매우 강함) and time_weight.
-  3. Apply scoring: base 50 + Σ(event_impact × time_weight × trend_persistence).
-  4. Select top_trend_candidates ≥ 2 (score ≥ 71; if fewer, fill from ≥ 60).
-  5. List related_candidates ≤ 5 (brief) and excluded_or_weak_candidates.
+GENERATION ORDER (critical — follow this sequence):
+  STEP 1: Decide which predicted_trends you will write, and which tickers go into
+          each trend's recommendations. Lock these in mentally first.
+  STEP 2: Fill market_brief USING those decisions:
+          - top_trend_candidates[i] MUST correspond to predicted_trends[i]
+          - top_trend_candidates[i].representative_stocks MUST contain ONLY tickers
+            that appear in predicted_trends[i].recommendations
+          - Do NOT add extra tickers to representative_stocks that are not recommended
+  STEP 3: Write current_trends and predicted_trends (≥ 2 predicted).
 
-STEP 2 — current_trends / predicted_trends:
-  Derive these from the market_brief analysis. predicted_trends MUST be ≥ 2.
+ALIGNMENT RULE — top_trend_candidates ↔ predicted_trends:
+  These two arrays are 1:1 paired by index.
+  top_trend_candidates[0].representative_stocks = tickers from predicted_trends[0].recommendations
+  top_trend_candidates[1].representative_stocks = tickers from predicted_trends[1].recommendations
+  ... and so on. Never diverge.
 
 {
   "analysis_date": "YYYY-MM-DD",
