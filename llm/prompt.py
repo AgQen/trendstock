@@ -168,6 +168,11 @@ PREDICTED TRENDS: each must have a clear mechanism linking it to a CURRENT trend
 DETAIL FIELDS (required for each recommendation):
 ═══════════════════════════════════════════════════════
 
+For predicted_trends, `related_tickers` (REQUIRED): list 3-6 tickers that benefit from
+this trend. Include ALL stocks the trend touches, not just the ones you recommend to buy.
+The recommendations array is the SUBSET you actually recommend buying.
+Users see related_tickers first to understand the full scope, then see which ones to buy.
+
 Each `recommendation` must include a `detail` object:
 - `stock_desc`: 2–3 sentences on what the company does and its market position.
 - `trend_link`: How this stock was derived from the trend — what specific products,
@@ -307,6 +312,7 @@ GENERATION ORDER (follow exactly):
       "trend_direction": "UP",
       "secondary_effect": "소재·특수가스 → 한미반도체 후공정까지 수혜",
       "trend_risk": "삼성 CapEx 동결 시 발주 취소 가능",
+      "related_tickers": ["ASML", "AMAT", "LRCX", "KLAC", "한미반도체"],
       "causal_chain": [
         {"step_no": 1, "statement": "AI 메모리 수요 폭발 → 삼성·하이닉스 HBM 증설 발표 임박", "confidence": 80},
         {"step_no": 2, "statement": "증설 결정 → ASML EUV 장비 발주 계약 체결 시작", "confidence": 74},

@@ -62,6 +62,7 @@ class TrendCard(BaseModel):
     trend_direction: Literal["UP", "DOWN"] | None = None
     secondary_effect: str | None = None   # 2차 파급 효과
     trend_risk: str | None = None         # 틀릴 수 있는 변수
+    related_tickers: list[str] = Field(default_factory=list)  # 트렌드 관련 종목 전체 (추천 포함)
     causal_chain: list[CausalStep] = Field(min_length=1)
     disconfirming_hypotheses: list[str] = Field(min_length=1)
     evidence: dict = Field(default_factory=dict)
