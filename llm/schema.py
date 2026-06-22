@@ -83,7 +83,7 @@ class TrendCard(BaseModel):
 class DetectedEvent(BaseModel):
     event: str
     impact: Literal["약함", "보통", "강함", "매우 강함"]
-    source_type: Literal["공식", "주요언론", "일반언론", "소셜"]
+    source_type: str   # 공식/주요언론/일반언론/소셜/시장가격 등 — 자유 텍스트 허용
     time_weight: float = Field(ge=0.0, le=1.5)
     reason: str
 
@@ -93,7 +93,7 @@ class TrendCandidate(BaseModel):
     theme: str
     score: float = Field(ge=0, le=100)
     direction: Literal["UP", "DOWN"]
-    representative_stocks: list[str] = Field(min_length=3)
+    representative_stocks: list[str] = Field(min_length=2)  # 2개 이상 (프롬프트에서 3개 요청)
     reason: str
     secondary_effect: str
     risk: str
