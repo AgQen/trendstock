@@ -713,7 +713,7 @@ function renderCard(t, kind, candidate) {
     <div style="display:flex;align-items:center;gap:8px;padding:6px 0 4px;flex-wrap:wrap">
       <span style="font-size:11px;font-weight:700;color:${scoreColor};background:rgba(0,0,0,.3);border-radius:4px;padding:2px 7px">점수 ${c.score}</span>
       <span style="font-size:11px;font-weight:700;color:${dirColor}">${dirLabel}</span>
-      ${c.representative_stocks.map(s=>`<span style="font-size:10px;background:var(--card-bg);border:1px solid var(--card-border);border-radius:4px;padding:1px 5px;color:var(--text-dim)">${s}</span>`).join("")}
+      ${c.representative_stocks.map(s=>`<span style="font-size:12px;font-weight:600;background:var(--card-bg);border:1px solid var(--card-border);border-radius:4px;padding:2px 7px;color:var(--text)">${s}</span>`).join("")}
     </div>
     <div style="font-size:11px;color:var(--text-faint);padding:0 0 4px">🔗 2차: ${c.secondary_effect} · ⚠ ${c.risk}</div>`;
   })() : "";
