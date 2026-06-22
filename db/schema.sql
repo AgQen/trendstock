@@ -70,7 +70,11 @@ CREATE TABLE IF NOT EXISTS predicted_trends (
     confidence          INTEGER,            -- 0~100
     causal_chain_json   TEXT,               -- [{step_no, statement, confidence}, ...]
     disconfirming_json  TEXT,               -- ["반대 가설1", "반대 가설2", ...]
-    evidence_json       TEXT                -- 가격/거래량/뉴스 근거 묶음
+    evidence_json       TEXT,               -- 가격/거래량/뉴스 근거 묶음
+    trend_score         REAL,               -- v3 점수 (0~100)
+    trend_direction     TEXT,               -- 'UP' | 'DOWN'
+    secondary_effect    TEXT,               -- 2차 파급 효과
+    trend_risk          TEXT                -- 틀릴 수 있는 변수
 );
 
 CREATE INDEX IF NOT EXISTS idx_trends_date ON predicted_trends(analysis_date DESC);

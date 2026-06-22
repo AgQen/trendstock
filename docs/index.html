@@ -699,23 +699,23 @@ function priceFmt(country, n) {
   return country === "KR" ? fmtKRW(n) : fmtUSD(n);
 }
 
-function renderCard(t, kind, candidate) {
+function renderCard(t, kind) {
   const cls = kind === "current" ? "cur" : "pred";
   const card = document.createElement("article");
   card.className = "card " + cls;
 
-  const candHtml = (candidate && kind === "predicted") ? (() => {
-    const c = candidate;
-    const scoreColor = c.score >= 80 ? "#4ade80" : c.score >= 70 ? "#60a5fa" : "#facc15";
-    const dirColor = c.direction === "UP" ? "var(--green)" : "#ef4444";
-    const dirLabel = c.direction === "UP" ? "▲ 상승 가능성" : "▼ 하락 가능성";
+  // v3 트렌드 점수 — predicted_trends에 직접 포함된 필드 사용 (별도 매칭 불필요)
+  const candHtml = (kind === "predicted" && t.trend_score != null) ? (() => {
+    const scoreColor = t.trend_score >= 80 ? "#4ade80" : t.trend_score >= 70 ? "#60a5fa" : "#facc15";
+    const dirColor = t.trend_direction === "UP" ? "var(--green)" : "#ef4444";
+    const dirLabel = t.trend_direction === "UP" ? "▲ 상승 가능성" : "▼ 하락 가능성";
     return `
     <div style="display:flex;align-items:center;gap:8px;padding:6px 0 3px;flex-wrap:wrap">
-      <span style="font-size:11px;font-weight:700;color:${scoreColor};background:rgba(0,0,0,.3);border-radius:4px;padding:2px 7px">점수 ${c.score}</span>
-      <span style="font-size:11px;font-weight:700;color:${dirColor}">${dirLabel}</span>
+      <span style="font-size:11px;font-weight:700;color:${scoreColor};background:rgba(0,0,0,.3);border-radius:4px;padding:2px 7px">점수 ${t.trend_score}</span>
+      ${t.trend_direction ? `<span style="font-size:11px;font-weight:700;color:${dirColor}">${dirLabel}</span>` : ""}
     </div>
-    <div style="font-size:11px;color:var(--text-dim);padding:0 0 2px;line-height:1.5">${c.reason}</div>
-    <div style="font-size:11px;color:var(--text-faint);padding:0 0 4px">🔗 2차: ${c.secondary_effect} · ⚠ ${c.risk}</div>`;
+    ${t.secondary_effect ? `<div style="font-size:11px;color:var(--text-faint);padding:0 0 2px">🔗 2차: ${t.secondary_effect}</div>` : ""}
+    ${t.trend_risk ? `<div style="font-size:11px;color:var(--text-faint);padding:0 0 4px">⚠ ${t.trend_risk}</div>` : ""}`;
   })() : "";
 
   card.innerHTML = `
@@ -1045,14 +1045,12 @@ async function load() {
     root.appendChild(cH);
     data.current_trends.forEach(t => root.appendChild(renderCard(t, "current")));
 
-    // Predicted trends — market_brief candidate를 인덱스로 매칭해서 카드에 삽입
-    const mb = data.market_brief;
-    const candidates = (mb && mb.top_trend_candidates) || [];
+    // Predicted trends — v3 점수가 predicted_trend 안에 직접 포함됨 (trend_score 필드)
     const pH = document.createElement("div");
     pH.className = "section-h";
     pH.innerHTML = `<h2><span class="accent-pred">🔮</span> 예측 다음 트렌드</h2><div class="count">${data.predicted_trends.length}건</div>`;
     root.appendChild(pH);
-    data.predicted_trends.forEach((t, i) => root.appendChild(renderCard(t, "predicted", candidates[i] || null)));
+    data.predicted_trends.forEach(t => root.appendChild(renderCard(t, "predicted")));
 
   } catch (e) {
     root.innerHTML = `<div class="err">데이터 로드 실패: ${e.message}<br>

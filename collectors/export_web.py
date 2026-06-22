@@ -59,6 +59,10 @@ def _trend_with_recs(conn, trend_row):
     except (IndexError, KeyError):
         timeframe = None
 
+    def _safe(key):
+        try: return trend_row[key]
+        except (IndexError, KeyError): return None
+
     return {
         "trend_id": trend_row["trend_id"],
         "rank": trend_row["rank"],
@@ -67,6 +71,10 @@ def _trend_with_recs(conn, trend_row):
         "category": trend_row["category"],
         "timeframe": timeframe,
         "confidence": trend_row["confidence"],
+        "trend_score": _safe("trend_score"),
+        "trend_direction": _safe("trend_direction"),
+        "secondary_effect": _safe("secondary_effect"),
+        "trend_risk": _safe("trend_risk"),
         "causal_chain": json.loads(trend_row["causal_chain_json"] or "[]"),
         "disconfirming_hypotheses": json.loads(trend_row["disconfirming_json"] or "[]"),
         "evidence": json.loads(trend_row["evidence_json"] or "{}"),

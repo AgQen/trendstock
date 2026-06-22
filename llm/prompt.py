@@ -189,21 +189,18 @@ Each `recommendation` must include a `detail` object:
 SCHEMA (emit JSON matching this structure exactly):
 ═══════════════════════════════════════════════════════
 
-GENERATION ORDER (critical — follow this sequence):
-  STEP 1: Decide which predicted_trends you will write, and which tickers go into
-          each trend's recommendations. Lock these in mentally first.
-  STEP 2: Fill market_brief USING those decisions:
-          - top_trend_candidates[i] MUST correspond to predicted_trends[i]
-          - top_trend_candidates[i].representative_stocks MUST contain ONLY tickers
-            that appear in predicted_trends[i].recommendations
-          - Do NOT add extra tickers to representative_stocks that are not recommended
-  STEP 3: Write current_trends and predicted_trends (≥ 2 predicted).
-
-ALIGNMENT RULE — top_trend_candidates ↔ predicted_trends:
-  These two arrays are 1:1 paired by index.
-  top_trend_candidates[0].representative_stocks = tickers from predicted_trends[0].recommendations
-  top_trend_candidates[1].representative_stocks = tickers from predicted_trends[1].recommendations
-  ... and so on. Never diverge.
+GENERATION ORDER (follow exactly):
+  STEP 1 — market_brief: Run v3 trend analysis. Score all candidate themes (0-100).
+           Identify top_trend_candidates ≥ 2 (score ≥ 60).
+  STEP 2 — predicted_trends: For each top_trend_candidate with score ≥ 60,
+           create ONE predicted_trend card that:
+             • Copies trend_score, trend_direction, secondary_effect, trend_risk
+               directly from the corresponding top_trend_candidate
+             • Adds detailed causal_chain (3-5 steps) explaining WHY
+             • Adds recommendations: the 1-2 best stocks to BUY for this trend
+               (Strong Buy or high-conviction Buy only)
+           predicted_trends MUST be ≥ 2, ordered by trend_score descending.
+  STEP 3 — current_trends: Document what is already happening NOW.
 
 {
   "analysis_date": "YYYY-MM-DD",
@@ -302,10 +299,14 @@ ALIGNMENT RULE — top_trend_candidates ↔ predicted_trends:
     {
       "rank": 1,
       "title": "반도체 장비 2차 수혜",
-      "summary": "AI 메모리 증설 결정 → 장비 발주 사이클 시작",
+      "summary": "AI 메모리 증설 결정 → 장비 발주 사이클 시작. 점수 74로 매수 추천.",
       "category": "반도체 장비",
       "timeframe": "short",
       "confidence": 72,
+      "trend_score": 74,
+      "trend_direction": "UP",
+      "secondary_effect": "소재·특수가스 → 한미반도체 후공정까지 수혜",
+      "trend_risk": "삼성 CapEx 동결 시 발주 취소 가능",
       "causal_chain": [
         {"step_no": 1, "statement": "AI 메모리 수요 폭발 → 삼성·하이닉스 HBM 증설 발표 임박", "confidence": 80},
         {"step_no": 2, "statement": "증설 결정 → ASML EUV 장비 발주 계약 체결 시작", "confidence": 74},

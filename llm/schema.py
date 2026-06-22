@@ -55,8 +55,13 @@ class TrendCard(BaseModel):
     title: str = Field(min_length=3)
     summary: str
     category: str
-    timeframe: Literal["ongoing", "imminent", "short", "medium"] | None = None
+    timeframe: str | None = None  # ongoing/imminent/short/medium — 자유 텍스트 허용
     confidence: int = Field(ge=0, le=100)
+    # v3 트렌드 엔진 점수 (predicted_trends에 직접 포함 — 별도 매칭 불필요)
+    trend_score: float | None = Field(default=None, ge=0, le=100)
+    trend_direction: Literal["UP", "DOWN"] | None = None
+    secondary_effect: str | None = None   # 2차 파급 효과
+    trend_risk: str | None = None         # 틀릴 수 있는 변수
     causal_chain: list[CausalStep] = Field(min_length=1)
     disconfirming_hypotheses: list[str] = Field(min_length=1)
     evidence: dict = Field(default_factory=dict)
@@ -131,12 +136,27 @@ class DailyAnalysis(BaseModel):
     @field_validator("current_trends", "predicted_trends")
     @classmethod
     def sector_diversity(cls, v: list[TrendCard]) -> list[TrendCard]:
-        """5개 트렌드는 최소 4개 카테고리 커버 (편향 방지, 19.3.5 #1)."""
         if len(v) >= 4:
             cats = {t.category for t in v}
             if len(cats) < min(4, len(v)):
                 raise ValueError(
                     f"섹터 다양성 부족: {len(v)}개 트렌드인데 "
                     f"카테고리 {len(cats)}개 ({cats})"
+                )
+        return v
+
+    @field_validator("predicted_trends")
+    @classmethod
+    def predicted_must_have_score(cls, v: list[TrendCard]) -> list[TrendCard]:
+        """예측 트렌드는 반드시 v3 점수(trend_score, trend_direction)를 포함해야 함."""
+        for t in v:
+            if t.trend_score is None:
+                raise ValueError(
+                    f"predicted_trend '{t.title}' is missing trend_score. "
+                    "Each predicted_trend MUST include trend_score (0-100) and trend_direction."
+                )
+            if t.trend_direction is None:
+                raise ValueError(
+                    f"predicted_trend '{t.title}' is missing trend_direction (UP/DOWN)."
                 )
         return v

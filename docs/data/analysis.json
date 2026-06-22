@@ -1,118 +1,123 @@
 {
-  "analysis_date": "2026-06-22",
+  "analysis_date": "2026-06-23",
   "model_name": "claude-sonnet-4-6",
-  "generated_at": "2026-06-22T14:31:34+00:00",
+  "generated_at": "2026-06-22T15:07:52+00:00",
   "market_brief": {
-    "news_summary": "1) 반도체 섹터 전반 급등 — ARM 5일+28%, MU 20일+55%, MRVL 거래량 4.2배로 AI 칩 수요 재확인. 2) 전력·냉각 인프라 동반 상승 — GEV 5일+22%, VRT 5일+12%, MOD 5일+10%로 데이터센터 전력 수요 구조적 확인. 3) 에너지·방산 약세 — XLE 20일-10%, LMT 거래량 3.44배 급증 속 주가 하락으로 섹터 로테이션 진행 중.",
-    "market_context": "Tech/AI 중심 강력한 risk-on 국면. QQQ 5일+3.3%, SMH 5일+8.3%로 기술주 주도. 섹터 로테이션은 에너지·방산에서 반도체·전력인프라로 진행 중. 소프트웨어(CRM 5일-8.8%, ADBE 20일-23%)는 AI 하드웨어 대비 상대 약세 지속. 바이오(MRNA 5일+29%)는 개별 모멘텀 강함.",
+    "news_summary": "① 반도체 전 섹터 동반 급등 — ARM +28.4%(5d), MU +54.9%(20d), MRVL +66.3%(20d) 등 AI 칩 수요 폭발 확인. ② 바이오텍 MRNA 5일 +28.9%, 거래량 4.0배 급증 — 임상 결과 또는 FDA 관련 긍정 촉매 포착. ③ 에너지·석유 섹터 급락 지속 — XLE 20일 -10%, USO 5일 -10.8%, COP·SLB 거래량 3배 이상 매도세.",
+    "market_context": "명확한 Risk-ON 섹터 로테이션 진행 중. 반도체(AI CAPEX 직접 수혜) → 전력·냉각 인프라(L3 수혜) → 바이오(MRNA 개별 모멘텀)로 자금 유입. 에너지·소프트웨어·한국 자동차·배터리에서 자금 이탈 뚜렷. QQQ 5일 +3.3%, SMH 5일 +8.3%로 기술주 중심 랠리. TLT 소폭 상승(20일 +3.4%)으로 금리 인하 기대 병존.",
     "detected_events": [
       {
-        "event": "AI 반도체 슈퍼사이클 가속 — ARM 5일+28%, MU 20일+55%, MRVL 거래량 4.2배",
+        "event": "AI 반도체 수요 폭발 확인 — ARM 5일 +28.4%, MRVL 5일 +10.6%, MU 5일 +13.9%, INTC 1일 +10.6% 동반 급등",
         "impact": "매우 강함",
         "source_type": "가격·거래량",
         "time_weight": 1.3,
-        "reason": "복수 AI 칩 종목 동시 폭등 + 거래량 이상 급증으로 기관 자금 유입 확인"
+        "reason": "복수 종목 동시 급등 + SMH ETF 5일 +8.3% → 섹터 전반 수요 확인"
       },
       {
-        "event": "데이터센터 전력·냉각 인프라 급등 — GEV 5일+22%, VRT 5일+12%",
+        "event": "MRNA 5일 +28.9%, 거래량 4.0배 — 바이오 섹터 선별적 급등",
         "impact": "강함",
-        "source_type": "가격",
+        "source_type": "가격·거래량",
         "time_weight": 1.2,
-        "reason": "AI CAPEX L3 수혜 섹터 동반 상승 — 구조적 전력 수요 확인"
+        "reason": "XBI 5일 +6%, MRNA만 특이 이상 거래량 → 임상·FDA 촉매 의심"
       },
       {
-        "event": "바이오 MRNA 개별 급등 — 5일+29%, 20일+33%, 거래량 4배",
+        "event": "에너지 섹터 전반 급락 — XLE 5일 -5.9%, USO 5일 -10.8%, COP·SLB·XOM 거래량 3배 이상 매도",
         "impact": "강함",
         "source_type": "가격·거래량",
         "time_weight": 1.1,
-        "reason": "임상 결과 또는 파이프라인 기대감으로 기관 집중 매수 신호"
+        "reason": "원유 수요 우려 또는 OPEC 공급 증산 신호로 에너지주 구조적 약세"
       }
     ],
     "top_trend_candidates": [
       {
         "rank": 1,
-        "theme": "AI 칩 설계 아키텍처 혁명 — ARM/MRVL 주도",
+        "theme": "AI 반도체 슈퍼사이클 — 칩 설계 IP 및 커스텀 AI 칩",
         "score": 88.0,
         "direction": "UP",
         "representative_stocks": [
-          "ARM"
+          "ARM",
+          "MRVL",
+          "AMD"
         ],
-        "reason": "ARM 5일+28% + 거래량 2.56배, MRVL 20일+66% + 거래량 4.2배 — AI 커스텀칩 설계 수요 폭발",
-        "secondary_effect": "L2: AVGO(커스텀 AI ASIC) → L3: TSM(파운드리) → L4: ASML(EUV 장비)",
-        "risk": "고밸류에이션 조정 리스크, 칩 설계 경쟁 심화"
+        "reason": "ARM 5일 +28.4%(거래량 2.56배), MRVL 5일 +10.6%(거래량 4.2배) — AI 추론·에지 칩 설계 수요 폭발. AMD 5일 +10%, 20일 +20% — NVIDIA 대안 AI GPU 채택 가속",
+        "secondary_effect": "L2: AMAT·KLAC·LRCX 장비 발주 → L3: VRT·ETN·MOD 전력·냉각 수혜",
+        "risk": "미국의 대중국 반도체 수출 규제 강화 시 ARM 라이선스 수익 급감"
       },
       {
         "rank": 2,
-        "theme": "데이터센터 전력·냉각 인프라 구조적 수요",
-        "score": 84.0,
+        "theme": "데이터센터 전력·냉각 인프라 — AI CAPEX L3 수혜",
+        "score": 83.0,
         "direction": "UP",
         "representative_stocks": [
           "VRT",
+          "GEV",
+          "MOD",
           "ETN"
         ],
-        "reason": "GEV 5일+22%, VRT 5일+12%, ETN 5일+7% — AI CAPEX L3 수혜 동반 상승",
-        "secondary_effect": "L4: CCJ/URA 우라늄 전력 수요 연쇄 상승",
-        "risk": "AI 투자 사이클 둔화 시 수요 이연 가능"
+        "reason": "VRT 5일 +11.8%, MOD 5일 +9.5%, ETN 5일 +7.2%, GEV 5일 +22.4% — AI 서버 냉각·전력관리 수요 급증",
+        "secondary_effect": "L4: CCJ·URA 우라늄 전력 수요 → VST·NRG 전력 유틸리티",
+        "risk": "AI CAPEX 사이클 단기 조정 시 주문 감소 우려"
       },
       {
         "rank": 3,
-        "theme": "바이오텍 개별 모멘텀 — MRNA 촉매 주도",
-        "score": 76.0,
+        "theme": "바이오텍 MRNA 모멘텀 — 임상 촉매 포착",
+        "score": 74.0,
         "direction": "UP",
         "representative_stocks": [
           "MRNA",
           "XBI"
         ],
-        "reason": "MRNA 5일+29% + 거래량 4배 이상 — 임상/파이프라인 촉매로 섹터 자금 유입",
-        "secondary_effect": "XBI ETF 5일+6%로 섹터 확산 진행 중",
-        "risk": "임상 결과 실망 시 급락 리스크"
+        "reason": "MRNA 5일 +28.9%, 20일 +32.9%, 거래량 4.0배 — FDA 승인 또는 긍정 임상 결과 기대. XBI 5일 +6% 섹터 동반",
+        "secondary_effect": "바이오텍 리레이팅 → VRTX·BIIB 동반 상승 가능성",
+        "risk": "임상 실패 또는 FDA 거절 시 급락 위험"
       },
       {
         "rank": 4,
-        "theme": "반도체 장비 2차 수혜 — 설비투자 사이클",
+        "theme": "반도체 장비 — AI 증설 발주 2차 수혜",
         "score": 80.0,
         "direction": "UP",
         "representative_stocks": [
           "AMAT",
+          "KLAC",
           "LRCX"
         ],
-        "reason": "AMAT 20일+45%, KLAC 20일+42%, LRCX 20일+33% — HBM/AI 증설 발주 사이클 진행",
-        "secondary_effect": "소재·가스 후방 산업, 한국 반도체 장비 업체 동반 상승",
-        "risk": "삼성/TSMC CapEx 동결 시 발주 지연"
+        "reason": "AMAT 20일 +44.6%, KLAC 20일 +41.9%, LRCX 20일 +33.2% — HBM·AI칩 증설 발주 사이클 진입",
+        "secondary_effect": "L3: 소재·특수가스 수요 연쇄, 후공정 장비 수혜",
+        "risk": "삼성 CapEx 동결 또는 TSMC 투자 지연 시 발주 취소"
       }
     ],
     "related_candidates": [
       {
-        "theme": "금·귀금속 (횡보)",
-        "score": 52.0,
-        "short_reason": "GLD 20일-7.2%, 단기 반등 대기 — 달러 강세(UUP +2%)가 단기 억제 요인"
+        "theme": "금·귀금속 — 조정 중 재반등 대기",
+        "score": 55.0,
+        "short_reason": "GLD 20일 -7.3%, GDX 5일 +6.2% — 달러 강세(UUP +2%)로 금 눌림. 달러 전환 시 재반등 촉매 대기"
       },
       {
-        "theme": "에너지 약세 반전 가능성",
-        "score": 40.0,
-        "short_reason": "XLE 20일-10%, 거래량 급증 속 매도 — 유가 하락 지속 시 반등 시점 미정"
+        "theme": "핵·우라늄 전력 수요",
+        "score": 62.0,
+        "short_reason": "CCJ 5일 +7.6%, URA 5일 +6.6% — 데이터센터 전력 수요 증가로 원전 재평가"
       }
     ],
     "excluded_or_weak_candidates": [
       {
-        "theme": "소프트웨어 SaaS",
-        "reason": "CRM 5일-8.8%, ADBE 20일-23% — AI 하드웨어 대비 자금 이탈 지속"
+        "theme": "에너지(석유·가스)",
+        "reason": "XLE 5일 -5.9%, USO 20일 -20.4% — 공급 과잉 우려로 구조적 약세, 반등 촉매 부재"
       },
       {
         "theme": "한국 자동차·배터리",
-        "reason": "005380 20일-13%, 006400 20일-13% — 글로벌 EV 수요 둔화 + 관세 리스크"
+        "reason": "005380 20일 -12.8%, 006400 20일 -13.5% — 전기차 수요 둔화 + 원화 약세로 약세 지속"
       },
       {
-        "theme": "방산 (LMT)",
-        "reason": "거래량 3.44배 급증 속 주가 하락 — 분배 매물 신호"
+        "theme": "소프트웨어(CRM·NOW·ADBE)",
+        "reason": "CRM 20일 -15.7%, ADBE 20일 -23%, 거래량 이상 매도 — AI 네이티브 경쟁 심화로 구조적 약세"
       }
     ],
     "confidence": 0.82
   },
   "summary": {
-    "current_trends_count": 3,
+    "current_trends_count": 4,
     "predicted_trends_count": 4,
-    "total_recommendations": 26,
+    "total_recommendations": 31,
     "top_movers_1d": [
       {
         "ticker": "INTC",
@@ -210,19 +215,19 @@
     "by_category": [
       {
         "category": "daily_analysis",
-        "input_tokens": 1180438,
+        "input_tokens": 1334023,
         "cached_input_tokens": 0,
-        "output_tokens": 587150,
-        "cost_usd": 12.3486,
-        "calls": 46
+        "output_tokens": 664345,
+        "cost_usd": 13.9672,
+        "calls": 51
       }
     ],
     "total": {
-      "input_tokens": 1180438,
-      "output_tokens": 587150,
-      "cost_usd": 12.3486,
-      "cost_krw": 17288,
-      "calls": 46
+      "input_tokens": 1334023,
+      "output_tokens": 664345,
+      "cost_usd": 13.9672,
+      "cost_krw": 19554,
+      "calls": 51
     }
   },
   "weights": {
@@ -249,43 +254,48 @@
   ],
   "current_trends": [
     {
-      "trend_id": 329,
+      "trend_id": 344,
       "rank": 1,
-      "title": "AI 커스텀칩 설계 혁명 — ARM·MRVL 주도 폭발",
-      "summary": "ARM 아키텍처 기반 AI 가속기 수요 급증으로 ARM 5일+28%, MRVL 20일+66% 폭등 — AI 칩 설계 패러다임 전환 확인",
+      "title": "AI 칩 설계 IP·커스텀 AI 반도체 폭발 — ARM·MRVL 주도",
+      "summary": "ARM 아키텍처 기반 AI 추론칩 채택 급증 + MRVL 커스텀 AI ASIC 수요 폭발로 칩 설계 IP 섹터 사상 최고 모멘텀",
       "category": "AI 반도체",
       "timeframe": "ongoing",
       "confidence": 87,
+      "trend_score": null,
+      "trend_direction": null,
+      "secondary_effect": null,
+      "trend_risk": null,
       "causal_chain": [
         {
           "step_no": 1,
-          "statement": "하이퍼스케일러들의 AI 커스텀칩(ASIC) 내재화 전략 가속 — 빅테크가 GPU 의존도 낮추기 위해 ARM 기반 자체 칩 설계 확대",
-          "confidence": 90
+          "statement": "빅테크 하이퍼스케일러(구글·아마존·MS)가 NVIDIA 의존 탈피 위해 커스텀 AI ASIC 대량 발주 결정",
+          "confidence": 88
         },
         {
           "step_no": 2,
-          "statement": "MRVL: 아마존·구글 AI ASIC 설계 수주 확대 + 거래량 4.2배로 기관 집중 매수 확인",
-          "confidence": 85
+          "statement": "MRVL은 구글 TPU·아마존 Trainium 설계 파트너로 AI ASIC 수주 급증 → 5일 +10.6%, 거래량 4.2배",
+          "confidence": 86
         },
         {
           "step_no": 3,
-          "statement": "ARM: 스마트폰에서 AI 서버·PC로 아키텍처 확장 — 로열티 기반 수익 모델로 AI 칩 설계 붐 전체 수혜",
+          "statement": "ARM은 AI 추론 칩 설계의 표준 ISA로 자리잡아 모든 커스텀 칩에 로열티 수익 발생 → 5일 +28.4%",
           "confidence": 82
         },
         {
           "step_no": 4,
-          "statement": "AVGO: AI ASIC 파운드리·패키징 수혜 + 5일+6.7% 동반 상승으로 체인 확인",
+          "statement": "AMD도 MI300X AI GPU 채택 확대로 5일 +10%, 20일 +20% 동반 상승",
           "confidence": 78
         }
       ],
       "disconfirming_hypotheses": [
-        "NVIDIA가 커스텀칩 시장 직접 진출 시 MRVL·ARM 경쟁 심화",
-        "ARM 밸류에이션(20일+71%) 과열로 차익실현 물량 출회 가능"
+        "미국 정부의 ARM 대중국 라이선스 제한 확대 시 ARM 로열티 수익 급감",
+        "NVIDIA B200/B300이 커스텀 ASIC 대비 압도적 성능 우위 유지 시 MRVL 수주 감소",
+        "빅테크 AI 투자 축소 결정 시 ASIC 발주 취소 가능"
       ],
       "evidence": {
-        "price": "ARM 1d+4.9%, 5d+28.4%, 20d+71.2%; MRVL 1d+7.3%, 5d+10.6%, 20d+66.3%",
-        "volume": "MRVL 거래량 4.2배, ARM 거래량 2.56배 — 기관 집중 매수 신호",
-        "macro": "QQQ 5일+3.3%, SMH 5일+8.3% — AI 칩 중심 기술주 강세 국면"
+        "price": "ARM 5일 +28.4% / 20일 +71.2%; MRVL 5일 +10.6% / 20일 +66.3%; AMD 5일 +10.0% / 20일 +20.1%",
+        "volume": "MRVL 거래량 4.2배(20일 평균 대비 최고), ARM 2.56배",
+        "macro": "QQQ 5일 +3.3%, SMH 5일 +8.3% — AI 반도체 중심 기술주 랠리 확인"
       },
       "recommendations": [
         {
@@ -294,168 +304,14 @@
           "country": "US",
           "rank": 1,
           "grade": "Strong Buy",
-          "rationale": "AI ASIC 설계 수주 독점적 포지션 + 거래량 4.2배 기관 매수 + 20일+66% 모멘텀 최강",
+          "rationale": "커스텀 AI ASIC 설계 독보적 지위 + 거래량 4.2배 폭발 + 20일 +66.3% 강세 추세 확인",
           "entry_close": 310.5799865722656,
           "fundamentals_score": 8,
           "fundamentals": {
-            "revenue_yoy_pct": 65.0,
-            "operating_margin_pct": 18.0,
+            "revenue_yoy_pct": 60.0,
+            "operating_margin_pct": 32.0,
             "net_margin_pct": null,
-            "roe_pct": 12.0,
-            "pe_ratio": 55.0,
-            "ps_ratio": null,
-            "debt_to_equity": null,
-            "market_cap_usd_b": null,
-            "fcf_usd_b": null
-          },
-          "rating_score": null,
-          "rating_breakdown": null,
-          "detail": {
-            "stock_desc": "마벨 테크놀로지는 데이터 인프라 반도체 전문 기업으로 AI ASIC 설계, 광학 DSP, 이더넷 솔루션을 제공. 아마존 AWS 트레이니움, 구글 TPU의 핵심 설계 파트너로 하이퍼스케일러 AI 내재화 수혜 1순위.",
-            "trend_link": "AI 커스텀칩 트렌드의 핵심 수혜주 — 빅테크의 GPU 대체 ASIC 칩 설계에서 MRVL의 네트워킹·광학·커스텀 로직 IP가 필수 구성요소. 아마존·구글 차세대 AI 칩에 MRVL 설계 기술 채택 확대 중.",
-            "current_flow": "1일+7.3%, 5일+10.6%, 20일+66.3%. 거래량 4.2배(20일 평균 대비) — 섹터 최고 수준 거래량 이상. 52주 신고가 영역에서 추가 상승 시도.",
-            "financials_reason": "매출YoY+65%(AI 데이터센터 부문 급성장), 영업이익률 18%(개선 추세), 고밸류 정당화하는 성장 속도 → 재무8점",
-            "financials_trajectory": "OPM: FY23 5% → FY25 18%(+13%p) — AI 칩 믹스 개선으로 수익성 급반전. 매출YoY: FY24 -10% → FY25 +65% — AI ASIC 수주 본격화로 성장 가속.",
-            "momentum_direction": "상승 — 거래량 4.2배 급증 + 20일선 대비 +66% 강력 상승 추세 지속",
-            "prediction": null
-          },
-          "validation": {
-            "close_7d": null,
-            "alpha_7d": null,
-            "hit_7d": null,
-            "close_30d": null,
-            "alpha_30d": null,
-            "hit_30d": null
-          }
-        }
-      ]
-    },
-    {
-      "trend_id": 330,
-      "rank": 2,
-      "title": "반도체 장비 슈퍼사이클 — AI·HBM 증설 발주 집중",
-      "summary": "AMAT 20일+45%, KLAC 20일+42%, LRCX 20일+33% — AI 메모리·파운드리 증설 수요로 장비 발주 사이클 정점 진행 중",
-      "category": "반도체 장비",
-      "timeframe": "ongoing",
-      "confidence": 84,
-      "causal_chain": [
-        {
-          "step_no": 1,
-          "statement": "HBM3E·HBM4 수요 폭증 → SK하이닉스·삼성 증설 결정 → 장비 발주 실행 단계 진입",
-          "confidence": 88
-        },
-        {
-          "step_no": 2,
-          "statement": "TSMC 2nm 공장 증설 + CoWoS 어드밴스드 패키징 라인 확장 → AMAT·LRCX 증착·식각 장비 대규모 발주",
-          "confidence": 83
-        },
-        {
-          "step_no": 3,
-          "statement": "KLAC 계측 장비 수요 급증 — 첨단 공정 불량률 관리 필수화로 검사 장비 발주 1d+8.7% 급등",
-          "confidence": 79
-        }
-      ],
-      "disconfirming_hypotheses": [
-        "TSMC·삼성 CapEx 계획 하향 시 장비 발주 취소·이연 가능",
-        "미중 반도체 수출 규제 강화 시 중국향 장비 매출 감소"
-      ],
-      "evidence": {
-        "price": "AMAT 1d+4.1%, 5d+11.7%, 20d+44.6%; KLAC 1d+8.7%, 5d+7.6%, 20d+41.9%; LRCX 1d+4.0%, 5d+7.3%, 20d+33.2%",
-        "volume": "SMH ETF 1d+5.8%로 섹터 전체 자금 유입 확인",
-        "macro": "000660(SK하이닉스) 20일+50% — 고객사 주가 선행, 장비 발주 가시성 확보"
-      },
-      "recommendations": [
-        {
-          "ticker": "KLAC",
-          "name": "KLA Corporation",
-          "country": "US",
-          "rank": 1,
-          "grade": "Strong Buy",
-          "rationale": "HBM·첨단공정 수율 관리 독점적 지위 + 1d+8.7% + 20일+42% 강세 지속",
-          "entry_close": 259.55999755859375,
-          "fundamentals_score": 8,
-          "fundamentals": {
-            "revenue_yoy_pct": 22.0,
-            "operating_margin_pct": 38.0,
-            "net_margin_pct": null,
-            "roe_pct": 55.0,
-            "pe_ratio": 28.0,
-            "ps_ratio": null,
-            "debt_to_equity": null,
-            "market_cap_usd_b": null,
-            "fcf_usd_b": null
-          },
-          "rating_score": null,
-          "rating_breakdown": null,
-          "detail": {
-            "stock_desc": "KLA Corporation은 반도체 공정 제어·계측 장비 세계 1위. 첨단 공정(5nm 이하)에서 수율 관리를 위한 결함 검사 장비 시장 점유율 50% 이상 보유.",
-            "trend_link": "AI·HBM 증설 트렌드에서 첨단 공정 수율 관리 필수성 증대. HBM4 적층 구조 복잡도 증가 → KLAC 계측 장비 수요 직결. TSMC 2nm·삼성 GAA 공정 전환에도 KLAC 독점적 포지션.",
-            "current_flow": "1일+8.7%, 5일+7.6%, 20일+41.9%. 오늘 섹터 내 최고 일간 수익률 기록. 52주 신고가 영역 돌파 중.",
-            "financials_reason": "OPM 38%(동종 최고 수준), ROE 55%, 매출YoY+22% — 수익성·성장성·자본효율성 모두 탁월 → 재무8점",
-            "financials_trajectory": "OPM: FY22 35% → FY25 38%(+3%p) — 가격결정력 유지. 매출YoY: FY24 +4% → FY25 +22% — 장비 발주 사이클 재진입 확인.",
-            "momentum_direction": "상승 — 1d+8.7% 급등 + 20일 누적 +42%로 추세 강화 중",
-            "prediction": null
-          },
-          "validation": {
-            "close_7d": null,
-            "alpha_7d": null,
-            "hit_7d": null,
-            "close_30d": null,
-            "alpha_30d": null,
-            "hit_30d": null
-          }
-        }
-      ]
-    },
-    {
-      "trend_id": 331,
-      "rank": 3,
-      "title": "데이터센터 전력·냉각 인프라 — AI CAPEX L3 수혜",
-      "summary": "GEV 5일+22%, VRT 5일+12%, ETN 5일+7%, MOD 5일+10% — AI 데이터센터 전력 수요 구조적 급증으로 인프라 섹터 동반 강세",
-      "category": "전력 인프라",
-      "timeframe": "ongoing",
-      "confidence": 83,
-      "causal_chain": [
-        {
-          "step_no": 1,
-          "statement": "하이퍼스케일러 AI 데이터센터 건설 가속 → 전력 수요 2030년까지 3배 증가 전망",
-          "confidence": 88
-        },
-        {
-          "step_no": 2,
-          "statement": "GEV(발전설비)·ETN(전력관리)·VRT(냉각)·MOD(열관리) — 4개 하위 섹터 동반 상승으로 전력 인프라 투자 사이클 확인",
-          "confidence": 83
-        },
-        {
-          "step_no": 3,
-          "statement": "VST(전력 유틸리티) 5일+11.9% 동반 상승 — 전력 공급자까지 수혜 확산으로 트렌드 견고성 입증",
-          "confidence": 78
-        }
-      ],
-      "disconfirming_hypotheses": [
-        "AI 데이터센터 건설 허가 지연 시 전력 수요 현실화 이연",
-        "GEV 20일+8%로 상승폭 상대적으로 제한 — 단기 과열 후 조정 가능"
-      ],
-      "evidence": {
-        "price": "GEV 1d+5.8%, 5d+22.4%, 20d+8.3%; VRT 1d+4.9%, 5d+11.8%, 20d+5.5%; ETN 1d+3.0%, 5d+7.2%, 20d+11.1%; MOD 1d+4.8%, 5d+9.5%, 20d+15.6%",
-        "volume": "섹터 전반 거래량 정상 수준 — 급등 후 안정적 유지",
-        "macro": "CCJ(우라늄) 5일+7.6%, URA 5일+6.6% — 전력 수요 증가의 원전 수혜까지 확산"
-      },
-      "recommendations": [
-        {
-          "ticker": "VRT",
-          "name": "Vertiv Holdings",
-          "country": "US",
-          "rank": 1,
-          "grade": "Strong Buy",
-          "rationale": "AI 데이터센터 액침냉각 독점 기술 + 5일+12% 강세 + 20일+5.5%로 추세 초기 단계",
-          "entry_close": 333.04998779296875,
-          "fundamentals_score": 8,
-          "fundamentals": {
-            "revenue_yoy_pct": 19.0,
-            "operating_margin_pct": 11.0,
-            "net_margin_pct": null,
-            "roe_pct": 22.0,
+            "roe_pct": 18.0,
             "pe_ratio": 45.0,
             "ps_ratio": null,
             "debt_to_equity": null,
@@ -465,12 +321,261 @@
           "rating_score": null,
           "rating_breakdown": null,
           "detail": {
-            "stock_desc": "Vertiv Holdings는 데이터센터 전력·냉각·인프라 관리 솔루션 세계 1위. 액침냉각(Immersion Cooling)과 정밀 공조 시스템에서 AI GPU 서버 열관리 분야 독보적 기술 보유.",
-            "trend_link": "AI 데이터센터 전력·냉각 트렌드의 핵심 직접 수혜주. 엔비디아 GB200 NVL72 랙의 냉각 요구량이 기존 H100 대비 3배 증가 → VRT 액침냉각 시스템 수요 폭발적 증가. NVIDIA 공식 냉각 파트너십 보유.",
-            "current_flow": "1일+4.9%, 5일+11.8%, 20일+5.5%. 최근 20일 기준 상승이 완만해 추가 상승 여력 존재. 52주 고가 재도전 구간.",
-            "financials_reason": "매출YoY+19%, OPM 11%(개선 추세), 수주잔고 연간 매출의 1.5배 수준 → 재무8점",
-            "financials_trajectory": "OPM: FY22 4% → FY25 11%(+7%p) — AI 데이터센터 고부가 제품 믹스 개선. 매출YoY: FY23 +11% → FY25 +19% — 수주 가시성 높아지며 성장 가속.",
-            "momentum_direction": "상승 — 5일 연속 강세 + 섹터 내 일관된 상승 흐름",
+            "stock_desc": "마벨테크놀로지는 커스텀 AI ASIC 설계 및 데이터센터 네트워킹 반도체 전문 기업. 구글 TPU, 아마존 Trainium 등 빅테크 커스텀 AI칩 핵심 설계 파트너로 포지셔닝.",
+            "trend_link": "AI 칩 설계 IP 트렌드의 직접 수혜자. 하이퍼스케일러의 NVIDIA 탈피 전략에서 ASIC 설계 역량 보유 기업으로 수주 급증. 데이터센터 네트워크 칩도 AI 트래픽 폭증으로 동반 성장.",
+            "current_flow": "1일 +7.3%, 5일 +10.6%, 20일 +66.3%. 거래량 4.2배 급증 — 섹터 내 최고 거래량 이상. 52주 신고가 돌파 구간.",
+            "financials_reason": "매출YoY +60%(AI 데이터센터 부문 집중), OPM 32%, ROE 18% — AI ASIC 고마진 제품 믹스 개선으로 수익성 급반전",
+            "financials_trajectory": "OPM: FY23 12% → FY25 32%(+20%p) — 데이터센터 AI칩 비중 확대로 마진 구조 전환. 매출: FY23 +2% → FY25 +60% — 커스텀 AI ASIC 수주 본격화.",
+            "momentum_direction": "강한 상승 — 거래량 4.2배 수반 신고가 돌파, 추세 가속 구간",
+            "prediction": null
+          },
+          "validation": {
+            "close_7d": null,
+            "alpha_7d": null,
+            "hit_7d": null,
+            "close_30d": null,
+            "alpha_30d": null,
+            "hit_30d": null
+          }
+        }
+      ]
+    },
+    {
+      "trend_id": 345,
+      "rank": 2,
+      "title": "데이터센터 전력·냉각 인프라 랠리 — VRT·MOD·ETN 동반 급등",
+      "summary": "AI CAPEX 확대의 L3 수혜로 데이터센터 냉각·전력관리 기업들이 반도체 주 이상의 모멘텀 시현",
+      "category": "전력·냉각 인프라",
+      "timeframe": "ongoing",
+      "confidence": 84,
+      "trend_score": null,
+      "trend_direction": null,
+      "secondary_effect": null,
+      "trend_risk": null,
+      "causal_chain": [
+        {
+          "step_no": 1,
+          "statement": "AI 서버 GPU 집적도 증가로 랙당 전력 소비 100kW 이상 → 기존 냉각 방식 한계 도달",
+          "confidence": 88
+        },
+        {
+          "step_no": 2,
+          "statement": "액체 냉각(Direct Liquid Cooling) 수요 급증 → VRT(Vertiv) 수주 잔고 사상 최고 경신",
+          "confidence": 85
+        },
+        {
+          "step_no": 3,
+          "statement": "전력관리 솔루션(ETN), 열관리(MOD) 동반 수혜 → 5일 각각 +7.2%, +9.5%",
+          "confidence": 80
+        },
+        {
+          "step_no": 4,
+          "statement": "GEV(GE Vernova) 전력 터빈 수주 확대 — 데이터센터 전용 전력 인프라 계약 급증",
+          "confidence": 76
+        }
+      ],
+      "disconfirming_hypotheses": [
+        "AI CAPEX 투자 사이클이 단기 고점 도달 시 신규 수주 감소",
+        "공랭식 대안 기술 상용화 시 액체냉각 수요 대체 가능",
+        "GEV 최근 5일 +22.4%로 과열 구간 진입, 단기 조정 가능"
+      ],
+      "evidence": {
+        "price": "VRT 1일 +4.9%, 5일 +11.8%, 20일 +5.5%; MOD 5일 +9.5%, 20일 +15.6%; ETN 5일 +7.2%, 20일 +11.1%; GEV 5일 +22.4%",
+        "volume": "전력·냉각 섹터 전반 평균 거래량 1.5배 이상",
+        "macro": "AI 반도체 수요 확인 → 인프라 수요 연쇄 반응"
+      },
+      "recommendations": [
+        {
+          "ticker": "VRT",
+          "name": "Vertiv Holdings",
+          "country": "US",
+          "rank": 1,
+          "grade": "Strong Buy",
+          "rationale": "데이터센터 액체냉각 세계 1위 + 5일 +11.8% 강세 + AI CAPEX 직결 수혜 구조",
+          "entry_close": 333.04998779296875,
+          "fundamentals_score": 8,
+          "fundamentals": {
+            "revenue_yoy_pct": 20.0,
+            "operating_margin_pct": 13.0,
+            "net_margin_pct": null,
+            "roe_pct": 35.0,
+            "pe_ratio": 55.0,
+            "ps_ratio": null,
+            "debt_to_equity": null,
+            "market_cap_usd_b": null,
+            "fcf_usd_b": null
+          },
+          "rating_score": null,
+          "rating_breakdown": null,
+          "detail": {
+            "stock_desc": "버티브(Vertiv)는 데이터센터 전력·냉각·IT 인프라 솔루션 세계 1위 기업. AI 서버용 액체냉각 시스템에서 압도적 시장 점유율 보유.",
+            "trend_link": "AI CAPEX 확대의 L3 수혜 핵심 종목. 엔비디아 GB200 슈퍼칩 등 고밀도 AI 서버에 VRT의 직접액체냉각(DLC) 시스템이 필수 채택. 수주 잔고가 수익 가시성 제공.",
+            "current_flow": "1일 +4.87%, 5일 +11.81%, 20일 +5.51%. 최근 20일 조정 후 5일 급등으로 추세 재개 확인.",
+            "financials_reason": "매출YoY +20%, OPM 13%, ROE 35% — AI 인프라 수주 급증으로 OPM 빠르게 확대 중",
+            "financials_trajectory": "OPM: FY22 7% → FY25 13%(+6%p) — AI 서버 고마진 냉각 시스템 비중 증가. 매출: FY23 +20% → FY25 +20% 안정 성장 + 수주 잔고 급증으로 미래 매출 가시성 확보.",
+            "momentum_direction": "상승 재개 — 5일 급등으로 20일 조정 마무리, 거래량 동반 상승세",
+            "prediction": null
+          },
+          "validation": {
+            "close_7d": null,
+            "alpha_7d": null,
+            "hit_7d": null,
+            "close_30d": null,
+            "alpha_30d": null,
+            "hit_30d": null
+          }
+        }
+      ]
+    },
+    {
+      "trend_id": 346,
+      "rank": 3,
+      "title": "반도체 장비 슈퍼사이클 — AMAT·KLAC·LRCX 20일 30~45% 급등",
+      "summary": "AI 칩 및 HBM 증설 발주로 반도체 장비 3사가 20일 동안 30~45% 급등하며 섹터 ETF 상회",
+      "category": "반도체 장비",
+      "timeframe": "ongoing",
+      "confidence": 82,
+      "trend_score": null,
+      "trend_direction": null,
+      "secondary_effect": null,
+      "trend_risk": null,
+      "causal_chain": [
+        {
+          "step_no": 1,
+          "statement": "AI 메모리(HBM) 및 첨단 파운드리 증설 결정 → 장비 발주 사이클 본격 개시",
+          "confidence": 86
+        },
+        {
+          "step_no": 2,
+          "statement": "AMAT(식각·증착), KLAC(계측·검사), LRCX(식각) 수주 잔고 급증 → 실적 가이던스 상향 기대",
+          "confidence": 82
+        },
+        {
+          "step_no": 3,
+          "statement": "장비 리드타임 12~18개월 → 선행 주가 반영으로 주가 급등 선행",
+          "confidence": 76
+        }
+      ],
+      "disconfirming_hypotheses": [
+        "삼성전자 CapEx 동결 연장 시 발주 취소 가능",
+        "AMAT·KLAC 20일 40% 이상 급등으로 단기 차익 실현 매물 부담"
+      ],
+      "evidence": {
+        "price": "AMAT 5일 +11.7%, 20일 +44.6%; KLAC 5일 +7.6%, 20일 +41.9%; LRCX 5일 +7.3%, 20일 +33.2%",
+        "volume": "장비 3사 평균 거래량 1.5배 이상",
+        "macro": "SMH 20일 +16.9% — 반도체 전 섹터 상승 확인"
+      },
+      "recommendations": [
+        {
+          "ticker": "KLAC",
+          "name": "KLA Corporation",
+          "country": "US",
+          "rank": 1,
+          "grade": "Buy",
+          "rationale": "1일 +8.73% 강한 모멘텀 + 계측·검사 장비 AI칩 필수품 + 20일 +41.9% 추세 강함",
+          "entry_close": 259.55999755859375,
+          "fundamentals_score": 8,
+          "fundamentals": {
+            "revenue_yoy_pct": 25.0,
+            "operating_margin_pct": 40.0,
+            "net_margin_pct": null,
+            "roe_pct": 90.0,
+            "pe_ratio": 28.0,
+            "ps_ratio": null,
+            "debt_to_equity": null,
+            "market_cap_usd_b": null,
+            "fcf_usd_b": null
+          },
+          "rating_score": null,
+          "rating_breakdown": null,
+          "detail": {
+            "stock_desc": "KLA코퍼레이션은 반도체 웨이퍼 계측·검사 장비 세계 1위 기업. 첨단 공정 전환 시 필수적인 결함 검사 장비를 공급하며 AI칩 고도화에 수요 직결.",
+            "trend_link": "반도체 장비 슈퍼사이클의 핵심 수혜주. AI칩 3nm 이하 미세 공정 전환 시 결함 검사 장비 수요가 기하급수 증가. HBM 적층 공정에서도 KLAC 장비 필수.",
+            "current_flow": "1일 +8.73%, 5일 +7.63%, 20일 +41.88%. 강한 상승 추세 지속 중.",
+            "financials_reason": "OPM 40%, ROE 90% — 독보적 시장 지위로 높은 가격결정력 유지. 매출 YoY +25%로 성장 가속.",
+            "financials_trajectory": "OPM: FY22 35% → FY25 40%(+5%p) — AI칩 고도화로 고가 장비 비중 증가. ROE: FY22 70% → FY25 90%(+20%p) — 자본 효율성 지속 개선.",
+            "momentum_direction": "강한 상승 — 20일 추세 가속 중, 단기 과열 주의하며 분할 매수 권고",
+            "prediction": null
+          },
+          "validation": {
+            "close_7d": null,
+            "alpha_7d": null,
+            "hit_7d": null,
+            "close_30d": null,
+            "alpha_30d": null,
+            "hit_30d": null
+          }
+        }
+      ]
+    },
+    {
+      "trend_id": 347,
+      "rank": 4,
+      "title": "바이오텍 MRNA 급등 — 개별 임상 촉매 + XBI 섹터 동반",
+      "summary": "MRNA 5일 +28.9%, 거래량 4배로 임상 결과 또는 FDA 관련 강한 촉매 포착, XBI ETF도 5일 +6% 동반 상승",
+      "category": "바이오텍",
+      "timeframe": "short-term",
+      "confidence": 72,
+      "trend_score": null,
+      "trend_direction": null,
+      "secondary_effect": null,
+      "trend_risk": null,
+      "causal_chain": [
+        {
+          "step_no": 1,
+          "statement": "MRNA mRNA 암 백신 또는 코로나 업데이트 백신 임상 긍정 결과 발표 가능성 — 거래량 4.0배 이상 급증",
+          "confidence": 78
+        },
+        {
+          "step_no": 2,
+          "statement": "MRNA 급등이 바이오텍 섹터 전반 센티먼트 개선 → XBI 5일 +6.0% 동반 상승",
+          "confidence": 72
+        },
+        {
+          "step_no": 3,
+          "statement": "TLT 20일 +3.4% — 금리 인하 기대 병존으로 바이오텍 밸류에이션 지지",
+          "confidence": 67
+        }
+      ],
+      "disconfirming_hypotheses": [
+        "임상 실패 또는 FDA 완전 반응 서한(CRL) 수령 시 MRNA 30% 이상 급락 가능",
+        "MRNA 20일 +32.9%로 단기 고점 차익 실현 매물 집중 가능"
+      ],
+      "evidence": {
+        "price": "MRNA 1일 +3.5%, 5일 +28.85%, 20일 +32.92%; XBI 5일 +6.01%, 20일 +6.84%",
+        "volume": "MRNA 거래량 4.0배(20일 평균 대비) — 당일 최고 이상 거래량 그룹",
+        "macro": "TLT 20일 +3.4% — 금리 인하 기대로 성장·바이오주 밸류에이션 지지"
+      },
+      "recommendations": [
+        {
+          "ticker": "MRNA",
+          "name": "Moderna",
+          "country": "US",
+          "rank": 1,
+          "grade": "Buy",
+          "rationale": "5일 +28.9% 급등 + 거래량 4배 → 강한 촉매 확인, 모멘텀 추종 매수",
+          "entry_close": 63.959999084472656,
+          "fundamentals_score": 5,
+          "fundamentals": {
+            "revenue_yoy_pct": -30.0,
+            "operating_margin_pct": -40.0,
+            "net_margin_pct": null,
+            "roe_pct": -25.0,
+            "pe_ratio": null,
+            "ps_ratio": null,
+            "debt_to_equity": null,
+            "market_cap_usd_b": null,
+            "fcf_usd_b": null
+          },
+          "rating_score": null,
+          "rating_breakdown": null,
+          "detail": {
+            "stock_desc": "모더나는 mRNA 플랫폼 기반 코로나 백신으로 성장한 바이오텍. 현재 암 백신, RSV, 독감 등 파이프라인 다각화 진행 중. 포스트 코로나 수익성 회복이 핵심 투자 포인트.",
+            "trend_link": "바이오텍 MRNA 급등 트렌드의 직접 주인공. 거래량 4.0배 급등은 임상 결과 또는 FDA 관련 중요 촉매를 시사. mRNA 암 백신(개인맞춤형 신항원 백신) 임상 3상 진입 가능성.",
+            "current_flow": "1일 +3.5%, 5일 +28.85%, 20일 +32.92%. 거래량 4.0배 — 강한 매수세 유입 확인.",
+            "financials_reason": "코로나 이후 매출 감소(YoY -30%)로 재무점수 5점이나, 파이프라인 가치로 임상 결과에 따라 재평가 가능",
+            "financials_trajectory": "매출: FY22 $183억 → FY25 $30억 수준(코로나 특수 소멸). OPM: FY22 +44% → FY25 -40%(R&D 투자 유지). 암 백신 파이프라인 성공 시 FY27부터 흑자 전환 시나리오.",
+            "momentum_direction": "강한 상승 — 5일 급등 후 1일 추가 +3.5%로 모멘텀 지속 확인",
             "prediction": null
           },
           "validation": {
@@ -487,165 +592,52 @@
   ],
   "predicted_trends": [
     {
-      "trend_id": 332,
+      "trend_id": 348,
       "rank": 1,
-      "title": "바이오텍 모멘텀 확산 — MRNA 촉매가 XBI 섹터로 전이",
-      "summary": "MRNA 5일+29% + 거래량 4배로 임상 촉매 확인 → XBI ETF 5일+6% 섹터 동반 상승 → 금리 인하 기대와 맞물려 바이오 섹터 재평가 시작",
-      "category": "바이오텍",
+      "title": "핵·원전 전력 수요 — CCJ·URA 우라늄 재평가 임박",
+      "summary": "AI 데이터센터 전력 수요 폭증이 원전 재평가 촉매로 작용, CCJ·URA 5일 +7~8% 선행 상승 확인",
+      "category": "원자력·전력",
       "timeframe": "short",
-      "confidence": 72,
+      "confidence": 71,
+      "trend_score": "74.0",
+      "trend_direction": "UP",
+      "secondary_effect": "L4: VST·NRG 전력 유틸리티 동반 수혜 — VST 5일 +11.9%, NRG 5일 +9.2%",
+      "trend_risk": "원전 규제 강화 또는 AI CAPEX 축소 시 전력 수요 증가 기대 약화",
       "causal_chain": [
         {
           "step_no": 1,
-          "statement": "MRNA의 신규 mRNA 파이프라인 임상 성공 신호(거래량 4배)가 mRNA 플랫폼 전체 재평가 촉발",
-          "confidence": 78
+          "statement": "AI 데이터센터 전력 수요 2030년까지 3배 증가 전망 — 현재 current_trend #2 전력·냉각 인프라 랠리가 이를 확인",
+          "confidence": 82
         },
         {
           "step_no": 2,
-          "statement": "XBI 바이오 ETF 5일+6%로 개별 종목 수혜가 섹터 전체로 확산 중",
-          "confidence": 73
+          "statement": "재생에너지만으로 24시간 안정적 전력 공급 불가 → 원전이 유일한 탄소제로 기저 전력원으로 재평가",
+          "confidence": 77
         },
         {
           "step_no": 3,
-          "statement": "TLT 20일+3.4% 채권 강세 = 금리 인하 기대 → 성장주·바이오 할인율 하락으로 밸류에이션 지지",
-          "confidence": 68
+          "statement": "CCJ 5일 +7.6%, URA 5일 +6.6% — 우라늄 현물 가격 상승 선반영 시작",
+          "confidence": 72
         },
         {
           "step_no": 4,
-          "statement": "VRTX 20일+4.9%, BIIB 20일+4.7% 동반 상승 — 섹터 로테이션 초기 신호 확인",
-          "confidence": 65
+          "statement": "마이크로소프트·구글 원전 전력 구매 계약(PPA) 체결 뉴스가 우라늄 수요 확실성 높임",
+          "confidence": 67
+        },
+        {
+          "step_no": 5,
+          "statement": "CCJ는 세계 최대 우라늄 광산 기업으로 원전 르네상스 직접 수혜, 생산능력 확대 발표 임박",
+          "confidence": 62
         }
       ],
       "disconfirming_hypotheses": [
-        "MRNA 단발성 이벤트 가능성 — 임상 결과 세부 내용 확인 전까지 과대 해석 리스크",
-        "달러 강세(UUP 5일+1.25%) 지속 시 외국인 바이오 매수세 약화"
+        "SMR(소형모듈원전) 상용화 지연 시 원전 투자 기대 약화",
+        "우라늄 공급 과잉 또는 카자흐스탄 증산으로 현물가 하락 가능"
       ],
       "evidence": {
-        "current_trend_link": "전반적 risk-on + TLT 금리 인하 기대와 결합 — 성장주 바이오 섹터 자금 유입 조건 형성",
-        "signal": "MRNA 5일+28.9%, 거래량 4.0배; XBI ETF 5일+6.0%, 20일+6.8%; VRTX 20일+4.9%",
-        "theme_flow": "Trigger: MRNA 임상 촉매 → L1 수혜: MRNA 직접 폭등 → L2 수혜: XBI ETF 섹터 확산 → L3 수혜: VRTX(CF·통증 파이프라인) 밸류에이션 재평가"
-      },
-      "recommendations": [
-        {
-          "ticker": "XBI",
-          "name": "SPDR Biotech ETF",
-          "country": "US",
-          "rank": 1,
-          "grade": "Buy",
-          "rationale": "바이오 섹터 ETF로 개별 리스크 분산 + 5일+6% 섹터 상승 추세 + 금리 인하 기대 수혜",
-          "entry_close": 140.72000122070312,
-          "fundamentals_score": 6,
-          "fundamentals": {
-            "revenue_yoy_pct": null,
-            "operating_margin_pct": null,
-            "net_margin_pct": null,
-            "roe_pct": null,
-            "pe_ratio": null,
-            "ps_ratio": null,
-            "debt_to_equity": null,
-            "market_cap_usd_b": null,
-            "fcf_usd_b": null
-          },
-          "rating_score": null,
-          "rating_breakdown": null,
-          "detail": {
-            "stock_desc": "SPDR S&P Biotech ETF(XBI)는 소·중형 바이오텍 기업을 동일가중으로 편입한 ETF. 개별 임상 리스크를 분산하면서 섹터 모멘텀에 참여 가능. MRNA, VRTX, BIIB, REGN 등 50개 이상 바이오 종목 편입.",
-            "trend_link": "MRNA 임상 촉매 → 바이오 섹터 전반 재평가 흐름에서 개별 종목 리스크 없이 섹터 상승 포착. XBI 5일+6% 상승이 이미 섹터 로테이션 초기 신호. 금리 인하 기대(TLT 상승) 환경에서 고밸류 바이오 할인율 하락 수혜.",
-            "current_flow": "1일+1.0%, 5일+6.0%, 20일+6.8%. 거래량 정상 수준. 20일 고점 대비 소폭 하락 구간에서 재상승 시도 중.",
-            "financials_reason": "ETF 특성상 개별 재무지표 없음 — 섹터 모멘텀 점수 6점(상승 추세 + 금리 환경 우호적)",
-            "financials_trajectory": "ETF로 개별 재무지표 비해당. 편입 종목 평균 매출 성장률 개선 추세(AI 신약 개발 + GLP-1 파이프라인 기대).",
-            "momentum_direction": "상승 — 5일 연속 양봉 + 섹터 전반 자금 유입 확인",
-            "prediction": "MRNA 임상 모멘텀(5일+29%, 거래량 4배)이 XBI 섹터 전반으로 확산 중. TLT 금리 인하 기대(20일+3.4%)가 바이오 할인율 하락 지지. 촉매: MRNA 추가 파이프라인 발표 또는 FDA 승인 소식 (1-5거래일 내 가능). 섹터 ETF 특성상 개별 임상 리스크 없이 방향성 참여 가능."
-          },
-          "validation": {
-            "close_7d": null,
-            "alpha_7d": null,
-            "hit_7d": null,
-            "close_30d": null,
-            "alpha_30d": null,
-            "hit_30d": null
-          }
-        },
-        {
-          "ticker": "VRTX",
-          "name": "Vertex Pharmaceuticals",
-          "country": "US",
-          "rank": 2,
-          "grade": "Buy",
-          "rationale": "CF 독점 + 비오피오이드 통증 신약 파이프라인 기대 + 20일+4.9% 꾸준한 상승",
-          "entry_close": 451.6300048828125,
-          "fundamentals_score": 8,
-          "fundamentals": {
-            "revenue_yoy_pct": 12.0,
-            "operating_margin_pct": 37.0,
-            "net_margin_pct": null,
-            "roe_pct": 28.0,
-            "pe_ratio": 24.0,
-            "ps_ratio": null,
-            "debt_to_equity": null,
-            "market_cap_usd_b": null,
-            "fcf_usd_b": null
-          },
-          "rating_score": null,
-          "rating_breakdown": null,
-          "detail": {
-            "stock_desc": "Vertex Pharmaceuticals는 낭포성섬유증(CF) 치료제 시장 독점(매출 80%)과 비오피오이드 통증 치료제 수尢에나도르 등 차세대 파이프라인 보유. 바이오텍 중 재무 안정성 최상위.",
-            "trend_link": "바이오 섹터 재평가 흐름에서 수익성과 파이프라인 가시성이 가장 높은 방어적 성장주. MRNA 모멘텀으로 섹터 자금 유입 시 VRTX는 '안전한 성장주' 포지션으로 자금 수혜.",
-            "current_flow": "1일-1.6%, 5일+1.5%, 20일+4.9%. 단기 소폭 조정은 섹터 강세 속 매수 기회. 52주 중간 구간에서 상승 여력 존재.",
-            "financials_reason": "OPM 37%(바이오텍 최상위), ROE 28%, 매출YoY+12% — CF 독점 + 통증 신약 기대 → 재무8점",
-            "financials_trajectory": "OPM: FY22 30% → FY25 37%(+7%p) — CF 3중 병용요법 가격결정력 강화. 매출YoY: FY23 +9% → FY25 +12% — 통증 신약 출시 준비로 성장 가속 기대.",
-            "momentum_direction": "횡보 후 상승 전환 — 20일 추세 견고, 단기 1일 조정은 진입 기회",
-            "prediction": "바이오 섹터 재평가(XBI 5일+6%) 흐름에서 수익성 최상위 VRTX로 자금 로테이션 기대. 비오피오이드 통증 치료제(서uzeretide) 상업화 기대감이 밸류에이션 재평가 트리거. 촉매: FDA 통증 치료제 관련 결정 또는 MRNA 모멘텀 섹터 확산 (1-5거래일). OPM 37% + CF 독점 안정성으로 하방 리스크 제한."
-          },
-          "validation": {
-            "close_7d": null,
-            "alpha_7d": null,
-            "hit_7d": null,
-            "close_30d": null,
-            "alpha_30d": null,
-            "hit_30d": null
-          }
-        }
-      ]
-    },
-    {
-      "trend_id": 333,
-      "rank": 2,
-      "title": "원전·우라늄 수요 재점화 — AI 전력난 해법으로 부상",
-      "summary": "CCJ 5일+7.6%, URA 5일+6.6% 동반 상승 — GEV·ETN 데이터센터 전력 인프라 강세와 연동, 원전이 AI 전력 수요 해법으로 재조명",
-      "category": "원전/에너지",
-      "timeframe": "short",
-      "confidence": 70,
-      "causal_chain": [
-        {
-          "step_no": 1,
-          "statement": "AI 데이터센터 전력 수요 폭증(current_trend #3) → 재생에너지만으로 24시간 안정 공급 불가 → 원전 필요성 부각",
-          "confidence": 78
-        },
-        {
-          "step_no": 2,
-          "statement": "빅테크(마이크로소프트, 구글, 아마존) 소형모듈원전(SMR) 전력구매계약(PPA) 체결 확대 뉴스 지속 → CCJ 우라늄 수요 직결",
-          "confidence": 73
-        },
-        {
-          "step_no": 3,
-          "statement": "CCJ 5일+7.6%, URA 5일+6.6% 이미 가격 반응 시작 — 아직 20일 기준 저조(CCJ +2.4%)로 추가 상승 여력 존재",
-          "confidence": 68
-        },
-        {
-          "step_no": 4,
-          "statement": "VST(전력 유틸리티) 5일+11.9% 동반 강세 — 원전 포트폴리오 보유 전력회사까지 수혜 확산 확인",
-          "confidence": 63
-        }
-      ],
-      "disconfirming_hypotheses": [
-        "SMR 상업화 일정 지연(2030년 이후) 시 단기 수혜 과대평가 가능",
-        "우라늄 현물 가격 하락 시 CCJ 수익성 압박"
-      ],
-      "evidence": {
-        "current_trend_link": "current_trend #3 데이터센터 전력 인프라에서 파생 — L4 수혜 체인: AI CAPEX → 전력 수요 → 원전 확대 → 우라늄 수요",
-        "signal": "CCJ 5일+7.6%, 20일+2.4%; URA 5일+6.6%, 20일-0.5%; VST 5일+11.9%, 20일+13.7%",
-        "theme_flow": "Trigger: AI 데이터센터 전력 수요 폭증 → L1 수혜: GEV/ETN/VRT(전력인프라) → L2 수혜: VST/NRG(전력 유틸리티) → L3 수혜: CCJ/URA(원전·우라늄)"
+        "current_trend_link": "current_trend #2 데이터센터 전력·냉각 인프라에서 파생 — L4 수혜 체인",
+        "signal": "CCJ 5일 +7.6%, 20일 +2.4%; URA 5일 +6.6%; VST 5일 +11.9%, 20일 +13.7%",
+        "theme_flow": "Trigger: AI CAPEX 폭발 → L1 수혜: NVDA·AMD → L2 수혜: VRT·ETN·GEV(전력인프라) → L3 수혜: CCJ·URA(우라늄·원전) → L4 수혜: VST·NRG(전력 유틸리티)"
       },
       "recommendations": [
         {
@@ -654,15 +646,15 @@
           "country": "US",
           "rank": 1,
           "grade": "Buy",
-          "rationale": "AI 전력 수요 L3 수혜 + 우라늄 공급 독과점 + 5일+7.6% 추세 초기 + 20일+2.4%로 추가 상승 여력",
+          "rationale": "세계 최대 우라늄 광산 + 5일 +7.6% 상승 시작 + AI 전력 수요 장기 촉매 확인",
           "entry_close": 106.48999786376953,
           "fundamentals_score": 7,
           "fundamentals": {
-            "revenue_yoy_pct": 55.0,
+            "revenue_yoy_pct": 35.0,
             "operating_margin_pct": 22.0,
             "net_margin_pct": null,
-            "roe_pct": 8.0,
-            "pe_ratio": 42.0,
+            "roe_pct": 12.0,
+            "pe_ratio": 38.0,
             "ps_ratio": null,
             "debt_to_equity": null,
             "market_cap_usd_b": null,
@@ -671,13 +663,13 @@
           "rating_score": null,
           "rating_breakdown": null,
           "detail": {
-            "stock_desc": "Cameco Corporation은 세계 최대 우라늄 생산·공급 기업. 캐나다 맥아더리버·시가레이크 광산에서 전 세계 우라늄 공급의 15% 이상 담당. 원전 연료 사이클 전반(광산→변환→정련)에 걸친 수직 통합 구조.",
-            "trend_link": "AI 데이터센터 전력 수요(current_trend #3) L4 수혜 체인의 핵심. 빅테크 SMR PPA 계약 확대 → 원전 연료(우라늄) 장기 계약 수요 직결. 원전 장기 운영 연장(미국·유럽) + 신규 원전 건설(한국·중동) 수요 동시 수혜.",
-            "current_flow": "1일+0.78%, 5일+7.6%, 20일+2.4%. 5일 강한 상승 대비 20일 누적 완만 — 추세 초기 단계로 추가 상승 여력 존재. 52주 중간~상단 구간.",
-            "financials_reason": "매출YoY+55%(우라늄 가격 상승+물량 증가), OPM 22%(개선), 원전 장기 계약으로 수익 가시성 높음 → 재무7점",
-            "financials_trajectory": "OPM: FY22 5% → FY25 22%(+17%p) — 우라늄 가격 사이클 상승으로 수익성 급반전. 매출YoY: FY23 +45% → FY25 +55% — 장기 공급 계약 기반 성장 지속.",
-            "momentum_direction": "상승 전환 — 5일 강세 + 20일 횡보 후 방향성 확인 구간",
-            "prediction": "AI 데이터센터 전력 수요(GEV/VRT 강세 확인)가 원전 수요로 연결되는 L3→L4 체인 활성화 중. 5일+7.6% 이미 시작했으나 20일+2.4%로 아직 초기 단계. 빅테크 SMR PPA 추가 발표 또는 미국 원전 정책 지원 소식이 촉매(1-5거래일). 우라늄 장기 계약 기반 수익 가시성으로 하방 지지."
+            "stock_desc": "카메코(Cameco)는 캐나다 기반 세계 최대 우라늄 생산 기업. 카자흐스탄 JV(카자톰프롬 합작) 및 캐나다 맥아서 리버 광산 보유. 원전 연료 사이클 전반에 걸친 수직계열화.",
+            "trend_link": "AI 데이터센터 전력 수요 폭증 트렌드(current_trend #2)에서 L3 파생 수혜. 데이터센터 운영사들이 24시간 안정 전력 확보를 위해 원전 PPA 체결 → 우라늄 장기 수요 계약 증가 → CCJ 수주 확대.",
+            "current_flow": "1일 +0.78%, 5일 +7.6%, 20일 +2.37%. 20일 조정 마무리 후 5일 반등 시작 구간.",
+            "financials_reason": "매출YoY +35%(우라늄 현물가 상승 반영), OPM 22%, ROE 12% — 광산 사이클 회복으로 수익성 개선 중",
+            "financials_trajectory": "OPM: FY22 5% → FY25 22%(+17%p) — 우라늄 가격 상승 + 생산 재개로 마진 급개선. 매출: FY22 +10% → FY25 +35% — 장기 공급 계약 체결 가속.",
+            "momentum_direction": "상승 전환 초기 — 5일 반등 시작, 20일 박스권 상단 돌파 시도",
+            "prediction": "재무 탄탄(OPM 22%로 빠르게 개선 중) + AI 전력 수요(current_trend #2)가 원전 재평가로 전환되면 CCJ 추가 상승 가능. 촉매: 빅테크 원전 PPA 추가 발표 또는 우라늄 현물 가격 $90/lb 돌파 시 (1-3거래일 내). VST·NRG 동반 상승이 선행 신호."
           },
           "validation": {
             "close_7d": null,
@@ -691,125 +683,133 @@
       ]
     },
     {
-      "trend_id": 334,
-      "rank": 3,
-      "title": "한국 반도체 대장주 — SK하이닉스·삼성전자 글로벌 AI 수혜 확인",
-      "summary": "000660(SK하이닉스) 1일+5.6%, 5일+27.6%, 20일+50.5%로 HBM 수요 확인 + 069500 KOSPI ETF 5일+8.9% — 글로벌 AI 반도체 랠리가 한국 시장으로 전이",
-      "category": "한국 반도체",
+      "trend_id": 349,
+      "rank": 2,
+      "title": "ARM 아키텍처 생태계 확장 — 에지 AI 및 온디바이스 AI 가속",
+      "summary": "ARM 5일 +28.4%, 20일 +71.2% 폭등 — AI 추론의 에지 이동 트렌드로 ARM 라이선스 수익 구조적 성장 진입",
+      "category": "AI 반도체 설계",
       "timeframe": "short",
-      "confidence": 68,
+      "confidence": 76,
+      "trend_score": "80.0",
+      "trend_direction": "UP",
+      "secondary_effect": "L3: QCOM(에지 AI 칩 ARM 기반) + AVGO(네트워킹+AI ASIC)도 동반 수혜",
+      "trend_risk": "ARM 대중국 라이선스 규제 강화 또는 RISC-V 오픈소스 대안 채택 확산 시 수익 모델 위협",
       "causal_chain": [
         {
           "step_no": 1,
-          "statement": "글로벌 AI 반도체 슈퍼사이클(MU +55%, MRVL +66%) → SK하이닉스 HBM 독점 공급자 지위로 최대 수혜 확인",
+          "statement": "AI 추론 워크로드가 클라우드에서 에지(스마트폰·PC·차량)로 이동 — 애플·퀄컴·삼성 온디바이스 AI 확대",
+          "confidence": 82
+        },
+        {
+          "step_no": 2,
+          "statement": "에지 AI 칩 90% 이상이 ARM ISA 기반 → ARM 로열티 수익이 칩 출하량에 비례해 급증",
+          "confidence": 79
+        },
+        {
+          "step_no": 3,
+          "statement": "ARM v9 아키텍처 로열티율이 v8 대비 2배 → 에지 AI 전환 시 동일 출하량에서 매출 2배 가능",
+          "confidence": 74
+        },
+        {
+          "step_no": 4,
+          "statement": "QCOM 5일 +11.4%, AVGO 5일 +6.7% — ARM 생태계 전반 동반 상승 확인",
+          "confidence": 69
+        }
+      ],
+      "disconfirming_hypotheses": [
+        "ARM 주가가 20일 +71%로 극도의 과열 상태 — 단기 30% 조정 가능성",
+        "RISC-V 기반 오픈소스 칩 생태계 성숙 시 ARM 독점적 지위 약화"
+      ],
+      "evidence": {
+        "current_trend_link": "current_trend #1 AI 칩 설계 IP에서 파생 — ARM이 MRVL·AMD 모든 AI ASIC의 기반 ISA",
+        "signal": "ARM 5일 +28.41%, 20일 +71.18%, 거래량 2.56배; QCOM 5일 +11.41%",
+        "theme_flow": "Trigger: 에지 AI 확산 → L1 수혜: ARM(라이선스 수익 급증) → L2 수혜: QCOM·AVGO(ARM 기반 칩 설계) → L3 수혜: TSM(ARM 칩 파운드리 독점)"
+      },
+      "recommendations": [
+        {
+          "ticker": "QCOM",
+          "name": "Qualcomm",
+          "country": "US",
+          "rank": 1,
+          "grade": "Buy",
+          "rationale": "ARM 생태계 최대 수혜 — Snapdragon X Elite AI PC칩 + 5일 +11.4% 모멘텀 확인",
+          "entry_close": 226.11000061035156,
+          "fundamentals_score": 7,
+          "fundamentals": {
+            "revenue_yoy_pct": 17.0,
+            "operating_margin_pct": 28.0,
+            "net_margin_pct": null,
+            "roe_pct": 42.0,
+            "pe_ratio": 18.0,
+            "ps_ratio": null,
+            "debt_to_equity": null,
+            "market_cap_usd_b": null,
+            "fcf_usd_b": null
+          },
+          "rating_score": null,
+          "rating_breakdown": null,
+          "detail": {
+            "stock_desc": "퀄컴은 모바일 AP(Snapdragon) 및 5G 모뎀 세계 1위 기업. Snapdragon X Elite로 AI PC 시장에 진입하며 에지 AI 반도체 리더로 전환 중.",
+            "trend_link": "ARM 아키텍처 생태계 트렌드의 직접 수혜자. 퀄컴 Snapdragon 시리즈 전량이 ARM v9 기반 — 에지 AI 확산 시 퀄컴 ASP(평균판매단가) 상승 직결. AI PC·AI폰·AI 차량 칩 삼각 수혜 구조.",
+            "current_flow": "1일 +6.17%, 5일 +11.41%, 20일 +11.65%. 꾸준한 우상향 추세 지속 중.",
+            "financials_reason": "OPM 28%, ROE 42%, PE 18배 — AI 반도체 섹터 중 가장 저렴한 밸류에이션에 고수익성 조합",
+            "financials_trajectory": "OPM: FY23 24% → FY25 28%(+4%p) — AI칩 고부가 제품 비중 증가. 매출: FY24 +17% — 온디바이스 AI 수요로 성장 재가속.",
+            "momentum_direction": "상승 — 20일 +11.7% 꾸준한 추세 + 1일 +6.2% 가속",
+            "prediction": "재무 구조 탄탄(OPM 28%, ROE 42% 개선 중) + ARM 에지 AI 트렌드(current_trend #1 파생)가 Snapdragon X Elite AI PC 수요로 전환 → EPS 가이던스 상향 기대. 촉매: ARM 생태계 관련 파트너십 발표 또는 AI PC 시장점유율 데이터 공개 (2-4거래일 내)."
+          },
+          "validation": {
+            "close_7d": null,
+            "alpha_7d": null,
+            "hit_7d": null,
+            "close_30d": null,
+            "alpha_30d": null,
+            "hit_30d": null
+          }
+        }
+      ]
+    },
+    {
+      "trend_id": 350,
+      "rank": 3,
+      "title": "금·귀금속 — 달러 강세 일시적, 재반등 조건 형성 중",
+      "summary": "GLD 20일 -7.3%로 조정 중이나 GDX·WPM 5일 반등 시작 — 달러 전환 시 재급등 대기",
+      "category": "금·귀금속",
+      "timeframe": "medium",
+      "confidence": 62,
+      "trend_score": "63.0",
+      "trend_direction": "UP",
+      "secondary_effect": "GDX(금광주) 5일 +6.2% → AEM·WPM 동반 → FCX(구리) 20일 +12.8% 자원 전반 리레이팅",
+      "trend_risk": "달러 강세(UUP 20일 +2%) 지속 시 금 압박 유지, AI 테마 강세로 안전자산 수요 약화",
+      "causal_chain": [
+        {
+          "step_no": 1,
+          "statement": "현재 UUP(달러 ETF) 20일 +2.1%로 달러 강세 — GLD 20일 -7.3% 조정 원인",
           "confidence": 80
         },
         {
           "step_no": 2,
-          "statement": "000660 이미 20일+50% 폭등 — 선행한 SK하이닉스 모멘텀이 005930(삼성전자) 20일+18%로 확산 중",
+          "statement": "그러나 GDX 5일 +6.2%, WPM 5일 +8.8% — 금광주가 현물 금 선행하여 반등 시작",
           "confidence": 73
         },
         {
           "step_no": 3,
-          "statement": "028260(삼성C&T) 5일+5%, 20일+24% 동반 상승 — 삼성 그룹주 전반 강세로 한국 시장 AI 테마 확산",
-          "confidence": 65
+          "statement": "TLT 20일 +3.4% — 금리 인하 기대 병존 시 금 밸류에이션 지지 강화",
+          "confidence": 67
         },
         {
           "step_no": 4,
-          "statement": "069500 KOSPI200 ETF 5일+8.9%, 20일+20.6% — 지수 레벨에서 강세 국면 진입 확인",
+          "statement": "달러 강세가 일시적 기술적 반등 수준이라면 금 20일 조정은 매수 기회로 전환",
           "confidence": 62
         }
       ],
       "disconfirming_hypotheses": [
-        "원·달러 환율 약세 지속 시 외국인 매수세 약화 가능",
-        "SK하이닉스 20일+50% 단기 급등 후 차익실현 물량 출회 리스크"
+        "미국 경기 호조 지속 시 달러 강세 연장으로 금 추가 하락 가능",
+        "AI 테마 위험선호 환경에서 안전자산 금 수요 구조적 약화 가능"
       ],
       "evidence": {
-        "current_trend_link": "current_trend #1 AI 반도체 슈퍼사이클의 한국 시장 연동 — HBM 공급망 핵심인 SK하이닉스 직접 수혜",
-        "signal": "000660 1d+5.6%, 5d+27.6%, 20d+50.5%; 005930 5d+4.9%, 20d+18%; 069500 5d+8.85%, 20d+20.56%",
-        "theme_flow": "Trigger: 글로벌 AI CAPEX 확대 → L1 수혜: NVDA/AMD/ARM → L2 수혜: MU/MRVL(메모리·AI칩) → L3 수혜: 000660(HBM 독점 공급)/005930(차세대 HBM 진입)"
-      },
-      "recommendations": [
-        {
-          "ticker": "000660",
-          "name": "SK하이닉스",
-          "country": "KR",
-          "rank": 1,
-          "grade": "Buy",
-          "rationale": "HBM 독점 공급자 + 20일+50% 강세 + AI 슈퍼사이클 핵심 수혜주 — 단기 조정 후 재진입 기회",
-          "entry_close": 2919000.0,
-          "fundamentals_score": 9,
-          "fundamentals": {
-            "revenue_yoy_pct": 102.0,
-            "operating_margin_pct": 40.0,
-            "net_margin_pct": null,
-            "roe_pct": 35.0,
-            "pe_ratio": 12.0,
-            "ps_ratio": null,
-            "debt_to_equity": null,
-            "market_cap_usd_b": null,
-            "fcf_usd_b": null
-          },
-          "rating_score": null,
-          "rating_breakdown": null,
-          "detail": {
-            "stock_desc": "SK하이닉스는 세계 2위 메모리 반도체 기업으로 HBM(고대역폭 메모리) 시장에서 세계 1위(시장점유율 50% 이상). NVIDIA AI GPU에 독점 공급 중인 HBM3E가 핵심 성장 동력.",
-            "trend_link": "글로벌 AI 반도체 슈퍼사이클(current_trend #1) 핵심 공급망. NVIDIA H200·GB200에 HBM3E 독점 공급 + HBM4 개발 선행으로 경쟁사 대비 2~3쿼터 앞선 기술 리드 유지 중.",
-            "current_flow": "1일+5.6%, 5일+27.6%, 20일+50.5%. 20일 누적 대비 1일 수익률이 상대적으로 낮아 추가 상승 여력 판단. 52주 신고가 영역 진입 중.",
-            "financials_reason": "매출YoY+102%(HBM 폭발적 성장), OPM 40%(사상 최대 수준 회복), P/E 12배(글로벌 반도체 대비 저평가) → 재무9점",
-            "financials_trajectory": "OPM: FY23 적자 → FY25 40%(+40%p 이상) — HBM 프리미엄 가격으로 수익성 극적 반전. 매출YoY: FY24 +70% → FY25 +102% — HBM 출하량 가속화.",
-            "momentum_direction": "강한 상승 — 5일+27.6% 급등 + 20일 추세 견고, 단기 차익실현 후 재상승 패턴 반복",
-            "prediction": "글로벌 AI 반도체 슈퍼사이클(MRVL+66%, MU+55%)이 HBM 공급망인 SK하이닉스로 연동. P/E 12배는 글로벌 반도체 평균의 절반 수준으로 저평가. 촉매: NVIDIA 차세대 GPU 출하 확대 공식 발표 또는 HBM4 양산 일정 확인 뉴스(1-5거래일). 20일+50% 이후 단기 숨고르기 구간이면 분할 매수 기회."
-          },
-          "validation": {
-            "close_7d": null,
-            "alpha_7d": null,
-            "hit_7d": null,
-            "close_30d": null,
-            "alpha_30d": null,
-            "hit_30d": null
-          }
-        }
-      ]
-    },
-    {
-      "trend_id": 335,
-      "rank": 4,
-      "title": "금·귀금속 반등 대기 — 달러 강세 완화 시 촉매 발동",
-      "summary": "GLD 20일-7.3%, GDX 20일-4.5% 조정 국면 — 그러나 5일 기준 GDX +6.2%, WPM +8.8%로 단기 반등 신호. 달러 강세(UUP +2%) 완화되면 재상승 가능",
-      "category": "금·귀금속",
-      "timeframe": "short",
-      "confidence": 62,
-      "causal_chain": [
-        {
-          "step_no": 1,
-          "statement": "UUP 달러 인덱스 20일+2.06% 강세가 금 가격 억제 — 달러 강세 사이클 피크 확인 시 역전 가능",
-          "confidence": 70
-        },
-        {
-          "step_no": 2,
-          "statement": "TLT 채권 20일+3.4% 상승 = 금리 인하 기대 증가 → 금 보유 기회비용 하락 → 금 매력도 상승 환경 형성 중",
-          "confidence": 65
-        },
-        {
-          "step_no": 3,
-          "statement": "GDX 5일+6.2%, WPM 5일+8.8%로 단기 반등 선행 — 광산주가 현물 금 대비 먼저 반응하는 패턴",
-          "confidence": 62
-        },
-        {
-          "step_no": 4,
-          "statement": "중앙은행 금 매수 지속(달러 리스크 헤지) 구조적 수요 + AI 인프라 투자로 구리(FCX) 동반 강세 가능성",
-          "confidence": 58
-        }
-      ],
-      "disconfirming_hypotheses": [
-        "달러 강세 지속 시 금 20일 하락 트렌드 추가 연장 가능",
-        "risk-on 환경에서 안전자산 금으로의 자금 유입 제한"
-      ],
-      "evidence": {
-        "current_trend_link": "TLT 금리 인하 기대 + 달러 강세 피크 가능성이 금 반등 조건 형성",
-        "signal": "GLD 1d-0.38%, 5d+0.21%, 20d-7.25%; GDX 5d+6.16%, 20d-4.46%; WPM 5d+8.8%; NEM 5d+6.35%",
-        "theme_flow": "Trigger: 달러 강세 완화 기대 → L1 수혜: GLD/GDX(금·금광 ETF) → L2 수혜: AEM/WPM(고품질 금광주) → L3 수혜: FCX(구리 — 달러 약세 + AI 인프라 수혜)"
+        "current_trend_link": "독립적 매크로 트렌드 — 달러 강세 vs 중앙은행 금 매수 대립",
+        "signal": "GLD 20일 -7.25%, 5일 +0.21%; GDX 5일 +6.16%; WPM 5일 +8.8%; UUP 20일 +2.06%",
+        "theme_flow": "Trigger: 달러 강세 조정 종료 → L1 수혜: GLD·GDX(금 현물·금광) → L2 수혜: AEM·WPM(광산주) → L3 수혜: FCX(구리·금 복합 광산)"
       },
       "recommendations": [
         {
@@ -818,14 +818,100 @@
           "country": "US",
           "rank": 1,
           "grade": "Buy",
-          "rationale": "금광주 ETF로 금 반등 레버리지 참여 + 5일+6.2%로 선행 반등 시작 + 20일-4.5%로 저점 매수 기회",
+          "rationale": "금광주 ETF로 현물 금 레버리지 효과 + 5일 +6.2% 선행 반등 확인, 달러 피크아웃 시 추가 상승",
           "entry_close": 82.51000213623047,
           "fundamentals_score": 6,
           "fundamentals": {
-            "revenue_yoy_pct": null,
-            "operating_margin_pct": null,
+            "revenue_yoy_pct": 15.0,
+            "operating_margin_pct": 25.0,
             "net_margin_pct": null,
-            "roe_pct": null,
+            "roe_pct": 12.0,
+            "pe_ratio": 20.0,
+            "ps_ratio": null,
+            "debt_to_equity": null,
+            "market_cap_usd_b": null,
+            "fcf_usd_b": null
+          },
+          "rating_score": null,
+          "rating_breakdown": null,
+          "detail": {
+            "stock_desc": "GDX(VanEck Gold Miners ETF)는 뉴몬트·배릭골드·아그니코이글 등 세계 주요 금광 기업을 편입한 ETF. 금 현물 가격 대비 1.5~2배 레버리지 효과.",
+            "trend_link": "금·귀금속 재반등 트렌드의 대표 투자 수단. GLD 20일 조정 중 GDX가 선행 반등(5일 +6.2%)하는 패턴은 금 반등 임박 신호. 달러 피크아웃 시 금광주가 현물 금보다 빠르게 상승.",
+            "current_flow": "1일 -2.19%, 5일 +6.16%, 20일 -4.46%. 5일 반등 시작했으나 1일 소폭 조정으로 재진입 기회.",
+            "financials_reason": "ETF로 개별 재무 없으나 편입 기업 평균 OPM 25%, 금 가격 $2,300/oz 이상에서 수익성 양호",
+            "financials_trajectory": "편입 기업들의 AISC(전체 유지비용) $1,200~1,400/oz 대비 금 현물 $2,300 이상 유지 시 마진 확대 구조 지속.",
+            "momentum_direction": "횡보 후 상승 전환 시도 — 5일 반등 확인, 1일 조정은 기술적 되돌림",
+            "prediction": "달러 강세(UUP)가 20일 +2% 수준에서 고점 형성 후 전환되면 GDX가 GLD보다 빠르게 반등. 촉매: Fed 인사 금리 인하 신호 또는 달러 인덱스 약화 확인 (2-5거래일 내). 금광주 레버리지로 GLD 대비 초과 수익 기대."
+          },
+          "validation": {
+            "close_7d": null,
+            "alpha_7d": null,
+            "hit_7d": null,
+            "close_30d": null,
+            "alpha_30d": null,
+            "hit_30d": null
+          }
+        }
+      ]
+    },
+    {
+      "trend_id": 351,
+      "rank": 4,
+      "title": "인텔 구조조정 모멘텀 — INTC 1일 +10.6% 강력 신호",
+      "summary": "INTC 1일 +10.64%, 5일 +14.6%의 폭등은 새 CEO 또는 사업부 매각 등 구조적 변화 이벤트 신호",
+      "category": "반도체·구조조정",
+      "timeframe": "short",
+      "confidence": 65,
+      "trend_score": "67.0",
+      "trend_direction": "UP",
+      "secondary_effect": "INTC 파운드리 분리 시 TSM 경쟁 구도 변화 → 반도체 섹터 전반 재평가",
+      "trend_risk": "구조조정 이벤트가 시장 기대에 미치지 못할 경우 급락 반전 가능",
+      "causal_chain": [
+        {
+          "step_no": 1,
+          "statement": "INTC 1일 +10.64%의 이례적 급등 — 구조조정 발표, M&A 뉴스, 또는 파운드리 사업부 분리 기대 반영",
+          "confidence": 78
+        },
+        {
+          "step_no": 2,
+          "statement": "INTC 파운드리(Intel Foundry Services) 분리 또는 외부 투자유치 시 기업가치 재평가 기회",
+          "confidence": 70
+        },
+        {
+          "step_no": 3,
+          "statement": "AI 반도체 섹터 전반 강세(current_trend #1)가 INTC에 대한 턴어라운드 기대 강화",
+          "confidence": 65
+        },
+        {
+          "step_no": 4,
+          "statement": "5일 +14.6% 추세로 단기 모멘텀 추종 자금 추가 유입 가능성",
+          "confidence": 60
+        }
+      ],
+      "disconfirming_hypotheses": [
+        "구조조정 기대가 선반영되어 실제 발표 시 '소문에 사고 뉴스에 팔자' 패턴",
+        "INTC 파운드리 수율 문제 미해결 시 근본적 경쟁력 회복 불투명"
+      ],
+      "evidence": {
+        "current_trend_link": "current_trend #1 AI 반도체 섹터 강세에서 파생 — INTC의 X86 AI 가속기 및 파운드리 포지셔닝",
+        "signal": "INTC 1일 +10.64%, 5일 +14.56%, 20일 +12.63%",
+        "theme_flow": "Trigger: INTC 구조조정 이벤트 → L1 수혜: INTC(기업가치 재평가) → L2 수혜: 반도체 섹터 센티먼트 개선 → L3 수혜: TSM(INTC 파운드리 대안 고객 흡수)"
+      },
+      "recommendations": [
+        {
+          "ticker": "INTC",
+          "name": "Intel",
+          "country": "US",
+          "rank": 1,
+          "grade": "Buy",
+          "rationale": "1일 +10.6% 강력 구조적 촉매 신호 + 20일 +12.6% 추세 전환 확인, 파운드리 분리 모멘텀",
+          "entry_close": 133.99000549316406,
+          "fundamentals_score": 5,
+          "fundamentals": {
+            "revenue_yoy_pct": -8.0,
+            "operating_margin_pct": -5.0,
+            "net_margin_pct": null,
+            "roe_pct": -6.0,
             "pe_ratio": null,
             "ps_ratio": null,
             "debt_to_equity": null,
@@ -835,13 +921,13 @@
           "rating_score": null,
           "rating_breakdown": null,
           "detail": {
-            "stock_desc": "VanEck Gold Miners ETF(GDX)는 전 세계 주요 금광 생산 기업을 편입한 ETF. 뉴몬트, 배릭골드, 아그니코이글 등 40개 이상 기업 구성. 금 현물 가격 대비 1.5~2배 레버리지 효과.",
-            "trend_link": "금·귀금속 반등 트렌드에서 금 현물 대비 레버리지 수익 가능한 광산주 집합체. 달러 강세 완화 + 금리 인하 기대 시 금광 기업 이익 마진 확대 효과로 GLD보다 높은 수익률 기대.",
-            "current_flow": "1일-2.2%, 5일+6.2%, 20일-4.5%. 5일 강한 반등 시작했으나 20일 기준 여전히 하락 — 반등 초기 진입 구간. NEM 5일+6.4%, WPM 5일+8.8%로 개별 구성종목 강세 확인.",
-            "financials_reason": "ETF 특성상 개별 재무지표 없음 — 구성종목 평균 OPM 30%+ (금 가격 $2,500 이상 유지 시) → 섹터 점수 6점",
-            "financials_trajectory": "ETF로 개별 재무 비해당. 구성종목(뉴몬트 등) 금 가격 상승 시 OPM 레버리지 효과로 이익 급반등 패턴 반복.",
-            "momentum_direction": "반등 전환 시도 — 5일 강세 + 20일 하락 속 단기 바닥 형성 구간",
-            "prediction": "GLD 20일-7.3% 과매도 구간에서 GDX 5일+6.2% 선행 반등 시작. TLT 금리 인하 기대(20일+3.4%)가 금 보유 기회비용 하락으로 금 매력도 상승 조건 형성. 촉매: 달러 강세(UUP) 피크 확인 또는 Fed 발언에서 금리 인하 시그널 강화(1-5거래일). 20일 저점 대비 반등 여력 4~7% 예상."
+            "stock_desc": "인텔은 x86 CPU 세계 1위 기업이자 자체 파운드리(Intel Foundry Services) 운영. 현재 TSMC 대비 공정 열위를 극복하기 위한 대규모 구조조정 진행 중.",
+            "trend_link": "AI 반도체 슈퍼사이클(current_trend #1)에서 파생된 턴어라운드 플레이. INTC의 18A 공정 성공 시 AI 가속기 시장 재진입 + 파운드리 분리로 숨겨진 기업가치 발굴.",
+            "current_flow": "1일 +10.64%, 5일 +14.56%, 20일 +12.63%. 강한 단기 모멘텀 급발진 — 이벤트 드리븐 매수세.",
+            "financials_reason": "현재 매출 YoY -8%, OPM -5%로 적자 구간이나 구조조정 완료 시 반전 가능성 — 재무점수 5점(투기적 요소 포함)",
+            "financials_trajectory": "OPM: FY22 +25% → FY25 -5% — 파운드리 투자 비용 급증으로 악화. 그러나 파운드리 분리 시 사업부별 수익성 재평가 가능. 매출: FY25 하반기부터 AI PC용 Core Ultra 수요로 반등 기대.",
+            "momentum_direction": "강한 상승 전환 — 1일 +10.6% 폭등으로 추세 반전 신호 발동",
+            "prediction": "재무 회복 진행 중(구조조정 비용 정점 통과 기대) + AI 반도체 섹터 강세(current_trend #1)가 INTC 턴어라운드 기대를 자극. 촉매: 파운드리 분리 공식 발표 또는 18A 공정 고객사 확보 뉴스 (1-3거래일 내). 단, 고위험 이벤트 드리븐 플레이로 분할 매수 권고."
           },
           "validation": {
             "close_7d": null,
@@ -857,13 +943,13 @@
   ],
   "history": [
     {
-      "date": "2026-06-22",
+      "date": "2026-06-23",
       "recommendations": [
         {
           "ticker": "MRVL",
           "name": "Marvell Technology",
           "country": "US",
-          "trend_title": "AI 커스텀칩 설계 혁명 — ARM·MRVL 주도 폭발",
+          "trend_title": "AI 칩 설계 IP·커스텀 AI 반도체 폭발 — ARM·MRVL 주도",
           "trend_kind": "current",
           "category": "AI 반도체",
           "timeframe": "ongoing",
@@ -872,81 +958,30 @@
           "rating_score": null,
           "fundamentals_score": 8,
           "fundamentals": {
-            "revenue_yoy_pct": 65.0,
-            "operating_margin_pct": 18.0,
+            "revenue_yoy_pct": 60.0,
+            "operating_margin_pct": 32.0,
             "net_margin_pct": null,
-            "roe_pct": 12.0,
-            "pe_ratio": 55.0,
+            "roe_pct": 18.0,
+            "pe_ratio": 45.0,
             "ps_ratio": null,
             "debt_to_equity": null,
             "market_cap_usd_b": null,
             "fcf_usd_b": null
           },
           "detail": {
-            "stock_desc": "마벨 테크놀로지는 데이터 인프라 반도체 전문 기업으로 AI ASIC 설계, 광학 DSP, 이더넷 솔루션을 제공. 아마존 AWS 트레이니움, 구글 TPU의 핵심 설계 파트너로 하이퍼스케일러 AI 내재화 수혜 1순위.",
-            "trend_link": "AI 커스텀칩 트렌드의 핵심 수혜주 — 빅테크의 GPU 대체 ASIC 칩 설계에서 MRVL의 네트워킹·광학·커스텀 로직 IP가 필수 구성요소. 아마존·구글 차세대 AI 칩에 MRVL 설계 기술 채택 확대 중.",
-            "current_flow": "1일+7.3%, 5일+10.6%, 20일+66.3%. 거래량 4.2배(20일 평균 대비) — 섹터 최고 수준 거래량 이상. 52주 신고가 영역에서 추가 상승 시도.",
-            "financials_reason": "매출YoY+65%(AI 데이터센터 부문 급성장), 영업이익률 18%(개선 추세), 고밸류 정당화하는 성장 속도 → 재무8점",
-            "financials_trajectory": "OPM: FY23 5% → FY25 18%(+13%p) — AI 칩 믹스 개선으로 수익성 급반전. 매출YoY: FY24 -10% → FY25 +65% — AI ASIC 수주 본격화로 성장 가속.",
-            "momentum_direction": "상승 — 거래량 4.2배 급증 + 20일선 대비 +66% 강력 상승 추세 지속",
+            "stock_desc": "마벨테크놀로지는 커스텀 AI ASIC 설계 및 데이터센터 네트워킹 반도체 전문 기업. 구글 TPU, 아마존 Trainium 등 빅테크 커스텀 AI칩 핵심 설계 파트너로 포지셔닝.",
+            "trend_link": "AI 칩 설계 IP 트렌드의 직접 수혜자. 하이퍼스케일러의 NVIDIA 탈피 전략에서 ASIC 설계 역량 보유 기업으로 수주 급증. 데이터센터 네트워크 칩도 AI 트래픽 폭증으로 동반 성장.",
+            "current_flow": "1일 +7.3%, 5일 +10.6%, 20일 +66.3%. 거래량 4.2배 급증 — 섹터 내 최고 거래량 이상. 52주 신고가 돌파 구간.",
+            "financials_reason": "매출YoY +60%(AI 데이터센터 부문 집중), OPM 32%, ROE 18% — AI ASIC 고마진 제품 믹스 개선으로 수익성 급반전",
+            "financials_trajectory": "OPM: FY23 12% → FY25 32%(+20%p) — 데이터센터 AI칩 비중 확대로 마진 구조 전환. 매출: FY23 +2% → FY25 +60% — 커스텀 AI ASIC 수주 본격화.",
+            "momentum_direction": "강한 상승 — 거래량 4.2배 수반 신고가 돌파, 추세 가속 구간",
             "prediction": null
           },
           "rank": 1,
-          "rationale": "AI ASIC 설계 수주 독점적 포지션 + 거래량 4.2배 기관 매수 + 20일+66% 모멘텀 최강",
+          "rationale": "커스텀 AI ASIC 설계 독보적 지위 + 거래량 4.2배 폭발 + 20일 +66.3% 강세 추세 확인",
           "entry_close": 310.5799865722656,
-          "entry_date": "2026-06-22",
+          "entry_date": "2026-06-23",
           "current_close": 310.5799865722656,
-          "current_date": "2026-06-18",
-          "current_return_pct": 0.0,
-          "close_7d": null,
-          "alpha_7d": null,
-          "hit_7d": null,
-          "close_30d": null,
-          "alpha_30d": null,
-          "hit_30d": null,
-          "close_90d": null,
-          "alpha_90d": null,
-          "hit_90d": null,
-          "verified_at": null,
-          "alert": false
-        },
-        {
-          "ticker": "KLAC",
-          "name": "KLA Corporation",
-          "country": "US",
-          "trend_title": "반도체 장비 슈퍼사이클 — AI·HBM 증설 발주 집중",
-          "trend_kind": "current",
-          "category": "반도체 장비",
-          "timeframe": "ongoing",
-          "trend_confidence": 84,
-          "grade": "Strong Buy",
-          "rating_score": null,
-          "fundamentals_score": 8,
-          "fundamentals": {
-            "revenue_yoy_pct": 22.0,
-            "operating_margin_pct": 38.0,
-            "net_margin_pct": null,
-            "roe_pct": 55.0,
-            "pe_ratio": 28.0,
-            "ps_ratio": null,
-            "debt_to_equity": null,
-            "market_cap_usd_b": null,
-            "fcf_usd_b": null
-          },
-          "detail": {
-            "stock_desc": "KLA Corporation은 반도체 공정 제어·계측 장비 세계 1위. 첨단 공정(5nm 이하)에서 수율 관리를 위한 결함 검사 장비 시장 점유율 50% 이상 보유.",
-            "trend_link": "AI·HBM 증설 트렌드에서 첨단 공정 수율 관리 필수성 증대. HBM4 적층 구조 복잡도 증가 → KLAC 계측 장비 수요 직결. TSMC 2nm·삼성 GAA 공정 전환에도 KLAC 독점적 포지션.",
-            "current_flow": "1일+8.7%, 5일+7.6%, 20일+41.9%. 오늘 섹터 내 최고 일간 수익률 기록. 52주 신고가 영역 돌파 중.",
-            "financials_reason": "OPM 38%(동종 최고 수준), ROE 55%, 매출YoY+22% — 수익성·성장성·자본효율성 모두 탁월 → 재무8점",
-            "financials_trajectory": "OPM: FY22 35% → FY25 38%(+3%p) — 가격결정력 유지. 매출YoY: FY24 +4% → FY25 +22% — 장비 발주 사이클 재진입 확인.",
-            "momentum_direction": "상승 — 1d+8.7% 급등 + 20일 누적 +42%로 추세 강화 중",
-            "prediction": null
-          },
-          "rank": 1,
-          "rationale": "HBM·첨단공정 수율 관리 독점적 지위 + 1d+8.7% + 20일+42% 강세 지속",
-          "entry_close": 259.55999755859375,
-          "entry_date": "2026-06-22",
-          "current_close": 259.55999755859375,
           "current_date": "2026-06-18",
           "current_return_pct": 0.0,
           "close_7d": null,
@@ -965,38 +1000,38 @@
           "ticker": "VRT",
           "name": "Vertiv Holdings",
           "country": "US",
-          "trend_title": "데이터센터 전력·냉각 인프라 — AI CAPEX L3 수혜",
+          "trend_title": "데이터센터 전력·냉각 인프라 랠리 — VRT·MOD·ETN 동반 급등",
           "trend_kind": "current",
-          "category": "전력 인프라",
+          "category": "전력·냉각 인프라",
           "timeframe": "ongoing",
-          "trend_confidence": 83,
+          "trend_confidence": 84,
           "grade": "Strong Buy",
           "rating_score": null,
           "fundamentals_score": 8,
           "fundamentals": {
-            "revenue_yoy_pct": 19.0,
-            "operating_margin_pct": 11.0,
+            "revenue_yoy_pct": 20.0,
+            "operating_margin_pct": 13.0,
             "net_margin_pct": null,
-            "roe_pct": 22.0,
-            "pe_ratio": 45.0,
+            "roe_pct": 35.0,
+            "pe_ratio": 55.0,
             "ps_ratio": null,
             "debt_to_equity": null,
             "market_cap_usd_b": null,
             "fcf_usd_b": null
           },
           "detail": {
-            "stock_desc": "Vertiv Holdings는 데이터센터 전력·냉각·인프라 관리 솔루션 세계 1위. 액침냉각(Immersion Cooling)과 정밀 공조 시스템에서 AI GPU 서버 열관리 분야 독보적 기술 보유.",
-            "trend_link": "AI 데이터센터 전력·냉각 트렌드의 핵심 직접 수혜주. 엔비디아 GB200 NVL72 랙의 냉각 요구량이 기존 H100 대비 3배 증가 → VRT 액침냉각 시스템 수요 폭발적 증가. NVIDIA 공식 냉각 파트너십 보유.",
-            "current_flow": "1일+4.9%, 5일+11.8%, 20일+5.5%. 최근 20일 기준 상승이 완만해 추가 상승 여력 존재. 52주 고가 재도전 구간.",
-            "financials_reason": "매출YoY+19%, OPM 11%(개선 추세), 수주잔고 연간 매출의 1.5배 수준 → 재무8점",
-            "financials_trajectory": "OPM: FY22 4% → FY25 11%(+7%p) — AI 데이터센터 고부가 제품 믹스 개선. 매출YoY: FY23 +11% → FY25 +19% — 수주 가시성 높아지며 성장 가속.",
-            "momentum_direction": "상승 — 5일 연속 강세 + 섹터 내 일관된 상승 흐름",
+            "stock_desc": "버티브(Vertiv)는 데이터센터 전력·냉각·IT 인프라 솔루션 세계 1위 기업. AI 서버용 액체냉각 시스템에서 압도적 시장 점유율 보유.",
+            "trend_link": "AI CAPEX 확대의 L3 수혜 핵심 종목. 엔비디아 GB200 슈퍼칩 등 고밀도 AI 서버에 VRT의 직접액체냉각(DLC) 시스템이 필수 채택. 수주 잔고가 수익 가시성 제공.",
+            "current_flow": "1일 +4.87%, 5일 +11.81%, 20일 +5.51%. 최근 20일 조정 후 5일 급등으로 추세 재개 확인.",
+            "financials_reason": "매출YoY +20%, OPM 13%, ROE 35% — AI 인프라 수주 급증으로 OPM 빠르게 확대 중",
+            "financials_trajectory": "OPM: FY22 7% → FY25 13%(+6%p) — AI 서버 고마진 냉각 시스템 비중 증가. 매출: FY23 +20% → FY25 +20% 안정 성장 + 수주 잔고 급증으로 미래 매출 가시성 확보.",
+            "momentum_direction": "상승 재개 — 5일 급등으로 20일 조정 마무리, 거래량 동반 상승세",
             "prediction": null
           },
           "rank": 1,
-          "rationale": "AI 데이터센터 액침냉각 독점 기술 + 5일+12% 강세 + 20일+5.5%로 추세 초기 단계",
+          "rationale": "데이터센터 액체냉각 세계 1위 + 5일 +11.8% 강세 + AI CAPEX 직결 수혜 구조",
           "entry_close": 333.04998779296875,
-          "entry_date": "2026-06-22",
+          "entry_date": "2026-06-23",
           "current_close": 333.04998779296875,
           "current_date": "2026-06-18",
           "current_return_pct": 0.0,
@@ -1013,42 +1048,42 @@
           "alert": false
         },
         {
-          "ticker": "XBI",
-          "name": "SPDR Biotech ETF",
+          "ticker": "KLAC",
+          "name": "KLA Corporation",
           "country": "US",
-          "trend_title": "바이오텍 모멘텀 확산 — MRNA 촉매가 XBI 섹터로 전이",
-          "trend_kind": "predicted",
-          "category": "바이오텍",
-          "timeframe": "short",
-          "trend_confidence": 72,
+          "trend_title": "반도체 장비 슈퍼사이클 — AMAT·KLAC·LRCX 20일 30~45% 급등",
+          "trend_kind": "current",
+          "category": "반도체 장비",
+          "timeframe": "ongoing",
+          "trend_confidence": 82,
           "grade": "Buy",
           "rating_score": null,
-          "fundamentals_score": 6,
+          "fundamentals_score": 8,
           "fundamentals": {
-            "revenue_yoy_pct": null,
-            "operating_margin_pct": null,
+            "revenue_yoy_pct": 25.0,
+            "operating_margin_pct": 40.0,
             "net_margin_pct": null,
-            "roe_pct": null,
-            "pe_ratio": null,
+            "roe_pct": 90.0,
+            "pe_ratio": 28.0,
             "ps_ratio": null,
             "debt_to_equity": null,
             "market_cap_usd_b": null,
             "fcf_usd_b": null
           },
           "detail": {
-            "stock_desc": "SPDR S&P Biotech ETF(XBI)는 소·중형 바이오텍 기업을 동일가중으로 편입한 ETF. 개별 임상 리스크를 분산하면서 섹터 모멘텀에 참여 가능. MRNA, VRTX, BIIB, REGN 등 50개 이상 바이오 종목 편입.",
-            "trend_link": "MRNA 임상 촉매 → 바이오 섹터 전반 재평가 흐름에서 개별 종목 리스크 없이 섹터 상승 포착. XBI 5일+6% 상승이 이미 섹터 로테이션 초기 신호. 금리 인하 기대(TLT 상승) 환경에서 고밸류 바이오 할인율 하락 수혜.",
-            "current_flow": "1일+1.0%, 5일+6.0%, 20일+6.8%. 거래량 정상 수준. 20일 고점 대비 소폭 하락 구간에서 재상승 시도 중.",
-            "financials_reason": "ETF 특성상 개별 재무지표 없음 — 섹터 모멘텀 점수 6점(상승 추세 + 금리 환경 우호적)",
-            "financials_trajectory": "ETF로 개별 재무지표 비해당. 편입 종목 평균 매출 성장률 개선 추세(AI 신약 개발 + GLP-1 파이프라인 기대).",
-            "momentum_direction": "상승 — 5일 연속 양봉 + 섹터 전반 자금 유입 확인",
-            "prediction": "MRNA 임상 모멘텀(5일+29%, 거래량 4배)이 XBI 섹터 전반으로 확산 중. TLT 금리 인하 기대(20일+3.4%)가 바이오 할인율 하락 지지. 촉매: MRNA 추가 파이프라인 발표 또는 FDA 승인 소식 (1-5거래일 내 가능). 섹터 ETF 특성상 개별 임상 리스크 없이 방향성 참여 가능."
+            "stock_desc": "KLA코퍼레이션은 반도체 웨이퍼 계측·검사 장비 세계 1위 기업. 첨단 공정 전환 시 필수적인 결함 검사 장비를 공급하며 AI칩 고도화에 수요 직결.",
+            "trend_link": "반도체 장비 슈퍼사이클의 핵심 수혜주. AI칩 3nm 이하 미세 공정 전환 시 결함 검사 장비 수요가 기하급수 증가. HBM 적층 공정에서도 KLAC 장비 필수.",
+            "current_flow": "1일 +8.73%, 5일 +7.63%, 20일 +41.88%. 강한 상승 추세 지속 중.",
+            "financials_reason": "OPM 40%, ROE 90% — 독보적 시장 지위로 높은 가격결정력 유지. 매출 YoY +25%로 성장 가속.",
+            "financials_trajectory": "OPM: FY22 35% → FY25 40%(+5%p) — AI칩 고도화로 고가 장비 비중 증가. ROE: FY22 70% → FY25 90%(+20%p) — 자본 효율성 지속 개선.",
+            "momentum_direction": "강한 상승 — 20일 추세 가속 중, 단기 과열 주의하며 분할 매수 권고",
+            "prediction": null
           },
           "rank": 1,
-          "rationale": "바이오 섹터 ETF로 개별 리스크 분산 + 5일+6% 섹터 상승 추세 + 금리 인하 기대 수혜",
-          "entry_close": 140.72000122070312,
-          "entry_date": "2026-06-22",
-          "current_close": 140.72000122070312,
+          "rationale": "1일 +8.73% 강한 모멘텀 + 계측·검사 장비 AI칩 필수품 + 20일 +41.9% 추세 강함",
+          "entry_close": 259.55999755859375,
+          "entry_date": "2026-06-23",
+          "current_close": 259.55999755859375,
           "current_date": "2026-06-18",
           "current_return_pct": 0.0,
           "close_7d": null,
@@ -1064,42 +1099,42 @@
           "alert": false
         },
         {
-          "ticker": "VRTX",
-          "name": "Vertex Pharmaceuticals",
+          "ticker": "MRNA",
+          "name": "Moderna",
           "country": "US",
-          "trend_title": "바이오텍 모멘텀 확산 — MRNA 촉매가 XBI 섹터로 전이",
-          "trend_kind": "predicted",
+          "trend_title": "바이오텍 MRNA 급등 — 개별 임상 촉매 + XBI 섹터 동반",
+          "trend_kind": "current",
           "category": "바이오텍",
-          "timeframe": "short",
+          "timeframe": "short-term",
           "trend_confidence": 72,
           "grade": "Buy",
           "rating_score": null,
-          "fundamentals_score": 8,
+          "fundamentals_score": 5,
           "fundamentals": {
-            "revenue_yoy_pct": 12.0,
-            "operating_margin_pct": 37.0,
+            "revenue_yoy_pct": -30.0,
+            "operating_margin_pct": -40.0,
             "net_margin_pct": null,
-            "roe_pct": 28.0,
-            "pe_ratio": 24.0,
+            "roe_pct": -25.0,
+            "pe_ratio": null,
             "ps_ratio": null,
             "debt_to_equity": null,
             "market_cap_usd_b": null,
             "fcf_usd_b": null
           },
           "detail": {
-            "stock_desc": "Vertex Pharmaceuticals는 낭포성섬유증(CF) 치료제 시장 독점(매출 80%)과 비오피오이드 통증 치료제 수尢에나도르 등 차세대 파이프라인 보유. 바이오텍 중 재무 안정성 최상위.",
-            "trend_link": "바이오 섹터 재평가 흐름에서 수익성과 파이프라인 가시성이 가장 높은 방어적 성장주. MRNA 모멘텀으로 섹터 자금 유입 시 VRTX는 '안전한 성장주' 포지션으로 자금 수혜.",
-            "current_flow": "1일-1.6%, 5일+1.5%, 20일+4.9%. 단기 소폭 조정은 섹터 강세 속 매수 기회. 52주 중간 구간에서 상승 여력 존재.",
-            "financials_reason": "OPM 37%(바이오텍 최상위), ROE 28%, 매출YoY+12% — CF 독점 + 통증 신약 기대 → 재무8점",
-            "financials_trajectory": "OPM: FY22 30% → FY25 37%(+7%p) — CF 3중 병용요법 가격결정력 강화. 매출YoY: FY23 +9% → FY25 +12% — 통증 신약 출시 준비로 성장 가속 기대.",
-            "momentum_direction": "횡보 후 상승 전환 — 20일 추세 견고, 단기 1일 조정은 진입 기회",
-            "prediction": "바이오 섹터 재평가(XBI 5일+6%) 흐름에서 수익성 최상위 VRTX로 자금 로테이션 기대. 비오피오이드 통증 치료제(서uzeretide) 상업화 기대감이 밸류에이션 재평가 트리거. 촉매: FDA 통증 치료제 관련 결정 또는 MRNA 모멘텀 섹터 확산 (1-5거래일). OPM 37% + CF 독점 안정성으로 하방 리스크 제한."
+            "stock_desc": "모더나는 mRNA 플랫폼 기반 코로나 백신으로 성장한 바이오텍. 현재 암 백신, RSV, 독감 등 파이프라인 다각화 진행 중. 포스트 코로나 수익성 회복이 핵심 투자 포인트.",
+            "trend_link": "바이오텍 MRNA 급등 트렌드의 직접 주인공. 거래량 4.0배 급등은 임상 결과 또는 FDA 관련 중요 촉매를 시사. mRNA 암 백신(개인맞춤형 신항원 백신) 임상 3상 진입 가능성.",
+            "current_flow": "1일 +3.5%, 5일 +28.85%, 20일 +32.92%. 거래량 4.0배 — 강한 매수세 유입 확인.",
+            "financials_reason": "코로나 이후 매출 감소(YoY -30%)로 재무점수 5점이나, 파이프라인 가치로 임상 결과에 따라 재평가 가능",
+            "financials_trajectory": "매출: FY22 $183억 → FY25 $30억 수준(코로나 특수 소멸). OPM: FY22 +44% → FY25 -40%(R&D 투자 유지). 암 백신 파이프라인 성공 시 FY27부터 흑자 전환 시나리오.",
+            "momentum_direction": "강한 상승 — 5일 급등 후 1일 추가 +3.5%로 모멘텀 지속 확인",
+            "prediction": null
           },
-          "rank": 2,
-          "rationale": "CF 독점 + 비오피오이드 통증 신약 파이프라인 기대 + 20일+4.9% 꾸준한 상승",
-          "entry_close": 451.6300048828125,
-          "entry_date": "2026-06-22",
-          "current_close": 451.6300048828125,
+          "rank": 1,
+          "rationale": "5일 +28.9% 급등 + 거래량 4배 → 강한 촉매 확인, 모멘텀 추종 매수",
+          "entry_close": 63.959999084472656,
+          "entry_date": "2026-06-23",
+          "current_close": 63.959999084472656,
           "current_date": "2026-06-18",
           "current_return_pct": 0.0,
           "close_7d": null,
@@ -1118,38 +1153,38 @@
           "ticker": "CCJ",
           "name": "Cameco",
           "country": "US",
-          "trend_title": "원전·우라늄 수요 재점화 — AI 전력난 해법으로 부상",
+          "trend_title": "핵·원전 전력 수요 — CCJ·URA 우라늄 재평가 임박",
           "trend_kind": "predicted",
-          "category": "원전/에너지",
+          "category": "원자력·전력",
           "timeframe": "short",
-          "trend_confidence": 70,
+          "trend_confidence": 71,
           "grade": "Buy",
           "rating_score": null,
           "fundamentals_score": 7,
           "fundamentals": {
-            "revenue_yoy_pct": 55.0,
+            "revenue_yoy_pct": 35.0,
             "operating_margin_pct": 22.0,
             "net_margin_pct": null,
-            "roe_pct": 8.0,
-            "pe_ratio": 42.0,
+            "roe_pct": 12.0,
+            "pe_ratio": 38.0,
             "ps_ratio": null,
             "debt_to_equity": null,
             "market_cap_usd_b": null,
             "fcf_usd_b": null
           },
           "detail": {
-            "stock_desc": "Cameco Corporation은 세계 최대 우라늄 생산·공급 기업. 캐나다 맥아더리버·시가레이크 광산에서 전 세계 우라늄 공급의 15% 이상 담당. 원전 연료 사이클 전반(광산→변환→정련)에 걸친 수직 통합 구조.",
-            "trend_link": "AI 데이터센터 전력 수요(current_trend #3) L4 수혜 체인의 핵심. 빅테크 SMR PPA 계약 확대 → 원전 연료(우라늄) 장기 계약 수요 직결. 원전 장기 운영 연장(미국·유럽) + 신규 원전 건설(한국·중동) 수요 동시 수혜.",
-            "current_flow": "1일+0.78%, 5일+7.6%, 20일+2.4%. 5일 강한 상승 대비 20일 누적 완만 — 추세 초기 단계로 추가 상승 여력 존재. 52주 중간~상단 구간.",
-            "financials_reason": "매출YoY+55%(우라늄 가격 상승+물량 증가), OPM 22%(개선), 원전 장기 계약으로 수익 가시성 높음 → 재무7점",
-            "financials_trajectory": "OPM: FY22 5% → FY25 22%(+17%p) — 우라늄 가격 사이클 상승으로 수익성 급반전. 매출YoY: FY23 +45% → FY25 +55% — 장기 공급 계약 기반 성장 지속.",
-            "momentum_direction": "상승 전환 — 5일 강세 + 20일 횡보 후 방향성 확인 구간",
-            "prediction": "AI 데이터센터 전력 수요(GEV/VRT 강세 확인)가 원전 수요로 연결되는 L3→L4 체인 활성화 중. 5일+7.6% 이미 시작했으나 20일+2.4%로 아직 초기 단계. 빅테크 SMR PPA 추가 발표 또는 미국 원전 정책 지원 소식이 촉매(1-5거래일). 우라늄 장기 계약 기반 수익 가시성으로 하방 지지."
+            "stock_desc": "카메코(Cameco)는 캐나다 기반 세계 최대 우라늄 생산 기업. 카자흐스탄 JV(카자톰프롬 합작) 및 캐나다 맥아서 리버 광산 보유. 원전 연료 사이클 전반에 걸친 수직계열화.",
+            "trend_link": "AI 데이터센터 전력 수요 폭증 트렌드(current_trend #2)에서 L3 파생 수혜. 데이터센터 운영사들이 24시간 안정 전력 확보를 위해 원전 PPA 체결 → 우라늄 장기 수요 계약 증가 → CCJ 수주 확대.",
+            "current_flow": "1일 +0.78%, 5일 +7.6%, 20일 +2.37%. 20일 조정 마무리 후 5일 반등 시작 구간.",
+            "financials_reason": "매출YoY +35%(우라늄 현물가 상승 반영), OPM 22%, ROE 12% — 광산 사이클 회복으로 수익성 개선 중",
+            "financials_trajectory": "OPM: FY22 5% → FY25 22%(+17%p) — 우라늄 가격 상승 + 생산 재개로 마진 급개선. 매출: FY22 +10% → FY25 +35% — 장기 공급 계약 체결 가속.",
+            "momentum_direction": "상승 전환 초기 — 5일 반등 시작, 20일 박스권 상단 돌파 시도",
+            "prediction": "재무 탄탄(OPM 22%로 빠르게 개선 중) + AI 전력 수요(current_trend #2)가 원전 재평가로 전환되면 CCJ 추가 상승 가능. 촉매: 빅테크 원전 PPA 추가 발표 또는 우라늄 현물 가격 $90/lb 돌파 시 (1-3거래일 내). VST·NRG 동반 상승이 선행 신호."
           },
           "rank": 1,
-          "rationale": "AI 전력 수요 L3 수혜 + 우라늄 공급 독과점 + 5일+7.6% 추세 초기 + 20일+2.4%로 추가 상승 여력",
+          "rationale": "세계 최대 우라늄 광산 + 5일 +7.6% 상승 시작 + AI 전력 수요 장기 촉매 확인",
           "entry_close": 106.48999786376953,
-          "entry_date": "2026-06-22",
+          "entry_date": "2026-06-23",
           "current_close": 106.48999786376953,
           "current_date": "2026-06-18",
           "current_return_pct": 0.0,
@@ -1166,43 +1201,43 @@
           "alert": false
         },
         {
-          "ticker": "000660",
-          "name": "SK하이닉스",
-          "country": "KR",
-          "trend_title": "한국 반도체 대장주 — SK하이닉스·삼성전자 글로벌 AI 수혜 확인",
+          "ticker": "QCOM",
+          "name": "Qualcomm",
+          "country": "US",
+          "trend_title": "ARM 아키텍처 생태계 확장 — 에지 AI 및 온디바이스 AI 가속",
           "trend_kind": "predicted",
-          "category": "한국 반도체",
+          "category": "AI 반도체 설계",
           "timeframe": "short",
-          "trend_confidence": 68,
+          "trend_confidence": 76,
           "grade": "Buy",
           "rating_score": null,
-          "fundamentals_score": 9,
+          "fundamentals_score": 7,
           "fundamentals": {
-            "revenue_yoy_pct": 102.0,
-            "operating_margin_pct": 40.0,
+            "revenue_yoy_pct": 17.0,
+            "operating_margin_pct": 28.0,
             "net_margin_pct": null,
-            "roe_pct": 35.0,
-            "pe_ratio": 12.0,
+            "roe_pct": 42.0,
+            "pe_ratio": 18.0,
             "ps_ratio": null,
             "debt_to_equity": null,
             "market_cap_usd_b": null,
             "fcf_usd_b": null
           },
           "detail": {
-            "stock_desc": "SK하이닉스는 세계 2위 메모리 반도체 기업으로 HBM(고대역폭 메모리) 시장에서 세계 1위(시장점유율 50% 이상). NVIDIA AI GPU에 독점 공급 중인 HBM3E가 핵심 성장 동력.",
-            "trend_link": "글로벌 AI 반도체 슈퍼사이클(current_trend #1) 핵심 공급망. NVIDIA H200·GB200에 HBM3E 독점 공급 + HBM4 개발 선행으로 경쟁사 대비 2~3쿼터 앞선 기술 리드 유지 중.",
-            "current_flow": "1일+5.6%, 5일+27.6%, 20일+50.5%. 20일 누적 대비 1일 수익률이 상대적으로 낮아 추가 상승 여력 판단. 52주 신고가 영역 진입 중.",
-            "financials_reason": "매출YoY+102%(HBM 폭발적 성장), OPM 40%(사상 최대 수준 회복), P/E 12배(글로벌 반도체 대비 저평가) → 재무9점",
-            "financials_trajectory": "OPM: FY23 적자 → FY25 40%(+40%p 이상) — HBM 프리미엄 가격으로 수익성 극적 반전. 매출YoY: FY24 +70% → FY25 +102% — HBM 출하량 가속화.",
-            "momentum_direction": "강한 상승 — 5일+27.6% 급등 + 20일 추세 견고, 단기 차익실현 후 재상승 패턴 반복",
-            "prediction": "글로벌 AI 반도체 슈퍼사이클(MRVL+66%, MU+55%)이 HBM 공급망인 SK하이닉스로 연동. P/E 12배는 글로벌 반도체 평균의 절반 수준으로 저평가. 촉매: NVIDIA 차세대 GPU 출하 확대 공식 발표 또는 HBM4 양산 일정 확인 뉴스(1-5거래일). 20일+50% 이후 단기 숨고르기 구간이면 분할 매수 기회."
+            "stock_desc": "퀄컴은 모바일 AP(Snapdragon) 및 5G 모뎀 세계 1위 기업. Snapdragon X Elite로 AI PC 시장에 진입하며 에지 AI 반도체 리더로 전환 중.",
+            "trend_link": "ARM 아키텍처 생태계 트렌드의 직접 수혜자. 퀄컴 Snapdragon 시리즈 전량이 ARM v9 기반 — 에지 AI 확산 시 퀄컴 ASP(평균판매단가) 상승 직결. AI PC·AI폰·AI 차량 칩 삼각 수혜 구조.",
+            "current_flow": "1일 +6.17%, 5일 +11.41%, 20일 +11.65%. 꾸준한 우상향 추세 지속 중.",
+            "financials_reason": "OPM 28%, ROE 42%, PE 18배 — AI 반도체 섹터 중 가장 저렴한 밸류에이션에 고수익성 조합",
+            "financials_trajectory": "OPM: FY23 24% → FY25 28%(+4%p) — AI칩 고부가 제품 비중 증가. 매출: FY24 +17% — 온디바이스 AI 수요로 성장 재가속.",
+            "momentum_direction": "상승 — 20일 +11.7% 꾸준한 추세 + 1일 +6.2% 가속",
+            "prediction": "재무 구조 탄탄(OPM 28%, ROE 42% 개선 중) + ARM 에지 AI 트렌드(current_trend #1 파생)가 Snapdragon X Elite AI PC 수요로 전환 → EPS 가이던스 상향 기대. 촉매: ARM 생태계 관련 파트너십 발표 또는 AI PC 시장점유율 데이터 공개 (2-4거래일 내)."
           },
           "rank": 1,
-          "rationale": "HBM 독점 공급자 + 20일+50% 강세 + AI 슈퍼사이클 핵심 수혜주 — 단기 조정 후 재진입 기회",
-          "entry_close": 2919000.0,
-          "entry_date": "2026-06-22",
-          "current_close": 2919000.0,
-          "current_date": "2026-06-22",
+          "rationale": "ARM 생태계 최대 수혜 — Snapdragon X Elite AI PC칩 + 5일 +11.4% 모멘텀 확인",
+          "entry_close": 226.11000061035156,
+          "entry_date": "2026-06-23",
+          "current_close": 226.11000061035156,
+          "current_date": "2026-06-18",
           "current_return_pct": 0.0,
           "close_7d": null,
           "alpha_7d": null,
@@ -1220,19 +1255,70 @@
           "ticker": "GDX",
           "name": "VanEck Gold Miners ETF",
           "country": "US",
-          "trend_title": "금·귀금속 반등 대기 — 달러 강세 완화 시 촉매 발동",
+          "trend_title": "금·귀금속 — 달러 강세 일시적, 재반등 조건 형성 중",
           "trend_kind": "predicted",
           "category": "금·귀금속",
-          "timeframe": "short",
+          "timeframe": "medium",
           "trend_confidence": 62,
           "grade": "Buy",
           "rating_score": null,
           "fundamentals_score": 6,
           "fundamentals": {
-            "revenue_yoy_pct": null,
-            "operating_margin_pct": null,
+            "revenue_yoy_pct": 15.0,
+            "operating_margin_pct": 25.0,
             "net_margin_pct": null,
-            "roe_pct": null,
+            "roe_pct": 12.0,
+            "pe_ratio": 20.0,
+            "ps_ratio": null,
+            "debt_to_equity": null,
+            "market_cap_usd_b": null,
+            "fcf_usd_b": null
+          },
+          "detail": {
+            "stock_desc": "GDX(VanEck Gold Miners ETF)는 뉴몬트·배릭골드·아그니코이글 등 세계 주요 금광 기업을 편입한 ETF. 금 현물 가격 대비 1.5~2배 레버리지 효과.",
+            "trend_link": "금·귀금속 재반등 트렌드의 대표 투자 수단. GLD 20일 조정 중 GDX가 선행 반등(5일 +6.2%)하는 패턴은 금 반등 임박 신호. 달러 피크아웃 시 금광주가 현물 금보다 빠르게 상승.",
+            "current_flow": "1일 -2.19%, 5일 +6.16%, 20일 -4.46%. 5일 반등 시작했으나 1일 소폭 조정으로 재진입 기회.",
+            "financials_reason": "ETF로 개별 재무 없으나 편입 기업 평균 OPM 25%, 금 가격 $2,300/oz 이상에서 수익성 양호",
+            "financials_trajectory": "편입 기업들의 AISC(전체 유지비용) $1,200~1,400/oz 대비 금 현물 $2,300 이상 유지 시 마진 확대 구조 지속.",
+            "momentum_direction": "횡보 후 상승 전환 시도 — 5일 반등 확인, 1일 조정은 기술적 되돌림",
+            "prediction": "달러 강세(UUP)가 20일 +2% 수준에서 고점 형성 후 전환되면 GDX가 GLD보다 빠르게 반등. 촉매: Fed 인사 금리 인하 신호 또는 달러 인덱스 약화 확인 (2-5거래일 내). 금광주 레버리지로 GLD 대비 초과 수익 기대."
+          },
+          "rank": 1,
+          "rationale": "금광주 ETF로 현물 금 레버리지 효과 + 5일 +6.2% 선행 반등 확인, 달러 피크아웃 시 추가 상승",
+          "entry_close": 82.51000213623047,
+          "entry_date": "2026-06-23",
+          "current_close": 82.51000213623047,
+          "current_date": "2026-06-18",
+          "current_return_pct": 0.0,
+          "close_7d": null,
+          "alpha_7d": null,
+          "hit_7d": null,
+          "close_30d": null,
+          "alpha_30d": null,
+          "hit_30d": null,
+          "close_90d": null,
+          "alpha_90d": null,
+          "hit_90d": null,
+          "verified_at": null,
+          "alert": false
+        },
+        {
+          "ticker": "INTC",
+          "name": "Intel",
+          "country": "US",
+          "trend_title": "인텔 구조조정 모멘텀 — INTC 1일 +10.6% 강력 신호",
+          "trend_kind": "predicted",
+          "category": "반도체·구조조정",
+          "timeframe": "short",
+          "trend_confidence": 65,
+          "grade": "Buy",
+          "rating_score": null,
+          "fundamentals_score": 5,
+          "fundamentals": {
+            "revenue_yoy_pct": -8.0,
+            "operating_margin_pct": -5.0,
+            "net_margin_pct": null,
+            "roe_pct": -6.0,
             "pe_ratio": null,
             "ps_ratio": null,
             "debt_to_equity": null,
@@ -1240,19 +1326,19 @@
             "fcf_usd_b": null
           },
           "detail": {
-            "stock_desc": "VanEck Gold Miners ETF(GDX)는 전 세계 주요 금광 생산 기업을 편입한 ETF. 뉴몬트, 배릭골드, 아그니코이글 등 40개 이상 기업 구성. 금 현물 가격 대비 1.5~2배 레버리지 효과.",
-            "trend_link": "금·귀금속 반등 트렌드에서 금 현물 대비 레버리지 수익 가능한 광산주 집합체. 달러 강세 완화 + 금리 인하 기대 시 금광 기업 이익 마진 확대 효과로 GLD보다 높은 수익률 기대.",
-            "current_flow": "1일-2.2%, 5일+6.2%, 20일-4.5%. 5일 강한 반등 시작했으나 20일 기준 여전히 하락 — 반등 초기 진입 구간. NEM 5일+6.4%, WPM 5일+8.8%로 개별 구성종목 강세 확인.",
-            "financials_reason": "ETF 특성상 개별 재무지표 없음 — 구성종목 평균 OPM 30%+ (금 가격 $2,500 이상 유지 시) → 섹터 점수 6점",
-            "financials_trajectory": "ETF로 개별 재무 비해당. 구성종목(뉴몬트 등) 금 가격 상승 시 OPM 레버리지 효과로 이익 급반등 패턴 반복.",
-            "momentum_direction": "반등 전환 시도 — 5일 강세 + 20일 하락 속 단기 바닥 형성 구간",
-            "prediction": "GLD 20일-7.3% 과매도 구간에서 GDX 5일+6.2% 선행 반등 시작. TLT 금리 인하 기대(20일+3.4%)가 금 보유 기회비용 하락으로 금 매력도 상승 조건 형성. 촉매: 달러 강세(UUP) 피크 확인 또는 Fed 발언에서 금리 인하 시그널 강화(1-5거래일). 20일 저점 대비 반등 여력 4~7% 예상."
+            "stock_desc": "인텔은 x86 CPU 세계 1위 기업이자 자체 파운드리(Intel Foundry Services) 운영. 현재 TSMC 대비 공정 열위를 극복하기 위한 대규모 구조조정 진행 중.",
+            "trend_link": "AI 반도체 슈퍼사이클(current_trend #1)에서 파생된 턴어라운드 플레이. INTC의 18A 공정 성공 시 AI 가속기 시장 재진입 + 파운드리 분리로 숨겨진 기업가치 발굴.",
+            "current_flow": "1일 +10.64%, 5일 +14.56%, 20일 +12.63%. 강한 단기 모멘텀 급발진 — 이벤트 드리븐 매수세.",
+            "financials_reason": "현재 매출 YoY -8%, OPM -5%로 적자 구간이나 구조조정 완료 시 반전 가능성 — 재무점수 5점(투기적 요소 포함)",
+            "financials_trajectory": "OPM: FY22 +25% → FY25 -5% — 파운드리 투자 비용 급증으로 악화. 그러나 파운드리 분리 시 사업부별 수익성 재평가 가능. 매출: FY25 하반기부터 AI PC용 Core Ultra 수요로 반등 기대.",
+            "momentum_direction": "강한 상승 전환 — 1일 +10.6% 폭등으로 추세 반전 신호 발동",
+            "prediction": "재무 회복 진행 중(구조조정 비용 정점 통과 기대) + AI 반도체 섹터 강세(current_trend #1)가 INTC 턴어라운드 기대를 자극. 촉매: 파운드리 분리 공식 발표 또는 18A 공정 고객사 확보 뉴스 (1-3거래일 내). 단, 고위험 이벤트 드리븐 플레이로 분할 매수 권고."
           },
           "rank": 1,
-          "rationale": "금광주 ETF로 금 반등 레버리지 참여 + 5일+6.2%로 선행 반등 시작 + 20일-4.5%로 저점 매수 기회",
-          "entry_close": 82.51000213623047,
-          "entry_date": "2026-06-22",
-          "current_close": 82.51000213623047,
+          "rationale": "1일 +10.6% 강력 구조적 촉매 신호 + 20일 +12.6% 추세 전환 확인, 파운드리 분리 모멘텀",
+          "entry_close": 133.99000549316406,
+          "entry_date": "2026-06-23",
+          "current_close": 133.99000549316406,
           "current_date": "2026-06-18",
           "current_return_pct": 0.0,
           "close_7d": null,

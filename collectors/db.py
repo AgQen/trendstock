@@ -47,6 +47,9 @@ def init_db() -> None:
         if "timeframe" not in tcols:
             conn.execute("ALTER TABLE predicted_trends "
                          "ADD COLUMN timeframe TEXT")
+        for col in ("trend_score", "trend_direction", "secondary_effect", "trend_risk"):
+            if col not in tcols:
+                conn.execute(f"ALTER TABLE predicted_trends ADD COLUMN {col} TEXT")
         # rule_weights 컬럼 마이그레이션 (rs_weight, risk_weight 추가)
         wcols = {r["name"] for r in
                  conn.execute("PRAGMA table_info(rule_weights)").fetchall()}
