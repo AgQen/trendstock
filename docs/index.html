@@ -699,10 +699,24 @@ function priceFmt(country, n) {
   return country === "KR" ? fmtKRW(n) : fmtUSD(n);
 }
 
-function renderCard(t, kind) {
+function renderCard(t, kind, candidate) {
   const cls = kind === "current" ? "cur" : "pred";
   const card = document.createElement("article");
   card.className = "card " + cls;
+
+  const candHtml = (candidate && kind === "predicted") ? (() => {
+    const c = candidate;
+    const scoreColor = c.score >= 80 ? "#4ade80" : c.score >= 70 ? "#60a5fa" : "#facc15";
+    const dirColor = c.direction === "UP" ? "var(--green)" : "#ef4444";
+    const dirLabel = c.direction === "UP" ? "▲ 상승 가능성" : "▼ 하락 가능성";
+    return `
+    <div style="display:flex;align-items:center;gap:8px;padding:6px 0 4px;flex-wrap:wrap">
+      <span style="font-size:11px;font-weight:700;color:${scoreColor};background:rgba(0,0,0,.3);border-radius:4px;padding:2px 7px">점수 ${c.score}</span>
+      <span style="font-size:11px;font-weight:700;color:${dirColor}">${dirLabel}</span>
+      ${c.representative_stocks.map(s=>`<span style="font-size:10px;background:var(--card-bg);border:1px solid var(--card-border);border-radius:4px;padding:1px 5px;color:var(--text-dim)">${s}</span>`).join("")}
+    </div>
+    <div style="font-size:11px;color:var(--text-faint);padding:0 0 4px">🔗 2차: ${c.secondary_effect} · ⚠ ${c.risk}</div>`;
+  })() : "";
 
   card.innerHTML = `
     <div class="card-head">
@@ -719,7 +733,7 @@ function renderCard(t, kind) {
         <div class="conf-label">신뢰도</div>
       </div>
     </div>
-    <div class="card-summary">${t.summary || ""}</div>
+    <div class="card-summary">${t.summary || ""}${candHtml}</div>
     <div class="recs"></div>
     <div class="card-detail">
       <div class="subhead">▼ 인과 체인</div>
@@ -1031,44 +1045,14 @@ async function load() {
     root.appendChild(cH);
     data.current_trends.forEach(t => root.appendChild(renderCard(t, "current")));
 
-    // Predicted trends
+    // Predicted trends — market_brief candidate를 인덱스로 매칭해서 카드에 삽입
+    const mb = data.market_brief;
+    const candidates = (mb && mb.top_trend_candidates) || [];
     const pH = document.createElement("div");
     pH.className = "section-h";
     pH.innerHTML = `<h2><span class="accent-pred">🔮</span> 예측 다음 트렌드</h2><div class="count">${data.predicted_trends.length}건</div>`;
     root.appendChild(pH);
-    data.predicted_trends.forEach(t => root.appendChild(renderCard(t, "predicted")));
-
-    // market_brief top_trend_candidates — 점수 기반 트렌드 후보
-    const mb = data.market_brief;
-    if (mb && (mb.top_trend_candidates || []).length) {
-      const mbH = document.createElement("div");
-      mbH.className = "section-h";
-      mbH.innerHTML = `<h2>📊 트렌드 점수 분석</h2><div class="count">${mb.top_trend_candidates.length}후보</div>`;
-      root.appendChild(mbH);
-
-      const mbWrap = document.createElement("div");
-      mbWrap.style.padding = "0 0 8px";
-      mbWrap.innerHTML = mb.top_trend_candidates.map(c => {
-        const dirColor = c.direction === "UP" ? "var(--green)" : "#ef4444";
-        const dirLabel = c.direction === "UP" ? "▲ 상승 가능성" : "▼ 하락 가능성";
-        const scoreColor = c.score >= 80 ? "#4ade80" : c.score >= 70 ? "#60a5fa" : "#facc15";
-        return `
-        <div class="card" style="margin:0 16px 10px">
-          <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
-            <span style="font-size:12px;font-weight:700;color:${scoreColor}">점수 ${c.score}</span>
-            <span style="font-size:12px;font-weight:700;color:${dirColor}">${dirLabel}</span>
-            <span style="flex:1;font-size:14px;font-weight:700;color:var(--text)">${c.theme}</span>
-          </div>
-          <div style="font-size:12px;color:var(--text-dim);line-height:1.5;margin-bottom:6px">${c.reason}</div>
-          <div style="font-size:11px;color:var(--text-faint);margin-bottom:4px">🔗 2차 파급: ${c.secondary_effect}</div>
-          <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:6px">
-            ${c.representative_stocks.map(s => `<span style="font-size:11px;font-weight:600;background:var(--card-bg);border:1px solid var(--card-border);border-radius:4px;padding:2px 6px;color:var(--text)">${s}</span>`).join("")}
-          </div>
-          <div style="font-size:11px;color:#f97316">⚠ 변수: ${c.risk}</div>
-        </div>`;
-      }).join("");
-      root.appendChild(mbWrap);
-    }
+    data.predicted_trends.forEach((t, i) => root.appendChild(renderCard(t, "predicted", candidates[i] || null)));
 
   } catch (e) {
     root.innerHTML = `<div class="err">데이터 로드 실패: ${e.message}<br>
@@ -2044,13 +2028,17 @@ function renderPortfolio(data) {
   root.innerHTML = `
     <div style="padding:0">
       <div style="padding:10px 16px;font-size:12px;color:var(--text-dim)">
-        현재 매수 신호 유지 중 · 월별 · 총 ${buyRecs.length}종목
+        현재 매수 신호 유지 중 · 총 ${buyRecs.length}종목
       </div>
-      ${months.map(ym => `
-        <div style="padding:8px 16px 4px;font-size:12px;font-weight:700;color:var(--text-dim);background:var(--card-bg)">
-          📅 ${ym} <span style="font-weight:400;font-size:11px">(${byMonth[ym].length}종목)</span>
-        </div>
-        ${byMonth[ym].map(recRow).join("")}
+      ${months.map((ym, idx) => `
+        <details ${idx === 0 ? "open" : ""} style="border-top:2px solid var(--card-border)">
+          <summary style="padding:10px 16px;cursor:pointer;list-style:none;display:flex;align-items:center;gap:8px;user-select:none;background:var(--card-bg)">
+            <span style="font-size:13px;font-weight:700">📅 ${ym}</span>
+            <span style="font-size:11px;color:var(--text-dim)">${byMonth[ym].length}종목</span>
+            <span style="margin-left:auto;font-size:11px;color:var(--text-faint)">${idx === 0 ? "현재 월" : ""}</span>
+          </summary>
+          ${byMonth[ym].map(recRow).join("")}
+        </details>
       `).join("")}
     </div>`;
 }
