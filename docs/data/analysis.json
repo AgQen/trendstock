@@ -222,19 +222,19 @@
     "by_category": [
       {
         "category": "daily_analysis",
-        "input_tokens": 1591668,
+        "input_tokens": 1570786,
         "cached_input_tokens": 0,
-        "output_tokens": 782859,
-        "cost_usd": 16.5179,
-        "calls": 57
+        "output_tokens": 771934,
+        "cost_usd": 16.2914,
+        "calls": 56
       }
     ],
     "total": {
-      "input_tokens": 1591668,
-      "output_tokens": 782859,
-      "cost_usd": 16.5179,
-      "cost_krw": 23125,
-      "calls": 57
+      "input_tokens": 1570786,
+      "output_tokens": 771934,
+      "cost_usd": 16.2914,
+      "cost_krw": 22808,
+      "calls": 56
     }
   },
   "weights": {
@@ -15415,9 +15415,9 @@
           "rationale": "산업 자동화·AI 솔루션 통합으로 5일 +3.78%, 20일 +11.31%. AI 인프라 자동화 수혜이나 전통 산업재 밸류에이션 한계",
           "entry_close": 236.5399932861328,
           "entry_date": "2026-06-01",
-          "current_close": 232.2100067138672,
+          "current_close": 464.4200134277344,
           "current_date": "2026-06-26",
-          "current_return_pct": -1.83,
+          "current_return_pct": 96.34,
           "close_7d": 205.8800048828125,
           "alpha_7d": -0.08596899911185218,
           "hit_7d": 0,
@@ -24395,9 +24395,9 @@
           "rationale": "항공우주·빌딩 자동화 복합 포트폴리오, 거래량 1.64배 기관 매집 확인. 5d +6.67% 모멘텀.",
           "entry_close": 231.72000122070312,
           "entry_date": "2026-05-26",
-          "current_close": 232.2100067138672,
+          "current_close": 464.4200134277344,
           "current_date": "2026-06-26",
-          "current_return_pct": 0.21,
+          "current_return_pct": 100.42,
           "close_7d": 217.63999938964844,
           "alpha_7d": -0.06942285133535775,
           "hit_7d": 0,
