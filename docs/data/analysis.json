@@ -215,19 +215,19 @@
     "by_category": [
       {
         "category": "daily_analysis",
-        "input_tokens": 1555568,
+        "input_tokens": 1534471,
         "cached_input_tokens": 0,
-        "output_tokens": 751762,
-        "cost_usd": 15.9431,
-        "calls": 54
+        "output_tokens": 737766,
+        "cost_usd": 15.6699,
+        "calls": 53
       }
     ],
     "total": {
-      "input_tokens": 1555568,
-      "output_tokens": 751762,
-      "cost_usd": 15.9431,
-      "cost_krw": 22320,
-      "calls": 54
+      "input_tokens": 1534471,
+      "output_tokens": 737766,
+      "cost_usd": 15.6699,
+      "cost_krw": 21938,
+      "calls": 53
     }
   },
   "weights": {
