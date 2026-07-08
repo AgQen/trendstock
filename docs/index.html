@@ -721,8 +721,9 @@ function renderCard(t, kind) {
   card.className = "card " + cls;
 
   // 예측 트렌드: (v3점수 + 신뢰도) / 2 평균 → 추후 실적 기반 가중치 자동 조정 예정
+  // trend_score는 DB에서 문자열('78.0')로 오므로 Number() 필수. 안 하면 "78.0"+74 문자열결합 → /2로 반토막.
   const score = (kind === "predicted" && t.trend_score != null)
-    ? Math.round((t.trend_score + t.confidence) / 2)
+    ? Math.round((Number(t.trend_score) + Number(t.confidence)) / 2)
     : t.confidence;
   const scoreColor = score >= 80 ? "#4ade80" : score >= 70 ? "#60a5fa" : "#facc15";
   const dirColor = t.trend_direction === "UP" ? "var(--green)" : (t.trend_direction === "DOWN" ? "#ef4444" : "var(--text-dim)");

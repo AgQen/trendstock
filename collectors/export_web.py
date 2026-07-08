@@ -63,6 +63,11 @@ def _trend_with_recs(conn, trend_row):
         try: return trend_row[key]
         except (IndexError, KeyError): return None
 
+    def _num(key):
+        v = _safe(key)
+        try: return float(v) if v is not None else None
+        except (TypeError, ValueError): return None
+
     return {
         "trend_id": trend_row["trend_id"],
         "rank": trend_row["rank"],
@@ -71,7 +76,7 @@ def _trend_with_recs(conn, trend_row):
         "category": trend_row["category"],
         "timeframe": timeframe,
         "confidence": trend_row["confidence"],
-        "trend_score": _safe("trend_score"),
+        "trend_score": _num("trend_score"),
         "trend_direction": _safe("trend_direction"),
         "secondary_effect": _safe("secondary_effect"),
         "trend_risk": _safe("trend_risk"),
