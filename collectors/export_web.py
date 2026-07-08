@@ -77,6 +77,8 @@ def _trend_with_recs(conn, trend_row):
         "trend_risk": _safe("trend_risk"),
         "tier1_tickers": json.loads(_safe("tier1_json") or "[]"),
         "tier2_tickers": json.loads(_safe("tier2_json") or "[]"),
+        "action_label": _safe("action_label"),
+        "cycle_adjustment": _safe("cycle_adjustment"),
         "causal_chain": json.loads(trend_row["causal_chain_json"] or "[]"),
         "disconfirming_hypotheses": json.loads(trend_row["disconfirming_json"] or "[]"),
         "evidence": json.loads(trend_row["evidence_json"] or "{}"),

@@ -28,6 +28,61 @@ OUTPUT RULES (strict — violations cause schema rejection):
    (`recent_leaders_history` provided as penalty context).
 
 ═══════════════════════════════════════════════════════
+MARKET CYCLE LAYER — 마켓 사이클 우선 판단 (STEP 0, 가장 먼저)
+═══════════════════════════════════════════════════════
+
+PER/PBR 정적 밸류에이션보다 "시장이 지금 어느 계절인지 + 돈이 어디로 이동하는지"를
+먼저 판단하고, 그 다음에 뉴스 트렌드 점수를 계절에 맞게 보정한다.
+
+전제: Productive Value = Labor Force × Labor Productivity.
+시장은 장기적으로 생산가치로 평균회귀하지만, 단기·중기엔 자본유입·기대·정책·유동성으로
+버블/침체를 반복한다. 먼저 계절을 판단한 뒤 트렌드 점수를 보정한다.
+
+■ 사계절 정의 (판단 신호 → 선호 자산)
+  WINTER(겨울): 지수 고점대비 -30~-50% 하락, 신용경색·침체우려, VIX↑, 현금선호.
+    선호: Gold, Cash, 단기채(SHY/BIL), 방어주(PG/KO). 초입=위험회피, 후반=봄 준비.
+  SPRING(봄): 큰 하락 후 바닥 횡보, 금리인상 중단/완화 기대, 원자재·에너지·소재 선반응.
+    선호: Commodities, Oil/Energy(XLE/XOM), Copper(FCX), Materials, Uranium(CCJ/URA).
+    기술주는 선별적으로만.
+  SUMMER(여름): 지수가 이전 고점 회복 근접, 성장주·반도체·AI·바이오 강세, 실적 상향.
+    선호: Growth Tech, AI Chip(NVDA/AMD), HBM/Memory(MU/하이닉스), 장비(ASML/AMAT),
+    Data Center(VRT/ETN), Cloud, Biotech(XBI). 초반=Accumulate, 후반=과열 체크.
+  AUTUMN(가을): 신고가 돌파·상승 후반, AI·로봇·우주 테마 급등, 스토리>실적, CAPEX 경쟁.
+    행동: 신규 공격매수보다 Harvest/부분익절/Watch. 현금·금·단기채·방어주 점검.
+    ★ 가을엔 점수 높아도 즉시 Buy 금지 → "강한 트렌드지만 진입부담"으로 표시.
+
+■ CYCLE MULTIPLIER (계절별 트렌드 점수 보정)
+  cycle_adjusted_score = trend_score × multiplier (0~100 클램프)
+  WINTER: Gold×1.25, 현금/단기채×1.20, 방어주×1.15, USD×1.10, GrowthTech×0.60,
+          AI Chip×0.60, Crypto×0.50, 투기기술주×0.40
+  SPRING: Commodities×1.25, Oil/Energy×1.20, Copper/Materials×1.20, Uranium×1.15,
+          Industrials×1.10, GrowthTech×0.85, AI Chip×0.90
+  SUMMER: GrowthTech×1.25, AI Chip×1.25, HBM/Memory×1.20, 장비×1.20, DataCenter×1.15,
+          Cloud×1.15, Biotech×1.10, Commodities×0.90, Gold×0.85, 방어주×0.80
+  AUTUMN: MomentumTech×1.10, AI Chip×1.05, DataCenter×1.00, Gold×1.10, 단기채×1.15,
+          방어주×1.10, 투기기술주×0.80, Crypto×0.75
+
+■ AUTUMN RISK CAP (가을 과열 제한) — 가을 후반 신호 감지 시:
+  주도주 5d/20d 상승률 과도, 거래량 급증 후 변동성↑, 뉴스가 실적보다 서사 중심,
+  소수 대형주만 지수 견인, CAPEX 대비 매출 실현 불확실.
+  → 신규매수 점수 최대 75로 제한, risk에 "과열/수확 국면 가능성" 반드시 명시.
+
+■ ACTION LABEL (top_trend_candidates.action_label + predicted_trends.action_label)
+  Buy/Sell 대신 계절 맥락 행동 라벨 사용:
+    "Accumulate" — 봄후반/여름초반 + 점수≥71 + 모멘텀·실적 동반확인 (=적극 매수)
+    "Watch"      — 트렌드 강하나 가을/단기급등으로 진입부담
+    "Harvest"    — 가을 중후반, 기존 보유자 수확/비중축소
+    "Hedge"      — 겨울초입/가을후반, 금·단기채·방어주·달러
+    "Avoid"      — 점수 낮거나 계절과 불일치
+  predicted_trends의 각 recommendation.grade는 이 라벨과 정합해야 함:
+    Accumulate↔"Strong Buy"/"Buy", Watch/Harvest/Hedge↔"Hold", Avoid↔"Caution".
+
+■ 마켓 사이클 우선 규칙
+  1) 뉴스 트렌드가 강해도 가을 후반이면 Buy로 단정하지 않는다.
+  2) 겨울=현금가치 보존, 봄=원자재/기초자산, 여름=기술/성장주, 가을=수익실현/리스크관리.
+  3) 매 predicted_trend에 action_label과 cycle_adjustment(계절 보정 설명)를 반드시 채운다.
+
+═══════════════════════════════════════════════════════
 THEME FLOW ENGINE — FOLLOW THE MONEY 3 LEVELS DEEP
 ═══════════════════════════════════════════════════════
 
@@ -205,14 +260,17 @@ SCHEMA (emit JSON matching this structure exactly):
 GENERATION ORDER (follow exactly):
   STEP 1 — market_brief: Run v3 trend analysis. Score all candidate themes (0-100).
            Identify top_trend_candidates ≥ 2 (score ≥ 60).
+  STEP 0 — market_cycle: Determine the current market SEASON first (Winter/Spring/
+           Summer/Autumn). This gates everything below.
   STEP 2 — predicted_trends: For each top_trend_candidate with score ≥ 60,
            create ONE predicted_trend card that:
              • Copies trend_score, trend_direction, secondary_effect, trend_risk
                directly from the corresponding top_trend_candidate
+             • Applies CYCLE MULTIPLIER → cycle_adjusted_score + action_label
              • Adds detailed causal_chain (3-5 steps) explaining WHY
-             • Adds recommendations: the 1-2 best stocks to BUY for this trend
-               (Strong Buy or high-conviction Buy only)
-           predicted_trends MUST be ≥ 2, ordered by trend_score descending.
+             • Adds recommendations whose grade matches action_label
+               (Accumulate→Strong Buy/Buy, Watch/Harvest/Hedge→Hold, Avoid→Caution)
+           predicted_trends MUST be ≥ 2, ordered by cycle_adjusted_score descending.
   STEP 3 — current_trends: Document what is already happening NOW.
 
 {
@@ -221,6 +279,13 @@ GENERATION ORDER (follow exactly):
   "market_brief": {
     "news_summary": "최근 24시간 핵심 뉴스 요약 — 가장 중요한 이벤트 3개",
     "market_context": "현재 시장이 어떤 국면인지 — risk-on/off, 섹터 로테이션 방향",
+    "market_cycle": {
+      "current_phase": "Summer 후반",
+      "phase_score": 72,
+      "phase_reason": "S&P500 신고가 근접 + AI/반도체 강세 + 실적 상향, 다만 소수 대형주 편중으로 여름 후반~가을 초입 경계",
+      "cycle_risk": "AI CAPEX 대비 매출 실현 지연 시 가을 후반 급전환 위험",
+      "money_flow_summary": "현금·채권 → AI 반도체·데이터센터 전력 인프라로 자금 유입, 방어주·금은 상대 약세"
+    },
     "detected_events": [
       {
         "event": "AI CAPEX 투자 확대 — 메타·마이크로소프트 데이터센터 발표",
@@ -235,7 +300,10 @@ GENERATION ORDER (follow exactly):
         "rank": 1,
         "theme": "AI 데이터센터 전력·냉각 인프라",
         "score": 82,
+        "cycle_adjusted_score": 88,
         "direction": "UP",
+        "action_label": "Accumulate",
+        "cycle_adjustment": "여름 국면 DataCenter×1.15 보정 → 82→88. 계절 순풍으로 적극 매수 구간.",
         "representative_stocks": ["VRT", "ETN", "GEV"],
         "reason": "AI CAPEX 확대 → L3 수혜: 데이터센터 전력관리·냉각 솔루션 수요 직결",
         "secondary_effect": "L4: FCX(구리) + CCJ(우라늄) 전력 수요 연쇄 상승",
@@ -245,7 +313,10 @@ GENERATION ORDER (follow exactly):
         "rank": 2,
         "theme": "반도체 장비 2차 수혜",
         "score": 74,
+        "cycle_adjusted_score": 78,
         "direction": "UP",
+        "action_label": "Watch",
+        "cycle_adjustment": "여름 장비×1.20 보정되나 5일 급등 후 진입부담 → Watch",
         "representative_stocks": ["AMAT", "LRCX", "KLAC"],
         "reason": "HBM 증설 결정 → 장비 발주 사이클 시작",
         "secondary_effect": "소재·특수가스 → 한미반도체 후공정",
@@ -318,6 +389,8 @@ GENERATION ORDER (follow exactly):
       "confidence": 72,
       "trend_score": 74,
       "trend_direction": "UP",
+      "action_label": "Watch",
+      "cycle_adjustment": "여름 장비×1.20 → 74→78. 다만 5일 급등 후라 신규는 Watch, 눌림 대기.",
       "secondary_effect": "소재·특수가스 → 한미반도체 후공정까지 수혜",
       "trend_risk": "삼성 CapEx 동결 시 발주 취소 가능",
       "tier1_tickers": ["ASML", "AMAT", "LRCX"],

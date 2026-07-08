@@ -48,7 +48,7 @@ def init_db() -> None:
             conn.execute("ALTER TABLE predicted_trends "
                          "ADD COLUMN timeframe TEXT")
         for col in ("trend_score", "trend_direction", "secondary_effect", "trend_risk",
-                    "tier1_json", "tier2_json"):
+                    "tier1_json", "tier2_json", "action_label", "cycle_adjustment"):
             if col not in tcols:
                 conn.execute(f"ALTER TABLE predicted_trends ADD COLUMN {col} TEXT")
         # rule_weights 컬럼 마이그레이션 (rs_weight, risk_weight 추가)

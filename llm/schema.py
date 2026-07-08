@@ -64,6 +64,9 @@ class TrendCard(BaseModel):
     trend_risk: str | None = None         # 틀릴 수 있는 변수
     tier1_tickers: list[str] = Field(default_factory=list)  # 1차 직접 수혜 (트렌드 핵심)
     tier2_tickers: list[str] = Field(default_factory=list)  # 2차 응용 수혜 (파생 수혜)
+    # 마켓 사이클 보정 (Market Cycle Layer)
+    action_label: str | None = None       # Accumulate/Watch/Harvest/Hedge/Avoid
+    cycle_adjustment: str | None = None    # 계절 때문에 점수가 어떻게 보정됐는지
     causal_chain: list[CausalStep] = Field(min_length=1)
     disconfirming_hypotheses: list[str] = Field(min_length=1)
     evidence: dict = Field(default_factory=dict)
@@ -99,7 +102,10 @@ class TrendCandidate(BaseModel):
     rank: int = Field(ge=1)
     theme: str
     score: float = Field(ge=0, le=100)
+    cycle_adjusted_score: float | None = Field(default=None, ge=0, le=100)  # 계절 보정 점수
     direction: str  # UP/DOWN/WATCH — 자유 텍스트 허용
+    action_label: str | None = None  # Accumulate/Watch/Harvest/Hedge/Avoid
+    cycle_adjustment: str | None = None  # 계절 보정 설명
     representative_stocks: list[str] = Field(min_length=1)  # 추천 종목 티커와 1:1 정렬
     reason: str
     secondary_effect: str
@@ -117,10 +123,20 @@ class ExcludedCandidate(BaseModel):
     reason: str
 
 
+class MarketCycle(BaseModel):
+    """마켓 사이클 사계절 판단 (Market Cycle Layer)."""
+    current_phase: str            # Winter/Spring/Summer/Autumn (+ 초입/후반)
+    phase_score: float = Field(ge=0, le=100)
+    phase_reason: str             # 이 계절로 판단한 이유
+    cycle_risk: str               # 현재 계절 최대 위험
+    money_flow_summary: str | None = None  # 자금이 어디서 어디로 이동하는지
+
+
 class MarketBrief(BaseModel):
     """AI Investment Trend Engine v3 출력 — 시장 국면 + 트렌드 후보 분석."""
     news_summary: str
     market_context: str
+    market_cycle: MarketCycle | None = None   # 마켓 사이클 판단 (필수 권장)
     detected_events: list[DetectedEvent] = Field(default_factory=list)
     top_trend_candidates: list[TrendCandidate] = Field(min_length=2, max_length=6)
     related_candidates: list[RelatedCandidate] = Field(default_factory=list, max_length=5)

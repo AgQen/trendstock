@@ -753,6 +753,21 @@ function renderCard(t, kind) {
       ? `<span style="font-size:11px;font-weight:700;color:${dirColor}">${t.trend_direction === "UP" ? "▲ 상승" : t.trend_direction === "DOWN" ? "▼ 하락" : "👁 관찰"}</span>`
       : "";
 
+    // 마켓 사이클 액션 라벨 배지
+    const actionMeta = (a) => {
+      const s = (a || "").toLowerCase();
+      if (s.includes("accumulate")) return { ko:"적극 매수", color:"#4ade80", bg:"rgba(74,222,128,0.15)" };
+      if (s.includes("watch"))      return { ko:"관찰",     color:"#facc15", bg:"rgba(250,204,21,0.15)" };
+      if (s.includes("harvest"))    return { ko:"수확·익절", color:"#fb923c", bg:"rgba(251,146,60,0.15)" };
+      if (s.includes("hedge"))      return { ko:"헤지·방어", color:"#60a5fa", bg:"rgba(96,165,250,0.15)" };
+      if (s.includes("avoid"))      return { ko:"회피",     color:"#ef4444", bg:"rgba(239,68,68,0.15)" };
+      return null;
+    };
+    const am = actionMeta(t.action_label);
+    const actionTag = am
+      ? `<span style="font-size:11px;font-weight:800;color:${am.color};background:${am.bg};padding:2px 8px;border-radius:6px">${am.ko}</span>`
+      : "";
+
     card.innerHTML = `
       <div class="card-head">
         <div class="rank">${t.rank}</div>
@@ -762,6 +777,7 @@ function renderCard(t, kind) {
             <span class="cat">${t.category}</span>
             ${timeframeChip(t.timeframe)}
             ${dirTag}
+            ${actionTag}
           </div>
         </div>
         <div class="conf">
@@ -772,6 +788,7 @@ function renderCard(t, kind) {
       </div>
       ${tiersHtml}
       <div class="top-pick"></div>
+      ${t.cycle_adjustment ? `<div style="font-size:11px;color:var(--text-dim);background:var(--card-bg);border-radius:6px;padding:6px 10px;margin-bottom:8px">🔄 <b>사이클 보정:</b> ${t.cycle_adjustment}</div>` : ""}
       <div class="card-summary">${t.summary || ""}</div>
       <div class="card-expand-btn">상세 분석 <span class="card-expand-btn-chevron">▼</span></div>
       <div class="card-detail">
@@ -1969,7 +1986,33 @@ function renderNews(data) {
     ? `<span style="color:var(--green);font-weight:700">▲ UP</span>`
     : `<span style="color:#ef4444;font-weight:700">▼ DOWN</span>`;
 
+  // 마켓 사이클 배너 (사계절)
+  const mc = mb.market_cycle;
+  const seasonMeta = (p) => {
+    const s = (p || "").toLowerCase();
+    if (s.includes("winter") || s.includes("겨울")) return { emoji:"❄️", ko:"겨울", color:"#60a5fa", bg:"rgba(96,165,250,0.12)" };
+    if (s.includes("spring") || s.includes("봄"))   return { emoji:"🌱", ko:"봄",   color:"#4ade80", bg:"rgba(74,222,128,0.12)" };
+    if (s.includes("summer") || s.includes("여름")) return { emoji:"☀️", ko:"여름", color:"#facc15", bg:"rgba(250,204,21,0.12)" };
+    if (s.includes("autumn") || s.includes("fall") || s.includes("가을")) return { emoji:"🍂", ko:"가을", color:"#fb923c", bg:"rgba(251,146,60,0.14)" };
+    return { emoji:"🌐", ko:"", color:"var(--text-dim)", bg:"var(--card-bg)" };
+  };
+  const cycleHtml = mc ? (() => {
+    const sm = seasonMeta(mc.current_phase);
+    return `
+    <div style="padding:14px 16px;margin-bottom:8px;background:${sm.bg};border-left:4px solid ${sm.color}">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
+        <span style="font-size:20px">${sm.emoji}</span>
+        <span style="font-size:16px;font-weight:800;color:${sm.color}">${mc.current_phase}</span>
+        ${mc.phase_score != null ? `<span style="font-size:11px;color:var(--text-dim)">사이클 점수 ${Math.round(mc.phase_score)}</span>` : ""}
+      </div>
+      <div style="font-size:12px;color:var(--text);line-height:1.5;margin-bottom:6px">${mc.phase_reason || ""}</div>
+      ${mc.money_flow_summary ? `<div style="font-size:12px;color:var(--text-dim);line-height:1.5;margin-bottom:4px">💰 <b>자금 흐름:</b> ${mc.money_flow_summary}</div>` : ""}
+      ${mc.cycle_risk ? `<div style="font-size:11px;color:#fb923c">⚠ <b>계절 위험:</b> ${mc.cycle_risk}</div>` : ""}
+    </div>`;
+  })() : "";
+
   let html = `
+    ${cycleHtml}
     <!-- 시장 요약 -->
     <div style="padding:12px 16px;background:var(--card-bg);margin-bottom:1px">
       <div style="font-size:11px;color:var(--text-dim);font-weight:600;margin-bottom:4px">📰 뉴스 요약</div>

@@ -106,8 +106,8 @@ def save(analysis: dict) -> int:
                        category, timeframe, confidence,
                        causal_chain_json, disconfirming_json, evidence_json,
                        trend_score, trend_direction, secondary_effect, trend_risk,
-                       tier1_json, tier2_json)
-                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                       tier1_json, tier2_json, action_label, cycle_adjustment)
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                     """,
                     (
                         snapshot_id, date, kind, t["rank"], t["title"],
@@ -122,6 +122,7 @@ def save(analysis: dict) -> int:
                         t.get("secondary_effect"), t.get("trend_risk"),
                         json.dumps(t.get("tier1_tickers", []), ensure_ascii=False),
                         json.dumps(t.get("tier2_tickers", []), ensure_ascii=False),
+                        t.get("action_label"), t.get("cycle_adjustment"),
                     ),
                 )
                 trend_id = cur.lastrowid
