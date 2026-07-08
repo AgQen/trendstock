@@ -135,11 +135,14 @@ body { padding-bottom: env(safe-area-inset-bottom); }
 
 /* Recommendations */
 .recs { padding: 0 16px 12px; }
-.rec-wrap { border-top: 1px solid var(--border); }
+.rec-wrap { border-top: 1px solid var(--border); padding: 8px 0 4px; }
 .rec-wrap:first-child { border-top: none; }
 .rec {
-  display: flex; align-items: center; gap: 10px;
-  padding: 10px 0 4px;
+  display: flex; flex-direction: column; gap: 4px;
+  padding: 2px 0;
+}
+.rec-signals {
+  display: flex; align-items: center; gap: 6px; flex-wrap: wrap;
 }
 .rec-toggle {
   display: flex; align-items: center; justify-content: center; gap: 5px;
@@ -153,11 +156,13 @@ body { padding-bottom: env(safe-area-inset-bottom); }
 .rec-wrap.open .chev-sm { transform: rotate(180deg); }
 /* 카드 레벨 상세분석 토글 버튼 */
 .card-expand-btn {
-  margin: 0 16px 12px; padding: 8px; text-align: center;
-  font-size: 12px; font-weight: 600; color: var(--text-dim);
-  background: var(--border); border-radius: 8px; cursor: pointer;
+  margin: 8px 16px 12px; padding: 10px 0; text-align: center;
+  font-size: 13px; font-weight: 700; color: var(--text);
+  background: var(--border); border-radius: 10px; cursor: pointer;
+  letter-spacing: 0.3px;
 }
-.card-expand-btn:hover { color: var(--text); }
+.card-expand-btn:hover { background: var(--card-bg); }
+.card.open .card-expand-btn { background: rgba(167,139,250,0.12); color: var(--purple); }
 .card.open .card-expand-btn-chevron { transform: rotate(180deg); }
 .card-expand-btn-chevron { display: inline-block; transition: transform .2s; }
 .rec-detail-panel { display: none; padding: 2px 0 10px; }
@@ -861,19 +866,28 @@ function renderCard(t, kind) {
         <div class="rationale" style="font-size:12px">${r.rationale || ""}${f_line}</div>
         <div style="font-size:11px;color:var(--text-faint);margin-top:3px">${priceFmt(r.country, r.entry_close)}</div>
       </div>
-      ${hasDetail ? `
-        <button class="rec-toggle">▼ 상세 분석 <i class="chev-sm"></i></button>
-        <div class="rec-detail-panel">
-          ${mkBlock("🏢 종목 소개", d.stock_desc)}
-          ${mkBlock("🔗 트렌드 연결", d.trend_link)}
-          ${mkBlock("📈 현재 흐름", d.current_flow)}
-          ${mkBlock("💰 재무 근거", d.financials_reason)}
-          ${mkBlock("🔮 예측 근거", d.prediction, " is-predict")}
-        </div>
-      ` : ""}
+      ${hasDetail ? (kind === "predicted"
+        // 예측: 이미 card-detail 안이므로 토글 없이 바로 표시
+        ? `<div class="rec-detail-panel" style="display:block">
+             ${mkBlock("🏢 종목 소개", d.stock_desc)}
+             ${mkBlock("🔗 트렌드 연결", d.trend_link)}
+             ${mkBlock("📈 현재 흐름", d.current_flow)}
+             ${mkBlock("💰 재무 근거", d.financials_reason)}
+             ${mkBlock("🔮 예측 근거", d.prediction, " is-predict")}
+           </div>`
+        // 현재: 최상위 노출이므로 토글 유지
+        : `<button class="rec-toggle">▼ 상세 분석 <i class="chev-sm"></i></button>
+           <div class="rec-detail-panel">
+             ${mkBlock("🏢 종목 소개", d.stock_desc)}
+             ${mkBlock("🔗 트렌드 연결", d.trend_link)}
+             ${mkBlock("📈 현재 흐름", d.current_flow)}
+             ${mkBlock("💰 재무 근거", d.financials_reason)}
+             ${mkBlock("🔮 예측 근거", d.prediction, " is-predict")}
+           </div>`
+      ) : ""}
     `;
 
-    if (hasDetail) {
+    if (hasDetail && kind !== "predicted") {
       wrap.querySelector(".rec-toggle").addEventListener("click", () => {
         wrap.classList.toggle("open");
       });
