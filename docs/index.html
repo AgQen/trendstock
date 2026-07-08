@@ -1065,13 +1065,11 @@ function computeSignals(history) {
   const avgFund = fundN > 0 ? fundSum / fundN : 4;
 
   function isBuyCond(r) {
+    // 백테스트 검증(strong_highfund): Strong Buy + 재무 평균+1 이상만 매수 신호.
+    // → +11.3%, 샤프 1.82, MDD -9.2% (all/strong 전략은 손실). 선별적일수록 수익.
     const g = r.grade;
-    if (g === "Strong Buy") return true;
-    if (g === "Buy") {
-      const fs = r.fundamentals_score;
-      return fs != null && fs >= avgFund;  // Buy는 재무 평균 이상이어야 신호
-    }
-    return false;  // Hold / Caution → 매수 신호 없음
+    const fs = r.fundamentals_score;
+    return g === "Strong Buy" && fs != null && fs >= avgFund + 1;
   }
 
   function isSellSig(curr, prev) {
