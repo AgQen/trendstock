@@ -781,8 +781,8 @@ function renderCard(t, kind) {
           </div>
         </div>
         <div class="conf">
-          <div class="conf-num" style="color:${scoreColor}">${score}</div>
-          <div class="conf-label" title="종합점수 = (v3점수 + 신뢰도) / 2 · 추후 실적 기반 가중치 적용 예정">종합점수</div>
+          <div class="conf-num" style="color:${scoreColor}">${score}<span style="font-size:12px">%</span></div>
+          <div class="conf-label" title="종합점수 = (v3점수 + 신뢰도) 평균 · 추후 실적 기반 가중치 적용 예정">종합점수</div>
           <div style="font-size:9px;color:var(--text-faint);margin-top:2px">${t.trend_score != null ? `v3 ${Math.round(t.trend_score)}·신뢰 ${t.confidence}` : ""}</div>
         </div>
       </div>
