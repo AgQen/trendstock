@@ -249,19 +249,27 @@
     "by_category": [
       {
         "category": "daily_analysis",
-        "input_tokens": 1485114,
+        "input_tokens": 1523966,
         "cached_input_tokens": 0,
-        "output_tokens": 717029,
-        "cost_usd": 15.2108,
-        "calls": 50
+        "output_tokens": 737146,
+        "cost_usd": 15.6291,
+        "calls": 51
+      },
+      {
+        "category": "reinforcement",
+        "input_tokens": 11796,
+        "cached_input_tokens": 0,
+        "output_tokens": 8000,
+        "cost_usd": 0.1554,
+        "calls": 1
       }
     ],
     "total": {
-      "input_tokens": 1485114,
-      "output_tokens": 717029,
-      "cost_usd": 15.2108,
-      "cost_krw": 21295,
-      "calls": 50
+      "input_tokens": 1535762,
+      "output_tokens": 745146,
+      "cost_usd": 15.7845,
+      "cost_krw": 22098,
+      "calls": 52
     }
   },
   "weights": {
@@ -13939,8 +13947,8 @@
           "category": "건설/지주",
           "timeframe": "ongoing",
           "trend_confidence": 73,
-          "grade": "Strong Buy",
-          "rating_score": 4,
+          "grade": "Buy",
+          "rating_score": 3,
           "fundamentals_score": 7,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -15036,8 +15044,8 @@
           "category": "한국 AI 플랫폼",
           "timeframe": "ongoing",
           "trend_confidence": 82,
-          "grade": "Strong Buy",
-          "rating_score": 4,
+          "grade": "Buy",
+          "rating_score": 3,
           "fundamentals_score": 6,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -16720,7 +16728,7 @@
           "timeframe": "ongoing",
           "trend_confidence": 82,
           "grade": "Strong Buy",
-          "rating_score": 5,
+          "rating_score": 4,
           "fundamentals_score": 5,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -18230,8 +18238,8 @@
           "category": "한국 인터넷/플랫폼",
           "timeframe": "ongoing",
           "trend_confidence": 82,
-          "grade": "Strong Buy",
-          "rating_score": 4,
+          "grade": "Buy",
+          "rating_score": 3,
           "fundamentals_score": 5,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -21424,8 +21432,8 @@
           "category": "한국 인터넷/건설",
           "timeframe": "ongoing",
           "trend_confidence": 76,
-          "grade": "Strong Buy",
-          "rating_score": 4,
+          "grade": "Buy",
+          "rating_score": 3,
           "fundamentals_score": 6,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -25048,8 +25056,8 @@
           "category": "조선/방산",
           "timeframe": "imminent",
           "trend_confidence": 70,
-          "grade": "Strong Buy",
-          "rating_score": 4,
+          "grade": "Buy",
+          "rating_score": 3,
           "fundamentals_score": 6,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -29839,8 +29847,8 @@
           "category": "반도체",
           "timeframe": "imminent",
           "trend_confidence": 70,
-          "grade": "Strong Buy",
-          "rating_score": 4,
+          "grade": "Buy",
+          "rating_score": 3,
           "fundamentals_score": 6,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -32877,7 +32885,7 @@
           "timeframe": "ongoing",
           "trend_confidence": 70,
           "grade": "Strong Buy",
-          "rating_score": 6,
+          "rating_score": 5,
           "fundamentals_score": 6,
           "fundamentals": {},
           "detail": null,
