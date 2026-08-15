@@ -233,11 +233,11 @@
     "by_category": [
       {
         "category": "daily_analysis",
-        "input_tokens": 1570559,
+        "input_tokens": 1504765,
         "cached_input_tokens": 0,
-        "output_tokens": 756651,
-        "cost_usd": 16.0614,
-        "calls": 48
+        "output_tokens": 724651,
+        "cost_usd": 15.3841,
+        "calls": 46
       },
       {
         "category": "reinforcement",
@@ -249,11 +249,11 @@
       }
     ],
     "total": {
-      "input_tokens": 1617681,
-      "output_tokens": 788651,
-      "cost_usd": 16.6828,
-      "cost_krw": 23356,
-      "calls": 52
+      "input_tokens": 1551887,
+      "output_tokens": 756651,
+      "cost_usd": 16.0054,
+      "cost_krw": 22408,
+      "calls": 50
     }
   },
   "weights": {
@@ -978,7 +978,7 @@
                 "weighted": -1.24,
                 "reasons": [
                   "20일 신고가 돌파",
-                  "P/E 166 극심한 고평가"
+                  "P/E 169 극심한 고평가"
                 ]
               },
               "volume": {
@@ -4180,7 +4180,7 @@
           "timeframe": "short",
           "trend_confidence": 63,
           "grade": "Caution",
-          "rating_score": -2,
+          "rating_score": -1,
           "fundamentals_score": 7,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -5320,7 +5320,7 @@
           "timeframe": "short",
           "trend_confidence": 62,
           "grade": "Caution",
-          "rating_score": -3,
+          "rating_score": -2,
           "fundamentals_score": 6,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -5785,7 +5785,7 @@
           "timeframe": "short",
           "trend_confidence": 62,
           "grade": "Caution",
-          "rating_score": -3,
+          "rating_score": -2,
           "fundamentals_score": 6,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -6148,7 +6148,7 @@
           "timeframe": "short",
           "trend_confidence": 66,
           "grade": "Caution",
-          "rating_score": -3,
+          "rating_score": -2,
           "fundamentals_score": 6,
           "fundamentals": {
             "revenue_yoy_pct": 18.5,
@@ -13625,8 +13625,8 @@
           "category": "조선/방산",
           "timeframe": "short",
           "trend_confidence": 78,
-          "grade": "Buy",
-          "rating_score": 3,
+          "grade": "Strong Buy",
+          "rating_score": 4,
           "fundamentals_score": 7,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -13926,7 +13926,7 @@
           "timeframe": "ongoing",
           "trend_confidence": 82,
           "grade": "Buy",
-          "rating_score": 2,
+          "rating_score": 3,
           "fundamentals_score": 6,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -14471,7 +14471,7 @@
           "timeframe": "ongoing",
           "trend_confidence": 80,
           "grade": "Hold",
-          "rating_score": 0,
+          "rating_score": 1,
           "fundamentals_score": 7,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -16608,7 +16608,7 @@
           "timeframe": "ongoing",
           "trend_confidence": 82,
           "grade": "Caution",
-          "rating_score": -2,
+          "rating_score": -1,
           "fundamentals_score": 7,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -30699,7 +30699,7 @@
           "timeframe": "imminent",
           "trend_confidence": 70,
           "grade": "Hold",
-          "rating_score": 0,
+          "rating_score": 1,
           "fundamentals_score": 6,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -31521,8 +31521,8 @@
           "category": "조선",
           "timeframe": "ongoing",
           "trend_confidence": 82,
-          "grade": "Hold",
-          "rating_score": 1,
+          "grade": "Buy",
+          "rating_score": 2,
           "fundamentals_score": 6,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -33462,8 +33462,8 @@
           "category": "방산/조선",
           "timeframe": "imminent",
           "trend_confidence": 70,
-          "grade": "Caution",
-          "rating_score": -1,
+          "grade": "Hold",
+          "rating_score": 0,
           "fundamentals_score": 5,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -35274,8 +35274,8 @@
           "category": "Defense",
           "timeframe": "imminent",
           "trend_confidence": 72,
-          "grade": "Caution",
-          "rating_score": -1,
+          "grade": "Hold",
+          "rating_score": 0,
           "fundamentals_score": 6,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -36312,8 +36312,8 @@
           "category": "방산/조선",
           "timeframe": "ongoing",
           "trend_confidence": 72,
-          "grade": "Caution",
-          "rating_score": -1,
+          "grade": "Hold",
+          "rating_score": 0,
           "fundamentals_score": 5,
           "fundamentals": {
             "revenue_yoy_pct": 15.0,
