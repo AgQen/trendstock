@@ -233,11 +233,11 @@
     "by_category": [
       {
         "category": "daily_analysis",
-        "input_tokens": 1504765,
+        "input_tokens": 1472021,
         "cached_input_tokens": 0,
-        "output_tokens": 724651,
-        "cost_usd": 15.3841,
-        "calls": 46
+        "output_tokens": 708946,
+        "cost_usd": 15.0503,
+        "calls": 45
       },
       {
         "category": "reinforcement",
@@ -249,11 +249,11 @@
       }
     ],
     "total": {
-      "input_tokens": 1551887,
-      "output_tokens": 756651,
-      "cost_usd": 16.0054,
-      "cost_krw": 22408,
-      "calls": 50
+      "input_tokens": 1519143,
+      "output_tokens": 740946,
+      "cost_usd": 15.6716,
+      "cost_krw": 21940,
+      "calls": 49
     }
   },
   "weights": {
@@ -3868,7 +3868,7 @@
           "timeframe": "short",
           "trend_confidence": 65,
           "grade": "Strong Buy",
-          "rating_score": 7,
+          "rating_score": 8,
           "fundamentals_score": 6,
           "fundamentals": {
             "revenue_yoy_pct": null,
