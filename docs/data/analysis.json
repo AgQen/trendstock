@@ -233,11 +233,11 @@
     "by_category": [
       {
         "category": "daily_analysis",
-        "input_tokens": 1211246,
+        "input_tokens": 1146184,
         "cached_input_tokens": 0,
-        "output_tokens": 582950,
-        "cost_usd": 12.378,
-        "calls": 37
+        "output_tokens": 552203,
+        "cost_usd": 11.7216,
+        "calls": 35
       },
       {
         "category": "reinforcement",
@@ -249,11 +249,11 @@
       }
     ],
     "total": {
-      "input_tokens": 1246610,
-      "output_tokens": 606950,
-      "cost_usd": 12.8441,
-      "cost_krw": 17982,
-      "calls": 40
+      "input_tokens": 1181548,
+      "output_tokens": 576203,
+      "cost_usd": 12.1877,
+      "cost_krw": 17063,
+      "calls": 38
     }
   },
   "weights": {
@@ -812,7 +812,7 @@
                 "score": 2,
                 "weighted": 2.19,
                 "reasons": [
-                  "펀더 2개 강함 (ROE 27%, 부채/자본 4 (낮음))"
+                  "펀더 2개 강함 (ROE 27%, 부채/자본 5 (낮음))"
                 ]
               },
               "momentum": {
@@ -2160,8 +2160,8 @@
           "category": "반도체",
           "timeframe": "short",
           "trend_confidence": 75,
-          "grade": "Hold",
-          "rating_score": 0,
+          "grade": "Buy",
+          "rating_score": 2,
           "fundamentals_score": 7,
           "fundamentals": {
             "revenue_yoy_pct": 85.0,
@@ -15364,8 +15364,8 @@
           "category": "한국 반도체",
           "timeframe": "ongoing",
           "trend_confidence": 78,
-          "grade": "Caution",
-          "rating_score": -1,
+          "grade": "Hold",
+          "rating_score": 0,
           "fundamentals_score": 8,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -15958,8 +15958,8 @@
           "category": "반도체/한국",
           "timeframe": "short",
           "trend_confidence": 80,
-          "grade": "Caution",
-          "rating_score": -1,
+          "grade": "Hold",
+          "rating_score": 0,
           "fundamentals_score": 8,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -37420,7 +37420,7 @@
           "timeframe": "ongoing",
           "trend_confidence": 85,
           "grade": "Strong Buy",
-          "rating_score": 5,
+          "rating_score": 6,
           "fundamentals_score": 5,
           "fundamentals": {},
           "detail": null,
@@ -39075,7 +39075,7 @@
           "timeframe": "short",
           "trend_confidence": 45,
           "grade": "Strong Buy",
-          "rating_score": 7,
+          "rating_score": 8,
           "fundamentals_score": 5,
           "fundamentals": {},
           "detail": null,
