@@ -233,11 +233,11 @@
     "by_category": [
       {
         "category": "daily_analysis",
-        "input_tokens": 1146184,
+        "input_tokens": 1113433,
         "cached_input_tokens": 0,
-        "output_tokens": 552203,
-        "cost_usd": 11.7216,
-        "calls": 35
+        "output_tokens": 537707,
+        "cost_usd": 11.4059,
+        "calls": 34
       },
       {
         "category": "reinforcement",
@@ -249,11 +249,11 @@
       }
     ],
     "total": {
-      "input_tokens": 1181548,
-      "output_tokens": 576203,
-      "cost_usd": 12.1877,
-      "cost_krw": 17063,
-      "calls": 38
+      "input_tokens": 1148797,
+      "output_tokens": 561707,
+      "cost_usd": 11.872,
+      "cost_krw": 16621,
+      "calls": 37
     }
   },
   "weights": {
