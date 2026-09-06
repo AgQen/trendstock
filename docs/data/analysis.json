@@ -233,11 +233,11 @@
     "by_category": [
       {
         "category": "daily_analysis",
-        "input_tokens": 390868,
+        "input_tokens": 325020,
         "cached_input_tokens": 0,
-        "output_tokens": 190025,
-        "cost_usd": 4.023,
-        "calls": 12
+        "output_tokens": 158025,
+        "cost_usd": 3.3454,
+        "calls": 10
       },
       {
         "category": "reinforcement",
@@ -249,22 +249,34 @@
       }
     ],
     "total": {
-      "input_tokens": 402661,
-      "output_tokens": 198025,
-      "cost_usd": 4.1784,
-      "cost_krw": 5850,
-      "calls": 13
+      "input_tokens": 336813,
+      "output_tokens": 166025,
+      "cost_usd": 3.5008,
+      "cost_krw": 4901,
+      "calls": 11
     }
   },
   "weights": {
-    "fund_weight": 1.093,
-    "momentum_weight": 0.728,
-    "timing_weight": 1.241,
-    "volume_weight": 1.299,
-    "rs_weight": 1.246,
-    "risk_weight": 0.848
+    "fund_weight": 1.034,
+    "momentum_weight": 0.668,
+    "timing_weight": 1.305,
+    "volume_weight": 1.301,
+    "rs_weight": 1.211,
+    "risk_weight": 0.875
   },
   "weight_history": [
+    {
+      "weight_id": 4,
+      "effective_date": "2026-09-06",
+      "fund_weight": 1.034,
+      "momentum_weight": 0.668,
+      "timing_weight": 1.305,
+      "volume_weight": 1.301,
+      "note": "auto-tune 2026-09-06: fund_weight=-0.059, momentum_weight=-0.060, timing_weight=+0.064, volume_weight=+0.002, rs_weight=-0.035, risk_weight=+0.027",
+      "created_at": "2026-09-06T00:03:17+00:00",
+      "rs_weight": 1.211,
+      "risk_weight": 0.875
+    },
     {
       "weight_id": 3,
       "effective_date": "2026-08-01",
