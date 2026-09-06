@@ -383,31 +383,31 @@
             "grade": "Strong Buy",
             "total": 9,
             "weights": {
-              "fund": 1.093,
-              "momentum": 0.728,
-              "timing": 1.241,
-              "volume": 1.299,
-              "rs": 1.246,
-              "risk": 0.848
+              "fund": 1.034,
+              "momentum": 0.668,
+              "timing": 1.305,
+              "volume": 1.301,
+              "rs": 1.211,
+              "risk": 0.875
             },
             "dimensions": {
               "fundamentals": {
                 "score": 3,
-                "weighted": 3.28,
+                "weighted": 3.1,
                 "reasons": [
                   "펀더 4지표 전부 강함 (매출 YoY +35%, 영업이익률 58%, ROE 23% 등)"
                 ]
               },
               "momentum": {
                 "score": 2,
-                "weighted": 1.46,
+                "weighted": 1.34,
                 "reasons": [
                   "20d +22% & 5d +23% 강한 우상향"
                 ]
               },
               "timing": {
                 "score": 1,
-                "weighted": 1.24,
+                "weighted": 1.3,
                 "reasons": [
                   "20일 신고가 돌파",
                   "P/E 18 합리"
@@ -420,14 +420,14 @@
               },
               "rs": {
                 "score": 2,
-                "weighted": 2.49,
+                "weighted": 2.42,
                 "reasons": [
                   "vs SPY 초과 +19% (강한 RS)"
                 ]
               },
               "risk": {
                 "score": 1,
-                "weighted": 0.85,
+                "weighted": 0.88,
                 "reasons": [
                   "MDD 7% — 변동성 낮음 (안정)"
                 ]
@@ -522,24 +522,24 @@
             "grade": "Strong Buy",
             "total": 5,
             "weights": {
-              "fund": 1.093,
-              "momentum": 0.728,
-              "timing": 1.241,
-              "volume": 1.299,
-              "rs": 1.246,
-              "risk": 0.848
+              "fund": 1.034,
+              "momentum": 0.668,
+              "timing": 1.305,
+              "volume": 1.301,
+              "rs": 1.211,
+              "risk": 0.875
             },
             "dimensions": {
               "fundamentals": {
                 "score": 3,
-                "weighted": 3.28,
+                "weighted": 3.1,
                 "reasons": [
                   "펀더 3개 강함 (매출 YoY +86%, 영업이익률 54%, ROE 44%)"
                 ]
               },
               "momentum": {
                 "score": 1,
-                "weighted": 0.73,
+                "weighted": 0.67,
                 "reasons": [
                   "20d +7% 우상향"
                 ]
@@ -566,7 +566,7 @@
               },
               "risk": {
                 "score": 1,
-                "weighted": 0.85,
+                "weighted": 0.88,
                 "reasons": [
                   "MDD 7% — 변동성 낮음 (안정)"
                 ]
@@ -661,24 +661,24 @@
             "grade": "Strong Buy",
             "total": 4,
             "weights": {
-              "fund": 1.093,
-              "momentum": 0.728,
-              "timing": 1.241,
-              "volume": 1.299,
-              "rs": 1.246,
-              "risk": 0.848
+              "fund": 1.034,
+              "momentum": 0.668,
+              "timing": 1.305,
+              "volume": 1.301,
+              "rs": 1.211,
+              "risk": 0.875
             },
             "dimensions": {
               "fundamentals": {
                 "score": 1,
-                "weighted": 1.09,
+                "weighted": 1.03,
                 "reasons": [
                   "펀더 일부 양호 (매출 YoY +21%, 영업이익률 17%, ROE 20%)"
                 ]
               },
               "momentum": {
                 "score": 2,
-                "weighted": 1.46,
+                "weighted": 1.34,
                 "reasons": [
                   "20d +10% & 5d +8% 강한 우상향"
                 ]
@@ -698,7 +698,7 @@
               },
               "rs": {
                 "score": 1,
-                "weighted": 1.25,
+                "weighted": 1.21,
                 "reasons": [
                   "vs SPY 초과 +8%"
                 ]
@@ -812,24 +812,24 @@
             "grade": "Caution",
             "total": -1,
             "weights": {
-              "fund": 1.093,
-              "momentum": 0.728,
-              "timing": 1.241,
-              "volume": 1.299,
-              "rs": 1.246,
-              "risk": 0.848
+              "fund": 1.034,
+              "momentum": 0.668,
+              "timing": 1.305,
+              "volume": 1.301,
+              "rs": 1.211,
+              "risk": 0.875
             },
             "dimensions": {
               "fundamentals": {
                 "score": 2,
-                "weighted": 2.19,
+                "weighted": 2.07,
                 "reasons": [
                   "펀더 2개 강함 (ROE 27%, 부채/자본 5 (낮음))"
                 ]
               },
               "momentum": {
                 "score": -1,
-                "weighted": -0.73,
+                "weighted": -0.67,
                 "reasons": [
                   "20d -9% 약세"
                 ]
@@ -846,14 +846,14 @@
               },
               "rs": {
                 "score": -1,
-                "weighted": -1.25,
+                "weighted": -1.21,
                 "reasons": [
                   "vs SPY 부진 -11%"
                 ]
               },
               "risk": {
                 "score": -1,
-                "weighted": -0.85,
+                "weighted": -0.88,
                 "reasons": [
                   "MDD 33% — 고변동성"
                 ]
@@ -963,17 +963,17 @@
             "grade": "Hold",
             "total": 0,
             "weights": {
-              "fund": 1.093,
-              "momentum": 0.728,
-              "timing": 1.241,
-              "volume": 1.299,
-              "rs": 1.246,
-              "risk": 0.848
+              "fund": 1.034,
+              "momentum": 0.668,
+              "timing": 1.305,
+              "volume": 1.301,
+              "rs": 1.211,
+              "risk": 0.875
             },
             "dimensions": {
               "fundamentals": {
                 "score": 1,
-                "weighted": 1.09,
+                "weighted": 1.03,
                 "reasons": [
                   "펀더 일부 양호 (부채/자본 17 (낮음))"
                 ]
@@ -987,7 +987,7 @@
               },
               "timing": {
                 "score": -1,
-                "weighted": -1.24,
+                "weighted": -1.3,
                 "reasons": [
                   "20일 신고가 돌파",
                   "P/E 174 극심한 고평가"
@@ -1112,31 +1112,31 @@
             "grade": "Strong Buy",
             "total": 6,
             "weights": {
-              "fund": 1.093,
-              "momentum": 0.728,
-              "timing": 1.241,
-              "volume": 1.299,
-              "rs": 1.246,
-              "risk": 0.848
+              "fund": 1.034,
+              "momentum": 0.668,
+              "timing": 1.305,
+              "volume": 1.301,
+              "rs": 1.211,
+              "risk": 0.875
             },
             "dimensions": {
               "fundamentals": {
                 "score": 1,
-                "weighted": 1.09,
+                "weighted": 1.03,
                 "reasons": [
                   "펀더 일부 양호 (매출 YoY +25%)"
                 ]
               },
               "momentum": {
                 "score": 2,
-                "weighted": 1.46,
+                "weighted": 1.34,
                 "reasons": [
                   "20d +21% & 5d +12% 강한 우상향"
                 ]
               },
               "timing": {
                 "score": 1,
-                "weighted": 1.24,
+                "weighted": 1.3,
                 "reasons": [
                   "20일 신고가 돌파"
                 ]
@@ -1148,7 +1148,7 @@
               },
               "rs": {
                 "score": 2,
-                "weighted": 2.49,
+                "weighted": 2.42,
                 "reasons": [
                   "vs SPY 초과 +19% (강한 RS)"
                 ]
@@ -1260,31 +1260,31 @@
             "grade": "Strong Buy",
             "total": 7,
             "weights": {
-              "fund": 1.093,
-              "momentum": 0.728,
-              "timing": 1.241,
-              "volume": 1.299,
-              "rs": 1.246,
-              "risk": 0.848
+              "fund": 1.034,
+              "momentum": 0.668,
+              "timing": 1.305,
+              "volume": 1.301,
+              "rs": 1.211,
+              "risk": 0.875
             },
             "dimensions": {
               "fundamentals": {
                 "score": 2,
-                "weighted": 2.19,
+                "weighted": 2.07,
                 "reasons": [
                   "펀더 2개 강함 (영업이익률 33%, 부채/자본 32 (낮음))"
                 ]
               },
               "momentum": {
                 "score": 2,
-                "weighted": 1.46,
+                "weighted": 1.34,
                 "reasons": [
                   "20d +13% & 5d +11% 강한 우상향"
                 ]
               },
               "timing": {
                 "score": 1,
-                "weighted": 1.24,
+                "weighted": 1.3,
                 "reasons": [
                   "20일 신고가 돌파"
                 ]
@@ -1296,14 +1296,14 @@
               },
               "rs": {
                 "score": 1,
-                "weighted": 1.25,
+                "weighted": 1.21,
                 "reasons": [
                   "vs SPY 초과 +11%"
                 ]
               },
               "risk": {
                 "score": 1,
-                "weighted": 0.85,
+                "weighted": 0.88,
                 "reasons": [
                   "MDD 8% — 변동성 낮음 (안정)"
                 ]
@@ -1708,7 +1708,7 @@
           "timeframe": "ongoing",
           "trend_confidence": 88,
           "grade": "Strong Buy",
-          "rating_score": 11,
+          "rating_score": 10,
           "fundamentals_score": 9,
           "fundamentals": {
             "revenue_yoy_pct": 17.0,
@@ -1809,8 +1809,8 @@
           "category": "사이버보안",
           "timeframe": "ongoing",
           "trend_confidence": 79,
-          "grade": "Hold",
-          "rating_score": 0,
+          "grade": "Caution",
+          "rating_score": -1,
           "fundamentals_score": 8,
           "fundamentals": {
             "revenue_yoy_pct": 33.0,
@@ -2172,8 +2172,8 @@
           "category": "반도체",
           "timeframe": "short",
           "trend_confidence": 75,
-          "grade": "Buy",
-          "rating_score": 2,
+          "grade": "Hold",
+          "rating_score": 1,
           "fundamentals_score": 7,
           "fundamentals": {
             "revenue_yoy_pct": 85.0,
@@ -2325,8 +2325,8 @@
           "category": "사이버보안",
           "timeframe": "medium",
           "trend_confidence": 65,
-          "grade": "Hold",
-          "rating_score": 0,
+          "grade": "Caution",
+          "rating_score": -1,
           "fundamentals_score": 8,
           "fundamentals": {
             "revenue_yoy_pct": 33.0,
@@ -2739,8 +2739,8 @@
           "category": "사이버보안",
           "timeframe": "short",
           "trend_confidence": 68,
-          "grade": "Hold",
-          "rating_score": 0,
+          "grade": "Caution",
+          "rating_score": -1,
           "fundamentals_score": 7,
           "fundamentals": {
             "revenue_yoy_pct": 33.0,
@@ -3103,7 +3103,7 @@
           "timeframe": "short",
           "trend_confidence": 65,
           "grade": "Strong Buy",
-          "rating_score": 7,
+          "rating_score": 6,
           "fundamentals_score": 7,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -3829,7 +3829,7 @@
           "timeframe": "short",
           "trend_confidence": 68,
           "grade": "Hold",
-          "rating_score": 1,
+          "rating_score": 0,
           "fundamentals_score": 8,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -4299,8 +4299,8 @@
           "category": "AI 반도체",
           "timeframe": "ongoing",
           "trend_confidence": 82,
-          "grade": "Hold",
-          "rating_score": 0,
+          "grade": "Caution",
+          "rating_score": -1,
           "fundamentals_score": 7,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -6210,8 +6210,8 @@
           "category": "사이버보안",
           "timeframe": "medium",
           "trend_confidence": 68,
-          "grade": "Strong Buy",
-          "rating_score": 4,
+          "grade": "Buy",
+          "rating_score": 3,
           "fundamentals_score": 8,
           "fundamentals": {
             "revenue_yoy_pct": 14.2,
@@ -6319,7 +6319,7 @@
           "timeframe": "ongoing",
           "trend_confidence": 83,
           "grade": "Strong Buy",
-          "rating_score": 5,
+          "rating_score": 4,
           "fundamentals_score": 8,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -6471,8 +6471,8 @@
           "category": "사이버보안",
           "timeframe": "short",
           "trend_confidence": 72,
-          "grade": "Strong Buy",
-          "rating_score": 4,
+          "grade": "Buy",
+          "rating_score": 3,
           "fundamentals_score": 7,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -7510,7 +7510,7 @@
           "timeframe": "ongoing",
           "trend_confidence": 75,
           "grade": "Strong Buy",
-          "rating_score": 6,
+          "rating_score": 5,
           "fundamentals_score": 7,
           "fundamentals": {
             "revenue_yoy_pct": 7.0,
@@ -7561,7 +7561,7 @@
           "timeframe": "short",
           "trend_confidence": 76,
           "grade": "Hold",
-          "rating_score": 1,
+          "rating_score": 0,
           "fundamentals_score": 7,
           "fundamentals": {
             "revenue_yoy_pct": 12.0,
@@ -8134,7 +8134,7 @@
           "timeframe": "ongoing",
           "trend_confidence": 83,
           "grade": "Strong Buy",
-          "rating_score": 5,
+          "rating_score": 4,
           "fundamentals_score": 8,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -8286,8 +8286,8 @@
           "category": "AI 인프라 / 전력·냉각",
           "timeframe": "short",
           "trend_confidence": 74,
-          "grade": "Buy",
-          "rating_score": 2,
+          "grade": "Hold",
+          "rating_score": 1,
           "fundamentals_score": 8,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -8548,7 +8548,7 @@
           "timeframe": "ongoing",
           "trend_confidence": 84,
           "grade": "Strong Buy",
-          "rating_score": 11,
+          "rating_score": 10,
           "fundamentals_score": 8,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -8599,7 +8599,7 @@
           "timeframe": "ongoing",
           "trend_confidence": 82,
           "grade": "Strong Buy",
-          "rating_score": 5,
+          "rating_score": 4,
           "fundamentals_score": 7,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -8961,8 +8961,8 @@
           "category": "바이오테크",
           "timeframe": "ongoing",
           "trend_confidence": 80,
-          "grade": "Strong Buy",
-          "rating_score": 4,
+          "grade": "Buy",
+          "rating_score": 3,
           "fundamentals_score": 6,
           "fundamentals": {
             "revenue_yoy_pct": -40.0,
@@ -9892,7 +9892,7 @@
           "timeframe": "short",
           "trend_confidence": 78,
           "grade": "Strong Buy",
-          "rating_score": 9,
+          "rating_score": 8,
           "fundamentals_score": 9,
           "fundamentals": {
             "revenue_yoy_pct": 13.0,
@@ -10305,8 +10305,8 @@
           "category": "반도체 장비",
           "timeframe": "short",
           "trend_confidence": 80,
-          "grade": "Strong Buy",
-          "rating_score": 4,
+          "grade": "Buy",
+          "rating_score": 3,
           "fundamentals_score": 8,
           "fundamentals": {
             "revenue_yoy_pct": 9.5,
@@ -10879,7 +10879,7 @@
           "timeframe": "ongoing",
           "trend_confidence": 80,
           "grade": "Buy",
-          "rating_score": 3,
+          "rating_score": 2,
           "fundamentals_score": 8,
           "fundamentals": {
             "revenue_yoy_pct": 5.8,
@@ -11191,7 +11191,7 @@
           "timeframe": "ongoing",
           "trend_confidence": 87,
           "grade": "Strong Buy",
-          "rating_score": 5,
+          "rating_score": 4,
           "fundamentals_score": 8,
           "fundamentals": {
             "revenue_yoy_pct": 18.0,
@@ -11242,7 +11242,7 @@
           "timeframe": "ongoing",
           "trend_confidence": 87,
           "grade": "Buy",
-          "rating_score": 3,
+          "rating_score": 2,
           "fundamentals_score": 7,
           "fundamentals": {
             "revenue_yoy_pct": 12.0,
@@ -11605,7 +11605,7 @@
           "timeframe": "ongoing",
           "trend_confidence": 88,
           "grade": "Buy",
-          "rating_score": 3,
+          "rating_score": 2,
           "fundamentals_score": 8,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -11948,7 +11948,7 @@
           "timeframe": "short",
           "trend_confidence": 74,
           "grade": "Strong Buy",
-          "rating_score": 5,
+          "rating_score": 4,
           "fundamentals_score": 8,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -12101,7 +12101,7 @@
           "timeframe": "ongoing",
           "trend_confidence": 88,
           "grade": "Buy",
-          "rating_score": 3,
+          "rating_score": 2,
           "fundamentals_score": 8,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -12395,7 +12395,7 @@
           "timeframe": "short",
           "trend_confidence": 73,
           "grade": "Strong Buy",
-          "rating_score": 5,
+          "rating_score": 4,
           "fundamentals_score": 8,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -12744,7 +12744,7 @@
           "timeframe": "short",
           "trend_confidence": 75,
           "grade": "Strong Buy",
-          "rating_score": 5,
+          "rating_score": 4,
           "fundamentals_score": 8,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -12946,7 +12946,7 @@
           "timeframe": "ongoing",
           "trend_confidence": 88,
           "grade": "Buy",
-          "rating_score": 3,
+          "rating_score": 2,
           "fundamentals_score": 8,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -13442,7 +13442,7 @@
           "timeframe": "ongoing",
           "trend_confidence": 83,
           "grade": "Buy",
-          "rating_score": 3,
+          "rating_score": 2,
           "fundamentals_score": 8,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -13833,8 +13833,8 @@
           "category": "사이버보안",
           "timeframe": "medium",
           "trend_confidence": 70,
-          "grade": "Strong Buy",
-          "rating_score": 4,
+          "grade": "Buy",
+          "rating_score": 3,
           "fundamentals_score": 8,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -14281,7 +14281,7 @@
           "timeframe": "short",
           "trend_confidence": 68,
           "grade": "Strong Buy",
-          "rating_score": 5,
+          "rating_score": 4,
           "fundamentals_score": 7,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -14385,7 +14385,7 @@
           "timeframe": "ongoing",
           "trend_confidence": 84,
           "grade": "Buy",
-          "rating_score": 3,
+          "rating_score": 2,
           "fundamentals_score": 8,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -14783,7 +14783,7 @@
           "timeframe": "ongoing",
           "trend_confidence": 84,
           "grade": "Buy",
-          "rating_score": 3,
+          "rating_score": 2,
           "fundamentals_score": 7,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -15328,7 +15328,7 @@
           "timeframe": "ongoing",
           "trend_confidence": 82,
           "grade": "Buy",
-          "rating_score": 3,
+          "rating_score": 2,
           "fundamentals_score": 8,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -15376,8 +15376,8 @@
           "category": "한국 반도체",
           "timeframe": "ongoing",
           "trend_confidence": 78,
-          "grade": "Hold",
-          "rating_score": 0,
+          "grade": "Caution",
+          "rating_score": -1,
           "fundamentals_score": 8,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -15824,7 +15824,7 @@
           "timeframe": "ongoing",
           "trend_confidence": 85,
           "grade": "Buy",
-          "rating_score": 3,
+          "rating_score": 2,
           "fundamentals_score": 8,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -15970,8 +15970,8 @@
           "category": "반도체/한국",
           "timeframe": "short",
           "trend_confidence": 80,
-          "grade": "Hold",
-          "rating_score": 0,
+          "grade": "Caution",
+          "rating_score": -1,
           "fundamentals_score": 8,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -16865,7 +16865,7 @@
           "timeframe": "short",
           "trend_confidence": 76,
           "grade": "Strong Buy",
-          "rating_score": 6,
+          "rating_score": 5,
           "fundamentals_score": 7,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -17459,7 +17459,7 @@
           "timeframe": "short",
           "trend_confidence": 67,
           "grade": "Caution",
-          "rating_score": -4,
+          "rating_score": -3,
           "fundamentals_score": 6,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -17660,8 +17660,8 @@
           "category": "반도체 장비",
           "timeframe": "ongoing",
           "trend_confidence": 88,
-          "grade": "Strong Buy",
-          "rating_score": 4,
+          "grade": "Buy",
+          "rating_score": 3,
           "fundamentals_score": 8,
           "fundamentals": {
             "revenue_yoy_pct": 28.0,
@@ -19547,7 +19547,7 @@
           "timeframe": "ongoing",
           "trend_confidence": 80,
           "grade": "Strong Buy",
-          "rating_score": 6,
+          "rating_score": 5,
           "fundamentals_score": 7,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -19644,8 +19644,8 @@
           "category": "건설/지주",
           "timeframe": "ongoing",
           "trend_confidence": 73,
-          "grade": "Strong Buy",
-          "rating_score": 4,
+          "grade": "Buy",
+          "rating_score": 3,
           "fundamentals_score": 7,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -19792,7 +19792,7 @@
           "timeframe": "short",
           "trend_confidence": 74,
           "grade": "Strong Buy",
-          "rating_score": 6,
+          "rating_score": 5,
           "fundamentals_score": 8,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -19889,8 +19889,8 @@
           "category": "클라우드 데이터",
           "timeframe": "short",
           "trend_confidence": 68,
-          "grade": "Strong Buy",
-          "rating_score": 4,
+          "grade": "Buy",
+          "rating_score": 3,
           "fundamentals_score": 7,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -19945,7 +19945,7 @@
           "timeframe": "ongoing",
           "trend_confidence": 85,
           "grade": "Strong Buy",
-          "rating_score": 6,
+          "rating_score": 5,
           "fundamentals_score": 8,
           "fundamentals": {
             "revenue_yoy_pct": 65.0,
@@ -19993,8 +19993,8 @@
           "category": "AI 반도체",
           "timeframe": "ongoing",
           "trend_confidence": 85,
-          "grade": "Strong Buy",
-          "rating_score": 4,
+          "grade": "Buy",
+          "rating_score": 3,
           "fundamentals_score": 7,
           "fundamentals": {
             "revenue_yoy_pct": 36.0,
@@ -20287,8 +20287,8 @@
           "category": "AI 소프트웨어",
           "timeframe": "short",
           "trend_confidence": 72,
-          "grade": "Strong Buy",
-          "rating_score": 4,
+          "grade": "Buy",
+          "rating_score": 3,
           "fundamentals_score": 7,
           "fundamentals": {
             "revenue_yoy_pct": 29.0,
@@ -20386,7 +20386,7 @@
           "timeframe": "short",
           "trend_confidence": 73,
           "grade": "Caution",
-          "rating_score": -3,
+          "rating_score": -4,
           "fundamentals_score": 8,
           "fundamentals": {
             "revenue_yoy_pct": 25.0,
@@ -20484,7 +20484,7 @@
           "timeframe": "ongoing",
           "trend_confidence": 88,
           "grade": "Strong Buy",
-          "rating_score": 6,
+          "rating_score": 5,
           "fundamentals_score": 7,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -20699,7 +20699,7 @@
           "timeframe": "ongoing",
           "trend_confidence": 82,
           "grade": "Strong Buy",
-          "rating_score": 5,
+          "rating_score": 4,
           "fundamentals_score": 8,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -20741,8 +20741,8 @@
           "category": "한국 AI 플랫폼",
           "timeframe": "ongoing",
           "trend_confidence": 82,
-          "grade": "Strong Buy",
-          "rating_score": 4,
+          "grade": "Buy",
+          "rating_score": 3,
           "fundamentals_score": 6,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -20828,7 +20828,7 @@
           "timeframe": "ongoing",
           "trend_confidence": 78,
           "grade": "Caution",
-          "rating_score": -1,
+          "rating_score": -2,
           "fundamentals_score": 6,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -21516,7 +21516,7 @@
           "timeframe": "imminent",
           "trend_confidence": 75,
           "grade": "Strong Buy",
-          "rating_score": 7,
+          "rating_score": 6,
           "fundamentals_score": 7,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -21559,7 +21559,7 @@
           "timeframe": "imminent",
           "trend_confidence": 75,
           "grade": "Strong Buy",
-          "rating_score": 5,
+          "rating_score": 4,
           "fundamentals_score": 5,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -21774,7 +21774,7 @@
           "timeframe": "imminent",
           "trend_confidence": 76,
           "grade": "Caution",
-          "rating_score": -3,
+          "rating_score": -4,
           "fundamentals_score": 7,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -21946,7 +21946,7 @@
           "timeframe": "imminent",
           "trend_confidence": 62,
           "grade": "Caution",
-          "rating_score": -4,
+          "rating_score": -3,
           "fundamentals_score": 4,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -22038,7 +22038,7 @@
           "timeframe": "ongoing",
           "trend_confidence": 88,
           "grade": "Strong Buy",
-          "rating_score": 5,
+          "rating_score": 4,
           "fundamentals_score": 7,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -22209,8 +22209,8 @@
           "category": "AI 반도체",
           "timeframe": "ongoing",
           "trend_confidence": 87,
-          "grade": "Strong Buy",
-          "rating_score": 4,
+          "grade": "Buy",
+          "rating_score": 3,
           "fundamentals_score": 8,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -22253,7 +22253,7 @@
           "timeframe": "ongoing",
           "trend_confidence": 87,
           "grade": "Strong Buy",
-          "rating_score": 6,
+          "rating_score": 5,
           "fundamentals_score": 7,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -22382,7 +22382,7 @@
           "timeframe": "ongoing",
           "trend_confidence": 82,
           "grade": "Strong Buy",
-          "rating_score": 8,
+          "rating_score": 7,
           "fundamentals_score": 6,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -22511,7 +22511,7 @@
           "timeframe": "ongoing",
           "trend_confidence": 84,
           "grade": "Caution",
-          "rating_score": -3,
+          "rating_score": -4,
           "fundamentals_score": 7,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -22597,7 +22597,7 @@
           "timeframe": "ongoing",
           "trend_confidence": 84,
           "grade": "Strong Buy",
-          "rating_score": 5,
+          "rating_score": 4,
           "fundamentals_score": 5,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -22983,8 +22983,8 @@
           "category": "AI 반도체",
           "timeframe": "imminent",
           "trend_confidence": 72,
-          "grade": "Strong Buy",
-          "rating_score": 4,
+          "grade": "Buy",
+          "rating_score": 3,
           "fundamentals_score": 7,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -23027,7 +23027,7 @@
           "timeframe": "imminent",
           "trend_confidence": 70,
           "grade": "Caution",
-          "rating_score": -1,
+          "rating_score": -2,
           "fundamentals_score": 7,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -23242,7 +23242,7 @@
           "timeframe": "imminent",
           "trend_confidence": 67,
           "grade": "Strong Buy",
-          "rating_score": 6,
+          "rating_score": 5,
           "fundamentals_score": 6,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -23678,7 +23678,7 @@
           "timeframe": "ongoing",
           "trend_confidence": 85,
           "grade": "Caution",
-          "rating_score": -3,
+          "rating_score": -4,
           "fundamentals_score": 7,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -23935,8 +23935,8 @@
           "category": "한국 인터넷/플랫폼",
           "timeframe": "ongoing",
           "trend_confidence": 82,
-          "grade": "Strong Buy",
-          "rating_score": 4,
+          "grade": "Buy",
+          "rating_score": 3,
           "fundamentals_score": 5,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -24323,7 +24323,7 @@
           "timeframe": "imminent",
           "trend_confidence": 78,
           "grade": "Strong Buy",
-          "rating_score": 5,
+          "rating_score": 4,
           "fundamentals_score": 6,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -24366,7 +24366,7 @@
           "timeframe": "imminent",
           "trend_confidence": 78,
           "grade": "Strong Buy",
-          "rating_score": 6,
+          "rating_score": 5,
           "fundamentals_score": 6,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -24409,7 +24409,7 @@
           "timeframe": "imminent",
           "trend_confidence": 78,
           "grade": "Strong Buy",
-          "rating_score": 6,
+          "rating_score": 5,
           "fundamentals_score": 7,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -25189,7 +25189,7 @@
           "timeframe": "ongoing",
           "trend_confidence": 87,
           "grade": "Strong Buy",
-          "rating_score": 5,
+          "rating_score": 4,
           "fundamentals_score": 7,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -25361,7 +25361,7 @@
           "timeframe": "ongoing",
           "trend_confidence": 85,
           "grade": "Caution",
-          "rating_score": -3,
+          "rating_score": -4,
           "fundamentals_score": 8,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -25962,8 +25962,8 @@
           "category": "Semiconductors",
           "timeframe": "imminent",
           "trend_confidence": 83,
-          "grade": "Strong Buy",
-          "rating_score": 4,
+          "grade": "Buy",
+          "rating_score": 3,
           "fundamentals_score": 7,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -26135,7 +26135,7 @@
           "timeframe": "imminent",
           "trend_confidence": 80,
           "grade": "Strong Buy",
-          "rating_score": 6,
+          "rating_score": 5,
           "fundamentals_score": 7,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -26700,7 +26700,7 @@
           "timeframe": "ongoing",
           "trend_confidence": 87,
           "grade": "Strong Buy",
-          "rating_score": 5,
+          "rating_score": 4,
           "fundamentals_score": 7,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -26786,7 +26786,7 @@
           "timeframe": "ongoing",
           "trend_confidence": 84,
           "grade": "Caution",
-          "rating_score": -3,
+          "rating_score": -4,
           "fundamentals_score": 8,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -27129,8 +27129,8 @@
           "category": "한국 인터넷/건설",
           "timeframe": "ongoing",
           "trend_confidence": 76,
-          "grade": "Strong Buy",
-          "rating_score": 4,
+          "grade": "Buy",
+          "rating_score": 3,
           "fundamentals_score": 6,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -27387,8 +27387,8 @@
           "category": "AI Semiconductors",
           "timeframe": "imminent",
           "trend_confidence": 82,
-          "grade": "Strong Buy",
-          "rating_score": 4,
+          "grade": "Buy",
+          "rating_score": 3,
           "fundamentals_score": 7,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -27474,7 +27474,7 @@
           "timeframe": "imminent",
           "trend_confidence": 82,
           "grade": "Strong Buy",
-          "rating_score": 6,
+          "rating_score": 5,
           "fundamentals_score": 6,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -28211,7 +28211,7 @@
           "timeframe": "ongoing",
           "trend_confidence": 88,
           "grade": "Hold",
-          "rating_score": 1,
+          "rating_score": 0,
           "fundamentals_score": 6,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -28254,7 +28254,7 @@
           "timeframe": "ongoing",
           "trend_confidence": 88,
           "grade": "Strong Buy",
-          "rating_score": 5,
+          "rating_score": 4,
           "fundamentals_score": 7,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -28296,8 +28296,8 @@
           "category": "반도체",
           "timeframe": "ongoing",
           "trend_confidence": 85,
-          "grade": "Strong Buy",
-          "rating_score": 4,
+          "grade": "Buy",
+          "rating_score": 3,
           "fundamentals_score": 7,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -28339,8 +28339,8 @@
           "category": "반도체",
           "timeframe": "ongoing",
           "trend_confidence": 85,
-          "grade": "Strong Buy",
-          "rating_score": 4,
+          "grade": "Buy",
+          "rating_score": 3,
           "fundamentals_score": 6,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -28383,7 +28383,7 @@
           "timeframe": "ongoing",
           "trend_confidence": 85,
           "grade": "Strong Buy",
-          "rating_score": 6,
+          "rating_score": 5,
           "fundamentals_score": 6,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -28426,7 +28426,7 @@
           "timeframe": "ongoing",
           "trend_confidence": 85,
           "grade": "Buy",
-          "rating_score": 3,
+          "rating_score": 2,
           "fundamentals_score": 6,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -28770,7 +28770,7 @@
           "timeframe": "ongoing",
           "trend_confidence": 78,
           "grade": "Strong Buy",
-          "rating_score": 6,
+          "rating_score": 5,
           "fundamentals_score": 7,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -29028,7 +29028,7 @@
           "timeframe": "imminent",
           "trend_confidence": 80,
           "grade": "Strong Buy",
-          "rating_score": 5,
+          "rating_score": 4,
           "fundamentals_score": 7,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -29114,7 +29114,7 @@
           "timeframe": "imminent",
           "trend_confidence": 80,
           "grade": "Hold",
-          "rating_score": 1,
+          "rating_score": 0,
           "fundamentals_score": 6,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -29501,7 +29501,7 @@
           "timeframe": "imminent",
           "trend_confidence": 75,
           "grade": "Strong Buy",
-          "rating_score": 5,
+          "rating_score": 4,
           "fundamentals_score": 7,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -29807,8 +29807,8 @@
           "category": "반도체/AI",
           "timeframe": "ongoing",
           "trend_confidence": 87,
-          "grade": "Strong Buy",
-          "rating_score": 4,
+          "grade": "Buy",
+          "rating_score": 3,
           "fundamentals_score": 7,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -29980,7 +29980,7 @@
           "timeframe": "ongoing",
           "trend_confidence": 82,
           "grade": "Strong Buy",
-          "rating_score": 5,
+          "rating_score": 4,
           "fundamentals_score": 8,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -30023,7 +30023,7 @@
           "timeframe": "ongoing",
           "trend_confidence": 75,
           "grade": "Buy",
-          "rating_score": 3,
+          "rating_score": 2,
           "fundamentals_score": 7,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -30753,8 +30753,8 @@
           "category": "조선/방산",
           "timeframe": "imminent",
           "trend_confidence": 70,
-          "grade": "Strong Buy",
-          "rating_score": 4,
+          "grade": "Buy",
+          "rating_score": 3,
           "fundamentals_score": 6,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -31232,8 +31232,8 @@
           "category": "반도체",
           "timeframe": "ongoing",
           "trend_confidence": 88,
-          "grade": "Strong Buy",
-          "rating_score": 4,
+          "grade": "Buy",
+          "rating_score": 3,
           "fundamentals_score": 7,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -31275,8 +31275,8 @@
           "category": "반도체",
           "timeframe": "ongoing",
           "trend_confidence": 88,
-          "grade": "Strong Buy",
-          "rating_score": 4,
+          "grade": "Buy",
+          "rating_score": 3,
           "fundamentals_score": 6,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -31318,8 +31318,8 @@
           "category": "반도체",
           "timeframe": "ongoing",
           "trend_confidence": 88,
-          "grade": "Strong Buy",
-          "rating_score": 4,
+          "grade": "Buy",
+          "rating_score": 3,
           "fundamentals_score": 6,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -31362,7 +31362,7 @@
           "timeframe": "ongoing",
           "trend_confidence": 85,
           "grade": "Caution",
-          "rating_score": -3,
+          "rating_score": -4,
           "fundamentals_score": 8,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -32528,8 +32528,8 @@
           "category": "Semiconductors",
           "timeframe": "ongoing",
           "trend_confidence": 85,
-          "grade": "Strong Buy",
-          "rating_score": 4,
+          "grade": "Buy",
+          "rating_score": 3,
           "fundamentals_score": 6,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -32571,8 +32571,8 @@
           "category": "Semiconductors",
           "timeframe": "ongoing",
           "trend_confidence": 85,
-          "grade": "Strong Buy",
-          "rating_score": 4,
+          "grade": "Buy",
+          "rating_score": 3,
           "fundamentals_score": 6,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -32658,7 +32658,7 @@
           "timeframe": "ongoing",
           "trend_confidence": 85,
           "grade": "Strong Buy",
-          "rating_score": 6,
+          "rating_score": 5,
           "fundamentals_score": 6,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -33302,8 +33302,8 @@
           "category": "Semiconductors",
           "timeframe": "imminent",
           "trend_confidence": 72,
-          "grade": "Strong Buy",
-          "rating_score": 4,
+          "grade": "Buy",
+          "rating_score": 3,
           "fundamentals_score": 6,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -33346,7 +33346,7 @@
           "timeframe": "imminent",
           "trend_confidence": 72,
           "grade": "Strong Buy",
-          "rating_score": 6,
+          "rating_score": 5,
           "fundamentals_score": 6,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -33948,7 +33948,7 @@
           "timeframe": "imminent",
           "trend_confidence": 65,
           "grade": "Strong Buy",
-          "rating_score": 5,
+          "rating_score": 4,
           "fundamentals_score": 7,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -34034,7 +34034,7 @@
           "timeframe": "imminent",
           "trend_confidence": 65,
           "grade": "Strong Buy",
-          "rating_score": 5,
+          "rating_score": 4,
           "fundamentals_score": 6,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -34082,8 +34082,8 @@
           "category": "Semiconductors",
           "timeframe": "ongoing",
           "trend_confidence": 84,
-          "grade": "Strong Buy",
-          "rating_score": 4,
+          "grade": "Buy",
+          "rating_score": 3,
           "fundamentals_score": 7,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -34125,8 +34125,8 @@
           "category": "Semiconductors",
           "timeframe": "ongoing",
           "trend_confidence": 84,
-          "grade": "Strong Buy",
-          "rating_score": 4,
+          "grade": "Buy",
+          "rating_score": 3,
           "fundamentals_score": 7,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -34169,7 +34169,7 @@
           "timeframe": "ongoing",
           "trend_confidence": 84,
           "grade": "Strong Buy",
-          "rating_score": 5,
+          "rating_score": 4,
           "fundamentals_score": 7,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -34212,7 +34212,7 @@
           "timeframe": "ongoing",
           "trend_confidence": 84,
           "grade": "Strong Buy",
-          "rating_score": 6,
+          "rating_score": 5,
           "fundamentals_score": 6,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -35459,7 +35459,7 @@
           "timeframe": "imminent",
           "trend_confidence": 70,
           "grade": "Strong Buy",
-          "rating_score": 5,
+          "rating_score": 4,
           "fundamentals_score": 8,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -35544,8 +35544,8 @@
           "category": "반도체",
           "timeframe": "imminent",
           "trend_confidence": 70,
-          "grade": "Strong Buy",
-          "rating_score": 4,
+          "grade": "Buy",
+          "rating_score": 3,
           "fundamentals_score": 6,
           "fundamentals": {
             "revenue_yoy_pct": null,
@@ -35765,8 +35765,8 @@
           "category": "Semiconductors",
           "timeframe": "ongoing",
           "trend_confidence": 82,
-          "grade": "Strong Buy",
-          "rating_score": 4,
+          "grade": "Buy",
+          "rating_score": 3,
           "fundamentals_score": 7,
           "fundamentals": {
             "revenue_yoy_pct": 17.0,
@@ -35852,7 +35852,7 @@
           "timeframe": "ongoing",
           "trend_confidence": 82,
           "grade": "Strong Buy",
-          "rating_score": 6,
+          "rating_score": 5,
           "fundamentals_score": 6,
           "fundamentals": {
             "revenue_yoy_pct": 27.0,
@@ -35894,8 +35894,8 @@
           "category": "Semiconductors",
           "timeframe": "ongoing",
           "trend_confidence": 82,
-          "grade": "Strong Buy",
-          "rating_score": 4,
+          "grade": "Buy",
+          "rating_score": 3,
           "fundamentals_score": 5,
           "fundamentals": {
             "revenue_yoy_pct": 48.0,
@@ -36583,7 +36583,7 @@
           "timeframe": "imminent",
           "trend_confidence": 72,
           "grade": "Caution",
-          "rating_score": -3,
+          "rating_score": -4,
           "fundamentals_score": 7,
           "fundamentals": {
             "revenue_yoy_pct": 21.0,
@@ -37395,7 +37395,7 @@
           "timeframe": "ongoing",
           "trend_confidence": 85,
           "grade": "Strong Buy",
-          "rating_score": 7,
+          "rating_score": 6,
           "fundamentals_score": 9,
           "fundamentals": {
             "revenue_yoy_pct": 198.1,
@@ -37630,7 +37630,7 @@
           "timeframe": "ongoing",
           "trend_confidence": 70,
           "grade": "Strong Buy",
-          "rating_score": 5,
+          "rating_score": 4,
           "fundamentals_score": 7,
           "fundamentals": {},
           "detail": null,
@@ -38032,7 +38032,7 @@
           "timeframe": "ongoing",
           "trend_confidence": 85,
           "grade": "Strong Buy",
-          "rating_score": 6,
+          "rating_score": 5,
           "fundamentals_score": 8,
           "fundamentals": {
             "revenue_yoy_pct": 196.3,
@@ -38115,7 +38115,7 @@
           "timeframe": "ongoing",
           "trend_confidence": 85,
           "grade": "Strong Buy",
-          "rating_score": 7,
+          "rating_score": 6,
           "fundamentals_score": 9,
           "fundamentals": {
             "revenue_yoy_pct": 198.1,
@@ -38195,7 +38195,7 @@
           "timeframe": "ongoing",
           "trend_confidence": 85,
           "grade": "Strong Buy",
-          "rating_score": 6,
+          "rating_score": 5,
           "fundamentals_score": 6,
           "fundamentals": {
             "revenue_yoy_pct": 13.2,
@@ -38483,7 +38483,7 @@
           "timeframe": "ongoing",
           "trend_confidence": 75,
           "grade": "Strong Buy",
-          "rating_score": 6,
+          "rating_score": 5,
           "fundamentals_score": 6,
           "fundamentals": {},
           "detail": null,
@@ -38856,7 +38856,7 @@
           "timeframe": "medium",
           "trend_confidence": 55,
           "grade": "Strong Buy",
-          "rating_score": 5,
+          "rating_score": 4,
           "fundamentals_score": 8,
           "fundamentals": {},
           "detail": null,
@@ -39054,7 +39054,7 @@
           "timeframe": "short",
           "trend_confidence": 45,
           "grade": "Strong Buy",
-          "rating_score": 7,
+          "rating_score": 6,
           "fundamentals_score": 9,
           "fundamentals": {},
           "detail": null,
